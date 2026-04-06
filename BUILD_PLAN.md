@@ -153,6 +153,7 @@ structorai/
 │   ├── SKILL-VOICE.md                     # Pipeline vocal — Whisper/Deepgram + ElevenLabs/OpenAI TTS
 │   ├── SKILL-WHATSAPP.md                  # WhatsApp Business API — webhook, envoi, templates
 │   ├── SKILL-OCR.md                       # Claude Vision pour scan tickets + fallback Tesseract
+│   ├── SKILL-PHOTOS.md                    # Galerie photo chantier — upload, analyse Claude Vision, avant/après, export PDF/social
 │   ├── SKILL-PDF.md                       # Génération PDF devis/factures — ReportLab + Factur-X
 │   ├── SKILL-DEVIS.md                     # Agent Devis — vocal→postes→prix→TVA→PDF→envoi
 │   ├── SKILL-RELANCE.md                   # Agent Relance — séquences, ton adaptatif, escalade
@@ -196,6 +197,7 @@ structorai/
 │       │       ├── clients.py             # CRUD clients — fiche, historique, tags
 │       │       ├── tickets.py             # POST /v1/tickets/scan — photo → OCR → catégorisation
 │       │       ├── contacts_pro.py        # CRUD architectes, apporteurs d'affaires
+│       │       ├── photos.py              # CRUD photos chantier — upload, list, analyze, avant-après, export
 │       │       ├── emails.py              # GET /v1/emails/summary — résumé emails pro
 │       │       ├── avis.py                # CRUD avis Google — list, respond
 │       │       ├── stats.py               # GET /v1/stats/dashboard — métriques globales
@@ -218,6 +220,7 @@ structorai/
 │       │   ├── devis_service.py           # Génération devis — vocal→postes→prix→TVA→PDF
 │       │   ├── facture_service.py         # Génération factures + Factur-X
 │       │   ├── ocr_service.py             # Claude Vision OCR tickets de caisse
+│       │   ├── photo_service.py           # Galerie photo chantier — upload, analyse IA (Claude Vision), avant/après, export, compression
 │       │   ├── pdf_service.py             # Génération PDF (ReportLab) — devis, factures
 │       │   ├── email_service.py           # IMAP polling, filtrage, catégorisation
 │       │   ├── whatsapp_service.py        # Meta Cloud API — envoi/réception messages
@@ -317,7 +320,8 @@ structorai/
 │   │   │   ├── _layout.tsx                # Dashboard layout — tabs + FAB micro flottant
 │   │   │   ├── index.tsx                  # Home — résumé quotidien, actions prioritaires
 │   │   │   ├── chantiers.tsx              # Pipeline Kanban — prospects → devis → en cours → terminé
-│   │   │   ├── chantiers/[id].tsx         # Détail chantier — timer, dépenses, marge, historique
+│   │   │   ├── chantiers/[id].tsx         # Détail chantier — timer, dépenses, marge, historique, PHOTOS
+│   │   │   ├── chantiers/[id]/photos.tsx  # Galerie photos du chantier — avant/pendant/après, analyse IA
 │   │   │   ├── devis.tsx                  # Liste devis — statuts, filtres
 │   │   │   ├── devis/[id].tsx             # Détail devis — preview PDF, envoyer, relancer
 │   │   │   ├── devis/new.tsx              # Nouveau devis — vocal ou formulaire
@@ -361,6 +365,11 @@ structorai/
 │   │   ├── compta/
 │   │   │   ├── TicketCard.tsx             # Carte ticket scanné
 │   │   │   └── ScanCamera.tsx             # Composant caméra OCR
+│   │   ├── photos/
+│   │   │   ├── PhotoCamera.tsx            # Prise de photo liée au chantier (géolocalisée, horodatée)
+│   │   │   ├── PhotoGrid.tsx              # Grille photos du chantier (avant/pendant/après)
+│   │   │   ├── BeforeAfterCompare.tsx     # Comparatif avant/après split screen
+│   │   │   └── PhotoExport.tsx            # Export avant/après pour réseaux sociaux / devis PDF
 │   │   ├── gamification/
 │   │   │   ├── LevelBadge.tsx             # Badge niveau (Apprenti→Légende)
 │   │   │   ├── QuestCard.tsx              # Carte quête d'onboarding
@@ -417,7 +426,8 @@ structorai/
 │       ├── 008_create_tickets.sql
 │       ├── 009_create_depenses.sql
 │       ├── 010_create_time_entries.sql
-│       ├── 011_create_contacts_pro.sql
+│       ├── 011_create_photos.sql          # Photos chantier — url, chantier_id, type (avant/pendant/après), analyse IA, géoloc, metadata
+│       ├── 012_create_contacts_pro.sql
 │       ├── 012_create_avis_google.sql
 │       ├── 013_create_emails.sql
 │       ├── 014_create_relances.sql
@@ -602,16 +612,22 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Mobile : Liste devis avec statuts
 - [ ] Test : dicter un devis vocal → PDF généré → envoi email
 
-### Sprint 4 — Pipeline chantiers + Compta (~2 jours)
+### Sprint 4 — Pipeline chantiers + Compta + Photos (~3 jours)
 - [ ] Backend : CRUD chantiers (pipeline stages)
 - [ ] Backend : Timer service (start/stop par chantier)
 - [ ] Backend : Agent Compta (OCR tickets Claude Vision)
 - [ ] Backend : Catégorisation automatique dépenses
+- [ ] Backend : Photo service (upload Supabase Storage, compression, géoloc, horodatage)
+- [ ] Backend : Analyse photo IA (Claude Vision → catégorisation avant/pendant/après, détection matériaux, aide au devis)
+- [ ] Backend : Export avant/après (split screen image generation)
 - [ ] Mobile : Pipeline Kanban (drag-and-drop chantiers)
 - [ ] Mobile : Timer widget (start/stop)
 - [ ] Mobile : Scan caméra tickets
 - [ ] Mobile : Liste tickets avec catégories
+- [ ] Mobile : Galerie photos chantier (PhotoCamera + PhotoGrid + BeforeAfterCompare)
+- [ ] Mobile : Export photos avant/après pour réseaux sociaux
 - [ ] Test : scan ticket → OCR → catégorisé → lié au chantier
+- [ ] Test : photo chantier → upload → analyse IA → catégorisée "avant" → plus tard photo "après" → comparatif généré
 
 ### Sprint 5 — Relances + Factures (~2 jours)
 - [ ] Backend : Facture service (devis accepté → facture auto)
