@@ -115,7 +115,7 @@ Source : expérience directe de Fabrice dans le bâtiment.
 
 ---
 
-## LA SOLUTION — 10 MODULES, 1 CERVEAU
+## LA SOLUTION — 12 MODULES, 1 CERVEAU
 
 ### Principe fondamental
 
@@ -276,6 +276,59 @@ Inspiré directement de l'architecture Ouroboros avec Supervisor + Background Co
 - Détection de demandes de devis dans les emails → création automatique de fiche prospect
 - Alertes sur les emails urgents (mise en demeure, relance URSSAF, etc.)
 - Tout est lié au pipeline : un email de prospect → fiche prospect → devis → chantier → facture
+
+### Module GALERIE PHOTO CHANTIER (NOUVEAU — feature terrain critique)
+
+**Le réflexe terrain :** Tout artisan prend des photos avant de commencer un chantier (état initial, problèmes existants, protection du client) et après (résultat fini, preuve de travail). Ces photos sont aujourd'hui éparpillées dans la pellicule du téléphone, mélangées avec les photos perso, impossibles à retrouver 6 mois après.
+
+**La galerie photo intégrée :**
+- **Prise de photo liée au chantier** : depuis la fiche chantier, l'artisan prend une photo → elle est automatiquement associée au bon chantier, datée, géolocalisée
+- **Catégorisation automatique** : le cerveau IA analyse chaque photo et la classe → "avant travaux", "pendant travaux", "après travaux", "problème constaté", "ticket/facture", "plan/croquis"
+- **Analyse IA des photos (Claude Vision)** : le cerveau VOIT et COMPREND les photos
+  - Photo "avant" d'une salle de bain → le cerveau identifie : baignoire à déposer, carrelage mural ancien, robinetterie vétuste, espace 3×2m environ
+  - Photo d'un tableau électrique → le cerveau détecte : disjoncteurs anciens, absence de différentiel 30mA, câblage non conforme
+  - Photo d'une fissure → le cerveau évalue : fissure structurelle vs superficielle, recommande un diagnostic ou un simple traitement
+  - **Aide au devis** : "D'après les photos du chantier, je vois une sdb d'environ 6m² avec baignoire, faïence murale sur 3 murs, carrelage sol ancien. Tu veux que je génère le devis sur cette base ?"
+  - **Détection d'oublis** : "Sur la photo je vois un sèche-serviette — tu ne l'as pas inclus dans le devis, je l'ajoute ?"
+- **Contexte visuel pour le cerveau** : les photos enrichissent la mémoire (Mem0). Plus le cerveau voit de chantiers, plus il comprend le métier de l'artisan. Il apprend à reconnaître les matériaux, les configurations, les problèmes récurrents.
+- **Avant/Après automatique** : le cerveau associe les photos "avant" et "après" du même espace pour générer un comparatif visuel
+- **4 usages de la galerie :**
+
+| Usage | Comment | Valeur |
+|-------|---------|--------|
+| **Devis enrichi** | Photos avant intégrées au devis PDF (page annexe) | Le client voit ce qui va être fait — augmente le taux d'acceptation |
+| **Facture illustrée** | Photos après intégrées à la facture PDF | Preuve de travail — réduit les litiges |
+| **Portfolio / Pub** | Galerie avant/après exportable pour réseaux sociaux, Google Business | Attire de nouveaux clients — les avant/après BTP cartonnent sur Facebook/Instagram |
+| **Protection juridique** | Photos horodatées + géolocalisées de l'état initial | Preuve en cas de litige client ("c'était déjà comme ça avant") |
+
+- **Partage simplifié** : l'artisan sélectionne les avant/après → export en une image comparée (split screen) → envoi direct sur WhatsApp, Facebook, Instagram, Google Business
+- **Stockage** : Supabase Storage (S3 compatible), compression auto des images, illimité en plan Business
+- **WhatsApp** : l'artisan envoie une photo par WhatsApp → le cerveau l'associe au chantier en cours ("Tu es sur le chantier Martin, je classe cette photo dans Martin/avant")
+
+### Module AGENT TÉLÉPHONE IA — Standard Vocal Intelligent (PLANIFIÉ — en réflexion)
+
+> **Status :** Feature planifiée. Le mécanisme exact (renvoi d'appel, numéro dédié, SIM virtuelle, intégration opérateur) est en cours de réflexion. Non inclus dans le Sprint de build initial. Sera développé en V2.
+
+**Le problème terrain :**
+L'artisan est sur le chantier avec la disqueuse qui tourne, ou il conduit sur la nationale. Son téléphone sonne. C'est un prospect qui appelle 4 artisans pour comparer. L'artisan ne décroche pas → le prospect appelle le suivant → chantier perdu. **Le premier qui répond a gagné.** C'est la réalité du terrain — les prospects ne laissent pas de message vocal et ne rappellent pas.
+
+**Ce que l'agent téléphone fera :**
+- **Décrochage automatique** quand l'artisan ne répond pas (après X sonneries ou mode "sur chantier" activé)
+- **Voix IA naturelle** qui se présente : "Bonjour, vous êtes bien chez [Nom Entreprise]. [Prénom] est actuellement sur un chantier. Je suis son assistant, je peux prendre votre demande et il vous rappellera dans l'heure."
+- **Prise d'information structurée** : nom, numéro, type de besoin, adresse, urgence, disponibilités
+- **Filtrage intelligent des appels** :
+  - Appel prospect/client → l'agent IA prend en charge, récupère les infos, crée la fiche prospect dans l'app, planifie le rappel
+  - Appel perso identifié (contacts enregistrés : famille, amis) → laisse sonner normalement / renvoi messagerie classique
+  - Appel fournisseur → prend le message, catégorise
+  - Appel spam/démarchage → filtre et ne dérange pas l'artisan
+- **Notification immédiate** : l'artisan reçoit une notification push avec le résumé de l'appel : "Prospect : M. Durand, SDB complète à Marseille 13008, veut un devis, disponible samedi matin. Rappeler au 06.XX.XX.XX.XX"
+- **Proactivité** : "Tu as 2 appels prospects non rappelés depuis ce matin. Le plus urgent c'est Mme Leroy qui veut une fuite réparée aujourd'hui."
+
+**Pistes techniques en réflexion :**
+- Renvoi d'appel opérateur (SFR, Orange, Free) vers un numéro Twilio/Vapi qui déclenche l'agent IA
+- Numéro professionnel dédié (VoIP) avec l'agent IA en première ligne
+- Intégration SIM virtuelle (eSIM) ou app de téléphonie
+- API Vapi.ai / Bland.ai / Retell.ai pour la conversation téléphonique IA temps réel
 
 ### SYSTÈME DE CONNAISSANCE — D'OÙ VIENT LE SAVOIR DU CERVEAU
 
