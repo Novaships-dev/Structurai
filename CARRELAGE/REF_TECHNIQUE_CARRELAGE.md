@@ -557,17 +557,374 @@ Nb croisillons = surface × nb carreaux/m² × 4 (mais on les réutilise, donc l
 
 ---
 
+---
+
+## 18. CARRELAGE PISCINE — TYPES, PRIX ET MISE EN OEUVRE
+
+### Types de revêtement piscine
+| Type | Prix fourniture/m² | Résistance | Usage | Note |
+|------|-------------------|-----------|-------|------|
+| Céramique piscine (grès cérame) | 10-50€ | Bonne | Bassin, plage | Le plus accessible, grandes dalles |
+| Pâte de verre (mosaïque) | 20-80€ | Très bonne | Bassin, parois, fond | Teintée dans la masse, pas d'émail. UV et chlore résistant. |
+| Émaux de verre (mosaïque) | 40-150€ | Excellente | Bassin haut de gamme, hammam | Couche d'émail brillante, reflets lumineux |
+| Mosaïque pierre naturelle (pierre de Bali, galets) | 30-120€ | Bonne | Décor, fond de bassin | Aspect naturel haut de gamme |
+| Grès cérame pleine masse antidérapant | 25-70€ | Très bonne | Plage piscine, margelles | R11-R13 obligatoire, ingélif |
+
+### Colle et joint piscine — spécifications obligatoires
+| Produit | Classification | Prix | Note |
+|---------|--------------|------|------|
+| Colle piscine | C2S1 ET minimum | 15-30€/sac 25kg | Déformable + temps ouvert long. Immersion permanente. |
+| Joint piscine époxy | Classe RE (réactif) | 40-80€/kit 5kg | Imperméable, antibactérien, résistant chlore/sel. Obligatoire en bassin. |
+| Joint piscine ciment hydrofuge | CG2WA | 15-25€/sac 5kg | Alternatif moins cher, moins durable que l'époxy |
+| Primaire piscine | - | 20-40€/bidon 5L | Accrochage sur enduit hydrofuge du bassin |
+
+### Prix de mise en oeuvre piscine (bassin)
+| Intervention | Unité | Prix MO+fourniture HT | Note |
+|-------------|-------|----------------------|------|
+| Pose mosaïque pâte de verre en bassin | m² | 80-190€ | Fond + parois. Joints époxy obligatoire. |
+| Pose mosaïque émaux de verre en bassin | m² | 120-300€ | Haut de gamme. Pose + finition. |
+| Pose grès cérame en bassin (grandes dalles) | m² | 80-150€ | Technique spécifique piscine |
+| Pose carrelage plage piscine (antidérapant) | m² | 60-120€ | R11 minimum, B pieds nus |
+| Pose margelles (pierre naturelle ou béton) | ml | 30-80€ | + fourniture margelle 15-60€/ml |
+| Rénovation carrelage piscine (dépose + repose) | m² | 120-250€ | Dépose + préparation + repose complète |
+| Carrelage escalier piscine (marches immergées) | marche | 80-200€ | Antidérapant C obligatoire, nez arrondi |
+
+**Règles piscine pour le cerveau IA :**
+- Séchage colle + joints : **7 à 14 jours minimum** avant mise en eau
+- Le carrelage piscine doit être **ingélif** (résistant au gel) dans toutes les régions
+- Les parois et fond nécessitent un support **parfaitement étanche** (enduit hydrofuge)
+- Le carreleur doit avoir une **qualification spécifique piscine** ou une expérience attestée
+- Colle minimum **C2S1 ET** — la C2 simple ne tient pas en immersion
+- Joint **époxy obligatoire** pour le bassin (le ciment se dégrade avec le chlore)
+- Piscine 8×4m standard = ~56m² de bassin (fond + parois) + ~30m² de plage
+
+### Budget type piscine carrelée
+| Piscine | Surface bassin | Surface plage | Budget total MO+fourniture HT |
+|---------|---------------|--------------|-------------------------------|
+| 8×4m rectangulaire (mosaïque pâte de verre) | ~56 m² | ~25 m² | 8 000-15 000€ |
+| 8×4m rectangulaire (grès cérame) | ~56 m² | ~25 m² | 6 000-12 000€ |
+| 10×5m avec escalier (émaux de verre) | ~80 m² | ~35 m² | 15 000-30 000€ |
+
+**Marques piscine :** Bisazza, Ezarri, Hisbalit, Onix Mosaico, Opiocolor, Appiani
+
+---
+
+## 19. TERRASSE EXTÉRIEURE — GUIDE COMPLET
+
+### Comparatif techniques de pose terrasse
+| Technique | Prix MO+fourniture/m² | Avantages | Inconvénients | Support requis |
+|-----------|----------------------|-----------|---------------|---------------|
+| Pose collée sur dalle béton | 60-130€ | Économique, solide | Dalle béton obligatoire, joints nécessaires | Dalle béton plane, saine, sèche |
+| Pose scellée sur chape | 80-150€ | Rattrapage niveau, très solide | Plus longue, plus chère | Dalle béton, rattrapage possible |
+| Pose sur plots | 80-135€ | Rapide, sans colle, démontable, bonne évacuation eau | Carrelage 20mm obligatoire (plus cher) | Sol stable (béton, gravier, géotextile) |
+
+### Pose sur plots — détail
+| Composant | Prix | Note |
+|-----------|------|------|
+| Plots réglables (hauteur 20-150mm) | 2-4.50€/unité | 4 plots/dalle 60×60, 8 plots/dalle 40×40 |
+| Plots autonivelants (pente intégrée) | 3-6€/unité | Pour rattraper pente jusqu'à 5% |
+| Plots haute hauteur (150-800mm) | 8-20€/unité | Pour terrasse surélevée |
+| Dalles grès cérame 20mm (60×60) | 25-60€/m² | Le standard terrasse sur plots |
+| Dalles grès cérame 20mm (80×80) | 35-80€/m² | Grand format, plus esthétique |
+| Dalles grès cérame 20mm (100×100) | 40-100€/m² | Très grand format |
+| Géotextile anti-végétation | 1-3€/m² | Sous les plots, sur sol meuble |
+
+**Nombre de plots par m² :**
+- Dalle 60×60 cm : 4 plots/m²
+- Dalle 50×50 cm : 5 plots/m²
+- Dalle 40×40 cm : 8 plots/m²
+
+**Règles terrasse pour le cerveau IA :**
+- Pente obligatoire : **1% minimum** (1cm/m) pour évacuation eau — pente VERS l'extérieur du bâtiment
+- Carrelage extérieur : **ingélif obligatoire** (résiste aux cycles gel/dégel)
+- Antidérapant : **R11 minimum** en terrasse découverte
+- Sur plots : **aucun joint, aucune colle** — le carrelage repose par son poids
+- DTU 43.1 pour terrasse sur plots (étanchéité toiture-terrasse)
+- DTU 52.1 pour pose scellée extérieure
+- DTU 52.2 pour pose collée extérieure
+- Espacement entre dalles sur plots : 2-4mm (joint ouvert naturel)
+
+---
+
+## 20. COEFFICIENTS RÉGIONAUX — CARRELAGE
+
+Les prix de main d'oeuvre de ce référentiel sont des **moyennes France**. Appliquer ces coefficients selon la zone :
+
+| Zone | Coefficient | Exemples |
+|------|------------|---------|
+| Paris intra-muros | ×1.30 à ×1.45 | Paris 1er-20ème |
+| Petite couronne IdF | ×1.20 à ×1.35 | Boulogne, Neuilly, Saint-Denis, Créteil |
+| Grande couronne IdF | ×1.10 à ×1.20 | Versailles, Cergy, Évry, Meaux |
+| Lyon, Marseille, Bordeaux, Toulouse | ×1.05 à ×1.15 | Métropoles >300K hab |
+| Grandes villes | ×1.00 à ×1.10 | Nantes, Strasbourg, Montpellier, Nice, Lille |
+| Villes moyennes | ×0.95 à ×1.00 | Base du référentiel |
+| Zones rurales | ×0.85 à ×0.95 | Campagne, moins de concurrence mais déplacement |
+| DOM-TOM | ×1.30 à ×1.60 | Majoration matériaux (import) + MO |
+| Corse | ×1.10 à ×1.25 | Majoration transport matériaux |
+
+**Logique IA :** Le cerveau applique automatiquement le coefficient de la zone de chantier (pas du siège de l'artisan). Si l'artisan intervient hors de sa zone habituelle, le frais de déplacement augmente aussi.
+
+---
+
+## 21. MAJORATIONS SPÉCIFIQUES ET SURCOÛTS TERRAIN
+
+### Majorations liées au chantier
+| Situation | Surcoût | Note |
+|-----------|---------|------|
+| Étage sans ascenseur (2ème+) | +5-10% MO + 5-15€/m² montée | Carrelage = LOURD (20-25kg/m²). Palette complète = 1-1.5 tonne. |
+| Accès difficile (ruelles, parking éloigné) | +5-10% | Temps de portage matériaux |
+| Petite surface < 5m² | Forfait minimum 400-600€ | Même setup, moins de m² à amortir |
+| Très petite surface < 2m² (WC, niche) | Forfait minimum 250-400€ | Beaucoup de découpes pour peu de surface |
+| Pièce très découpée | +10-20% MO | Nombreux angles, tuyaux, passages |
+| Travail de nuit / week-end | +25-50% | Urgence ou contrainte copropriété |
+| Hauteur sous plafond > 3m (mural) | +10-15% | Échafaudage + temps |
+| Découpes courbes (colonnes, arrondis) | +15-25% | Scie à eau obligatoire |
+| Pièces multiples sur même chantier | -5 à -10% | Dégressivité volume |
+
+### Surcoûts matériaux souvent oubliés dans les devis
+| Poste | Prix | Note |
+|-------|------|------|
+| Benne à gravats (dépose ancien carrelage) | 150-350€ | 1 benne 5m³ ≈ 15-25m² de dépose |
+| Sacs poubelle gravats (petit volume) | 2-5€/sac | Si pas de benne |
+| Protection sols existants (bâche) | 1-3€/m² | Pour protéger les pièces adjacentes |
+| Scotch de masquage (plinthes, encadrements) | 3-8€/rouleau | Finition propre |
+| Éponge de nettoyage joints (lot) | 5-10€ | Consommable, à remplacer souvent |
+| Lame de scie diamant (remplacement) | 15-40€ | Usure sur grands chantiers |
+| Primaire d'accrochage | 15-30€/bidon 5L (5-8 m²/L) | Souvent oublié → décollement |
+| Silicone sanitaire (joints périphériques) | 5-10€/cartouche | 1 cartouche ≈ 8-12 ml |
+| Film polyane (protection plancher chauffant) | 1-2€/m² | Avant ragréage sur PC |
+
+---
+
+## 22. CONSOMMABLES ET PETITES FOURNITURES — PRIX DÉTAILLÉS
+
+| Fourniture | Conditionnement | Prix | Consommation/m² |
+|-----------|----------------|------|----------------|
+| Colle C2S1 (sac 25kg) | Sac 25kg | 10-20€ | 4-6 m² en simple, 2-3 m² en double encollage |
+| Colle C2 (sac 25kg) | Sac 25kg | 8-15€ | 4-6 m² |
+| Colle en pâte D2 (pot 15kg) | Pot 15kg | 18-35€ | 3-5 m² |
+| Joint ciment (sac 5kg) | Sac 5kg | 5-10€ | 5-10 m² selon format et largeur joint |
+| Joint époxy (kit 5kg) | Kit 5kg | 25-50€ | 3-5 m² |
+| Silicone sanitaire | Cartouche 310ml | 5-10€ | 8-12 ml linéaire |
+| Primaire d'accrochage | Bidon 5L | 15-30€ | 5-8 m²/L |
+| Croisillons 2mm (lot 200) | Lot 200 | 2-5€ | 1 lot pour 10-15 m² |
+| Croisillons autonivelants (lot 100) | Lot 100 | 15-40€ | 1 lot pour 8-12 m² |
+| Disque diamant Ø125 | Unité | 10-25€ | 1 disque pour 20-50 m² |
+| Disque diamant scie à eau | Unité | 30-80€ | 1 disque pour 50-100 m² |
+| Scie cloche diamant Ø6-65mm (jeu) | Jeu | 15-40€ | Réutilisable |
+| Éponge à joints | Lot 2-3 | 3-8€ | 1 lot par chantier |
+| Genouillères | Paire | 10-25€ | Réutilisable |
+
+---
+
+## 23. COORDINATION INTER-CORPS DE MÉTIER
+
+Le carreleur intervient **après** certains corps de métier et **avant** d'autres. L'ordre est critique.
+
+### Ordre d'intervention sur un chantier type rénovation SDB
+| Étape | Corps de métier | Ce qu'il fait | Délai avant carrelage |
+|-------|----------------|--------------|----------------------|
+| 1 | Plombier | Dépose sanitaires, modification réseaux eau/évacuation | - |
+| 2 | Électricien | Modification circuits, déplacement prises/interrupteurs | - |
+| 3 | Plaquiste | Doublage, cloisons, faux-plafond | Séchage enduit 48-72h |
+| 4 | Étanchéiste / Carreleur | Étanchéité SPEC sous carrelage (douche) | Séchage 24-48h entre couches |
+| 5 | **CARRELEUR** | **Ragréage → pose sol → pose mur → joints** | - |
+| 6 | Plombier | Repose sanitaires (WC, lavabo, douche) sur carrelage | Après séchage joints 24-48h |
+| 7 | Électricien | Pose appareillage (prises, interrupteurs) | - |
+| 8 | Peintre | Retouches plafond et murs non carrelés | - |
+
+### Points de coordination critiques
+| Avec | Point de coordination | Risque si raté |
+|------|----------------------|---------------|
+| **Plombier** | Hauteur des arrivées d'eau et évacuations AVANT ragréage (le ragréage change le niveau du sol de 3-10mm) | Tuyaux trop bas = invisible sous le carrelage, trop hauts = dépassent du mur |
+| **Plombier** | Position exacte de l'évacuation douche italienne AVANT chape | Pente impossible à réaliser si évacuation mal placée |
+| **Plombier** | Encastrement des tuyaux dans le mur AVANT pose faïence | Boîtiers de raccordement affleurant le plan du carrelage fini |
+| **Électricien** | Profondeur des boîtiers d'encastrement = épaisseur placo + colle + carreau (10-15mm) | Interrupteur qui ne rentre pas ou qui dépasse |
+| **Électricien** | Position des prises SDB : **hors volumes 0, 1 et 2** (NFC 15-100) | Non conforme, dangereux |
+| **Plaquiste** | Placo posé ET enduit sec ET d'équerre AVANT carrelage | Carrelage sur placo humide = décollement |
+| **Plaquiste** | Placo **hydrofuge (vert)** en pièce humide | Placo standard en SDB = gonfle et s'effondre |
+| **Menuisier** | Hauteur bâti de porte APRÈS carrelage (ou prévoir cale d'épaisseur) | Porte qui frotte sur le carrelage ou jour trop grand |
+| **Peintre** | Le peintre passe APRÈS le carreleur pour les murs et plafonds | Peinture abîmée par les projections de colle/joint |
+| **Chauffagiste** | Plancher chauffant testé et en pression AVANT ragréage + carrelage | Fuite impossible à réparer sans tout casser |
+
+### Épaisseurs à prendre en compte (coordination niveau sol fini)
+| Composant | Épaisseur | Note |
+|-----------|-----------|------|
+| Ragréage | 3-10 mm | Standard |
+| Natte désolidarisation | 3-5 mm | Si plancher bois ou PC |
+| Isolation phonique | 3-5 mm | Si copropriété |
+| Colle | 3-6 mm | Selon peigne utilisé |
+| Carrelage sol | 8-10 mm | Standard |
+| **TOTAL sol fini** | **17-36 mm** | À communiquer au plombier et menuisier |
+
+---
+
+## 24. ASSURANCES ET GARANTIES
+
+| Garantie | Durée | Ce qu'elle couvre | Note |
+|----------|-------|------------------|------|
+| Garantie de parfait achèvement | 1 an | Tous défauts signalés dans l'année | Obligatoire |
+| Garantie biennale (bon fonctionnement) | 2 ans | Équipements dissociables (robinetterie posée par le carreleur, etc.) | Obligatoire |
+| Garantie décennale | 10 ans | Défauts compromettant la solidité ou rendant l'ouvrage impropre à sa destination | **Obligatoire** — assurance à vérifier |
+| Assurance RC Pro | Permanente | Dommages causés aux tiers pendant le chantier | Obligatoire |
+
+**Cas typiques couverts par la décennale carrelage :**
+- Carrelage qui se décolle massivement (défaut de colle ou préparation)
+- Infiltration d'eau par défaut d'étanchéité sous carrelage (douche, terrasse)
+- Fissuration généralisée du carrelage
+- Défaut de pente en terrasse → stagnation d'eau → dégradation structure
+
+**Cas NON couverts par la décennale :**
+- Carrelage fissuré par un choc (usage normal)
+- Usure normale des joints
+- Défaut esthétique mineur (variation de teinte entre lots)
+
+---
+
+## 25. RÈGLES IA PRICING — CERVEAU STRUCTORAI
+
+**Ces règles sont IMPÉRATIVES pour le cerveau IA lorsqu'il génère un devis carrelage :**
+
+### Règle 1 — Toujours donner des FOURCHETTES
+```
+❌ "La pose coûtera 40€/m²"
+✅ "La pose coûtera entre 35 et 55€/m² selon le format et la technique"
+```
+Le cerveau ne donne JAMAIS un prix unique. Toujours min-max.
+
+### Règle 2 — Appliquer le coefficient régional
+```
+Prix affiché = prix référentiel × coefficient zone du chantier
+```
+Le coefficient est celui de la **zone du chantier**, pas du siège de l'artisan.
+
+### Règle 3 — Déférer aux prix de l'artisan (Mem0)
+```
+SI l'artisan a ses propres prix en mémoire (Mem0) :
+  → Utiliser SES prix, pas ceux du référentiel
+  → Mentionner : "J'utilise tes tarifs habituels"
+SINON :
+  → Utiliser les prix du référentiel comme base
+  → Mentionner : "Prix marché moyens, tu pourras les ajuster"
+```
+
+### Règle 4 — Alerter sur les prix anormaux
+```
+SI prix artisan < 70% du prix référentiel :
+  → "Attention, ton prix de XX€ est nettement sous le marché (moyenne : YY€). Tu es sûr ?"
+SI prix artisan > 150% du prix référentiel :
+  → "Ton prix de XX€ est bien au-dessus du marché (moyenne : YY€). Le client pourrait trouver moins cher."
+```
+
+### Règle 5 — Ne JAMAIS oublier dans un devis carrelage
+- [ ] Ragréage (si nécessaire) — souvent oublié par les artisans novices
+- [ ] Dépose ancien revêtement (si applicable) + évacuation gravats
+- [ ] Primaire d'accrochage (si ancien carrelage ou support lisse)
+- [ ] Étanchéité sous carrelage (si douche ou pièce humide)
+- [ ] Joints de dilatation (si surface > 40m²)
+- [ ] Joint silicone périphérique (jonction mur/sol)
+- [ ] Perte de découpe (5-15% selon pose)
+- [ ] Montée matériaux si étage sans ascenseur
+- [ ] Benne à gravats si dépose
+- [ ] TVA correcte : 10% rénovation logement > 2 ans, 20% neuf
+
+### Règle 6 — Temps de travail réaliste
+```
+Rendement moyen 1 carreleur :
+- Sol pose droite : 8-12 m²/jour
+- Sol grand format : 6-10 m²/jour
+- Mur faïence : 5-8 m²/jour
+- Mosaïque : 3-5 m²/jour
+- Terrasse sur plots : 15-25 m²/jour (plus rapide, pas de colle)
+
+Ajouter :
+- Ragréage : +0.5 jour par 15m²
+- Dépose ancien carrelage : +0.5-1 jour par 15m²
+- Étanchéité douche : +0.5-1 jour
+- Joints : +0.5 jour par 20m²
+```
+
+### Règle 7 — Double encollage automatique
+```
+SI format ≥ 30×30 cm (sol) → recommander double encollage
+SI format ≥ 60×60 cm (sol) → double encollage OBLIGATOIRE
+SI mural → colle anti-glissement (T) OBLIGATOIRE
+SI plancher chauffant → colle C2S1 minimum OBLIGATOIRE
+SI extérieur → colle C2S1 ET minimum + carrelage ingélif R11+ OBLIGATOIRE
+SI piscine → colle C2S1 ET minimum + joint époxy OBLIGATOIRE
+```
+
+### Règle 8 — Forfaits minimum
+```
+Surface < 5m² → forfait minimum 400-600€ (pas au m²)
+Surface < 2m² → forfait minimum 250-400€
+Déplacement > 30km → frais déplacement 30-80€
+```
+
+### Règle 9 — Urgence et majorations
+| Situation | Majoration |
+|-----------|-----------|
+| Urgence (< 48h) | +30 à +50% |
+| Week-end | +25 à +50% |
+| Jour férié | +50 à +100% |
+| Travail de nuit | +50% |
+
+---
+
+## 26. DEVIS TYPES — EXEMPLES CHIFFRÉS POUR LE CERVEAU IA
+
+### Devis type 1 : SDB complète 6m² sol + 15m² mur (rénovation)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Dépose ancien carrelage sol + mur | 21 m² | 18€/m² | 378€ |
+| Évacuation gravats + benne | 1 | 200€ | 200€ |
+| Ragréage sol | 6 m² | 22€/m² | 132€ |
+| Étanchéité sous carrelage douche (SPEC) | 4 m² | 30€/m² | 120€ |
+| Fourniture carrelage sol grès cérame 60×60 | 7 m² (+15%) | 35€/m² | 245€ |
+| Fourniture faïence murale 30×60 | 17 m² (+12%) | 25€/m² | 425€ |
+| Pose carrelage sol (double encollage) | 6 m² | 45€/m² | 270€ |
+| Pose faïence murale | 15 m² | 40€/m² | 600€ |
+| Fourniture colle C2S1 (sol) + C2T (mur) | 8 sacs | 14€ | 112€ |
+| Fourniture joints hydrofuge + époxy douche | 6 sacs | 12€ | 72€ |
+| Pose joints | 21 m² | 5€/m² | 105€ |
+| Joints silicone périphériques | forfait | 80€ | 80€ |
+| Profilé d'angle inox (2 angles) | 5 ml | 12€/ml | 60€ |
+| **TOTAL HT** | | | **2 799€** |
+| TVA 10% (rénovation logement > 2 ans) | | | 279,90€ |
+| **TOTAL TTC** | | | **3 078,90€** |
+
+### Devis type 2 : Terrasse 20m² sur plots
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Préparation sol (décaissement + géotextile) | 20 m² | 15€/m² | 300€ |
+| Fourniture dalle grès cérame 20mm 60×60 | 22 m² (+10%) | 40€/m² | 880€ |
+| Fourniture plots réglables | 80 u | 3€/u | 240€ |
+| Pose sur plots | 20 m² | 35€/m² | 700€ |
+| **TOTAL HT** | | | **2 120€** |
+| TVA 10% (si terrasse logement > 2 ans) | | | 212€ |
+| **TOTAL TTC** | | | **2 332€** |
+
+---
+
 > **Note pour le cerveau IA :** Ce référentiel couvre l'intégralité du métier carreleur :
-> 1. Types de carrelage (11 matériaux sol + 8 muraux + 5 extérieurs) avec prix fourniture/m²
+> 1. Types de carrelage (11 matériaux sol + 8 muraux + 5 extérieurs + 5 piscine) avec prix fourniture/m²
 > 2. Formats standard (11 formats sol + 8 formats mural) avec nb carreaux/m² et perte découpe
-> 3. Colles carrelage (11 classifications C1→R2T) avec usage, prix sac 25kg, rendement, marques
+> 3. Colles carrelage (11 classifications C1→R2T + colles piscine) avec usage, prix sac 25kg, rendement, marques
 > 4. Peignes à colle (6 tailles) avec usage et épaisseur résultante
-> 5. Joints (5 types : ciment, hydrofuge, époxy, silicone, dilatation) avec prix et usage
+> 5. Joints (5 types + joints piscine époxy) avec prix et usage
 > 6. Croisillons (6 largeurs + autonivelants) avec prix
 > 7. Ragréage et préparation (7 produits) avec prix et rendement
 > 8. Outillage complet carreleur (20+ outils) avec prix
 > 9. Techniques de pose (8 types) avec surcoût vs droite
 > 10. Méthodes de collage (4 méthodes) avec prix MO/m²
-> 11. Toutes les mises en oeuvre (9 catégories, 60+ postes) : dépose, préparation, sol, mur, joints, plinthes, extérieur, forfaits, majorations
-> 12. Taux horaires et rendement moyen par zone
+> 11. Toutes les mises en oeuvre (9 catégories, 80+ postes) : dépose, préparation, sol, mur, joints, plinthes, extérieur, piscine, terrasse, forfaits, majorations
+> 12. Taux horaires et rendement moyen par zone + coefficients régionaux (9 zones)
 > 13. 14 erreurs courantes terrain
+> 14. Carrelage piscine complet (types, colles, joints, mise en oeuvre, budgets)
+> 15. Terrasse extérieure détaillée (collée, scellée, sur plots avec prix composants)
+> 16. Coefficients régionaux (Paris → DOM-TOM)
+> 17. Consommables détaillés avec consommation/m²
+> 18. Coordination inter-corps de métier (ordre intervention, points critiques, épaisseurs)
+> 19. Assurances et garanties (décennale, biennale, RC Pro)
+> 20. Règles IA pricing (9 règles impératives pour la génération de devis)
+> 21. Devis types chiffrés (SDB rénovation, terrasse sur plots)
