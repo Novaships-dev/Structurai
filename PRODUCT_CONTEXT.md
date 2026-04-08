@@ -115,7 +115,7 @@ Source : expérience directe de Fabrice dans le bâtiment.
 
 ---
 
-## LA SOLUTION — 12 MODULES, 1 CERVEAU
+## LA SOLUTION — 15 MODULES, 1 CERVEAU
 
 ### Principe fondamental
 
@@ -187,7 +187,7 @@ Le cerveau se souvient de TOUT pour chaque artisan :
 
 Plus l'artisan utilise l'outil, plus il est précis. Au bout de 3 mois, le cerveau fait des devis EXACTEMENT comme l'artisan les ferait — mais en 2 minutes au lieu de 2 heures.
 
-**COUCHE 3 — 6 agents autonomes (pattern Ouroboros)**
+**COUCHE 3 — 9 agents autonomes (pattern Ouroboros)**
 
 Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrière-plan (background consciousness) inspirés d'Ouroboros. Chaque agent :
 - A sa propre spécialité et ses propres outils
@@ -196,9 +196,12 @@ Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrièr
 - A un budget LLM dédié et tracké
 - Est proactif : il pense et agit ENTRE les tâches, pas seulement quand on lui demande
 
-Les 6 agents :
+Les 9 agents :
 
 **Agent DEVIS (le killer feature)**
+- Le devis est CONVERSATIONNEL : le cerveau dicte poste par poste, l'artisan valide ou modifie chaque prix en vocal
+- Chaque modification de prix est mémorisée dans Mem0 pour les prochains devis
+- Le cerveau utilise les photos du chantier pour pré-décomposer les postes
 - L'artisan dicte par WhatsApp vocal : "Devis pour M. Dupont, sdb complète, 8m²"
 - L'agent comprend le métier, structure les postes, cherche les prix dans la mémoire de l'artisan (ou propose les prix marché si nouveau type de chantier)
 - Calcule automatiquement : quantités (m², ml, unités), main d'oeuvre (basé sur le rythme réel de l'artisan), TVA multi-taux, total HT/TTC
@@ -252,11 +255,46 @@ Les 6 agents :
 - Gestion des leads entrants : quand un prospect appelle, l'agent crée la fiche, planifie le rappel, suggère le pré-devis
 - Proactivité : "Tu n'as que 2 chantiers prévus pour juin. Il faut relancer les architectes. Je prépare 3 messages ?"
 
+**Agent FISCALITÉ**
+- Connaît la fiscalité de chaque statut : Micro-entreprise, EURL, SAS, SASU, EI
+- Micro : seuils CA 2026 (203 100€ vente / 83 600€ services), taux cotisations (12.3% vente / 21.2% services BIC), franchise TVA, ACRE
+- EURL/SAS : charges déductibles, TVA collectée/déductible, cotisations TNS ou assimilé salarié, bilan annuel
+- Tient un tableau de bord fiscal annuel en temps réel : CA cumulé vs seuils, TVA, cotisations payées/à payer, charges déductibles, résultat net estimé, trésorerie prévisionnelle
+- Calendrier fiscal automatique adapté au statut avec rappels proactifs
+- Scan courrier administratif (URSSAF, impôts) → lecture + explication + action à faire
+- Prépare le dossier annuel pour le comptable
+- Alerte seuils : "Attention, ton CA approche 83 600€"
+- Conseil optimisation : "En EURL tu pourrais déduire tes charges, parles-en à ton comptable"
+- Proactivité : "Ta déclaration URSSAF trimestrielle est dans 5 jours. Ton CA du trimestre : 18 400€."
+
+**Agent DÉPLACEMENTS**
+- GPS intégré : calcule la distance domicile/siège → chantier automatiquement
+- Coût trajet automatique selon barème kilométrique fiscal 2026
+- Zones BTP (1A→5) avec indemnités de trajet et transport selon convention collective régionale
+- Panier repas automatique si chantier trop loin pour rentrer déjeuner (10.50-14€/jour selon région)
+- Compteur aller-retours par chantier par jour
+- Intégration devis : propose d'ajouter les frais de déplacement au devis
+- Suivi carburant, parking, amendes, péages — classés par chantier
+- Pour les artisans avec employés : indemnités calculées par employé/jour/chantier
+- Export frais de déplacement dans l'export comptable mensuel
+- Proactivité : "Cette semaine tu as fait 340km pour 4 chantiers. Frais km déductibles : 204€."
+
+**Agent RH** (pour les artisans avec employés)
+- Pointage heures par employé, par chantier, par jour (normales + heures sup 25%/50%)
+- Convention collective BTP : connaît les 6 IDCC (1596, 1597, 2609, 2420, 1702, 2614), grilles salariales par coefficient (N1P1→N4P2) et par région
+- Calcul automatique des indemnités BTP par employé/jour (trajet, transport, panier — selon zone)
+- Suivi congés/absences avec période CIBTP (1er avril → 31 mars), prime de vacances 30%
+- Cotisations spécifiques BTP : CIBTP (~20.70%), OPPBTP (0.11%), PRO BTP, abattement DFS (7% en 2026)
+- Export éléments de paie mensuel pour le cabinet comptable : heures, heures sup, indemnités, absences
+- Alerte conformité : salaire minimum par coefficient, contingent heures sup (180h/an), congés non pris
+- Ne génère PAS les fiches de paie (trop complexe légalement → c'est le job du cabinet comptable)
+- Proactivité : "Ahmed a fait 42h cette semaine dont 7h sup. Sa paye doit inclure 7h à 125%."
+
 **COUCHE 4 — Cerveau global / Supervisor (pattern Ouroboros)**
 
 Inspiré directement de l'architecture Ouroboros avec Supervisor + Background Consciousness :
 
-- **Orchestration des 6 agents** : distribue les tâches, gère les priorités, évite les conflits (l'agent Relance ne contacte pas un client que l'agent Devis vient de relancer)
+- **Orchestration des 9 agents** : distribue les tâches, gère les priorités, évite les conflits (l'agent Relance ne contacte pas un client que l'agent Devis vient de relancer)
 - **Background Consciousness** : entre les tâches, le cerveau PENSE sur l'état global de l'artisan. Pas réactif — proactif.
   - "Ce mois-ci ta marge moyenne est de 23% (vs 31% le mois dernier). Le problème c'est le chantier Martin qui a dépassé de 40%."
   - "Tu as gagné 3 chantiers sur 12 devis ce mois (25%). Le mois dernier c'était 1/10. Ton nouveau format fonctionne."
@@ -282,6 +320,11 @@ Inspiré directement de l'architecture Ouroboros avec Supervisor + Background Co
 **Le réflexe terrain :** Tout artisan prend des photos avant de commencer un chantier (état initial, problèmes existants, protection du client) et après (résultat fini, preuve de travail). Ces photos sont aujourd'hui éparpillées dans la pellicule du téléphone, mélangées avec les photos perso, impossibles à retrouver 6 mois après.
 
 **La galerie photo intégrée :**
+- **Vidéos courtes (15-60s)** liées au chantier, horodatées, géolocalisées
+- **Montage automatique avant/après** (split screen photos ET vidéos)
+- **Organisation par chantier** : 3 albums (À commencer / En cours / Terminé)
+- **Connexion directe réseaux sociaux** (Facebook, Instagram, Google Business) pour publication directe avec texte IA
+- **Validation obligatoire par l'artisan** avant toute publication
 - **Prise de photo liée au chantier** : depuis la fiche chantier, l'artisan prend une photo → elle est automatiquement associée au bon chantier, datée, géolocalisée
 - **Catégorisation automatique** : le cerveau IA analyse chaque photo et la classe → "avant travaux", "pendant travaux", "après travaux", "problème constaté", "ticket/facture", "plan/croquis"
 - **Analyse IA des photos (Claude Vision)** : le cerveau VOIT et COMPREND les photos
@@ -329,6 +372,38 @@ L'artisan est sur le chantier avec la disqueuse qui tourne, ou il conduit sur la
 - Numéro professionnel dédié (VoIP) avec l'agent IA en première ligne
 - Intégration SIM virtuelle (eSIM) ou app de téléphonie
 - API Vapi.ai / Bland.ai / Retell.ai pour la conversation téléphonique IA temps réel
+
+### Module DÉPLACEMENTS & FRAIS PROFESSIONNELS (NOUVEAU)
+
+- **GPS intégré** : calcule la distance domicile/siège → chantier automatiquement
+- **Coût trajet automatique** selon barème kilométrique fiscal 2026 (barème URSSAF en vigueur)
+- **Zones BTP (1A→5)** avec indemnités de trajet et transport selon convention collective régionale
+- **Panier repas automatique** si chantier trop loin pour rentrer déjeuner (10.50-14€/jour selon région)
+- **Compteur aller-retours** par chantier par jour — l'artisan dit "je suis arrivé" / "je repars" ou détection GPS auto
+- **Intégration devis** : le cerveau propose d'ajouter les frais de déplacement au devis ("Le chantier est à 45km, tu veux facturer le déplacement ?")
+- **Suivi carburant** : les tickets essence sont classés automatiquement en "carburant" et répartis entre les chantiers
+- **Parking, amendes, péages** : tout est classé par chantier et inclus dans l'export comptable
+- **Pour les artisans avec employés** : les indemnités de trajet et transport sont calculées par employé, par chantier, par jour. Le cerveau génère les lignes pour le bulletin de paie (indemnités exonérées de charges)
+- **Export comptable** : les frais de déplacement sont inclus dans l'export mensuel au comptable avec les indemnités km, paniers, et barème appliqué
+- Proactivité : "Cette semaine tu as fait 340km pour 4 chantiers. Frais km déductibles : 204€."
+
+### Module RH — GESTION EMPLOYÉS (NOUVEAU — pour artisans avec salariés)
+
+- **Pointage heures** par employé, par chantier, par jour (heures normales + heures sup 25%/50%)
+- **Convention collective BTP** : connaît les 6 IDCC (1596, 1597, 2609, 2420, 1702, 2614), grilles salariales par coefficient (N1P1→N4P2) et par région
+- **Calcul automatique des indemnités BTP** par employé/jour : trajet, transport, panier — selon zone du chantier
+- **Suivi congés/absences** avec période CIBTP (1er avril → 31 mars), prime de vacances 30%
+- **Cotisations spécifiques BTP** : CIBTP (~20.70%), OPPBTP (0.11%), PRO BTP, abattement DFS (7% en 2026)
+- **Export éléments de paie mensuel** pour le cabinet comptable : heures, heures sup, indemnités, absences
+- **Alerte conformité** : salaire minimum par coefficient, contingent heures sup (180h/an), congés non pris
+- **Ne génère PAS les fiches de paie** (trop complexe légalement → c'est le job du cabinet comptable)
+- Il alerte sur les anomalies mais ne remplace pas un expert-comptable
+- Mention systématique : "Vérifiez avec votre comptable pour validation"
+- Proactivité : "Ahmed a fait 42h cette semaine dont 7h sup. Sa paye doit inclure 7h à 125%."
+
+### Dossier "À FAIRE" centralisé (NOUVEAU)
+
+Un onglet dans l'app qui liste TOUTES les actions en attente de validation : réponses avis, relances, messages clients, publications réseaux, alertes planning. Classé par priorité. L'artisan valide (vocal/tap/swipe) ou refuse. Aucune action sans sa validation.
 
 ### SYSTÈME DE CONNAISSANCE — D'OÙ VIENT LE SAVOIR DU CERVEAU
 
@@ -588,7 +663,7 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │                                                                  │
 │  ├── state.py — État global artisan, budget LLM, métriques      │
 │  ├── queue.py — File de tâches prioritaires                     │
-│  ├── workers.py — Cycle de vie des 6 agents                    │
+│  ├── workers.py — Cycle de vie des 9 agents                    │
 │  ├── consciousness.py — Background consciousness (pense entre   │
 │  │                       les tâches, génère les résumés,        │
 │  │                       détecte les problèmes proactivement)   │
@@ -605,7 +680,7 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 └───────────────────────────┬─────────────────────────────────────┘
                             │
 ┌───────────────────────────▼─────────────────────────────────────┐
-│                    6 AGENTS AUTONOMES                             │
+│                    9 AGENTS AUTONOMES                             │
 │                                                                  │
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
 │  │  AGENT   │ │  AGENT   │ │  AGENT   │                        │
@@ -625,6 +700,16 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │  │ Capacité │ │ Google   │ │ Archi    │                        │
 │  │ Alerte   │ │ Réponse  │ │ Relance  │                        │
 │  │ Enchaîne │ │ IA       │ │ Leads    │                        │
+│  └──────────┘ └──────────┘ └──────────┘                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
+│  │  AGENT   │ │  AGENT   │ │  AGENT   │                        │
+│  │FISCALITÉ │ │DÉPLACE-  │ │   RH     │                        │
+│  │          │ │ MENTS    │ │          │                        │
+│  │ Statuts  │ │ GPS      │ │ Pointage │                        │
+│  │ Seuils   │ │ Frais km │ │ Heures   │                        │
+│  │ URSSAF   │ │ Paniers  │ │ Conv.BTP │                        │
+│  │ Calendr. │ │ Zones BTP│ │ CIBTP    │                        │
+│  │ Scan doc │ │ Carburant│ │ Export   │                        │
 │  └──────────┘ └──────────┘ └──────────┘                        │
 │                                                                  │
 │  Chaque agent :                                                 │
@@ -733,7 +818,7 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 1. La compréhension métier BTP par LLM (chaque prompt est un investissement en knowledge)
 2. La mémoire persistante par artisan (plus tu l'utilises, plus il est précis)
 3. L'interface WhatsApp/voix (les concurrents sont tous sur écran PC)
-4. Les 6 agents proactifs avec background consciousness
+4. Les 9 agents proactifs avec background consciousness
 
 ---
 
@@ -782,7 +867,7 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 | Plan | Prix/mois | Cible | Inclus |
 |------|-----------|-------|--------|
 | Starter | €0 | Auto-entrepreneurs, test | 5 devis/mois, scan tickets, pipeline basique. Pas de relance auto ni agents. |
-| Pro | €29 | Artisan seul | Devis illimités voix/WhatsApp, 6 agents actifs, relances auto, scan tickets illimité, avis Google, export comptable |
+| Pro | €29 | Artisan seul | Devis illimités voix/WhatsApp, 9 agents actifs, relances auto, scan tickets illimité, avis Google, export comptable |
 | Business | €79 | TPE 2-10 salariés | Tout Pro + multi-utilisateurs, suivi multi-chantiers avancé, rapports rentabilité, accès comptable partagé, support prioritaire |
 
 **ARPU cible :** €40/mois (mix Pro/Business)
@@ -801,12 +886,15 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 | Planning (analyse + alertes) | ~1 | ~$0.50 | |
 | Réputation (réponse avis) | ~0.5 | ~$0.30 | 1-2 avis/semaine |
 | Prospection (suggestions) | ~0.5 | ~$0.20 | |
+| Fiscalité (tableau de bord + alertes) | ~1 | ~$0.50 | |
+| Déplacements (GPS + frais) | ~2 | ~$0.80 | |
+| RH (pointage + indemnités) | ~1 | ~$0.50 | Pour artisans avec employés |
 | Background consciousness | ~24 (1/heure) | ~$1.70 | $0.07/pensée |
 | Email filtering | ~10 | ~$1 | |
-| **TOTAL** | | **~$11/mois par artisan** | |
+| **TOTAL** | | **~$13/mois par artisan** | |
 
-**Marge sur un artisan Pro (€29/mois) :** €29 - $11 LLM - $5 infra = ~€12 marge = **~41%**
-**Marge sur un artisan Business (€79/mois) :** €79 - $15 LLM - $5 infra = ~€57 marge = **~72%**
+**Marge sur un artisan Pro (€29/mois) :** €29 - $13 LLM - $5 infra = ~€10 marge = **~34%**
+**Marge sur un artisan Business (€79/mois) :** €79 - $17 LLM - $5 infra = ~€55 marge = **~70%**
 
 ---
 
