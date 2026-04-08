@@ -457,9 +457,335 @@ Surface nette = surface totale - déductions
 > 4. Enduits et préparation (8 types d'enduits, 12 produits de préparation) avec prix
 > 5. Revêtements muraux alternatifs (papier peint, toile de verre) avec prix fourniture et pose
 > 6. Outillage complet du peintre (25+ outils) avec prix
-> 7. Toutes les mises en oeuvre chiffrées (10 catégories, 80+ postes) :
->    préparation chantier, préparation supports, murs, plafonds, boiseries/portes/fenêtres,
->    façade extérieure, sols, forfaits par pièce, dépose/décapage, majorations
+> 7. Toutes les mises en oeuvre chiffrées (10 catégories, 80+ postes)
 > 8. Marques pro et grand public
 > 9. Taux horaires par zone
 > 10. 12 erreurs courantes terrain
+
+---
+
+## 10. DIAGNOSTIC PLOMB — OBLIGATIONS AVANT TRAVAUX
+
+### Quand le diagnostic plomb est obligatoire
+| Situation | Obligation | Type de diagnostic | Bâtiments concernés |
+|-----------|-----------|-------------------|-------------------|
+| Vente d'un logement | **Obligatoire** | CREP (Constat de Risque d'Exposition au Plomb) | Construit **avant 1949** |
+| Location d'un logement | **Obligatoire** | CREP | Construit **avant 1949** |
+| Travaux (ponçage, décapage, perçage) | **Obligatoire** | Diagnostic plomb avant travaux (NF X 46-035) | Construit **avant 1994** |
+| Démolition | **Obligatoire** | Diagnostic plomb avant démolition | Construit **avant 1994** |
+
+### Prix du diagnostic
+| Type de bien | Prix CREP | Note |
+|-------------|----------|------|
+| Appartement T2-T3 | 110-200€ | Diagnostiqueur certifié COFRAC obligatoire |
+| Maison individuelle | 200-300€ | Plus de surfaces à contrôler |
+| Multi-diagnostics (plomb + amiante + DPE) | 200-500€ forfait | Économie de 20-30% vs diagnostics séparés |
+
+### Seuil réglementaire
+- **< 1 mg/cm²** : pas de plomb → CREP illimité
+- **≥ 1 mg/cm²** : plomb détecté → travaux obligatoires avant location/vente, CREP valable 1 an (vente) / 6 ans (location)
+
+### Impact sur le peintre
+| Situation | Ce que le peintre doit faire |
+|-----------|----------------------------|
+| Bâtiment avant 1949 (logement) | Demander le CREP au propriétaire avant travaux |
+| Bâtiment avant 1994 (tous) | Exiger le diagnostic plomb avant travaux (pas le CREP) |
+| Plomb détecté | EPI spécifiques (masque FFP3, combinaison), aspiration des poussières, pas de ponçage à sec, bâchage étanche |
+| Plomb + ponçage/décapage prévu | Sous-traitance à entreprise spécialisée déplombage recommandée |
+
+**Règle IA :** Si le chantier concerne un bâtiment construit avant 1949, le cerveau doit TOUJOURS mentionner l'obligation de diagnostic plomb et alerter l'artisan sur les précautions nécessaires.
+
+---
+
+## 11. NORMES ET DTU — PEINTURE
+
+| DTU / Norme | Intitulé | Ce qu'il impose |
+|-------------|---------|-----------------|
+| NF DTU 59.1 | Revêtements de peinture en feuil mince, semi-épais ou épais | Règles de mise en oeuvre peinture intérieure/extérieure |
+| NF DTU 59.2 | Revêtements plastiques épais | RPE (Revêtements Plastiques Épais) sur façade |
+| NF DTU 59.3 | Peinture de sols | Sols béton, ciment (garage, industriel) |
+| NF DTU 59.4 | Mise en peinture des métaux ferreux | Préparation + peinture métal (portails, garde-corps) |
+| NF EN 13300 | Peintures en phase aqueuse pour murs et plafonds intérieurs | Classification pouvoir couvrant, résistance lavage |
+| NF EN ISO 12944 | Protection anticorrosion des structures acier | Systèmes de peinture anticorrosion |
+| NF P 74-201 (DTU 59.1) | États de finition des supports | Définit les 3 niveaux de finition (A, B, C) |
+
+### Niveaux de finition (DTU 59.1) — CRITIQUE POUR LE DEVIS
+| Niveau | Exigence | Résultat | Prix relatif |
+|--------|----------|---------|-------------|
+| **C — Courant** | Rebouchage + 2 couches peinture. Défauts visibles tolérés sous éclairage normal. | Correct, standard. | Base |
+| **B — Soigné** | Rebouchage + enduit de lissage partiel + sous-couche + 2 couches. Défauts peu visibles. | Bon, pour pièces de vie. | +20-30% |
+| **A — Très soigné** | Enduit de lissage complet (ratissage) + ponçage fin + sous-couche + 2-3 couches. Aucun défaut visible, même sous éclairage rasant. | Prestige, haut de gamme. | +40-60% |
+
+**Règle IA :** Le cerveau doit TOUJOURS demander le niveau de finition souhaité (A, B ou C) car l'écart de prix est considérable. Si le client a des spots encastrés ou un éclairage rasant, le niveau A est recommandé.
+
+---
+
+## 12. COEFFICIENTS RÉGIONAUX — PEINTURE
+
+| Zone | Coefficient | Note |
+|------|------------|------|
+| Paris intra-muros | ×1.25 à ×1.40 | Stationnement, accès, montée matériaux |
+| Petite couronne IdF | ×1.15 à ×1.30 | |
+| Grande couronne IdF | ×1.05 à ×1.15 | |
+| Lyon, Marseille, Bordeaux, Toulouse | ×1.00 à ×1.10 | |
+| Grandes villes | ×0.95 à ×1.05 | |
+| Villes moyennes | ×0.90 à ×1.00 | Base du référentiel |
+| Zones rurales | ×0.85 à ×0.95 | |
+| DOM-TOM | ×1.25 à ×1.50 | Import peinture + MO |
+| Corse | ×1.10 à ×1.20 | Transport maritime |
+
+**Particularité peinture :** L'écart régional est moins fort que pour la maçonnerie ou le carrelage car la peinture est un métier moins dépendant de la logistique lourde. Mais les taux horaires varient fortement (30€/h province vs 60€/h Paris).
+
+---
+
+## 13. CONSOMMABLES ET PETITES FOURNITURES — PRIX DÉTAILLÉS
+
+| Fourniture | Conditionnement | Prix | Consommation type |
+|-----------|----------------|------|-------------------|
+| Peinture acrylique mate (murs, standard) | Pot 10L | 40-90€ | 10L = ~100 m² en 1 couche |
+| Peinture acrylique satinée (murs, pro) | Pot 10L | 80-160€ | 10L = ~100 m² en 1 couche |
+| Sous-couche universelle | Pot 10L | 30-70€ | 10L = ~100 m² |
+| Enduit de rebouchage (poudre) | Sac 5kg | 5-12€ | 5kg = ~5 m² (3mm épaisseur) |
+| Enduit de lissage (prêt à l'emploi) | Seau 15kg | 15-30€ | 15kg = ~10-15 m² |
+| Papier abrasif grain 120 (rouleau 5m) | Rouleau | 3-6€ | 1 rouleau = ~15-20 m² |
+| Scotch de masquage (50m) | Rouleau | 2-5€ | 1 rouleau = 1 pièce type |
+| Bâche de protection (25m²) | Rouleau | 3-8€ | 1 rouleau = 2-3 pièces |
+| Mastic acrylique (cartouche 310ml) | Cartouche | 3-6€ | 1 cartouche = ~12-15 ml de joint |
+| Calicot / bande à fissure (rouleau 25m) | Rouleau | 3-6€ | Variable selon fissures |
+| Lessive Saint-Marc (boîte 1.6kg) | Boîte | 3-6€ | 1 boîte = ~30 m² lessivage |
+| Anti-moisissure (spray 500ml) | Spray | 5-12€ | 1 spray = ~5-10 m² |
+| Manchon rouleau 180mm (poils 12mm) | Unité | 3-8€ | 1 manchon = 1 pièce (puis jeter) |
+| Pinceau à rechampir Ø25mm | Unité | 3-8€ | Réutilisable si nettoyé |
+| White spirit (bidon 1L) | Bidon | 3-6€ | Nettoyage outils glycéro |
+
+**Règle de pouce :** Le coût des fournitures (peinture + enduits + consommables) représente typiquement **10-20% du devis total** en peinture. La main d'oeuvre représente 80-90%.
+
+---
+
+## 14. COORDINATION INTER-CORPS DE MÉTIER
+
+### Ordre d'intervention — Le peintre passe en DERNIER
+| Étape | Corps de métier | Ce qu'il fait | Avant le peintre ? |
+|-------|----------------|--------------|-------------------|
+| 1 | Maçon | Gros oeuvre, enduit | OUI — support sec (1-3 mois) |
+| 2 | Plombier | Réseaux eau | OUI |
+| 3 | Électricien | Gaines, câblage | OUI — boîtiers posés |
+| 4 | Plaquiste | Cloisons, doublage, faux plafond | OUI — bandes et enduit secs (48-72h) |
+| 5 | Menuisier | Portes, fenêtres, plinthes | OUI (ou en même temps) |
+| 6 | Carreleur | Carrelage sol et mur | OUI (ou en même temps) |
+| 7 | **PEINTRE** | **Enduit + sous-couche + finition** | **DERNIER** |
+| 8 | Électricien | Pose appareillage (prises, interrupteurs) | APRÈS 1ère couche peinture |
+
+### Points de coordination critiques
+| Avec | Point de coordination | Risque si raté |
+|------|----------------------|---------------|
+| **Plaquiste** | Bandes de placo SÈCHES + poncées AVANT passage peintre | Joint visible sous la peinture |
+| **Plaquiste** | Placo imprimé (sous-couche) dans les 6 mois suivant pose | Placo qui jaunit si exposé trop longtemps |
+| **Électricien** | Boîtiers d'encastrement affleurants au plan fini du mur (placo + enduit + peinture) | Interrupteur enfoncé ou qui dépasse |
+| **Électricien** | Pose prises/interrupteurs APRÈS 1ère couche peinture, AVANT 2ème | Pas de trace de peinture sur l'appareillage |
+| **Menuisier** | Plinthes posées AVANT ou APRÈS peinture ? Décider en amont. | Si avant : masquage nécessaire. Si après : retouche raccord |
+| **Carreleur** | Joint silicone périphérique (jonction carrelage/mur peint) = en dernier | Silicone qui déborde sur la peinture fraîche |
+| **Chauffagiste** | Radiateurs démontés AVANT peinture (idéal) ou peindre derrière en place (patte de lapin) | Zones non peintes derrière le radiateur |
+
+### Temps de séchage des supports avant peinture
+| Support | Temps de séchage minimum | Note |
+|---------|------------------------|------|
+| Placo neuf (BA13) | 48-72h après enduit bandes | Les bandes doivent être sèches et poncées |
+| Enduit ciment (mur maçonnerie) | 1-3 mois | Le ciment doit être carbonaté |
+| Enduit plâtre | 3-4 semaines | Tester avec papier buvard |
+| Ragréage / chape | 2-4 semaines | Selon épaisseur |
+| Bois neuf | Sec (taux humidité < 20%) | Mesurer au testeur d'humidité |
+
+---
+
+## 15. ASSURANCES ET GARANTIES
+
+| Garantie | Durée | Ce qu'elle couvre |
+|----------|-------|------------------|
+| Garantie de parfait achèvement | 1 an | Tous défauts signalés (cloquage, écaillage, teinte non conforme) |
+| Garantie biennale | 2 ans | Équipements dissociables |
+| Garantie décennale | 10 ans | Défauts rendant l'ouvrage impropre à sa destination |
+| RC Pro | Permanente | Dommages aux tiers (tache de peinture chez le voisin, etc.) |
+
+**Cas typiques couverts par la décennale peinture :**
+- Infiltration d'eau par défaut de peinture étanche en façade
+- Décollement généralisé de peinture de sol (garage, terrasse)
+- Écaillage massif de peinture extérieure rendant la façade impropre à sa fonction de protection
+
+**Cas NON couverts :**
+- Jaunissement naturel d'une peinture blanche
+- Usure normale (traces de frottement dans un couloir)
+- Défaut d'entretien (moisissure due à manque de ventilation)
+- Différence de teinte légère entre lots de peinture
+
+---
+
+## 16. CLASSIFICATION PEINTURES ET LABELS
+
+### Labels environnementaux
+| Label | Signification | Impact prix |
+|-------|-------------|-----------|
+| A+ (obligatoire en France) | Émissions COV très faibles dans l'air intérieur | Inclus dans le prix standard |
+| NF Environnement | Écolabel français, faible impact environnemental | +5-15% |
+| Ecolabel européen | Écolabel EU, critères environnementaux stricts | +5-15% |
+| Ecocert | Certification bio, ingrédients naturels >95% | +20-40% |
+| Pure (Tollens) | Peinture sans solvant, sans conservateur | +15-25% |
+
+### Classification résistance à l'humidité
+| Classe | Signification | Usage |
+|--------|-------------|-------|
+| Lessivable | Résiste au nettoyage à l'eau + lessive | Cuisine, SDB, couloir, chambre enfant |
+| Lavable | Résiste au nettoyage à l'eau + éponge douce | Pièces de vie |
+| Non lessivable | Ne résiste pas au nettoyage humide | Plafonds, pièces sèches peu sollicitées |
+
+### Pouvoir couvrant (NF EN 13300)
+| Classe | Ratio de contraste | Signification |
+|--------|-------------------|-------------|
+| Classe 1 | ≥ 99.5% | Excellent — 1 couche peut suffire |
+| Classe 2 | ≥ 98% | Très bon — 2 couches standard |
+| Classe 3 | ≥ 95% | Bon — 2-3 couches selon la couleur |
+| Classe 4 | < 95% | Médiocre — 3+ couches nécessaires |
+
+---
+
+## 17. RÈGLES IA PRICING — CERVEAU STRUCTORAI
+
+### Règle 1 — Toujours donner des FOURCHETTES
+Le cerveau ne donne JAMAIS un prix unique. Toujours min-max.
+
+### Règle 2 — Appliquer le coefficient régional
+Prix affiché = prix référentiel × coefficient zone du chantier.
+
+### Règle 3 — Déférer aux prix de l'artisan (Mem0)
+Si l'artisan a ses propres prix → utiliser SES prix. Sinon → prix référentiel.
+
+### Règle 4 — Alerter sur les prix anormaux
+Si prix < 70% du référentiel → alerte. Si > 150% → alerte.
+
+### Règle 5 — Demander le niveau de finition
+```
+TOUJOURS demander : "C'est pour un rendu courant, soigné ou prestige ?"
+  C (courant) = prix base
+  B (soigné) = +20-30%
+  A (prestige) = +40-60%
+```
+
+### Règle 6 — Ne JAMAIS oublier dans un devis peinture
+- [ ] État des murs (bon / moyen / mauvais) — change le prix de 50-100%
+- [ ] Nombre de couches (2 standard, 3 si couleur foncée ou passage clair→foncé)
+- [ ] Sous-couche (obligatoire sur neuf, sur changement de base glycéro↔acrylique)
+- [ ] Préparation (lessivage, rebouchage, enduit de lissage, traitement moisissure)
+- [ ] Plafond (toujours plus cher que murs : +20-30%)
+- [ ] Boiseries séparément (portes, fenêtres, plinthes = postes à part)
+- [ ] Protection (bâchage, scotch, déplacement meubles)
+- [ ] Hauteur sous plafond (>3m = échafaudage = surcoût)
+- [ ] Diagnostic plomb si bâtiment avant 1949
+- [ ] TVA correcte : 10% rénovation, 20% neuf
+
+### Règle 7 — Calcul quantité peinture
+```
+Quantité (litres) = surface nette (m²) ÷ rendement (m²/L) × nombre de couches × 1.10
+  → Rendement standard : 10 m²/L (rouleau)
+  → Rendement pistolet : 8 m²/L (perte brouillard)
+  → Couleur foncée sur clair : 3 couches minimum
+  → Mur poreux (plâtre neuf) : rendement -20-30%
+```
+
+### Règle 8 — Forfaits minimum
+```
+Intervention < 2h → forfait minimum 150-250€
+Retouche ponctuelle → forfait minimum 100-180€
+Déplacement > 30km → 30-60€ de frais
+```
+
+### Règle 9 — Urgence et majorations
+| Situation | Majoration |
+|-----------|-----------|
+| Urgence (< 48h) | +30 à +50% |
+| Week-end | +25 à +50% |
+| Jour férié | +50 à +100% |
+| Plafond > 3m | +8-15€/m² (échafaudage) |
+| Poutres apparentes | +5-10€/m² |
+| Moulures / corniches | +5-12€/ml |
+| Couleur foncée sur clair | +1 couche = +30-50% fourniture |
+| Pièce très encombrée | +50-150€ forfait |
+
+---
+
+## 18. DEVIS TYPES — EXEMPLES CHIFFRÉS
+
+### Devis type 1 : Chambre 12m² (murs + plafond, état moyen, finition B soigné)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Protection sols + meubles | forfait | 40€ | 40€ |
+| Lessivage murs + plafond | 38 m² | 3€/m² | 114€ |
+| Rebouchage trous (5 petits) | 5 u | 2€/u | 10€ |
+| Enduit de lissage (zones abîmées ~30%) | 12 m² | 8€/m² | 96€ |
+| Ponçage fin | 38 m² | 2€/m² | 76€ |
+| Sous-couche (1 couche) | 38 m² | 4€/m² | 152€ |
+| Peinture finition acrylique satinée (2 couches murs) | 28 m² | 12€/m² | 336€ |
+| Peinture finition mate plafond (2 couches) | 12 m² | 14€/m² | 168€ |
+| Fourniture peinture (2 pots 2.5L finition + 1 pot SC) | forfait | 80€ | 80€ |
+| Fourniture enduit + abrasif + scotch | forfait | 20€ | 20€ |
+| Nettoyage fin de chantier | forfait | 40€ | 40€ |
+| **TOTAL HT** | | | **1 132€** |
+| TVA 10% (rénovation > 2 ans) | | | 113,20€ |
+| **TOTAL TTC** | | | **1 245,20€** |
+
+### Devis type 2 : Appartement T3 65m² complet (murs + plafonds, état moyen, finition C courant)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Protection sols + meubles (5 pièces) | forfait | 120€ | 120€ |
+| Lessivage complet | 210 m² | 2.50€/m² | 525€ |
+| Rebouchage + petites réparations | forfait | 150€ | 150€ |
+| Ponçage léger | 210 m² | 2€/m² | 420€ |
+| Sous-couche (1 couche) | 210 m² | 4€/m² | 840€ |
+| Peinture murs (2 couches, acrylique mate) | 150 m² | 10€/m² | 1 500€ |
+| Peinture plafonds (2 couches, anti-goutte) | 65 m² | 12€/m² | 780€ |
+| Peinture boiseries (6 portes, 2 faces) | 6 u | 100€/u | 600€ |
+| Peinture plinthes | 50 ml | 4€/ml | 200€ |
+| Fourniture peinture + enduit + consommables | forfait | 600€ | 600€ |
+| Nettoyage fin de chantier | forfait | 150€ | 150€ |
+| **TOTAL HT** | | | **5 885€** |
+| TVA 10% | | | 588,50€ |
+| **TOTAL TTC** | | | **6 473,50€** |
+
+### Devis type 3 : Ravalement façade 120m² (échafaudage, finition peinture siloxane)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Location + montage/démontage échafaudage | 120 m² | 15€/m² | 1 800€ |
+| Nettoyage haute pression | 120 m² | 5€/m² | 600€ |
+| Rebouchage fissures | forfait | 300€ | 300€ |
+| Traitement hydrofuge | 120 m² | 8€/m² | 960€ |
+| Sous-couche façade (1 couche) | 120 m² | 5€/m² | 600€ |
+| Peinture siloxane façade (2 couches) | 120 m² | 18€/m² | 2 160€ |
+| Fourniture peinture + enduit | forfait | 800€ | 800€ |
+| Peinture soubassement (10m²) | 10 m² | 15€/m² | 150€ |
+| Peinture volets bois (4 paires) | 4 u | 130€/u | 520€ |
+| Nettoyage fin de chantier | forfait | 100€ | 100€ |
+| **TOTAL HT** | | | **7 990€** |
+| TVA 10% (ravalement logement > 2 ans) | | | 799€ |
+| **TOTAL TTC** | | | **8 789€** |
+
+---
+
+> **Note pour le cerveau IA :** Ce référentiel couvre l'intégralité du métier peintre :
+> 1. Types de peinture (acrylique, glycéro, alkyde, époxy, polyuréthane, spéciales, à effets, lasures, vernis) avec prix au litre et rendement
+> 2. Finitions (mat, velours, satin, brillant) avec usage recommandé
+> 3. Sous-couches et impressions (7 types) avec prix et rendement
+> 4. Enduits et préparation (8 types d'enduits, 12 produits de préparation) avec prix
+> 5. Revêtements muraux alternatifs (papier peint, toile de verre) avec prix fourniture et pose
+> 6. Outillage complet du peintre (25+ outils) avec prix
+> 7. Toutes les mises en oeuvre chiffrées (10 catégories, 100+ postes)
+> 8. Enduits décoratifs haut de gamme (10 techniques artisanales) avec prix
+> 9. Marques pro et grand public
+> 10. Taux horaires par zone + coefficients régionaux (9 zones)
+> 11. 12 erreurs courantes terrain
+> 12. Diagnostic plomb (obligations, prix, seuils, impact sur le peintre)
+> 13. Normes et DTU (7 références + 3 niveaux de finition A/B/C)
+> 14. Consommables détaillés avec consommation type
+> 15. Coordination inter-corps de métier (ordre intervention, points critiques, séchage supports)
+> 16. Assurances et garanties (décennale, cas couverts/non couverts)
+> 17. Classification peintures et labels (environnementaux, résistance humidité, pouvoir couvrant)
+> 18. Règles IA pricing (9 règles impératives)
+> 19. Devis types chiffrés (chambre 12m², appartement T3 complet, ravalement façade 120m²)
