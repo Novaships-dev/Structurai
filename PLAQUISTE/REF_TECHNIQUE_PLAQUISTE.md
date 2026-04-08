@@ -399,3 +399,258 @@ TVA : 10% en rénovation (> 2 ans), 20% en neuf, 5.5% en rénovation énergétiq
 > 7. Forfaits par pièce (7 exemples)
 > 8. Taux horaires par zone
 > 9. 10 erreurs courantes terrain
+
+---
+
+## 18. PERFORMANCES THERMIQUES — ÉLIGIBILITÉ AIDES
+
+### Résistance thermique R minimale pour les aides
+| Zone d'isolation | R minimum MaPrimeRénov' | R minimum RE2020 (neuf) | Note |
+|-----------------|------------------------|------------------------|------|
+| Murs (doublage intérieur) | **R ≥ 3.7 m².K/W** | R ≥ 3.7 | Doublage Optima laine 120-140mm |
+| Plafond sous combles aménagés (rampants) | **R ≥ 6.0** | R ≥ 6.0 | Laine 200-240mm sous rampant |
+| Combles perdus (soufflage) | **R ≥ 7.0** | R ≥ 7.0 | 300-350mm laine soufflée |
+| Plancher bas (sur cave/VS) | **R ≥ 3.0** | R ≥ 3.0 | PSE ou PUR sous dalle |
+
+### Correspondance épaisseur isolant / R
+| Isolant | R = 2.5 | R = 3.7 | R = 5.0 | R = 6.0 | R = 7.0 |
+|---------|---------|---------|---------|---------|---------|
+| Laine de verre GR32 (λ=0.032) | 80mm | 120mm | 160mm | 200mm | 225mm |
+| Laine de roche (λ=0.035) | 88mm | 130mm | 175mm | 210mm | 245mm |
+| PSE (λ=0.038) | 95mm | 140mm | 190mm | 228mm | 266mm |
+| PUR (λ=0.022) | 55mm | 82mm | 110mm | 132mm | 154mm |
+
+**Règle IA :** Si l'artisan parle d'isolation, le cerveau doit TOUJOURS vérifier que le R atteint le minimum pour les aides (R ≥ 3.7 murs, R ≥ 6.0 rampants, R ≥ 7.0 combles). Si le client demande un doublage R=2.0, prévenir qu'il ne sera pas éligible aux aides.
+
+---
+
+## 19. COEFFICIENTS RÉGIONAUX — PLAQUISTE
+
+| Zone | Coefficient | Note |
+|------|------------|------|
+| Paris intra-muros | ×1.25 à ×1.40 | Montée matériaux (plaques = encombrant + lourd) |
+| Petite couronne IdF | ×1.15 à ×1.30 | |
+| Grande couronne IdF | ×1.05 à ×1.15 | |
+| Lyon, Marseille, Bordeaux | ×1.00 à ×1.10 | |
+| Grandes villes | ×0.95 à ×1.05 | |
+| Villes moyennes | ×0.90 à ×1.00 | Base du référentiel |
+| Zones rurales | ×0.85 à ×0.95 | |
+| DOM-TOM | ×1.30 à ×1.55 | Import plaques + isolant |
+| Corse | ×1.10 à ×1.20 | Transport maritime |
+
+**Particularité plaquiste :** Les plaques de plâtre sont volumineuses et lourdes (~28kg/plaque BA13 de 3m²). La montée en étage sans ascenseur est un surcoût majeur (bras ou monte-charge). En centre-ville parisien, la livraison par camion-grue est parfois nécessaire (+200-500€).
+
+---
+
+## 20. TEMPS DE TRAVAIL RÉALISTE PAR POSTE
+
+### Rendement plaquiste qualifié (1 personne)
+| Poste | Rendement/jour | Note |
+|-------|---------------|------|
+| Pose cloison (ossature + isolation + 2 faces BA13) | 12-18 m² | Hors joints |
+| Pose doublage collé (MAP) | 15-25 m² | Le plus rapide |
+| Pose doublage sur ossature Optima | 10-15 m² | Plus long que collé |
+| Pose faux plafond BA13 | 8-12 m² | Position haute, lève-plaque |
+| Pose faux plafond sous rampant (combles) | 6-10 m² | Pente, découpes |
+| Bandes à joint + enduit (2 passes) | 20-30 m² | Hors temps de séchage |
+| Ratissage complet (Q4) | 15-25 m² | Enduit de lissage + ponçage |
+| Ponçage seul (ponceuse girafe) | 30-50 m² | Rapide mais poussière |
+| Coffrage technique (colonne, WC) | 2-4 u | Variable selon complexité |
+
+### Temps de séchage incompressibles
+| Élément | Séchage | Note |
+|---------|---------|------|
+| MAP (collage doublage) | 24h minimum | Avant de charger le mur |
+| Enduit à joint (1ère passe) | 12-24h | Selon température et ventilation |
+| Enduit à joint (2ème passe) | 12-24h | Idem |
+| Enduit de lissage | 4-12h | Plus fin = sèche plus vite |
+| Ponçage → peinture | 24h après ponçage | Laisser retomber la poussière |
+
+### Équipes types
+| Chantier | Équipe | Durée |
+|----------|--------|-------|
+| Cloison 10m² (1 pièce) | 1 plaquiste | 2-3 jours (pose + joints) |
+| Faux plafond 20m² | 1 plaquiste (+ aide levage) | 3-4 jours |
+| Doublage murs maison 100m² | 2 plaquistes | 5-8 jours |
+| Aménagement combles 30m² | 2 plaquistes | 5-10 jours |
+| Appartement T3 complet | 2-3 plaquistes | 8-15 jours |
+
+---
+
+## 21. FIXATIONS DANS LE PLACO — GUIDE CHARGES
+
+| Type de fixation | Charge max par point | Prix unitaire | Usage |
+|-----------------|---------------------|-------------|-------|
+| Vis directe (BA13 standard) | 3-5 kg | ~0.02€ | Cadre léger, petit miroir |
+| Cheville Molly (expansion métal) | 15-25 kg | 0.20-0.50€ | Étagère, petit meuble |
+| Cheville à bascule | 15-20 kg | 0.30-0.60€ | Luminaire, tringle rideau |
+| Toggler / SnapToggle | 30-50 kg | 0.50-1.50€ | Meuble moyen, store |
+| Vis directe dans Habito (BA13 HD) | 20-40 kg | ~0.02€ | Sans cheville, vis standard |
+| Vis dans montant métallique (en face du montant) | 30-50 kg | ~0.02€ | Le plus solide en placo |
+| Renfort bois/contreplaqué (derrière placo) | 50-200 kg | planifié à la pose | Meuble cuisine, TV murale >30kg, chauffe-eau |
+
+**Règle IA :** Si le client mentionne une TV murale, des meubles hauts de cuisine, un chauffe-eau, ou tout objet >20kg, le cerveau doit TOUJOURS mentionner la nécessité d'un renfort derrière le placo (contreplaqué 18mm ou plaque Habito). C'est la demande de SAV la plus fréquente chez les plaquistes.
+
+---
+
+## 22. ASSURANCES ET GARANTIES
+
+| Garantie | Durée | Ce qu'elle couvre |
+|----------|-------|------------------|
+| Garantie de parfait achèvement | 1 an | Fissures joints, défauts finition, réglages |
+| Garantie biennale | 2 ans | Trappes de visite, accessoires dissociables |
+| **Garantie décennale** | **10 ans** | Défauts compromettant solidité ou impropriété |
+| RC Pro | Permanente | Dommages aux tiers |
+
+**Cas typiques couverts par la décennale plaquiste :**
+- Effondrement faux plafond (suspentes insuffisantes ou mal fixées)
+- Cloison qui se fissure et se désolidarise du sol/plafond
+- Infiltration due à défaut de placo hydrofuge en pièce humide
+- Isolation insuffisante (R non conforme → surconsommation énergie)
+- Défaut coupe-feu (placo non ignifugé autour cheminée → incendie)
+
+**Cas NON couverts :**
+- Fissure de joint esthétique (micro-fissure au raccord mur/plafond)
+- Trou dans le placo par choc (coup de meuble, déménagement)
+- Clou/vis qui ne tient pas (mauvaise cheville, pas un défaut de pose)
+- Traces de bandes visibles sous éclairage rasant si finition Q2 demandée (pas Q3/Q4)
+
+---
+
+## 23. RÈGLES IA PRICING — CERVEAU STRUCTORAI
+
+### Règle 1 — Toujours donner des FOURCHETTES
+Le cerveau ne donne JAMAIS un prix unique. Toujours min-max.
+
+### Règle 2 — Appliquer le coefficient régional
+Prix affiché = prix référentiel × coefficient zone du chantier.
+
+### Règle 3 — Déférer aux prix de l'artisan (Mem0)
+Si l'artisan a ses propres prix → utiliser SES prix. Sinon → prix référentiel.
+
+### Règle 4 — Alerter sur les prix anormaux
+Si prix < 70% du référentiel → alerte. Si > 150% → alerte.
+
+### Règle 5 — Demander le niveau de finition Q1-Q4
+```
+TOUJOURS demander : "Quel niveau de finition ? Q2 standard, Q3 soigné, Q4 prestige ?"
+  Q1 = zones cachées (-20%)
+  Q2 = standard (base)
+  Q3 = soigné pour peinture (+3-6€/m²)
+  Q4 = prestige, éclairage rasant (+6-12€/m²)
+```
+
+### Règle 6 — Ne JAMAIS oublier dans un devis plaquiste
+- [ ] Type de plaque adapté à la pièce (hydrofuge SDB, ignifugé cheminée, phonique chambre)
+- [ ] Isolant et épaisseur (vérifier R minimum pour aides)
+- [ ] Niveau de finition Q1-Q4
+- [ ] Renforts pour fixations lourdes (cuisine, TV, chauffe-eau)
+- [ ] Trappes de visite (gaines techniques, plomberie, électricité)
+- [ ] Bande résiliente (phonique) sous les rails
+- [ ] Coordination électricien/plombier AVANT fermeture
+- [ ] Montée matériaux (étage sans ascenseur → surcoût)
+- [ ] Évacuation gravats si dépose ancien placo
+- [ ] TVA : 10% rénovation, 20% neuf, **5.5% si isolation RGE avec R conforme**
+
+### Règle 7 — Calcul quantité plaques
+```
+Nombre de plaques = surface (m²) ÷ 3 m² (surface 1 plaque 2500×1200) × 1.10 (marge 10%)
+  → Cloison double face : surface × 2
+  → Double parement : surface × 4 (2 plaques par face)
+  → Plafond : surface au sol
+  → Doublage mur : périmètre × hauteur
+```
+
+### Règle 8 — Forfaits minimum
+```
+Intervention < 5m² → forfait minimum 300-500€
+Déplacement > 30km → 30-60€
+Coffrage unitaire (WC, colonne) → forfait minimum 200-400€
+```
+
+### Règle 9 — Urgence et majorations
+| Situation | Majoration |
+|-----------|-----------|
+| Urgence (< 48h) | +30 à +50% |
+| Week-end | +25 à +50% |
+| Étage sans ascenseur (2ème+) | +10-20% (montée plaques + isolant) |
+| Combles sous rampant | +15-25% |
+| Hauteur > 3m | +10-20% (échafaudage) |
+| Site occupé (logement habité) | +5-10% (protection, bruit, accès) |
+
+---
+
+## 24. DEVIS TYPES — EXEMPLES CHIFFRÉS
+
+### Devis type 1 : Cloison séparation salon/chambre 12m² (isolée, finition Q3)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Fourniture ossature M48 (rails + montants, entraxe 60cm) | 12 m² | 5€/m² | 60€ |
+| Fourniture BA13 standard (2 faces) | 24 m² (8 plaques) | 5€/m² | 120€ |
+| Fourniture laine de verre 45mm | 12 m² | 5€/m² | 60€ |
+| Fourniture bande résiliente (sol + plafond) | 14 ml | 0.50€/ml | 7€ |
+| Fourniture vis, bandes à joint, enduit | forfait | 30€ | 30€ |
+| Pose ossature (rails, montants, isolation) | 12 m² | 12€/m² | 144€ |
+| Pose plaques BA13 (2 faces) | 24 m² | 8€/m² | 192€ |
+| Bandes à joint + enduit Q3 (2 faces) | 24 m² | 10€/m² | 240€ |
+| Ponçage | 24 m² | 2€/m² | 48€ |
+| Renfort linteau porte (1 ouverture 93cm) | 1 u | 80€ | 80€ |
+| **TOTAL HT** | | | **981€** |
+| TVA 10% (rénovation logement > 2 ans) | | | 98,10€ |
+| **TOTAL TTC** | | | **1 079,10€** |
+
+### Devis type 2 : Faux plafond BA13 + isolant salon 22m² (finition Q3, 4 spots LED)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Fourniture ossature (fourrures F530 + suspentes) | 22 m² | 5€/m² | 110€ |
+| Fourniture BA13 standard (4BA plafond) | 22 m² (8 plaques) | 6€/m² | 132€ |
+| Fourniture laine de verre 100mm | 22 m² | 6€/m² | 132€ |
+| Fourniture vis, bandes, enduit, cornière | forfait | 35€ | 35€ |
+| Pose ossature + isolation | 22 m² | 15€/m² | 330€ |
+| Pose plaques (lève-plaque) | 22 m² | 12€/m² | 264€ |
+| Bandes à joint Q3 | 22 m² | 10€/m² | 220€ |
+| Percements spots LED (4 spots, coordination électricien) | 4 u | 8€/u | 32€ |
+| Ponçage | 22 m² | 2€/m² | 44€ |
+| **TOTAL HT** | | | **1 299€** |
+| TVA 10% | | | 129,90€ |
+| **TOTAL TTC** | | | **1 428,90€** |
+
+### Devis type 3 : Aménagement combles 28m² (rampants + pignons + plafond, isolation R=6)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Rampants : ossature + laine 200mm + BA13 | 32 m² | 55€/m² | 1 760€ |
+| Pignons : ossature + laine 100mm + BA13 | 16 m² | 45€/m² | 720€ |
+| Plafond horizontal (si applicable) | 10 m² | 50€/m² | 500€ |
+| Joues de velux (2 velux) | 2 u | 150€/u | 300€ |
+| Trappe d'accès combles isolée | 1 u | 180€ | 180€ |
+| Bandes à joint + enduit Q3 (toutes surfaces) | 58 m² | 10€/m² | 580€ |
+| Ponçage complet | 58 m² | 3€/m² | 174€ |
+| Montée matériaux combles | forfait | 200€ | 200€ |
+| **TOTAL HT** | | | **4 414€** |
+| TVA 5.5% (isolation RGE, R ≥ 6.0) | | | 242,77€ |
+| **TOTAL TTC** | | | **4 656,77€** |
+
+---
+
+> **Note pour le cerveau IA :** Ce référentiel couvre l'intégralité du métier plaquiste :
+> 1. Types de plaques (13 types) avec couleur, épaisseur, prix, usage
+> 2. Ossature métallique (rails, montants, fourrures, suspentes) avec prix et entraxes
+> 3. Isolants (7 types) avec épaisseur, R, prix, usage + correspondance épaisseur/R pour aides
+> 4. Consommables (14 fournitures) avec prix
+> 5. Outillage (15 outils) avec prix
+> 6. Mises en oeuvre (8 catégories, 60+ postes) : dépose, cloisons, doublage, faux plafonds, jointage, coffrages, travaux spécifiques, majorations
+> 7. Forfaits par pièce (7 exemples)
+> 8. Taux horaires par zone + coefficients régionaux (9 zones)
+> 9. 10 erreurs courantes terrain
+> 10. Niveaux de finition Q1-Q4 (DTU 25.41 / NF P 72-203)
+> 11. Performances acoustiques (6 configurations cloison, de 34 à 60 dB)
+> 12. Corniches, moulures et staff (9 éléments + 7 interventions)
+> 13. Plâtrerie traditionnelle (6 interventions)
+> 14. Aménagement combles détaillé (7 postes)
+> 15. Verrières et ouvertures dans cloisons (5 interventions)
+> 16. Performances thermiques pour aides (R minimum par zone, correspondance épaisseur/R)
+> 17. Temps de travail réaliste par poste + temps de séchage + équipes types
+> 18. Fixations dans le placo — guide charges (7 types avec charge max)
+> 19. Assurances et garanties (décennale, cas couverts/non couverts)
+> 20. Règles IA pricing (9 règles impératives)
+> 21. Devis types chiffrés (cloison 12m², faux plafond 22m², aménagement combles 28m²)
