@@ -36,7 +36,7 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 | **iPhone** (PWA) | Web app installable, bypass Apple Store | iOS sans les $99/an |
 | **WhatsApp** | Actions rapides vocal/photo | Sur le chantier, mains occupées |
 
-### 6 Agents IA Autonomes
+### 9 Agents IA Autonomes
 
 | Agent | Ce qu'il fait |
 |-------|---------------|
@@ -46,6 +46,9 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 | **Planning** | Timer chantier, marge temps réel, détection dépassements, enchaînements |
 | **Réputation** | SMS avis Google post-chantier, réponse IA aux avis, suivi score |
 | **Prospection** | CRM architectes/apporteurs, rappels automatiques, suivi réseau |
+| **Fiscalité** | Suivi fiscal annuel par statut (micro/EURL/SAS), rappels URSSAF/TVA, alertes seuils, scan courrier admin, préparation dossier comptable |
+| **Déplacements** | GPS intégré, frais km automatiques, indemnités BTP par zone, paniers repas, suivi carburant/parking/amendes |
+| **RH** | Pointage heures employés, calcul heures sup (convention BTP), indemnités par employé/chantier/jour, congés CIBTP, export éléments de paie |
 
 ### Architecture Cerveau IA — 4 Couches
 
@@ -55,9 +58,10 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 │  Queue prioritaire · Workers · Budget LLM   │
 │  Background consciousness · Circuit breaker │
 ├─────────────────────────────────────────────┤
-│  COUCHE 3 — 6 Agents Autonomes              │
+│  COUCHE 3 — 9 Agents Autonomes              │
 │  Devis · Relance · Compta · Planning        │
-│  Réputation · Prospection                   │
+│  Réputation · Prospection · Fiscalité       │
+│  Déplacements · RH                          │
 ├─────────────────────────────────────────────┤
 │  COUCHE 2 — Mémoire Persistante (Mem0)      │
 │  Prix artisan · Clients · Fournisseurs      │
@@ -94,7 +98,8 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 ```
 structorai/
 ├── PRODUCT_CONTEXT.md          # Source de vérité produit (845 lignes)
-├── BUILD_PLAN.md               # Blueprint build — 270 fichiers, 8 sprints (692 lignes)
+├── BUILD_PLAN.md               # Blueprint build — 300 fichiers, 8 sprints (692 lignes)
+├── FEATURES.md                 # Liste exhaustive des 93 features V2 (546 lignes)
 ├── FICHE_METIER.md             # Inventaire 48 fichiers data métier (844 lignes)
 ├── README.md                   # Ce fichier
 │
@@ -124,11 +129,13 @@ La base de connaissances BTP du cerveau IA. Chaque référentiel contient les ma
 | Façadier | 375 | 100+ | 10 |
 | **Total** | **4709** | **950+** | **96** |
 
+> **Total référentiels (dont FEATURES.md)** : ~5255 lignes de documentation produit + technique.
+
 ---
 
 ## Plan de Build
 
-**~270 fichiers · ~18-20 jours · 8 sprints**
+**~300 fichiers · ~18-20 jours · 8 sprints**
 
 | Sprint | Contenu | Durée |
 |--------|---------|-------|
@@ -138,8 +145,8 @@ La base de connaissances BTP du cerveau IA. Chaque référentiel contient les ma
 | **3** | Agent Devis — vocal→postes→prix→TVA→PDF Factur-X, knowledge base BTP, signature | ~3 jours |
 | **4** | Pipeline chantiers + Compta — Kanban, timer, OCR tickets, catégorisation | ~2 jours |
 | **5** | Relances + Factures — Agent Relance, Brevo, Twilio, cron jobs | ~2 jours |
-| **6** | Réputation + Prospection + Email — avis Google, CRM pro, IMAP | ~2 jours |
-| **7** | Gamification + Polish — XP, niveaux, quêtes, badges, onboarding | ~2 jours |
+| **6** | Réputation + Prospection + Email + Fiscalité + Déplacements | ~3 jours |
+| **7** | Gamification + Polish + RH (employés) | ~2 jours |
 | **8** | Build + Deploy + Launch — Play Store, PWA, landing page, tests | ~2 jours |
 
 Build entièrement réalisé par **Claude Code**. Fabrice crée les comptes infra et configure les clés.
@@ -148,7 +155,7 @@ Build entièrement réalisé par **Claude Code**. Fabrice crée les comptes infr
 
 | Pattern | Source | Usage |
 |---------|--------|-------|
-| Supervisor + workers + queue | Ouroboros (456★) | Orchestration des 6 agents |
+| Supervisor + workers + queue | Ouroboros (456★) | Orchestration des 9 agents |
 | Background consciousness | Ouroboros | Proactivité — le cerveau pense entre les tâches |
 | Circuit breaker + fallback | Ouroboros v6.0 | 3 réponses vides → pause + fallback model |
 | Context compaction | Ouroboros v6.1 | Résumé contexte long via LLM léger |
@@ -163,7 +170,7 @@ Build entièrement réalisé par **Claude Code**. Fabrice crée les comptes infr
 | Plan | Prix | Cible |
 |------|------|-------|
 | **Starter** | Gratuit | Découverte — 5 devis/mois, chat limité |
-| **Pro** | 29€/mois | Artisan solo — devis illimités, 6 agents, voix |
+| **Pro** | 29€/mois | Artisan solo — devis illimités, 9 agents, voix |
 | **Business** | 79€/mois | Artisan + employés — multi-user, API, priorité |
 
 ARPU cible : 40€/mois · Kill criteria : <200€ MRR après 12 semaines
