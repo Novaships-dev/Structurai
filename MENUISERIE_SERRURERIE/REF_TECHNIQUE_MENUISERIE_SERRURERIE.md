@@ -424,3 +424,321 @@ TVA : 10% rénovation (> 2 ans), 20% neuf, 5.5% si amélioration énergétique (
 > 11. Aides financières fenêtres
 > 12. Marques et fournisseurs
 > 13. 12 erreurs courantes terrain
+
+---
+
+## 18. PERFORMANCES THERMIQUES RE2020 — GUIDE POUR LE DEVIS
+
+### Coefficients thermiques à connaître
+| Coefficient | Signification | Unité | Objectif |
+|------------|-------------|-------|---------|
+| **Uw** | Transmission thermique de la fenêtre complète (cadre + vitrage) | W/m².K | **Plus c'est bas, mieux c'est** |
+| **Ug** | Transmission thermique du vitrage seul | W/m².K | Plus c'est bas, mieux c'est |
+| **Uf** | Transmission thermique du cadre seul | W/m².K | PVC < bois < alu |
+| **Sw** | Facteur solaire (apports chaleur du soleil) | 0 à 1 | Élevé = chaud en hiver, trop chaud en été |
+| **TLw** | Transmission lumineuse | 0 à 1 | Élevé = plus de lumière naturelle |
+| **AEV** | Étanchéité Air/Eau/Vent | Classes | Plus c'est élevé, plus c'est étanche |
+
+### Seuils RE2020 (construction neuve depuis 2022)
+| Exigence | Valeur |
+|----------|--------|
+| Uw maximum recommandé | **≤ 1.3 W/m².K** (standard) / ≤ 1.1 W/m².K (excellent) |
+| Uw maison passive | ≤ 0.8 W/m².K |
+| Surface vitrée minimum | **≥ 1/6 de la surface habitable** (= 1m² vitrage pour 6m² habitables) |
+| Confort d'été (DH) | ≤ 1 250 °C.h (degré-heures) |
+
+### Performances typiques par matériau
+| Matériau | Uw typique | Sw typique | Note RE2020 |
+|----------|-----------|-----------|-------------|
+| PVC double vitrage argon | 1.1-1.4 | 0.50-0.65 | **Conforme RE2020** — le meilleur rapport qualité/prix |
+| PVC triple vitrage | 0.8-1.0 | 0.35-0.50 | Haute performance, zones froides |
+| Alu RPT double vitrage | 1.3-1.8 | 0.45-0.60 | Conforme si RPT (rupture pont thermique) |
+| Alu RPT triple vitrage | 0.9-1.2 | 0.30-0.45 | Haute performance |
+| Bois double vitrage | 1.1-1.5 | 0.50-0.65 | Conforme, excellent bilan carbone |
+| Bois-alu double vitrage | 1.0-1.3 | 0.50-0.65 | Le meilleur compromis performance/carbone |
+
+### Choix du vitrage selon l'orientation (conseil IA)
+| Orientation | Vitrage recommandé | Sw recommandé | Pourquoi |
+|------------|-------------------|---------------|---------|
+| **Nord** | Triple vitrage | Sw faible ok (0.3-0.4) | Peu de soleil → maximiser l'isolation |
+| **Sud** | Double vitrage + protection solaire | Sw moyen (0.4-0.5) + store/BSO | Profiter du soleil d'hiver, bloquer l'été |
+| **Est/Ouest** | Double vitrage + contrôle solaire | Sw modéré (0.4-0.5) | Soleil rasant = surchauffe sans protection |
+| Zone froide (montagne) | Triple vitrage toutes orientations | - | Isolation prioritaire |
+| Zone bruyante (route, aéroport) | Vitrage feuilleté acoustique | - | Affaiblissement 35-40 dB vs 28-30 dB standard |
+
+---
+
+## 19. ACCESSIBILITÉ PMR — MENUISERIES
+
+| Exigence | Norme | Détail |
+|----------|-------|--------|
+| Largeur porte intérieure | NF P 01-012 | ≥ 83cm passage libre (bloc-porte 93cm) |
+| Largeur porte d'entrée | NF P 01-012 | ≥ 90cm passage libre |
+| Seuil porte-fenêtre | - | ≤ 2cm (ressaut max), idéal : seuil PMR plat |
+| Poignée fenêtre | - | Hauteur 1.00-1.30m depuis le sol |
+| Garde-corps | NF P 01-012 | Hauteur ≥ 1m, barreaux espacés ≤ 11cm |
+| Escalier | NF P 01-012 | Main courante continue, nez de marche contrasté, largeur ≥ 80cm |
+
+**Règle IA :** Si l'artisan mentionne un logement PMR, ERP (Établissement Recevant du Public), ou si le client est une personne âgée/à mobilité réduite, le cerveau doit TOUJOURS vérifier la conformité PMR des menuiseries proposées.
+
+---
+
+## 20. COEFFICIENTS RÉGIONAUX — MENUISERIE / SERRURERIE
+
+| Zone | Coeff. menuiserie | Coeff. serrurerie | Note |
+|------|------------------|-------------------|------|
+| Paris intra-muros | ×1.20 à ×1.35 | ×1.30 à ×1.50 | Serrurerie très chère à Paris (urgence++) |
+| Petite couronne IdF | ×1.10 à ×1.25 | ×1.20 à ×1.40 | |
+| Grande couronne IdF | ×1.05 à ×1.15 | ×1.10 à ×1.25 | |
+| Lyon, Marseille, Bordeaux | ×1.00 à ×1.10 | ×1.05 à ×1.15 | |
+| Grandes villes | ×0.95 à ×1.05 | ×1.00 à ×1.10 | |
+| Villes moyennes | ×0.90 à ×1.00 | ×0.95 à ×1.00 | Base du référentiel |
+| Zones rurales | ×0.85 à ×0.95 | ×0.90 à ×1.00 | |
+| DOM-TOM | ×1.30 à ×1.60 | ×1.25 à ×1.50 | Import menuiseries |
+| Corse | ×1.10 à ×1.20 | ×1.10 à ×1.20 | Transport maritime |
+
+**Particularité serrurerie :** Les tarifs serrurier sont TRÈS variables, surtout en urgence. Le coefficient régional est plus élevé en serrurerie qu'en menuiserie car la demande d'urgence (porte claquée, cambriolage) crée un effet de prix. Le cerveau IA doit alerter l'artisan sur le risque de « serruriers pirates » facturant 3-5× le prix normal.
+
+---
+
+## 21. CONSOMMABLES ET QUINCAILLERIE — PRIX DÉTAILLÉS
+
+| Fourniture | Prix | Consommation type |
+|-----------|------|-------------------|
+| Mousse expansive PU (bombe 750ml) | 5-10€ | 1 bombe = 2-3 fenêtres (calfeutrement) |
+| Mousse compriband (joint pré-comprimé, rouleau 5.6m) | 8-15€ | 1 rouleau = 1-2 fenêtres |
+| Mastic silicone extérieur (cartouche 310ml) | 5-12€ | 1 cartouche = 2-3 fenêtres |
+| Mastic acrylique intérieur (cartouche 310ml) | 3-6€ | 1 cartouche = 3-4 fenêtres |
+| Vis inox (boîte 100) | 5-12€ | 20-30 vis/fenêtre |
+| Chevilles à frapper (boîte 50) | 8-15€ | 6-8 chevilles/fenêtre |
+| Paumelles (charnières) porte intérieure (jeu 3) | 5-15€ | 3 par porte |
+| Paumelles porte d'entrée (jeu 3, renforcées) | 15-35€ | 3 par porte |
+| Poignée de fenêtre (standard) | 5-15€ | 1 par ouvrant |
+| Poignée de fenêtre (sécurité, à clé) | 15-35€ | 1 par ouvrant (RDC) |
+| Poignée de porte intérieure (lot rosace) | 8-25€ | 1 par porte |
+| Poignée de porte d'entrée (plaque/rosace blindée) | 20-60€ | 1 par porte |
+| Cylindre standard (40+40mm) | 15-40€ | 1 par serrure |
+| Cylindre haute sécurité A2P* | 60-150€ | 1 par serrure |
+| Gâche standard | 3-8€ | 1 par serrure |
+| Gâche renforcée (anti-arrachement) | 15-35€ | 1 par porte d'entrée |
+| Entretien-bois (huile, cire, lubrifiant) | 5-15€ | Fenêtres bois, charnières |
+| Ruban d'étanchéité adhésif (rouleau 25m) | 5-12€ | Pare-vapeur intérieur fenêtre |
+
+---
+
+## 22. OUTILLAGE MENUISIER / SERRURIER
+
+### Outillage menuisier
+| Outil | Usage | Prix |
+|-------|-------|------|
+| Visseuse sans fil 18V | Vissage fenêtres, portes, plinthes | 80-250€ |
+| Perforateur SDS+ | Percement béton/parpaing pour fixation | 150-400€ |
+| Scie sauteuse | Découpe bois, PVC | 50-150€ |
+| Scie circulaire | Découpe panneaux, plinthes | 80-250€ |
+| Défonceuse | Assemblages, feuillures | 80-250€ |
+| Rabot électrique | Ajustement portes, bois | 50-150€ |
+| Ponceuse orbitale | Finition bois | 30-80€ |
+| Niveau laser lignes croisées | Alignement fenêtres, portes | 40-150€ |
+| Mètre laser | Prise de cotes | 30-80€ |
+| Cale de vitrage (jeu) | Calage vitrages dans cadres | 5-15€ |
+| Ventouses pour vitrage | Manipulation grands vitrages | 20-60€ |
+| Pistolet à silicone | Application joints | 10-25€ |
+| Pistolet à mousse PU | Calfeutrement | 15-35€ |
+
+### Outillage serrurier
+| Outil | Usage | Prix |
+|-------|-------|------|
+| Kit de crochetage (usage pro, légal) | Ouverture porte sans dégât | 50-200€ |
+| Radio d'ouverture (lame souple) | Ouverture porte claquée | 10-30€ |
+| Extracteur de cylindre cassé | Retrait cylindre brisé | 15-40€ |
+| Perceuse à colonne portative | Percement cylindre (ouverture destructive) | 40-100€ |
+| Jeu de clés Allen | Réglage serrures | 5-15€ |
+| Gabarit de pose serrure | Marquage précis des encastrements | 15-40€ |
+| Mortaiseuse portative | Encastrement serrure dans porte | 150-400€ |
+
+---
+
+## 23. ASSURANCES ET GARANTIES
+
+| Garantie | Durée | Ce qu'elle couvre |
+|----------|-------|------------------|
+| Garantie de parfait achèvement | 1 an | Tous défauts signalés (réglage, étanchéité, quincaillerie) |
+| Garantie biennale | 2 ans | Serrures, poignées, motorisations, stores (équipements dissociables) |
+| **Garantie décennale** | **10 ans** | Infiltration eau, défaut étanchéité, ruine de l'ouvrage |
+| RC Pro | Permanente | Dommages aux tiers |
+| Garantie fabricant menuiseries | 10-30 ans | Selon fabricant : profils, vitrages, quincaillerie |
+
+**Cas typiques couverts par la décennale menuiserie :**
+- Infiltration d'eau par défaut de pose (joint absent, mauvais calfeutrement)
+- Fenêtre qui ne ferme plus (déformation structure, mauvais calage)
+- Porte d'entrée qui ne résiste pas aux intempéries (pourrissement cadre)
+- Vitrage qui se désolidarise du cadre
+- Escalier instable (fixation insuffisante)
+
+**Cas NON couverts :**
+- Usure normale des joints (à remplacer tous les 10-15 ans)
+- Panne de motorisation volet (garantie biennale, pas décennale)
+- Vitre cassée par un choc
+- Serrure bloquée par manque d'entretien
+
+---
+
+## 24. TEMPS DE TRAVAIL RÉALISTE
+
+| Intervention | Durée (1 poseur) | Note |
+|-------------|-----------------|------|
+| Pose fenêtre (dépose totale + repose) | 2-4h | Variable selon rénovation/neuf |
+| Pose fenêtre (en rénovation, sur dormant) | 1-2h | Plus rapide |
+| Pose porte d'entrée | 3-5h | Serrure + réglage + finition |
+| Pose porte intérieure (bloc-porte) | 1-2h | Dans huisserie existante |
+| Pose porte intérieure (avec création ouverture) | 4-8h | Découpe + linteau + pose |
+| Pose baie vitrée coulissante | 3-5h | 2 poseurs souvent |
+| Pose velux (fenêtre de toit) | 3-5h | Chevêtre + raccord étanchéité |
+| Pose volet roulant motorisé | 1-3h | Avec câblage électrique |
+| Pose porte de garage sectionnelle | 3-5h | 2 poseurs |
+| Pose escalier bois (droit) | 1-2 jours | Préfabriqué |
+| Pose escalier bois (tournant) | 2-3 jours | Préfabriqué |
+| Remplacement serrure 3 points | 1-2h | |
+| Ouverture porte claquée | 15-45 min | Sans destruction |
+| Blindage porte existante | 3-5h | Tôle + serrure + huisserie |
+| Pose placard sur mesure (2m linéaire) | 1-2 jours | Structure + portes + aménagement |
+
+---
+
+## 25. RÈGLES IA PRICING — CERVEAU STRUCTORAI
+
+### Règle 1 — Toujours donner des FOURCHETTES
+Le cerveau ne donne JAMAIS un prix unique. Toujours min-max.
+
+### Règle 2 — Appliquer le coefficient régional
+Prix affiché = prix référentiel × coefficient zone du chantier. Attention : serrurerie ≠ menuiserie (coefficients différents).
+
+### Règle 3 — Déférer aux prix de l'artisan (Mem0)
+Si l'artisan a ses propres prix → utiliser SES prix. Sinon → prix référentiel.
+
+### Règle 4 — Alerter sur les prix anormaux
+Si prix < 70% du référentiel → alerte. Si > 150% → alerte. Exception : serrurerie urgence nuit = prix ×2-3 est normal.
+
+### Règle 5 — Toujours vérifier les performances thermiques
+```
+SI construction neuve → Uw ≤ 1.3 W/m².K OBLIGATOIRE (RE2020)
+SI rénovation avec aides (MaPrimeRénov') → Uw ≤ 1.3 W/m².K recommandé
+SI remplacement simple vitrage → double vitrage minimum
+SI zone froide/montagne → triple vitrage nord + double vitrage autres
+SI zone bruyante → vitrage acoustique feuilleté
+```
+
+### Règle 6 — Ne JAMAIS oublier dans un devis menuiserie
+- [ ] Type de pose (applique, tunnel, feuillure, dépose totale) — change le prix de 50-100%
+- [ ] Reprise maçonnerie / plâtrerie après pose (+80-200€/fenêtre)
+- [ ] Joint d'étanchéité périphérique (mousse + silicone)
+- [ ] Appui de fenêtre et rejingot (si pas existant)
+- [ ] Raccord d'étanchéité (velux : adapté tuile/ardoise)
+- [ ] Alimentation électrique volets motorisés (coordination électricien)
+- [ ] Habillage tableau intérieur (coordination plaquiste)
+- [ ] Évacuation ancienne menuiserie (benne ou enlèvement)
+- [ ] TVA correcte : 10% rénovation, 20% neuf, **5.5% si amélioration énergétique** (fenêtres performantes + artisan RGE)
+
+### Règle 7 — Ne JAMAIS oublier dans un devis serrurerie
+- [ ] Nombre de points de fermeture (3, 5 ou 7 points)
+- [ ] Certification A2P du cylindre (★, ★★, ★★★) — exigée par certaines assurances
+- [ ] Cornières anti-pinces (si blindage)
+- [ ] Protège-cylindre (rosace blindée)
+- [ ] Nombre de clés fournis (3 standard, + clés supplémentaires = 20-80€/clé)
+- [ ] Carte de propriété pour clé non reproductible
+
+### Règle 8 — Forfaits minimum
+```
+Menuiserie :
+  Intervention < 2h → forfait minimum 150-250€
+  Déplacement > 30km → 30-60€
+  
+Serrurerie :
+  Ouverture porte (heures ouvrables) → 80-250€
+  Ouverture porte (nuit/WE/férié) → 150-400€
+  Déplacement → 30-80€ (inclus souvent dans le forfait)
+```
+
+### Règle 9 — Urgence et majorations
+| Situation | Majoration |
+|-----------|-----------|
+| Serrurerie urgence nuit (20h-8h) | ×2 à ×3 |
+| Serrurerie urgence WE | ×1.5 à ×2 |
+| Serrurerie urgence jour férié | ×2 à ×3 |
+| Menuiserie urgence (vitre cassée, porte forcée) | +30-50% |
+| Pose en hauteur (échafaudage, nacelle) | +15-25% |
+| Accès difficile (centre-ville, impasse) | +10-20% |
+
+---
+
+## 26. DEVIS TYPES — EXEMPLES CHIFFRÉS
+
+### Devis type 1 : Remplacement 5 fenêtres PVC double vitrage (rénovation, dépose totale)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Fourniture fenêtre PVC oscillo-battante 120×125cm, Uw 1.2, double vitrage argon | 4 u | 380€ | 1 520€ |
+| Fourniture fenêtre PVC fixe 60×95cm (WC) | 1 u | 200€ | 200€ |
+| Dépose totale ancienne fenêtre bois | 5 u | 50€ | 250€ |
+| Pose en tunnel (mur épais) | 4 u | 280€ | 1 120€ |
+| Pose en tunnel (petite fenêtre) | 1 u | 200€ | 200€ |
+| Mousse PU + joint compriband + silicone (5 fenêtres) | forfait | 60€ | 60€ |
+| Reprise plâtrerie / habillage tableau intérieur | 5 u | 120€ | 600€ |
+| Évacuation anciennes menuiseries | forfait | 100€ | 100€ |
+| **TOTAL HT** | | | **4 050€** |
+| TVA 5.5% (amélioration énergétique, artisan RGE) | | | 222,75€ |
+| **TOTAL TTC** | | | **4 272,75€** |
+
+### Devis type 2 : Blindage porte d'entrée existante + serrure 5 points A2P**
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Fourniture tôle de blindage acier (porte standard) | 1 | 400€ | 400€ |
+| Fourniture serrure encastrée 5 points A2P** | 1 | 400€ | 400€ |
+| Fourniture cylindre A2P** (3 clés + carte) | 1 | 150€ | 150€ |
+| Fourniture cornières anti-pinces (3 côtés) | 1 jeu | 180€ | 180€ |
+| Fourniture protège-cylindre (rosace blindée) | 1 | 50€ | 50€ |
+| Pose blindage + serrure + cornières | forfait | 350€ | 350€ |
+| Réglage + essais | forfait | 50€ | 50€ |
+| **TOTAL HT** | | | **1 580€** |
+| TVA 10% (rénovation logement > 2 ans) | | | 158€ |
+| **TOTAL TTC** | | | **1 738€** |
+
+### Devis type 3 : Pose baie vitrée coulissante alu + volet roulant motorisé
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Fourniture baie vitrée alu coulissante 2 vantaux 215×240cm, Uw 1.4, double vitrage argon | 1 | 1 600€ | 1 600€ |
+| Fourniture volet roulant alu motorisé (Somfy io) | 1 | 550€ | 550€ |
+| Dépose ancienne porte-fenêtre | 1 | 80€ | 80€ |
+| Pose baie vitrée (2 poseurs) | 1 | 450€ | 450€ |
+| Pose volet roulant + raccordement électrique | 1 | 180€ | 180€ |
+| Seuil PMR alu | 1 | 40€ | 40€ |
+| Joint mousse + silicone + finition | forfait | 40€ | 40€ |
+| Reprise plâtrerie tableau intérieur | forfait | 150€ | 150€ |
+| Évacuation ancien menuiserie | forfait | 50€ | 50€ |
+| **TOTAL HT** | | | **3 140€** |
+| TVA 5.5% (si amélioration énergétique + RGE) | | | 172,70€ |
+| **TOTAL TTC** | | | **3 312,70€** |
+
+---
+
+> **Note pour le cerveau IA :** Ce référentiel couvre l'intégralité des métiers menuisier + serrurier :
+> 1. Fenêtres (4 matériaux × 6 types ouverture + portes-fenêtres + baies + velux) avec prix et performances
+> 2. Vitrages (6 types) avec prix et usage
+> 3. Volets (10 types) avec prix + réparations
+> 4. Portes extérieures (7 types entrée + 6 types garage) avec prix
+> 5. Portes intérieures (9 types) avec prix
+> 6. Escaliers (11 types) avec prix
+> 7. Agencement bois (6 interventions) avec prix
+> 8. Serrurerie complète (11 serrures + 4 blindages + 8 dépannages + 4 ferronnerie) avec prix
+> 9. Types de pose (5 fenêtres + 5 portes) avec prix MO
+> 10. Taux horaires menuisier + serrurier + coefficients régionaux (9 zones, distincts menuiserie/serrurerie)
+> 11. Aides financières fenêtres (MaPrimeRénov', CEE, TVA 5.5%, éco-PTZ)
+> 12. Marques et fournisseurs
+> 13. 12 erreurs courantes terrain
+> 14. Performances thermiques RE2020 (Uw, Sw, TLw, seuils, choix vitrage par orientation)
+> 15. Accessibilité PMR (largeurs portes, seuils, garde-corps)
+> 16. Consommables et quincaillerie détaillés (18 fournitures avec prix)
+> 17. Outillage menuisier + serrurier (20 outils avec prix)
+> 18. Assurances et garanties (décennale, biennale, garantie fabricant)
+> 19. Temps de travail réaliste par intervention (15 postes)
+> 20. Règles IA pricing (9 règles impératives, spécifiques menuiserie ET serrurerie)
+> 21. Devis types chiffrés (5 fenêtres PVC, blindage porte, baie vitrée alu + VR motorisé)
