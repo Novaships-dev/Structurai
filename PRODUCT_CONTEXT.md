@@ -673,8 +673,9 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │                                                                  │
 │  Règles Supervisor :                                            │
 │  - MAX_ROUNDS = 50 par tâche (prevent runaway)                  │
-│  - Budget par agent : Devis 40%, Relance 15%, Compta 15%,      │
-│    Planning 10%, Réputation 10%, Prospection 10%                │
+│  - Budget par agent : Devis 30%, Relance 10%, Compta 10%,      │
+│    Planning 8%, Réputation 8%, Prospection 8%,                  │
+│    Fiscalité 8%, Déplacements 8%, RH 10%                       │
 │  - Background consciousness : 1 cycle/heure, $0.07/pensée      │
 │  - Multi-model review sur les décisions critiques (devis > 5K€)│
 └───────────────────────────┬─────────────────────────────────────┘
