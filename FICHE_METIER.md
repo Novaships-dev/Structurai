@@ -795,7 +795,46 @@ Mots-clés SEO à intégrer dans les réponses aux avis :
 
 ---
 
-## 7. GAMIFICATION & ONBOARDING
+## 7. DONNÉES FISCALITÉ & GESTION D'ENTREPRISE
+
+### Fichiers data fiscalité
+
+| Fichier | Contenu | Priorité |
+|---------|---------|----------|
+| data/fiscalite/micro_entreprise.json | Seuils CA 2026 (203 100€/83 600€), taux cotisations (12.3%/21.2%), franchise TVA, ACRE 50%→25%, versement libératoire, CFP, TFCC | Sprint 6 |
+| data/fiscalite/eurl.json | Charges déductibles, cotisations TNS (~45% bénéfice), IS 15%/25%, TVA collectée/déductible, bilan annuel | Sprint 6 |
+| data/fiscalite/sas_sasu.json | Président assimilé salarié, cotisations ~65% salaire brut, dividendes flat tax 30%, AG | Sprint 6 |
+| data/fiscalite/ei.json | Régime réel simplifié/normal, charges déductibles, cotisations TNS | Sprint 6 |
+| data/fiscalite/calendrier_fiscal.json | Toutes les échéances par statut : URSSAF (mensuel/trimestriel), TVA, CFE, IS, bilan, déclaration revenus | Sprint 6 |
+| data/fiscalite/tva_regimes.json | Franchise base, réel simplifié, réel normal, seuils, taux, conditions | Sprint 6 |
+
+### Fichiers data RH / conventions collectives BTP
+
+| Fichier | Contenu | Priorité |
+|---------|---------|----------|
+| data/rh/conventions_btp.json | 6 IDCC (1596, 1597, 2609, 2420, 1702, 2614), champ d'application, classifications | Sprint 7 |
+| data/rh/grilles_salaires_btp_2026.json | Grilles salariales ouvriers (N1P1→N4P2, coefficients 150→270) par région | Sprint 7 |
+| data/rh/indemnites_btp_2026.json | Barèmes indemnités trajet, transport, panier repas par zone (1A→5) et par région | Sprint 7 |
+| data/rh/cotisations_specifiques_btp.json | CIBTP (20.70%), OPPBTP (0.11%), PRO BTP (prévoyance), CCCA-BTP, DFS (7% en 2026) | Sprint 7 |
+| data/rh/conges_btp.json | Période référence (1er avril → 31 mars), prime vacances 30%, congés intempéries | Sprint 7 |
+
+### Fichiers data déplacements
+
+| Fichier | Contenu | Priorité |
+|---------|---------|----------|
+| data/deplacements/bareme_kilometrique_2026.json | Barème fiscal km par puissance CV (3CV→7CV+), seuils km | Sprint 6 |
+| data/deplacements/zones_btp.json | 5 zones concentriques (0-5km → 40-50km), plafonds URSSAF exonération | Sprint 6 |
+| data/deplacements/paniers_repas_regions.json | Montant panier repas par région BTP (10.50€ Normandie → 14€ Occitanie) | Sprint 6 |
+
+### Fichiers data réseaux sociaux
+
+| Fichier | Contenu | Priorité |
+|---------|---------|----------|
+| data/social/templates_publications.json | Templates de texte pour publications avant/après par réseau (Facebook, Instagram, Google Business) avec hashtags métier | Sprint 7 |
+
+---
+
+## 8. GAMIFICATION & ONBOARDING
 
 ### data/gamification/quests.json
 Les 7 quêtes d'onboarding avec XP et conditions de complétion
@@ -808,7 +847,7 @@ Les 5 niveaux avec seuils XP
 
 ---
 
-## 8. I18N — TERMES MÉTIER PAR LANGUE
+## 9. I18N — TERMES MÉTIER PAR LANGUE
 
 ### data/i18n/metier_terms.json
 Termes métier BTP traduits dans les 6 langues (FR, EN, TR, ES, PT, AR) :
@@ -829,9 +868,13 @@ Termes métier BTP traduits dans les 6 langues (FR, EN, TR, ES, PT, AR) :
 | Comptabilité (catégories + fournisseurs) | 2 | 🟡 HAUTE (sans ça, OCR mal classé) |
 | Prospection (contacts + relances) | 2 | 🟢 MOYENNE |
 | Réputation (avis + SEO) | 2 | 🟢 MOYENNE |
+| Fiscalité (statuts, calendrier, TVA) | 6 | 🟡 HAUTE (sans ça, alertes fiscales impossibles) |
+| RH / conventions BTP (grilles, indemnités, cotisations) | 5 | 🟡 HAUTE (sans ça, calculs paie faux) |
+| Déplacements (barème km, zones, paniers) | 3 | 🟡 HAUTE (sans ça, frais non suivis) |
+| Réseaux sociaux (templates publications) | 1 | 🟢 MOYENNE |
 | Gamification | 3 | 🟢 MOYENNE |
 | i18n termes métier | 1 | 🟢 MOYENNE |
-| **TOTAL** | **~48 fichiers** | |
+| **TOTAL** | **~63 fichiers** | |
 
 **Les 18 fichiers 🔴 CRITIQUES doivent être prêts AVANT le Sprint 3 (Agent Devis).**
 Les autres peuvent être ajoutés progressivement.
