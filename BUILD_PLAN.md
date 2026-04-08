@@ -121,7 +121,7 @@ structorai/
 │   ├── ARCH.md                            # Architecture technique détaillée
 │   ├── API.md                             # Tous les endpoints REST
 │   ├── CONVENTIONS.md                     # Naming, patterns, règles de code
-│   ├── AGENTS.md                          # Architecture des 6 agents IA + Supervisor
+│   ├── AGENTS.md                          # Architecture des 9 agents IA + Supervisor
 │   ├── METIER.md                          # Constitution BTP — règles immuables (TVA, mentions, Factur-X)
 │   ├── MEMORY.md                          # Architecture mémoire Mem0 — niveaux, recall, enrichissement
 │   ├── VOICE.md                           # Pipeline vocal — STT, TTS, latence, langues
@@ -154,6 +154,9 @@ structorai/
 │   ├── SKILL-WHATSAPP.md                  # WhatsApp Business API — webhook, envoi, templates
 │   ├── SKILL-OCR.md                       # Claude Vision pour scan tickets + fallback Tesseract
 │   ├── SKILL-PHOTOS.md                    # Galerie photo chantier — upload, analyse Claude Vision, avant/après, export PDF/social
+│   ├── SKILL-FISCALITE.md                 # Agent Fiscalité — statuts juridiques, calendrier fiscal, URSSAF, TVA, suivi annuel
+│   ├── SKILL-DEPLACEMENTS.md              # Agent Déplacements — GPS, barème km, zones BTP, indemnités, paniers repas
+│   ├── SKILL-RH.md                        # Agent RH — conventions BTP (6 IDCC), grilles salaires, CIBTP, heures sup, export paie
 │   ├── SKILL-PDF.md                       # Génération PDF devis/factures — ReportLab + Factur-X
 │   ├── SKILL-DEVIS.md                     # Agent Devis — vocal→postes→prix→TVA→PDF→envoi
 │   ├── SKILL-RELANCE.md                   # Agent Relance — séquences, ton adaptatif, escalade
@@ -234,7 +237,7 @@ structorai/
 │       │   ├── web_search_service.py      # Recherche web fallback + auto-enrichissement
 │       │   └── i18n_service.py            # Détection langue, traduction, localization
 │       │
-│       ├── agents/                        # Les 6 agents IA + Supervisor (pattern Ouroboros)
+│       ├── agents/                        # Les 9 agents IA + Supervisor (pattern Ouroboros)
 │       │   ├── __init__.py
 │       │   ├── supervisor.py              # Orchestrateur — queue, workers, budget, consciousness
 │       │   ├── consciousness.py           # Background consciousness — pense entre les tâches
@@ -253,7 +256,10 @@ structorai/
 │       │   ├── agent_compta.py            # Agent Compta
 │       │   ├── agent_planning.py          # Agent Planning
 │       │   ├── agent_reputation.py        # Agent Réputation
-│       │   └── agent_prospection.py       # Agent Prospection
+│       │   ├── agent_prospection.py       # Agent Prospection
+│       │   ├── agent_fiscalite.py         # Agent Fiscalité — suivi fiscal annuel, rappels URSSAF/TVA, alertes seuils, scan courrier admin
+│       │   ├── agent_deplacements.py      # Agent Déplacements — GPS, frais km, paniers, indemnités BTP zones, export frais
+│       │   └── agent_rh.py               # Agent RH — pointage heures, heures sup, indemnités employés, congés CIBTP, export paie
 │       │
 │       ├── prompts/                       # System prompts séparés du code (pattern Ouroboros prompts/)
 │       │   ├── __init__.py
@@ -265,6 +271,9 @@ structorai/
 │       │   ├── planning_prompt.py         # System prompt Agent Planning (timer, capacité)
 │       │   ├── reputation_prompt.py       # System prompt Agent Réputation (avis, SEO)
 │       │   ├── prospection_prompt.py      # System prompt Agent Prospection (CRM, relance archi)
+│       │   ├── fiscalite_prompt.py        # System prompt Agent Fiscalité (statuts micro/EURL/SAS, URSSAF, TVA, calendrier fiscal)
+│       │   ├── deplacements_prompt.py     # System prompt Agent Déplacements (barème km, zones BTP, paniers, GPS)
+│       │   ├── rh_prompt.py              # System prompt Agent RH (conventions collectives BTP, grilles, CIBTP, heures sup)
 │       │   └── metier_context.py          # Injecteur du contexte METIER.md + health invariants dans chaque prompt
 │       │
 │       ├── memory/                        # Couche mémoire (Mem0)
@@ -334,6 +343,9 @@ structorai/
 │   │   │   ├── avis.tsx                   # Avis Google — liste, score, réponses
 │   │   │   ├── stats.tsx                  # Dashboard stats — CA, marge, temps, taux conversion
 │   │   │   ├── chat.tsx                   # Chat plein écran avec le cerveau IA
+│   │   │   ├── rh.tsx                     # Gestion employés — planning, heures, export paie
+│   │   │   ├── fiscal.tsx                 # Tableau de bord fiscal annuel
+│   │   │   ├── todo.tsx                   # File d'attente "À faire" — toutes les validations
 │   │   │   └── settings.tsx               # Profil, langue, voix H/F, plan, entreprise
 │   │   └── onboarding/
 │   │       ├── _layout.tsx
@@ -370,6 +382,16 @@ structorai/
 │   │   │   ├── PhotoGrid.tsx              # Grille photos du chantier (avant/pendant/après)
 │   │   │   ├── BeforeAfterCompare.tsx     # Comparatif avant/après split screen
 │   │   │   └── PhotoExport.tsx            # Export avant/après pour réseaux sociaux / devis PDF
+│   │   ├── rh/
+│   │   │   ├── EmployeeCard.tsx           # Carte employé — nom, classification, chantier affecté
+│   │   │   ├── TeamPlanning.tsx           # Vue planning équipe — qui est où, quel jour
+│   │   │   └── PayrollExport.tsx          # Export éléments de paie mensuel
+│   │   ├── fiscal/
+│   │   │   └── FiscalDashboard.tsx        # Tableau de bord fiscal annuel — CA, TVA, cotisations, résultat
+│   │   ├── deplacements/
+│   │   │   └── DeplacementTracker.tsx     # Suivi GPS + frais km + indemnités
+│   │   ├── todo/
+│   │   │   └── TodoQueue.tsx             # Dossier "À faire" — toutes actions en attente de validation
 │   │   ├── gamification/
 │   │   │   ├── LevelBadge.tsx             # Badge niveau (Apprenti→Légende)
 │   │   │   ├── QuestCard.tsx              # Carte quête d'onboarding
@@ -441,7 +463,11 @@ structorai/
 │       ├── 022_create_metier_rules.sql
 │       ├── 023_create_helper_functions.sql
 │       ├── 024_create_rls_policies.sql
-│       └── 025_seed_metier_rules.sql      # TVA, mentions obligatoires, templates devis
+│       ├── 025_seed_metier_rules.sql      # TVA, mentions obligatoires, templates devis
+│       ├── 026_create_deplacements.sql     # Déplacements — chantier_id, employe_id, km, zone BTP, indemnités, panier
+│       ├── 027_create_employes.sql         # Employés — nom, classification BTP, coefficient, compétences, disponibilité
+│       ├── 028_create_fiscal_calendar.sql  # Échéances fiscales par statut — URSSAF, TVA, CFE, IS, bilan
+│       └── 029_create_deplacements_frais.sql # Frais déplacements détaillés — carburant, parking, péages, amendes par chantier
 │
 ├── data/                                  # Données seed BTP
 │   ├── tva_rules.json                     # Règles TVA BTP (5.5%, 10%, 20%)
@@ -455,6 +481,17 @@ structorai/
 │   │   ├── carrelage_sdb.json
 │   │   ├── maconnerie_mur.json
 │   │   └── menuiserie_fenetre.json
+│   ├── fiscalite/
+│   │   ├── micro_entreprise.json          # Seuils, taux cotisations, franchise TVA, ACRE 2026
+│   │   ├── eurl.json                      # Charges déductibles, cotisations TNS, IS/IR, bilan
+│   │   ├── sas_sasu.json                 # Assimilé salarié, cotisations, dividendes, flat tax
+│   │   └── calendrier_fiscal.json         # Toutes les échéances par statut
+│   ├── rh/
+│   │   ├── conventions_btp.json           # 6 IDCC, grilles salariales, coefficients
+│   │   ├── indemnites_btp_2026.json       # Barèmes trajet, transport, panier par zone et par région
+│   │   └── cotisations_specifiques.json   # CIBTP 20.70%, OPPBTP 0.11%, PRO BTP, DFS 7%
+│   ├── deplacements/
+│   │   └── bareme_kilometrique_2026.json  # Barème fiscal km par puissance CV
 │   └── prix_marche/                       # Prix moyens par région
 │       ├── ile_de_france.json
 │       ├── paca.json
@@ -639,25 +676,35 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Mobile : Indicateur impayés
 - [ ] Test : devis accepté → facture auto → pas payée J+15 → relance email
 
-### Sprint 6 — Réputation + Prospection + Email (~2 jours)
+### Sprint 6 — Réputation + Prospection + Email + Fiscalité + Déplacements (~3 jours)
 - [ ] Backend : Agent Réputation (SMS avis Google + réponse IA)
 - [ ] Backend : Agent Prospection (CRM pro + rappels architectes)
 - [ ] Backend : Module email (IMAP polling + catégorisation)
 - [ ] Backend : Background consciousness (loop pensée proactive)
+- [ ] Backend : Agent Fiscalité (suivi annuel, calendrier fiscal, alertes seuils, scan courrier admin)
+- [ ] Backend : Agent Déplacements (GPS, calcul frais km, indemnités BTP, paniers)
+- [ ] Data : Seed fiscalité (micro/EURL/SAS/EI) + calendrier fiscal + barèmes km
 - [ ] Mobile : Écran avis Google
 - [ ] Mobile : Écran contacts pro
 - [ ] Mobile : Résumé emails
+- [ ] Mobile : Écran fiscal (tableau de bord annuel)
+- [ ] Mobile : DeplacementTracker (GPS + frais)
+- [ ] Mobile : TodoQueue (dossier "À faire" centralisé)
 - [ ] Test : chantier terminé → SMS avis → avis reçu → réponse IA
 
-### Sprint 7 — Gamification + Polish (~2 jours)
+### Sprint 7 — Gamification + RH + Polish (~3 jours)
 - [ ] Backend : Gamification service (XP, niveaux, quêtes, badges)
 - [ ] Backend : Score de contexte par devis (⭐ à ⭐⭐⭐⭐⭐)
 - [ ] Backend : "Mon assistant me connaît à X%"
 - [ ] Backend : Auto-enrichissement (web → base, corrections → apprentissage)
+- [ ] Backend : Agent RH (pointage heures, conventions BTP, indemnités employés, export paie)
+- [ ] Data : Seed conventions collectives BTP + grilles salariales + indemnités zones
 - [ ] Mobile : Onboarding flow (7 quêtes)
 - [ ] Mobile : Profil avec badges, niveau, XP
 - [ ] Mobile : BrainProgress component
 - [ ] Mobile : Micro-apprentissages vocaux
+- [ ] Mobile : Écran RH (planning équipe, heures, export paie)
+- [ ] Test : pointage employé → heures sup calculées → indemnités calculées → export paie généré
 
 ### Sprint 8 — Build + Deploy + Launch (~2 jours)
 - [ ] EAS Build Android → Google Play Store (beta)
@@ -677,14 +724,14 @@ MEM0_API_KEY=xxx              # ou self-hosted
 
 | Métrique | Valeur |
 |----------|--------|
-| Fichiers backend Python | ~80 (inclut agents/, prompts/, memory/, knowledge/) |
-| Fichiers mobile TypeScript | ~80 |
-| Migrations SQL | 25 |
+| Fichiers backend Python | ~90 (+3 agents, +3 prompts, +3 services) |
+| Fichiers mobile TypeScript | ~90 (+8 composants, +3 écrans) |
+| Migrations SQL | 29 (au lieu de 25, +4 nouvelles) |
 | Docs .md | 22 |
-| Skills .md | 31 |
-| Fichiers data JSON | ~20 |
+| Skills .md | 34 (au lieu de 31, +3 nouvelles) |
+| Fichiers data JSON | ~30 (au lieu de ~20, +10 nouvelles) |
 | Fichiers i18n | 6 |
-| **Total fichiers** | **~270** |
+| **Total fichiers** | **~300** |
 | **Durée estimée** | **~18-20 jours de build** |
 
 Pour référence : AgentShield = 355 fichiers en 32h. STRUCTORAI est plus complexe (agents IA, vocal, mobile, 6 langues) mais le pattern est rodé.
@@ -693,7 +740,7 @@ Pour référence : AgentShield = 355 fichiers en 32h. STRUCTORAI est plus comple
 
 | Pattern | Source | Fichier STRUCTORAI | Pourquoi |
 |---------|--------|-------------------|----------|
-| Supervisor + workers + queue | Ouroboros `supervisor/` | `agents/supervisor.py`, `queue.py`, `workers.py` | Orchestration des 6 agents |
+| Supervisor + workers + queue | Ouroboros `supervisor/` | `agents/supervisor.py`, `queue.py`, `workers.py` | Orchestration des 9 agents |
 | Background consciousness loop | Ouroboros `consciousness.py` | `agents/consciousness.py` | Proactivité — le cerveau pense entre les tâches |
 | BIBLE.md constitution | Ouroboros `BIBLE.md` | `docs/METIER.md` | Règles BTP immuables (TVA, mentions, Factur-X) |
 | Circuit breaker + fallback chain | Ouroboros v6.0 | `agents/circuit_breaker.py` | 3 réponses vides → pause + fallback model |
