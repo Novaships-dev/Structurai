@@ -70,7 +70,7 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 │  COUCHE 1 — LLM Spécialisé BTP             │
 │  System prompt métier · RAG base BTP        │
 │  TVA · Mentions légales · Prix marché       │
-│  8 référentiels techniques (7000+ lignes)   │
+│  8 référentiels techniques (6600+ lignes)   │
 └─────────────────────────────────────────────┘
 ```
 
@@ -97,39 +97,40 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 
 ```
 structorai/
-├── PRODUCT_CONTEXT.md          # Source de vérité produit (845 lignes)
-├── BUILD_PLAN.md               # Blueprint build — 300 fichiers, 8 sprints (692 lignes)
+├── PRODUCT_CONTEXT.md          # Source de vérité produit (987 lignes)
+├── BUILD_PLAN.md               # Blueprint build — 300 fichiers, 8 sprints (755 lignes)
 ├── FEATURES.md                 # Liste exhaustive des 93 features V2 (546 lignes)
-├── FICHE_METIER.md             # Inventaire 48 fichiers data métier (844 lignes)
+├── FICHE_METIER.md             # Inventaire 63 fichiers data métier (887 lignes)
+├── CLAUDE.md                   # Instructions Claude Code — la loi du repo
 ├── README.md                   # Ce fichier
 │
 ├── PLOMBERIE/                  # Référentiel technique plomberie (1021 lignes)
 ├── ELECTRICITE/                # Référentiel technique électricité (960 lignes)
-├── CARRELAGE/                  # Référentiel technique carrelage (573 lignes)
-├── PEINTURE/                   # Référentiel technique peinture (465 lignes)
-├── MACONNERIE/                 # Référentiel technique maçonnerie (488 lignes)
-├── MENUISERIE_SERRURERIE/      # Référentiel technique menuiserie & serrurerie (426 lignes)
-├── PLAQUISTE/                  # Référentiel technique plâtrier-plaquiste (401 lignes)
-└── FACADE/                     # Référentiel technique façadier (375 lignes)
+├── CARRELAGE/                  # Référentiel technique carrelage (930 lignes)
+├── MACONNERIE/                 # Référentiel technique maçonnerie (857 lignes)
+├── PEINTURE/                   # Référentiel technique peinture (791 lignes)
+├── MENUISERIE_SERRURERIE/      # Référentiel technique menuiserie & serrurerie (744 lignes)
+├── FACADE/                     # Référentiel technique façadier (699 lignes)
+└── PLAQUISTE/                  # Référentiel technique plâtrier-plaquiste (656 lignes)
 ```
 
 ### Référentiels Techniques — 8 Corps de Métier
 
-La base de connaissances BTP du cerveau IA. Chaque référentiel contient les matériaux avec prix, toutes les mises en oeuvre chiffrées, l'outillage, les DTU/normes, les erreurs terrain courantes, et la coordination entre corps de métier.
+La base de connaissances BTP du cerveau IA. Chaque référentiel contient : matériaux avec prix fournisseurs réels, toutes les mises en oeuvre chiffrées (fourchettes min-max), outillage, DTU/normes, erreurs terrain courantes, coefficients régionaux (9 zones de Paris au DOM-TOM), coordination inter-corps de métier, règles IA pricing (9 règles impératives par métier), assurances et garanties, temps de travail réaliste, consommables détaillés, et devis types chiffrés ligne par ligne.
 
-| Métier | Lignes | Postes chiffrés | Erreurs terrain |
-|--------|--------|----------------|-----------------|
-| Plomberie | 1021 | 100+ | 13 |
-| Électricité | 960 | 120+ | 13 |
-| Carrelage | 573 | 80+ | 14 |
-| Peinture | 465 | 100+ | 12 |
-| Maçonnerie | 488 | 150+ | 12 |
-| Menuiserie & Serrurerie | 426 | 200+ | 12 |
-| Plaquiste | 401 | 100+ | 10 |
-| Façadier | 375 | 100+ | 10 |
-| **Total** | **4709** | **950+** | **96** |
+| Métier | Lignes | Sections | Postes chiffrés | Erreurs terrain | Devis types |
+|--------|--------|----------|----------------|-----------------|-------------|
+| Plomberie | 1021 | 12 | 100+ | 13 | ✅ |
+| Électricité | 960 | 24 | 120+ | 13 | ✅ |
+| Carrelage | 930 | 26 | 80+ | 14 | 2 devis |
+| Maçonnerie | 857 | 30 | 150+ | 12 | 3 devis |
+| Peinture | 791 | 18 | 100+ | 12 | 3 devis |
+| Menuiserie & Serrurerie | 744 | 26 | 200+ | 12 | 3 devis |
+| Façadier | 699 | 25 | 60+ | 10 | 3 devis |
+| Plaquiste | 656 | 24 | 60+ | 10 | 3 devis |
+| **Total** | **6658** | **185** | **870+** | **96** | **20+** |
 
-> **Total référentiels (dont FEATURES.md)** : ~5255 lignes de documentation produit + technique.
+> **Total documentation** : ~10 000+ lignes (référentiels techniques + PRODUCT_CONTEXT + BUILD_PLAN + FEATURES + FICHE_METIER + CLAUDE.md).
 
 ---
 
