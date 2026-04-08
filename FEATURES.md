@@ -404,7 +404,7 @@ Le cerveau devient un assistant RH qui prépare TOUT pour le comptable ou la pla
 | **Agent FISCALITÉ** (nouveau) | Gestion statut entreprise, rappels URSSAF/TVA/CFE, aide déclarations, alertes seuils, scan courriers administratifs, conseil optimisation | L'artisan est perdu avec la paperasse. C'est la feature F09 enrichie qui justifie un agent dédié. |
 | **Agent DÉPLACEMENTS** (nouveau) | GPS, calcul frais km, paniers repas, indemnités zones BTP, suivi carburant/parking/amendes, export frais | La feature F20 enrichie est assez complexe pour justifier un agent dédié. |
 
-**Total : 8 agents autonomes** (Devis, Relance, Compta, Planning, Réputation, Prospection, Fiscalité, Déplacements) + Supervisor
+**Total : 9 agents autonomes** (Devis, Relance, Compta, Planning, Réputation, Prospection, Fiscalité, Déplacements, RH) + Supervisor
 
 Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 
