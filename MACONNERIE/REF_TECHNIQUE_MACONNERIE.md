@@ -431,6 +431,38 @@ TVA : 10% rénovation (> 2 ans), 20% neuf, 5.5% si rénovation énergétique (is
 - Mortier bâtard : 150 kg ciment + 150 kg chaux/m³ (plus souple, pour pierre)
 - Béton de propreté : 150-200 kg ciment/m³
 
+### Dosages détaillés pour 1 m³ de béton (à la bétonnière)
+| Type | Ciment (kg) | Sable (L) | Gravier (L) | Eau (L) | Usage |
+|------|------------|----------|------------|---------|-------|
+| Béton de propreté | 150 | 400 | 800 | 75 | Fond de fouille, non structurel |
+| Béton fondation | 300 | 400 | 800 | 150 | Semelles, longrines |
+| Béton standard (C25/30) | 350 | 400 | 800 | 175 | Dalles, poteaux, linteaux |
+| Béton dosé à 400 | 400 | 400 | 800 | 200 | Ouvrage spécial, pilier |
+| Mortier de montage | 300-400 | 900 | 0 | 150 | Joints parpaings, briques |
+| Mortier bâtard | 150 ciment + 150 chaux | 900 | 0 | 160 | Pierre, bâti ancien |
+| Chape maigre | 300 | 900 | 0 | 150 | Ragréage épais |
+
+**Règle du 1-2-3 (béton à la bétonnière) :** 1 seau ciment + 2 seaux sable + 3 seaux gravier + 0.5 seau eau. Ajuster l'eau selon la consistance. Trop d'eau = béton faible.
+
+### Ferraillage par type d'ouvrage
+| Ouvrage | Armature minimum | Section minimum | Note |
+|---------|-----------------|----------------|------|
+| Semelle filante mur (non sismique) | 4 HA 8 en nappe basse | 1.6 cm² | Semelle S45 standard |
+| Semelle filante mur (zone sismique ≥3) | 4 HA 10 | 3.14 cm² | Renforcé sismique |
+| Chaînage horizontal | 4 HA 8 + cadres HA 6 tous les 20cm | 2 cm² | Ceinture à chaque niveau |
+| Chaînage vertical (poteau raidisseur) | 4 HA 10 + cadres HA 6 tous les 20cm | 3.14 cm² | Angles + tous les 3-4m |
+| Linteau béton (portée < 1.50m) | 2 HA 10 bas + 2 HA 8 haut | - | Coffrage + coulage |
+| Linteau béton (portée 1.50-2.50m) | 3 HA 12 bas + 2 HA 8 haut | - | Étude BET recommandée |
+| Dalle 12cm (maison) | Treillis ST25 (Ø7mm, mailles 150×150) | - | + chapeaux sur appuis |
+| Dalle 15cm (garage) | Treillis ST25C ou ST30 | - | Trafic véhicule |
+| Escalier béton | HA 10 tous les 15cm + répartition HA 8 tous les 25cm | - | Selon portée et charge |
+
+**Enrobage minimum des aciers :**
+- Intérieur (béton protégé) : 2.5 cm
+- Extérieur (béton exposé) : 3 cm
+- Fondation (béton en terre) : 4 cm minimum (5cm recommandé)
+- Milieu agressif (piscine, marin) : 5 cm
+
 ---
 
 ## 18. ENDUITS SUR MAÇONNERIE (par le maçon)
@@ -486,3 +518,340 @@ TVA : 10% rénovation (> 2 ans), 20% neuf, 5.5% si rénovation énergétique (is
 > 4. Taux horaires par zone
 > 5. DTU et normes (9 références)
 > 6. 12 erreurs courantes terrain
+
+---
+
+## 21. PROFONDEUR HORS GEL — CARTE FRANCE
+
+La profondeur des fondations doit être **au minimum** à la profondeur hors gel. Données DTU 13.12 + NF P 94-261 :
+
+### Zones climatiques
+| Zone | Profondeur hors gel mini | Régions | Départements typiques |
+|------|------------------------|---------|----------------------|
+| Zone 1 — Gel faible | 50 cm | Littoral atlantique, méditerranéen, vallées protégées | 13, 33, 34, 44, 56, 64, 66, 83, 2A, 2B |
+| Zone 2 — Gel modéré | 80 cm | Plaines intérieures, piémont | 01, 21, 25, 31, 38, 42, 45, 51, 54, 57, 67, 69, 75, 77, 78, 91, 92, 93, 94, 95 |
+| Zone 3 — Gel sévère | 100 cm minimum | Zones montagneuses | Alpes (73, 74, 05), Pyrénées (09, 65, 66 altitude), Jura (39), Massif Central (15, 43, 63 altitude), Vosges (88) |
+
+### Formule de calcul (DTU 13.12)
+```
+H = H0 + (A - 150) / 4000
+
+H  = profondeur hors gel finale (en mètres)
+H0 = valeur de base lue sur la carte (0.50, 0.80 ou 1.00 m)
+A  = altitude du chantier en mètres (si A > 150m, sinon H = H0)
+```
+
+**Exemple :** Chantier à 500m d'altitude en zone 1 (H0 = 0.50m) :
+H = 0.50 + (500 - 150) / 4000 = 0.50 + 0.0875 = **0.59m → arrondir à 60cm**
+
+**Règle IA :** Le cerveau demande TOUJOURS le département et l'altitude du chantier pour calculer la profondeur hors gel. Ne jamais proposer des fondations à 30cm ou 40cm, même pour un simple muret.
+
+---
+
+## 22. ZONES SISMIQUES FRANCE — IMPACT MAÇONNERIE
+
+| Zone | Niveau | Départements (exemples) | Impact sur les travaux |
+|------|--------|------------------------|----------------------|
+| 1 — Très faible | Pas d'exigence parasismique | La plupart du bassin parisien, Nord, Bretagne | Standard |
+| 2 — Faible | Règles simplifiées | Rhône-Alpes (plaine), Centre | Chaînages renforcés |
+| 3 — Modérée | Eurocode 8 obligatoire | Alpes, Pyrénées (piémont), Alsace, Provence | Ferraillage renforcé +10-15% coût |
+| 4 — Moyenne | Eurocode 8 renforcé | Nice, Lourdes, Annecy, Gap | Ferraillage spécial +15-25% coût |
+| 5 — Forte | Eurocode 8 maximal | Antilles (Guadeloupe, Martinique) | Parasismique complet +25-40% coût |
+
+**Exigences parasismiques (zone ≥ 3) :**
+- Chaînages horizontaux à chaque plancher + arase
+- Chaînages verticaux à chaque angle et tous les 5m
+- Semelles filantes avec armatures renforcées (4 HA 10 au lieu de 4 HA 8)
+- Liaison mur-plancher obligatoire
+- Acier B500B (au lieu de B500A)
+- Étude BET avec note de calcul sismique
+
+---
+
+## 23. COEFFICIENTS RÉGIONAUX — MAÇONNERIE
+
+| Zone | Coefficient | Exemples |
+|------|------------|---------|
+| Paris intra-muros | ×1.35 à ×1.50 | Paris — accès chantier difficile, stationnement, bennes |
+| Petite couronne IdF | ×1.20 à ×1.35 | 92, 93, 94 |
+| Grande couronne IdF | ×1.10 à ×1.20 | 77, 78, 91, 95 |
+| Lyon, Marseille, Bordeaux, Toulouse | ×1.05 à ×1.15 | Grandes métropoles |
+| Grandes villes | ×1.00 à ×1.10 | Nantes, Strasbourg, Montpellier, Nice, Lille |
+| Villes moyennes | ×0.95 à ×1.00 | Base du référentiel |
+| Zones rurales | ×0.85 à ×0.95 | Campagne |
+| DOM-TOM | ×1.40 à ×1.70 | Import matériaux + parasismique + transport |
+| Corse | ×1.15 à ×1.30 | Transport maritime matériaux |
+| Zone montagne (>800m) | ×1.10 à ×1.25 | Accès, conditions climat, fondations profondes |
+
+**Logique IA :** Le coefficient s'applique au chantier. En maçonnerie, la logistique (accès benne, toupie, grue) pèse beaucoup plus que dans d'autres métiers. Paris = surcoût très élevé à cause des contraintes d'accès.
+
+---
+
+## 24. TEMPS DE TRAVAIL RÉALISTE PAR POSTE
+
+### Rendement maçon qualifié (1 personne)
+| Poste | Rendement/jour | Note |
+|-------|---------------|------|
+| Montage mur parpaing 20cm | 3-5 m² | Incluant mortier, aplomb, niveaux |
+| Montage mur parpaing 10-15cm | 4-7 m² | Plus rapide (plus léger) |
+| Montage mur béton cellulaire | 5-8 m² | Collé (pas de mortier traditionnel) |
+| Montage mur brique | 2-4 m² | Beaucoup de manipulation |
+| Montage mur pierre | 1-2 m² | Très lent, tri des pierres |
+| Coulage dalle béton (préparation + coulage) | 15-25 m² | Avec bétonnière. Toupie = plus rapide. |
+| Terrassement manuel | 1-3 m³ | Pénible, lent |
+| Terrassement mini-pelle | 15-30 m³ | Avec opérateur |
+| Coffrage (fondation, poteau, escalier) | 3-6 m² | Très variable selon complexité |
+| Enduit ciment/chaux (3 couches) | 5-10 m² | Gobetis + corps + finition |
+| Ragréage | 20-40 m² | Relativement rapide |
+| Pose ferraillage fondation | 10-20 ml | Coupe + ligature + cales |
+
+### Équipes types
+| Chantier | Équipe type | Durée estimée |
+|----------|-------------|---------------|
+| Mur de clôture 20ml (h=1.80m) | 2 maçons | 5-8 jours |
+| Dalle terrasse 20m² | 2 maçons | 2-3 jours (hors séchage) |
+| Ouverture mur porteur (baie 2m) | 2 maçons + BET | 2-4 jours |
+| Extension 15m² (gros oeuvre) | 2-3 maçons | 15-25 jours |
+| Garage 20m² (gros oeuvre) | 2-3 maçons | 10-20 jours |
+| Piscine maçonnée 8×4m | 2-3 maçons | 15-25 jours |
+| Fondation maison 100m² | 3-4 maçons | 5-10 jours |
+
+**Temps de séchage incompressibles (hors temps de travail) :**
+| Élément | Temps de séchage | Note |
+|---------|-----------------|------|
+| Fondation béton (avant montage murs) | 7 jours minimum | Idéal 28 jours pour résistance max |
+| Dalle béton (avant revêtement) | 21-28 jours | 1 semaine/cm d'épaisseur environ |
+| Chape (avant carrelage) | 1-3 semaines | Selon épaisseur et type |
+| Enduit (entre couches) | 24-48h | Entre gobetis, corps et finition |
+| Mortier (avant charge mur) | 24h par rang | Monter max 1.20-1.50m/jour |
+| Mur (avant retrait étais) | 28 jours | Résistance béton chaînages |
+
+---
+
+## 25. CONSOMMABLES ET PETITES FOURNITURES — PRIX DÉTAILLÉS
+
+| Fourniture | Conditionnement | Prix | Consommation type |
+|-----------|----------------|------|-------------------|
+| Ciment (sac 35kg) | sac | 5-8€ | ~0.5 sac/m² mur parpaing (mortier joints) |
+| Sable à maçonner (big bag 1m³) | big bag | 40-70€ | ~0.03 m³/m² mur (mortier) |
+| Mortier prêt à l'emploi (sac 35kg) | sac | 4-7€ | 1 sac ≈ 1m² mur parpaing |
+| Béton prêt à l'emploi (sac 35kg) | sac | 6-10€ | 1 sac ≈ 0.017 m³ |
+| Film polyane (rouleau 25m²) | rouleau | 10-20€ | 1 rouleau = 25m² dalle |
+| Fil de ligature recuit Ø1.5mm (rouleau 50m) | rouleau | 3-6€ | 1 rouleau ≈ 30-50 m² ferraillage |
+| Cales d'armature (distancier) (sac 100) | sac | 5-10€ | 4-6 cales/m² |
+| Étais métalliques (réglable 1.80-3.50m) | unité | 15-30€ (achat) / 2-4€/jour (location) | 1 étai/m² plancher |
+| Clous de coffrage (kg) | kg | 3-6€ | variable |
+| Huile de décoffrage (bidon 5L) | bidon | 10-20€ | ~0.15L/m² coffrage |
+| Hydrofuge de masse (bidon 5L) | bidon | 15-30€ | 0.5-1L/100L béton |
+| Adjuvant accélérateur de prise (bidon 5L) | bidon | 15-25€ | Hiver, urgence |
+| Adjuvant plastifiant (bidon 5L) | bidon | 12-25€ | Meilleure ouvrabilité béton |
+| Tasseaux bois coffrage (4×6cm, barre 3m) | barre | 2-5€ | Variable selon coffrage |
+| Chevrons de calage (6×8cm, barre 3m) | barre | 3-8€ | Variable |
+| Géotextile (rouleau 25m²) | rouleau | 15-30€ | Drainage, séparation couches |
+| Bâche de protection (rouleau 50m²) | rouleau | 10-25€ | Protection intempéries |
+
+---
+
+## 26. ISOLATION LIÉE À LA MAÇONNERIE
+
+### Isolation Thermique par l'Extérieur (ITE) — souvent réalisée par le maçon
+| Intervention | Unité | Prix MO+fourniture HT | Note |
+|-------------|-------|----------------------|------|
+| ITE polystyrène (80mm) + enduit | m² | 80-140€ | Le plus courant. Plaques collées/chevillées + enduit armé + finition |
+| ITE polystyrène (120mm) + enduit | m² | 100-170€ | Meilleure performance thermique |
+| ITE polystyrène (160mm) + enduit | m² | 120-200€ | Haute performance, RE2020 |
+| ITE laine de roche + enduit | m² | 110-180€ | Meilleur comportement au feu que le PSE |
+| ITE fibre de bois + enduit | m² | 130-220€ | Écologique, bon confort été |
+| ITE sous bardage (ossature + isolant + parement) | m² | 120-250€ | Bardage bois, composite, métal |
+
+### Isolation Thermique par l'Intérieur (ITI) — coordination maçon/plaquiste
+| Intervention | Unité | Prix MO+fourniture HT | Note |
+|-------------|-------|----------------------|------|
+| Doublage collé (polystyrène + plaque de plâtre) | m² | 25-45€ | Th38 ou Th32, épaisseurs 10+80 à 10+120mm |
+| Doublage sur ossature (laine + plaque) | m² | 35-60€ | Plus performant, correction ponts thermiques |
+| Isolation plancher bas (sous-face) | m² | 20-40€ | Polystyrène ou laine sous dalle du RDC |
+| Isolation combles perdus (soufflage) | m² | 15-30€ | Laine de verre, laine de roche, ouate de cellulose |
+
+**TVA :** 5.5% si les travaux d'isolation sont réalisés par un professionnel RGE dans un logement de plus de 2 ans (rénovation énergétique).
+
+---
+
+## 27. ÉTANCHÉITÉ — INTERVENTIONS DU MAÇON
+
+| Intervention | Unité | Prix MO+fourniture HT | Note |
+|-------------|-------|----------------------|------|
+| Membrane d'étanchéité mur enterré (Delta MS / Platon) | m² | 8-18€ | Noppes vers l'extérieur, protège le mur |
+| Enduit d'étanchéité bitumineux (badigeon noir) | m² | 5-12€ | 2 couches au rouleau sur fondation/soubassement |
+| Drain périphérique (tuyau + gravier + géotextile) | ml | 25-50€ | Autour fondation, pente 1-3% vers exutoire |
+| Cuvelage intérieur cave (enduit étanche + drainage) | m² | 50-120€ | Enduit hydrofuge rigide + pompe si besoin |
+| Étanchéité toiture-terrasse (membrane EPDM) | m² | 40-80€ | Sur dalle béton, sous protection |
+| Étanchéité toiture-terrasse (multicouche bitume) | m² | 30-60€ | Traditionnel, 2-3 couches soudées |
+| Relevé d'étanchéité (jonction mur/terrasse) | ml | 15-30€ | Remontée étanchéité sur mur 15cm minimum |
+| Joint de dilatation étanche (dans dalle) | ml | 8-15€ | Profilé + mastic polyuréthane |
+| Traitement hydrofuge façade (par imprégnation) | m² | 5-15€ | Produit incolore, pénétrant, protection pluie |
+
+---
+
+## 28. ASSURANCES ET GARANTIES
+
+| Garantie | Durée | Ce qu'elle couvre |
+|----------|-------|------------------|
+| Garantie de parfait achèvement | 1 an | Tous défauts signalés dans l'année suivant réception |
+| Garantie biennale | 2 ans | Équipements dissociables du gros oeuvre |
+| **Garantie décennale** | **10 ans** | **Atteinte à la solidité de l'ouvrage ou le rendant impropre à sa destination** |
+| Assurance RC Pro | Permanente | Dommages aux tiers pendant le chantier |
+| Dommage-ouvrage (DO) | 10 ans | **Côté client** — préfinancement des réparations sans attendre décision de justice |
+
+**Cas typiques couverts par la décennale maçonnerie :**
+- Fissures structurelles des murs (>0.2mm, traversantes)
+- Affaissement de fondations
+- Effondrement partiel d'un mur
+- Infiltrations par défaut d'étanchéité des murs enterrés
+- Dalle qui s'affaisse (sol mal compacté)
+- IPN sous-dimensionné (mur porteur)
+
+**Cas NON couverts :**
+- Fissure esthétique non structurelle (<0.2mm, en étoile sur enduit)
+- Défaut purement esthétique (couleur enduit)
+- Dommage causé par un tiers (voisin, arbre)
+- Défaut d'entretien par le propriétaire
+
+**Obligation BET :** Toute ouverture dans un mur porteur nécessite une étude BET avec note de calcul. Sans BET = l'assurance décennale peut ne pas jouer.
+
+---
+
+## 29. RÈGLES IA PRICING — CERVEAU STRUCTORAI
+
+### Règle 1 — Toujours donner des FOURCHETTES
+Le cerveau ne donne JAMAIS un prix unique. Toujours min-max.
+
+### Règle 2 — Appliquer le coefficient régional
+Prix affiché = prix référentiel × coefficient zone du chantier.
+
+### Règle 3 — Déférer aux prix de l'artisan (Mem0)
+Si l'artisan a ses propres prix en mémoire → utiliser SES prix. Sinon → prix référentiel comme base.
+
+### Règle 4 — Alerter sur les prix anormaux
+Si prix artisan < 70% du référentiel → alerte sous-évaluation. Si > 150% → alerte surévaluation.
+
+### Règle 5 — Ne JAMAIS oublier dans un devis maçonnerie
+- [ ] Étude de sol (si construction neuve ou soutènement)
+- [ ] Étude BET (si ouverture mur porteur)
+- [ ] Profondeur hors gel adaptée à la zone (département + altitude)
+- [ ] Ferraillage adapté à la zone sismique
+- [ ] Film polyane sous dalle
+- [ ] Joints de dilatation (tous les 15-20m² en extérieur, tous les 25-35m² en intérieur)
+- [ ] Évacuation gravats / terres (benne 8m³ = 250-500€)
+- [ ] Séchage béton (28 jours avant charge) — ne pas sous-estimer les délais
+- [ ] Chaînages horizontaux et verticaux
+- [ ] Drainage et étanchéité si mur enterré ou fondation
+- [ ] TVA correcte : 10% rénovation, 20% neuf, 5.5% isolation RGE
+
+### Règle 6 — Temps de travail réaliste
+```
+Maçon qualifié :
+- Montage mur parpaing 20 : 3-5 m²/jour
+- Montage mur béton cellulaire : 5-8 m²/jour
+- Coulage dalle : 15-25 m²/jour
+- Enduit 3 couches : 5-10 m²/jour
+
+TOUJOURS ajouter les temps de séchage :
+- Fondation → murs : +7 jours minimum
+- Dalle → revêtement : +21-28 jours
+- Enduit entre couches : +24-48h
+```
+
+### Règle 7 — Béton toupie vs bétonnière
+```
+SI volume béton > 1 m³ → recommander toupie (80-150€/m³ livré)
+  → Plus rapide, plus homogène, meilleure qualité
+SI volume béton < 1 m³ → bétonnière possible (mais plus cher au m³ en main d'oeuvre)
+SI accès camion impossible → pompe à béton (+300-600€)
+```
+
+### Règle 8 — Forfaits minimum
+```
+Intervention ponctuelle < 1 jour → forfait minimum 300-500€
+Déplacement > 30km → frais déplacement 40-100€
+Location mini-pelle (mini 1/2 journée) → 200-350€
+```
+
+### Règle 9 — Urgence et majorations
+| Situation | Majoration |
+|-----------|-----------|
+| Urgence (< 48h) | +30 à +50% |
+| Week-end | +50 à +100% |
+| Jour férié | +100% |
+| Accès difficile (centre-ville, impasse) | +15-25% |
+| Sol rocheux | +30-50% terrassement |
+| Nappe phréatique | +20-40% fondations |
+
+---
+
+## 30. DEVIS TYPES — EXEMPLES CHIFFRÉS
+
+### Devis type 1 : Mur de clôture 15ml (h=1.80m, enduit 2 faces)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Implantation + traçage | forfait | 150€ | 150€ |
+| Terrassement fondation (tranchée 40×60cm) | 15 ml | 25€/ml | 375€ |
+| Fondation béton armé (semelle filante) | 15 ml | 70€/ml | 1 050€ |
+| Montage mur parpaing 20cm (9 rangs) | 27 m² | 75€/m² | 2 025€ |
+| Chaînage horizontal (arase + mi-hauteur) | 30 ml | 12€/ml | 360€ |
+| Chaînage vertical (angles + raidisseurs tous 2.50m) | 8 poteaux | 45€/u | 360€ |
+| Enduit ciment 2 faces | 54 m² | 35€/m² | 1 890€ |
+| Chaperon béton (dessus mur, pente 2 côtés) | 15 ml | 20€/ml | 300€ |
+| Évacuation terres | 3 m³ | 25€/m³ | 75€ |
+| **TOTAL HT** | | | **6 585€** |
+| TVA 20% (construction neuve) | | | 1 317€ |
+| **TOTAL TTC** | | | **7 902€** |
+
+### Devis type 2 : Ouverture mur porteur (baie vitrée 2.50m)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Étude BET (note de calcul + plans) | forfait | 1 000€ | 1 000€ |
+| Étaiement provisoire (2 côtés) | forfait | 300€ | 300€ |
+| Fourniture IPN 200 (longueur 3m) | 2 u | 250€ | 500€ |
+| Découpe mur porteur | 2.50 × 2.20m | 60€/m² | 330€ |
+| Pose IPN + scellement béton | forfait | 400€ | 400€ |
+| Reprise maçonnerie (tableau, appuis) | forfait | 350€ | 350€ |
+| Enduit de finition | 12 m² | 30€/m² | 360€ |
+| Évacuation gravats | 2 m³ | 30€/m³ | 60€ |
+| Nettoyage fin de chantier | forfait | 100€ | 100€ |
+| **TOTAL HT** | | | **3 400€** |
+| TVA 10% (rénovation logement > 2 ans) | | | 340€ |
+| **TOTAL TTC** | | | **3 740€** |
+
+### Devis type 3 : Dalle terrasse béton 25m² (désactivé)
+| Poste | Quantité | Prix unitaire HT | Total HT |
+|-------|----------|-----------------|----------|
+| Décaissement terrain (25cm) | 25 m² | 12€/m² | 300€ |
+| Mise en place hérisson gravier (15cm) + compactage | 25 m² | 12€/m² | 300€ |
+| Film polyane + treillis soudé ST25 | 25 m² | 8€/m² | 200€ |
+| Coffrage périphérique | 20 ml | 10€/ml | 200€ |
+| Béton désactivé livré toupie (3.5m³) + pompe | forfait | 150€/m³ + 400€ pompe | 925€ |
+| Coulage + vibration + finition désactivée | 25 m² | 25€/m² | 625€ |
+| Lavage haute pression (désactivation) | 25 m² | 5€/m² | 125€ |
+| Joints de dilatation (tous les 15m²) | 10 ml | 10€/ml | 100€ |
+| **TOTAL HT** | | | **2 775€** |
+| TVA 10% (terrasse logement > 2 ans) | | | 277,50€ |
+| **TOTAL TTC** | | | **3 052,50€** |
+
+---
+
+> **Note pour le cerveau IA :** Ce référentiel couvre l'intégralité du métier maçon :
+> 1. Matériaux (12 blocs/briques + 7 bétons/mortiers + 11 ferraillage/coffrage) avec prix
+> 2. Mises en oeuvre (11 catégories, 150+ postes) : terrassement, fondations, dalles/chapes, murs, ouvertures mur porteur, escaliers maçonnés, terrasse/extérieur, piscine, réparations, assainissement, majorations
+> 3. Outillage (17 outils) avec prix achat/location
+> 4. Taux horaires par zone + coefficients régionaux (10 zones)
+> 5. DTU et normes (9 références)
+> 6. 12 erreurs courantes terrain
+> 7. Profondeur hors gel (3 zones France, formule de calcul DTU 13.12)
+> 8. Zones sismiques France (5 zones, impact sur ferraillage et coûts)
+> 9. Temps de travail réaliste par poste + temps de séchage incompressibles
+> 10. Consommables détaillés avec rendements
+> 11. Isolation liée à la maçonnerie (ITE/ITI avec prix)
+> 12. Étanchéité (murs enterrés, terrasses, drainage, cuvelage)
+> 13. Assurances et garanties (décennale, DO, BET obligatoire)
+> 14. Règles IA pricing (9 règles impératives)
+> 15. Devis types chiffrés (clôture 15ml, ouverture mur porteur, dalle terrasse désactivée)
