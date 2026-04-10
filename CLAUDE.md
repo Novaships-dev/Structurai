@@ -23,6 +23,9 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 | `FICHE_METIER.md` | Inventaire 63 fichiers data (887 lignes) | Avant de créer un fichier data/ |
 | `docs/METIER.md` | Constitution BTP — règles immuables | Avant tout code lié aux devis/factures/TVA |
 | `PLOMBERIE/`, `ELECTRICITE/`, etc. | 8 référentiels techniques (6658 lignes) | Pour les prix, matériaux, règles IA pricing |
+| `COUT_REEL.md` | Coûts API réels et pièges | Avant de configurer les budgets LLM et rate limits |
+| `SECURITE.md` | Audit sécurité complet | Avant d'implémenter auth, RLS, webhooks, RGPD |
+| `DISTRIBUTION.md` | Distribution + expansion Europe | Avant de toucher à l'i18n ou la facturation multi-pays |
 
 **Règle absolue :** Si une décision contredit ces fichiers → mettre le fichier à jour ET logger dans `docs/CHANGELOG.md`.
 

@@ -103,6 +103,9 @@ structorai/
 ├── FICHE_METIER.md             # Inventaire 63 fichiers data métier (887 lignes)
 ├── CLAUDE.md                   # Instructions Claude Code — la loi du repo
 ├── README.md                   # Ce fichier
+├── COUT_REEL.md              # Coûts réels API/infra et 12 pièges à éviter (288 lignes)
+├── SECURITE.md               # Audit sécurité complet — RGPD, RLS, vecteurs d'attaque (284 lignes)
+├── DISTRIBUTION.md           # Stratégie distribution France + expansion 10 pays Europe (333 lignes)
 │
 ├── PLOMBERIE/                  # Référentiel technique plomberie (1021 lignes)
 ├── ELECTRICITE/                # Référentiel technique électricité (960 lignes)
