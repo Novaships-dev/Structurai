@@ -180,8 +180,8 @@ Ces règles sont dans `docs/METIER.md` et DOIVENT être respectées partout dans
 - Un même devis PEUT contenir des lignes à taux différents
 - Attestation TVA réduite à faire signer par le client
 
-### Mentions obligatoires devis (15 mentions)
-Le code de génération PDF DOIT toujours inclure ces 15 mentions. Voir `FICHE_METIER.md` section 1 pour la liste complète. Sanction si absent : 3 000€ à 75 000€ d'amende.
+### Mentions obligatoires devis (47 mentions)
+Le code de génération PDF DOIT toujours inclure les 47 mentions : 15 mentions légalement obligatoires (Code de la consommation + Code du commerce) + 32 mentions complémentaires BTP (décennale, RGE, Qualibat, conditions de paiement, droit de rétractation, clause travaux complémentaires, etc.). Voir `FICHE_METIER.md` section 1 pour la liste des 15 mentions légales, et `PRODUCT_CONTEXT.md` pour la liste complète des 47. Sanction si absent : 3 000€ à 75 000€ d'amende.
 
 ### Factur-X
 - Obligatoire réception septembre 2026, émission septembre 2027

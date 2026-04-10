@@ -10,7 +10,7 @@
 ## 1. RÉGLEMENTATION & MENTIONS LÉGALES
 
 ### data/legal/mentions_obligatoires_devis.json
-Les 15 mentions obligatoires d'un devis BTP 2026 :
+Les 15 mentions LÉGALES obligatoires d'un devis BTP 2026 (sur 47 mentions totales — voir PRODUCT_CONTEXT.md pour la liste complète incluant les 32 mentions complémentaires BTP) :
 1. Terme "devis" ou "proposition de prix"
 2. Date du devis
 3. Numéro de devis (format : DEV-2026-001)
