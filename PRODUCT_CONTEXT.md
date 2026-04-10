@@ -2,7 +2,7 @@
 > Source de vérité du deuxième SaaS Nova.
 > Statut : BUILD — launch prévu Juin 2026
 > Priorité : Tool #2 dans le portfolio Nova (remplace EngageRadar)
-> Dernière mise à jour : 02/04/2026
+> Dernière mise à jour : 09/04/2026
 > Pivot stratégique : EngageRadar abandonné (marché saturé, ICP = codeurs qui buildent eux-mêmes). Nouveau Tool #2 = STRUCTORAI, SaaS pour artisans du bâtiment.
 
 ---
@@ -879,23 +879,37 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 
 ## COÛTS LLM PAR ARTISAN
 
+### Estimation initiale (sans optimisation)
+
 | Agent | Appels/jour | Coût/mois | Notes |
 |-------|-------------|-----------|-------|
 | Devis (vocal → PDF) | ~2 | ~$4 | Le plus coûteux (long context métier) |
 | Relance (messages adaptatifs) | ~3 | ~$1.50 | Messages courts |
 | Compta (OCR + catégorisation) | ~5 tickets | ~$2 | Vision API pour OCR |
 | Planning (analyse + alertes) | ~1 | ~$0.50 | |
-| Réputation (réponse avis) | ~0.5 | ~$0.30 | 1-2 avis/semaine |
+| Réputation (réponse avis) | ~0.5 | ~$0.30 | |
 | Prospection (suggestions) | ~0.5 | ~$0.20 | |
 | Fiscalité (tableau de bord + alertes) | ~1 | ~$0.50 | |
 | Déplacements (GPS + frais) | ~2 | ~$0.80 | |
-| RH (pointage + indemnités) | ~1 | ~$0.50 | Pour artisans avec employés |
+| RH (pointage + indemnités) | ~1 | ~$0.50 | |
 | Background consciousness | ~24 (1/heure) | ~$1.70 | $0.07/pensée |
 | Email filtering | ~10 | ~$1 | |
-| **TOTAL** | | **~$13/mois par artisan** | |
+| **TOTAL (sans optimisation)** | | **~$13/mois par artisan** | |
 
-**Marge sur un artisan Pro (€29/mois) :** €29 - $13 LLM - $5 infra = ~€10 marge = **~34%**
-**Marge sur un artisan Business (€79/mois) :** €79 - $17 LLM - $5 infra = ~€55 marge = **~70%**
+### Coût réel avec optimisations (voir COUT_REEL.md pour le détail)
+
+| Optimisation | Économie |
+|-------------|----------|
+| Routage 70% Haiku / 30% Sonnet | -50% coût LLM moyen |
+| Prompt caching (system prompts) | -90% input tokens récurrents |
+| Background consciousness 3×/jour au lieu de 24× | -87% |
+| Context compaction (max 10K tokens historique) | -60% input |
+| **TOTAL OPTIMISÉ** | **~$3.30/mois par artisan** |
+
+**Marge sur un artisan Pro (€29/mois) :** €29 - $3.30 LLM - $1 infra = ~€25 marge = **~86%**
+**Marge sur un artisan Business (€79/mois) :** €79 - $4.50 LLM - $1.50 infra = ~€73 marge = **~92%**
+
+> Détail complet des coûts : voir `COUT_REEL.md`
 
 ---
 
