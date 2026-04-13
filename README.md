@@ -36,7 +36,7 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 | **iPhone** (PWA) | Web app installable, bypass Apple Store | iOS sans les $99/an |
 | **WhatsApp** | Actions rapides vocal/photo | Sur le chantier, mains occupées |
 
-### 9 Agents IA Autonomes
+### 13 Agents IA Autonomes
 
 | Agent | Ce qu'il fait |
 |-------|---------------|
@@ -44,11 +44,14 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 | **Relance** | Devis sans réponse J+3, factures impayées J+15/30/45, ton adaptatif par client |
 | **Compta** | Photo ticket → OCR → catégorisation → attribution chantier → export comptable |
 | **Planning** | Timer chantier, marge temps réel, détection dépassements, enchaînements |
-| **Réputation** | SMS avis Google post-chantier, réponse IA aux avis, suivi score |
 | **Prospection** | CRM architectes/apporteurs, rappels automatiques, suivi réseau |
 | **Fiscalité** | Suivi fiscal annuel par statut (micro/EURL/SAS), rappels URSSAF/TVA, alertes seuils, scan courrier admin, préparation dossier comptable |
 | **Déplacements** | GPS intégré, frais km automatiques, indemnités BTP par zone, paniers repas, suivi carburant/parking/amendes |
 | **RH** | Pointage heures employés, calcul heures sup (convention BTP), indemnités par employé/chantier/jour, congés CIBTP, export éléments de paie |
+| **Email Pro** | Connexion boîte mail, filtrage IA, catégorisation, résumé quotidien, alertes urgentes, fiche prospect auto |
+| **Vision IA** | Analyse toute photo/document : chantier → catégorisation, ticket → OCR, plan → compréhension, détection oublis dans les devis |
+| **Site Web** | Génération site vitrine IA en 5 min, MAJ auto mensuelle (photos/avis), validation artisan, SEO local |
+| **Réputation & Marketing** | SMS avis Google + réponse IA + publication réseaux sociaux avant/après + SEO local |
 
 ### Architecture Cerveau IA — 4 Couches
 
@@ -58,7 +61,7 @@ Un cerveau IA dans la poche de l'artisan. Il parle, le cerveau fait le reste.
 │  Queue prioritaire · Workers · Budget LLM   │
 │  Background consciousness · Circuit breaker │
 ├─────────────────────────────────────────────┤
-│  COUCHE 3 — 9 Agents Autonomes              │
+│  COUCHE 3 — 13 Agents Autonomes              │
 │  Devis · Relance · Compta · Planning        │
 │  Réputation · Prospection · Fiscalité       │
 │  Déplacements · RH                          │
@@ -159,7 +162,7 @@ Build entièrement réalisé par **Claude Code**. Fabrice crée les comptes infr
 
 | Pattern | Source | Usage |
 |---------|--------|-------|
-| Supervisor + workers + queue | Ouroboros (456★) | Orchestration des 9 agents |
+| Supervisor + workers + queue | Ouroboros (456★) | Orchestration des 13 agents |
 | Background consciousness | Ouroboros | Proactivité — le cerveau pense entre les tâches |
 | Circuit breaker + fallback | Ouroboros v6.0 | 3 réponses vides → pause + fallback model |
 | Context compaction | Ouroboros v6.1 | Résumé contexte long via LLM léger |
@@ -174,7 +177,7 @@ Build entièrement réalisé par **Claude Code**. Fabrice crée les comptes infr
 | Plan | Prix | Cible |
 |------|------|-------|
 | **Starter** | Gratuit | Découverte — 5 devis/mois, chat limité |
-| **Pro** | 29€/mois | Artisan solo — devis illimités, 9 agents, voix |
+| **Pro** | 29€/mois | Artisan solo — devis illimités, 13 agents, voix |
 | **Business** | 79€/mois | Artisan + employés — multi-user, API, priorité |
 
 ARPU cible : 40€/mois · Kill criteria : <200€ MRR après 12 semaines

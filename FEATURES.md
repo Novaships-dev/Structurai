@@ -295,7 +295,7 @@ Le cerveau devient un assistant RH qui prépare TOUT pour le comptable ou la pla
 |-------|------|
 | **Agent RH** (nouveau) | Pointage heures, calcul heures sup, indemnités BTP par employé/chantier/jour, suivi congés/absences, export éléments de paie mensuel, alertes conformité convention collective, rappels obligations employeur |
 
-**Total agents mis à jour : 9 agents** (Devis, Relance, Compta, Planning, Réputation, Prospection, Fiscalité, Déplacements, **RH**) + Supervisor
+**Total agents mis à jour : 13 agents** (Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, **RH**, Vision IA, Site Web) + Supervisor
 
 ---
 
@@ -404,7 +404,7 @@ Le cerveau devient un assistant RH qui prépare TOUT pour le comptable ou la pla
 | **Agent FISCALITÉ** (nouveau) | Gestion statut entreprise, rappels URSSAF/TVA/CFE, aide déclarations, alertes seuils, scan courriers administratifs, conseil optimisation | L'artisan est perdu avec la paperasse. C'est la feature F09 enrichie qui justifie un agent dédié. |
 | **Agent DÉPLACEMENTS** (nouveau) | GPS, calcul frais km, paniers repas, indemnités zones BTP, suivi carburant/parking/amendes, export frais | La feature F20 enrichie est assez complexe pour justifier un agent dédié. |
 
-**Total : 9 agents autonomes** (Devis, Relance, Compta, Planning, Réputation, Prospection, Fiscalité, Déplacements, RH) + Supervisor
+**Total : 13 agents autonomes** (Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web) + Supervisor
 
 Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 
@@ -526,6 +526,67 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 - **Pourquoi :** L'artisan avec des employés perd des heures chaque mois à préparer les éléments de paie. Les conventions collectives BTP sont complexes (6 conventions, cotisations CIBTP 20.70%, OPPBTP, PRO BTP, abattement DFS 7%). Le cerveau mâche le travail.
 - **Comment :** Agent dédié avec knowledge base conventions collectives BTP (IDCC 1596/1597/2609/2420) + grilles salariales régionales + barèmes indemnités URSSAF + intégration avec Agent Déplacements (indemnités) et Agent Planning (heures par chantier) + export CSV/PDF vers le cabinet comptable
 
+### F94. Agent Vision IA (nouveau)
+- **Quoi :** Agent IA dédié qui est le premier filtre de TOUTE image reçue dans l'app (photo chantier, ticket de caisse, facture fournisseur, plan, courrier administratif, tableau électrique, photo SDB)
+- **Pourquoi :** Centraliser l'intelligence visuelle. Quand l'artisan envoie une photo, le cerveau doit comprendre ce que c'est AVANT de router vers le bon agent (Compta pour un ticket, Devis pour une photo chantier, Fiscalité pour un courrier URSSAF)
+- **Comment :** Agent dédié utilisant Claude Vision (Sonnet 4.6). Reçoit toute image → identifie le type → catégorise → extrait les données → transmet à l'agent concerné. Détection d'oublis sur les photos chantier ("je vois un sèche-serviette pas dans le devis"). Catégorisation auto des photos galerie (avant/pendant/après/problème)
+
+### F95. Agent Site Web IA (nouveau)
+- **Quoi :** Agent IA qui génère un site vitrine professionnel complet pour l'artisan en 5 minutes, avec mise à jour automatique mensuelle
+- **Pourquoi :** 80% des artisans n'ont pas de site web. Les agences facturent 1 500-5 000€. Avec l'IA, le site se crée avec les données déjà dans l'app (profil entreprise, photos chantier, avis Google, corps de métier)
+- **Comment :** Agent dédié. Création : profil F92 → génération pages (accueil, services, galerie, avis, contact) → photos depuis galerie chantier → avis depuis Agent Réputation → SEO local auto → publication sur sous-domaine structorai.app (Pro) ou domaine perso (Business). MAJ mensuelle : le cerveau détecte les nouvelles photos/avis → propose une mise à jour → l'artisan valide dans le dossier "À faire" (F89) AVANT publication. Le cerveau ne publie JAMAIS sans validation.
+- **Pricing :** Starter = pas de site. Pro (29€) = site inclus sur sous-domaine. Business (79€) = site + domaine perso + SEO avancé
+
+### F96. Agent Email Pro (nouveau)
+- **Quoi :** Agent IA qui se connecte à la boîte email de l'artisan (IMAP/OAuth) et agit comme une secrétaire IA
+- **Pourquoi :** L'artisan reçoit des dizaines d'emails par jour et rate les demandes de devis, les relances URSSAF, les factures fournisseurs. L'agent filtre, catégorise, alerte et crée des fiches prospects automatiquement
+- **Comment :** Connexion IMAP ou OAuth (Gmail, Outlook). Filtrage pro/perso. Catégorisation auto (prospect/client/fournisseur/admin/spam). Résumé quotidien vocal. Alertes urgentes en temps réel (mise en demeure, URSSAF). Détection demande de devis dans les emails → fiche prospect auto → notification "Nouveau prospect Leblanc, demande devis SDB"
+
+### F97. Gestion des fournisseurs (nouveau)
+- **Quoi :** Répertoire fournisseurs avec fiche détaillée (coordonnées, historique achats, prix négociés), accessible via menu profil
+- **Pourquoi :** L'artisan travaille avec 5-10 fournisseurs réguliers. Leurs prix sont stockés en Mem0 et utilisés par l'Agent Devis
+- **Comment :** Fiches fournisseurs en DB (Supabase). Historique achats rattaché (tickets scannés). Prix négociés par matériau stockés en Mem0. Comparaison prix entre fournisseurs sur un même matériau
+
+### F98. Gestion des achats et bons de commande (nouveau)
+- **Quoi :** Bons de commande fournisseurs, réception, rattachement au chantier, suivi dépenses
+- **Pourquoi :** L'artisan commande chez Point P → bon de commande → réception → facture fournisseur → rattaché au chantier → calcul marge réel. Sans ça, la marge par chantier est imprécise
+- **Comment :** Création bon de commande (vocal ou manuel), lié à un chantier et un fournisseur. Réception partielle ou totale. Facture fournisseur rattachée. Total achats par chantier visible dans la fiche chantier
+
+### F99. Situations de travaux / facturation à l'avancement (nouveau)
+- **Quoi :** Facturer un chantier par tranches de pourcentage d'avancement (30% → 60% → 100%)
+- **Pourquoi :** Indispensable pour les chantiers longs (rénovation complète, gros oeuvre). Obat, Sage et EBP l'ont tous. Un artisan qui fait une cuisine à 15 000€ ne peut pas attendre la fin pour facturer
+- **Comment :** Depuis un devis signé, l'artisan crée une facture de situation en définissant le % d'avancement par poste ou global. Le cerveau calcule le reste à facturer. Numérotation conforme
+
+### F100. Attestation TVA réduite auto-générée (nouveau)
+- **Quoi :** Génération automatique de l'attestation simplifiée de TVA (formulaire CERFA 1301-SD) que le client doit signer pour bénéficier de la TVA 10% ou 5.5%
+- **Pourquoi :** Obligatoire pour appliquer la TVA réduite en rénovation. Sans ce document signé, l'artisan risque un redressement fiscal. Obat le fait automatiquement
+- **Comment :** Pré-remplie avec les infos du client et du chantier. Envoyée avec le devis pour signature. Stockée dans la fiche chantier
+
+### F101. PV de réception de chantier (nouveau)
+- **Quoi :** Document de réception des travaux, signé par le client à la fin du chantier
+- **Pourquoi :** Déclenche les garanties (parfait achèvement 1 an, décennale 10 ans). Protège l'artisan en cas de litige. Preuve que le client a accepté les travaux
+- **Comment :** Généré automatiquement quand l'artisan passe un chantier en "Terminé". Pré-rempli. Envoyé au client pour signature. Horodaté
+
+### F102. Duplication de devis en 1 tap (nouveau)
+- **Quoi :** Dupliquer un devis existant pour un nouveau client en 1 tap
+- **Pourquoi :** L'artisan fait souvent le même type de chantier. Au lieu de recréer un devis de zéro, il duplique et ajuste
+- **Comment :** Bouton "Dupliquer" sur chaque devis. Copie tous les postes, prix, TVA. L'artisan change le client et ajuste les quantités
+
+### F103. Calendrier avec vue semaine/mois + synchro Google (nouveau)
+- **Quoi :** Calendrier visuel avec tous les RDV, chantiers, échéances fiscales, relances programmées
+- **Pourquoi :** L'artisan a besoin de voir sa semaine d'un coup d'oeil. Quand est le prochain RDV client ? Quel chantier quel jour ? Quelle échéance URSSAF ?
+- **Comment :** Vue semaine et mois. Synchro bidirectionnelle Google Calendar. Les chantiers, RDV clients, échéances fiscales et relances programmées apparaissent automatiquement. Accessible depuis le menu profil
+
+### F104. Bibliothèque d'ouvrages navigable (nouveau)
+- **Quoi :** Écran dédié pour naviguer, chercher, ajouter et modifier les ouvrages/matériaux/main d'oeuvre avec les prix de l'artisan
+- **Pourquoi :** L'artisan doit pouvoir consulter et modifier ses prix visuellement, pas seulement via le chat. C'est la base de tous ses devis
+- **Comment :** Liste cherchable par catégorie (plomberie, électricité, etc.), par mot-clé. Chaque entrée = descriptif + prix MO + prix fourniture + temps de pose + TVA. L'artisan ajoute, modifie, supprime. Les prix sont stockés en Mem0 et utilisés par l'Agent Devis
+
+### F105. Gestion intérimaires et sous-traitants (nouveau)
+- **Quoi :** Fiches pour les intérimaires et sous-traitants engagés ponctuellement sur un chantier
+- **Pourquoi :** L'artisan fait appel à un intérimaire pour 2 jours ou sous-traite une partie du chantier. Il doit suivre les coûts et les heures
+- **Comment :** Fiche intérimaire/sous-traitant (coordonnées, tarif, attestations). Affectation par chantier. Suivi heures et coûts. Impact sur la marge du chantier
+
 ---
 
 ## RÉSUMÉ DES CHANGEMENTS
@@ -533,9 +594,10 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 | Type | Nombre |
 |------|--------|
 | Features modifiées/enrichies | 23 |
-| Nouvelles features ajoutées | 7 (F87-F93) |
-| **Total features V2** | **93** (86 → 93) |
-| **Total agents** | **9** (6 → 9 : +Fiscalité, +Déplacements, +RH) |
+| Nouvelles features ajoutées | 19 (F87-F105) |
+| **Total features** | **105** (86 → 105) |
+| **Total agents V1** | **13** (6 → 13 : +Fiscalité, +Déplacements, +RH, +Vision IA, +Site Web, +Email Pro, +Réputation & Marketing) + Supervisor |
+| **V2** | Agent Téléphone IA |
 
 ### Impact BUILD_PLAN
 - 3 nouveaux agents backend : `agent_fiscalite.py`, `agent_deplacements.py`, `agent_rh.py`

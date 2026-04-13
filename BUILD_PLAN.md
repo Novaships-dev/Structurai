@@ -2,7 +2,7 @@
 > Ce fichier est le blueprint exact pour Claude Code.
 > Chaque fichier listé ici doit être créé, avec son rôle précis.
 > Fabrice ne code pas. Claude Code code tout. Fabrice crée les comptes infra et configure les clés.
-> Date : 09/04/2026
+> Date : 14/04/2026
 
 ---
 
@@ -121,7 +121,7 @@ structorai/
 │   ├── ARCH.md                            # Architecture technique détaillée
 │   ├── API.md                             # Tous les endpoints REST
 │   ├── CONVENTIONS.md                     # Naming, patterns, règles de code
-│   ├── AGENTS.md                          # Architecture des 9 agents IA + Supervisor
+│   ├── AGENTS.md                          # Architecture des 13 agents IA + Supervisor
 │   ├── METIER.md                          # Constitution BTP — règles immuables (TVA, mentions, Factur-X)
 │   ├── MEMORY.md                          # Architecture mémoire Mem0 — niveaux, recall, enrichissement
 │   ├── VOICE.md                           # Pipeline vocal — STT, TTS, latence, langues
@@ -162,7 +162,7 @@ structorai/
 │   ├── SKILL-RELANCE.md                   # Agent Relance — séquences, ton adaptatif, escalade
 │   ├── SKILL-COMPTA.md                    # Agent Compta — OCR tickets, catégorisation, export
 │   ├── SKILL-PLANNING.md                  # Agent Planning — timer, capacité, enchaînements
-│   ├── SKILL-REPUTATION.md                # Agent Réputation — avis Google, réponse IA, SEO
+│   ├── SKILL-REPUTATION.md                # Agent Réputation & Marketing — avis Google, réponse IA, SEO, réseaux sociaux
 │   ├── SKILL-PROSPECTION.md               # Agent Prospection — CRM pro, relances architectes
 │   ├── SKILL-EMAIL.md                     # Module email pro — IMAP, filtrage, catégorisation
 │   ├── SKILL-I18N.md                      # Multi-langue — i18next, 6 langues, traductions
@@ -237,7 +237,7 @@ structorai/
 │       │   ├── web_search_service.py      # Recherche web fallback + auto-enrichissement
 │       │   └── i18n_service.py            # Détection langue, traduction, localization
 │       │
-│       ├── agents/                        # Les 9 agents IA + Supervisor (pattern Ouroboros)
+│       ├── agents/                        # Les 13 agents IA + Supervisor (pattern Ouroboros)
 │       │   ├── __init__.py
 │       │   ├── supervisor.py              # Orchestrateur — queue, workers, budget, consciousness
 │       │   ├── consciousness.py           # Background consciousness — pense entre les tâches
@@ -255,11 +255,15 @@ structorai/
 │       │   ├── agent_relance.py           # Agent Relance
 │       │   ├── agent_compta.py            # Agent Compta
 │       │   ├── agent_planning.py          # Agent Planning
-│       │   ├── agent_reputation.py        # Agent Réputation
+│       │   ├── agent_reputation.py        # Agent Réputation & Marketing
 │       │   ├── agent_prospection.py       # Agent Prospection
 │       │   ├── agent_fiscalite.py         # Agent Fiscalité — suivi fiscal annuel, rappels URSSAF/TVA, alertes seuils, scan courrier admin
 │       │   ├── agent_deplacements.py      # Agent Déplacements — GPS, frais km, paniers, indemnités BTP zones, export frais
-│       │   └── agent_rh.py               # Agent RH — pointage heures, heures sup, indemnités employés, congés CIBTP, export paie
+│       │   ├── agent_rh.py               # Agent RH — pointage heures, heures sup, indemnités employés, congés CIBTP, export paie
+│       │   ├── email_pro.py                     # Agent Email Pro (IMAP, filtrage, résumé)
+│       │   ├── vision.py                        # Agent Vision IA (analyse photos/documents)
+│       │   ├── site_web.py                      # Agent Site Web (génération + MAJ site vitrine)
+│       │   └── telephone.py                     # Agent Téléphone IA (V2 — décroche, prise d'info)
 │       │
 │       ├── prompts/                       # System prompts séparés du code (pattern Ouroboros prompts/)
 │       │   ├── __init__.py
@@ -269,7 +273,7 @@ structorai/
 │       │   ├── relance_prompt.py          # System prompt Agent Relance (ton adaptatif, escalade)
 │       │   ├── compta_prompt.py           # System prompt Agent Compta (OCR, catégorisation)
 │       │   ├── planning_prompt.py         # System prompt Agent Planning (timer, capacité)
-│       │   ├── reputation_prompt.py       # System prompt Agent Réputation (avis, SEO)
+│       │   ├── reputation_prompt.py       # System prompt Agent Réputation & Marketing (avis, SEO, réseaux sociaux)
 │       │   ├── prospection_prompt.py      # System prompt Agent Prospection (CRM, relance archi)
 │       │   ├── fiscalite_prompt.py        # System prompt Agent Fiscalité (statuts micro/EURL/SAS, URSSAF, TVA, calendrier fiscal)
 │       │   ├── deplacements_prompt.py     # System prompt Agent Déplacements (barème km, zones BTP, paniers, GPS)
@@ -677,7 +681,7 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Test : devis accepté → facture auto → pas payée J+15 → relance email
 
 ### Sprint 6 — Réputation + Prospection + Email + Fiscalité + Déplacements (~3 jours)
-- [ ] Backend : Agent Réputation (SMS avis Google + réponse IA)
+- [ ] Backend : Agent Réputation & Marketing (SMS avis Google + réponse IA + réseaux sociaux)
 - [ ] Backend : Agent Prospection (CRM pro + rappels architectes)
 - [ ] Backend : Module email (IMAP polling + catégorisation)
 - [ ] Backend : Background consciousness (loop pensée proactive)
@@ -740,7 +744,7 @@ Pour référence : AgentShield = 355 fichiers en 32h. STRUCTORAI est plus comple
 
 | Pattern | Source | Fichier STRUCTORAI | Pourquoi |
 |---------|--------|-------------------|----------|
-| Supervisor + workers + queue | Ouroboros `supervisor/` | `agents/supervisor.py`, `queue.py`, `workers.py` | Orchestration des 9 agents |
+| Supervisor + workers + queue | Ouroboros `supervisor/` | `agents/supervisor.py`, `queue.py`, `workers.py` | Orchestration des 13 agents |
 | Background consciousness loop | Ouroboros `consciousness.py` | `agents/consciousness.py` | Proactivité — le cerveau pense entre les tâches |
 | BIBLE.md constitution | Ouroboros `BIBLE.md` | `docs/METIER.md` | Règles BTP immuables (TVA, mentions, Factur-X) |
 | Circuit breaker + fallback chain | Ouroboros v6.0 | `agents/circuit_breaker.py` | 3 réponses vides → pause + fallback model |

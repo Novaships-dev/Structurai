@@ -2,7 +2,7 @@
 > Source de vérité du deuxième SaaS Nova.
 > Statut : BUILD — launch prévu Juin 2026
 > Priorité : Tool #2 dans le portfolio Nova (remplace EngageRadar)
-> Dernière mise à jour : 09/04/2026
+> Dernière mise à jour : 14/04/2026
 > Pivot stratégique : EngageRadar abandonné (marché saturé, ICP = codeurs qui buildent eux-mêmes). Nouveau Tool #2 = STRUCTORAI, SaaS pour artisans du bâtiment.
 
 ---
@@ -187,7 +187,7 @@ Le cerveau se souvient de TOUT pour chaque artisan :
 
 Plus l'artisan utilise l'outil, plus il est précis. Au bout de 3 mois, le cerveau fait des devis EXACTEMENT comme l'artisan les ferait — mais en 2 minutes au lieu de 2 heures.
 
-**COUCHE 3 — 9 agents autonomes (pattern Ouroboros)**
+**COUCHE 3 — 13 agents autonomes (pattern Ouroboros)**
 
 Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrière-plan (background consciousness) inspirés d'Ouroboros. Chaque agent :
 - A sa propre spécialité et ses propres outils
@@ -196,7 +196,7 @@ Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrièr
 - A un budget LLM dédié et tracké
 - Est proactif : il pense et agit ENTRE les tâches, pas seulement quand on lui demande
 
-Les 9 agents :
+Les 13 agents :
 
 **Agent DEVIS (le killer feature)**
 - Le devis est CONVERSATIONNEL : le cerveau dicte poste par poste, l'artisan valide ou modifie chaque prix en vocal
@@ -240,7 +240,7 @@ Les 9 agents :
 - Calcul de la capacité : "Tu as 3 chantiers en avril, ta capacité max est de 4, tu peux accepter 1 devis de plus"
 - Proactivité : "Le chantier Martin commence lundi mais tu n'as pas commandé les matériaux. Je te rappelle de passer chez Point P ?"
 
-**Agent RÉPUTATION**
+**Agent RÉPUTATION & MARKETING**
 - Chantier terminé → SMS automatique au client avec lien avis Google (timing intelligent : 2-3 jours après la fin, quand le client est satisfait)
 - Détection de nouvel avis Google → réponse IA personnalisée et professionnelle avec mots-clés SEO locaux
 - Réponse adaptée : avis 5★ = remerciement chaleureux. Avis 3★ = empathie + proposition de résolution
@@ -255,7 +255,7 @@ Les 9 agents :
 - Gestion des leads entrants : quand un prospect appelle, l'agent crée la fiche, planifie le rappel, suggère le pré-devis
 - Proactivité : "Tu n'as que 2 chantiers prévus pour juin. Il faut relancer les architectes. Je prépare 3 messages ?"
 
-**Agent FISCALITÉ**
+**Agent FISCALITÉ & TRÉSORERIE**
 - Connaît la fiscalité de chaque statut : Micro-entreprise, EURL, SAS, SASU, EI
 - Micro : seuils CA 2026 (203 100€ vente / 83 600€ services), taux cotisations (12.3% vente / 21.2% services BIC), franchise TVA, ACRE
 - EURL/SAS : charges déductibles, TVA collectée/déductible, cotisations TNS ou assimilé salarié, bilan annuel
@@ -290,11 +290,23 @@ Les 9 agents :
 - Ne génère PAS les fiches de paie (trop complexe légalement → c'est le job du cabinet comptable)
 - Proactivité : "Ahmed a fait 42h cette semaine dont 7h sup. Sa paye doit inclure 7h à 125%."
 
+**Agent EMAIL PRO**
+- Connexion IMAP/OAuth, filtrage pro/perso, catégorisation auto, résumé quotidien, alertes urgentes, fiche prospect auto
+
+**Agent VISION IA**
+- Premier filtre de toute image (photo chantier, ticket, courrier). Catégorise, analyse, détecte les oublis, transmet à l'agent concerné
+
+**Agent SITE WEB**
+- Génère un site vitrine professionnel IA avec les données de l'app. MAJ mensuelle auto avec validation artisan
+
+**Agent RÉPUTATION & MARKETING**
+- Avis Google (SMS + réponse IA + SEO) + publication réseaux sociaux (avant/après + texte IA)
+
 **COUCHE 4 — Cerveau global / Supervisor (pattern Ouroboros)**
 
 Inspiré directement de l'architecture Ouroboros avec Supervisor + Background Consciousness :
 
-- **Orchestration des 9 agents** : distribue les tâches, gère les priorités, évite les conflits (l'agent Relance ne contacte pas un client que l'agent Devis vient de relancer)
+- **Orchestration des 13 agents** : distribue les tâches, gère les priorités, évite les conflits (l'agent Relance ne contacte pas un client que l'agent Devis vient de relancer)
 - **Background Consciousness** : entre les tâches, le cerveau PENSE sur l'état global de l'artisan. Pas réactif — proactif.
   - "Ce mois-ci ta marge moyenne est de 23% (vs 31% le mois dernier). Le problème c'est le chantier Martin qui a dépassé de 40%."
   - "Tu as gagné 3 chantiers sur 12 devis ce mois (25%). Le mois dernier c'était 1/10. Ton nouveau format fonctionne."
@@ -663,7 +675,7 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │                                                                  │
 │  ├── state.py — État global artisan, budget LLM, métriques      │
 │  ├── queue.py — File de tâches prioritaires                     │
-│  ├── workers.py — Cycle de vie des 9 agents                    │
+│  ├── workers.py — Cycle de vie des 13 agents                    │
 │  ├── consciousness.py — Background consciousness (pense entre   │
 │  │                       les tâches, génère les résumés,        │
 │  │                       détecte les problèmes proactivement)   │
@@ -819,7 +831,7 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 1. La compréhension métier BTP par LLM (chaque prompt est un investissement en knowledge)
 2. La mémoire persistante par artisan (plus tu l'utilises, plus il est précis)
 3. L'interface WhatsApp/voix (les concurrents sont tous sur écran PC)
-4. Les 9 agents proactifs avec background consciousness
+4. Les 13 agents proactifs avec background consciousness
 
 ---
 
@@ -868,7 +880,7 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 | Plan | Prix/mois | Cible | Inclus |
 |------|-----------|-------|--------|
 | Starter | €0 | Auto-entrepreneurs, test | 5 devis/mois, scan tickets, pipeline basique. Pas de relance auto ni agents. |
-| Pro | €29 | Artisan seul | Devis illimités voix/WhatsApp, 9 agents actifs, relances auto, scan tickets illimité, avis Google, export comptable |
+| Pro | €29 | Artisan seul | Devis illimités voix/WhatsApp, 13 agents actifs, relances auto, scan tickets illimité, avis Google, export comptable |
 | Business | €79 | TPE 2-10 salariés | Tout Pro + multi-utilisateurs, suivi multi-chantiers avancé, rapports rentabilité, accès comptable partagé, support prioritaire |
 
 **ARPU cible :** €40/mois (mix Pro/Business)

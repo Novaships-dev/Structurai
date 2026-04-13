@@ -9,7 +9,7 @@
 
 Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artisans du bâtiment en France. Tu codes TOUT. Fabrice (le fondateur) ne code pas. Il crée les comptes infra, configure les clés API, et valide les choix produit.
 
-**Ce que tu builds :** Une app mobile avec cerveau IA spécialisé BTP — chat vocal, scan de tickets, devis par la voix, 9 agents IA autonomes, 6 langues.
+**Ce que tu builds :** Une app mobile avec cerveau IA spécialisé BTP — chat vocal, scan de tickets, devis par la voix, 13 agents IA autonomes, 6 langues.
 
 ---
 
@@ -156,20 +156,24 @@ Le Supervisor reçoit TOUS les messages et décide quel agent répond :
 4. Suit le budget LLM par artisan
 5. Circuit breaker : 3 réponses vides → pause + fallback
 
-### Les 9 Agents
+### Les 13 Agents V1 + Supervisor
 
-| Agent | Fichier | Model | Budget/appel |
-|-------|---------|-------|-------------|
-| Supervisor | `agents/supervisor.py` | claude-sonnet-4-6 | $0.10 |
-| Devis | `agents/devis.py` | claude-sonnet-4-6 | $0.15 |
-| Relance | `agents/relance.py` | claude-haiku-4-5 | $0.02 |
-| Compta | `agents/compta.py` | claude-sonnet-4-6 | $0.08 |
-| Planning | `agents/planning.py` | claude-haiku-4-5 | $0.03 |
-| Réputation | `agents/reputation.py` | claude-haiku-4-5 | $0.02 |
-| Prospection | `agents/prospection.py` | claude-haiku-4-5 | $0.02 |
-| Fiscalité | `agents/fiscalite.py` | claude-sonnet-4-6 | $0.05 |
-| Déplacements | `agents/deplacements.py` | claude-haiku-4-5 | $0.02 |
-| RH | `agents/rh.py` | claude-sonnet-4-6 | $0.05 |
+| Agent | Fichier | Model | Budget/appel | Scope |
+|-------|---------|-------|-------------|-------|
+| Supervisor | `agents/supervisor.py` | claude-sonnet-4-6 | $0.10 | Routage intent, queue, budget LLM, briefing matin, résumé soir, crons, Background Consciousness |
+| Devis | `agents/devis.py` | claude-sonnet-4-6 | $0.15 | Vocal/texte/photo → postes → prix (Mem0 + référentiels) → TVA multi-taux → PDF 47 mentions → signature Yousign → acompte auto |
+| Relance | `agents/relance.py` | claude-haiku-4-5 | $0.02 | Devis sans réponse J+3, factures impayées J+15/30/45, ton adaptatif par client (Mem0), mise en demeure |
+| Compta | `agents/compta.py` | claude-sonnet-4-6 | $0.08 | Catégorisation tickets/factures fournisseurs, attribution chantier, marge temps réel, export comptable, suivi achats |
+| Planning | `agents/planning.py` | claude-haiku-4-5 | $0.03 | Timer chantier, dépassements, capacité, enchaînements, rappels matériaux, calendrier, plan de charge |
+| Réputation & Marketing | `agents/reputation.py` | claude-haiku-4-5 | $0.02 | Avis Google (SMS + réponse IA + SEO local), publication réseaux sociaux (avant/après + texte IA), suivi score |
+| Prospection | `agents/prospection.py` | claude-haiku-4-5 | $0.02 | CRM architectes/apporteurs, leads entrants, rappels réseau, détection opportunités |
+| Email Pro | `agents/email_pro.py` | claude-haiku-4-5 | $0.03 | Connexion IMAP/OAuth, filtrage pro/perso, catégorisation (prospect/client/fournisseur/admin/spam), résumé quotidien, alertes urgentes, fiche prospect auto |
+| Fiscalité & Trésorerie | `agents/fiscalite.py` | claude-sonnet-4-6 | $0.05 | Suivi fiscal annuel par statut, calendrier échéances, seuils, scan courriers admin, trésorerie prévisionnelle, alertes |
+| Déplacements | `agents/deplacements.py` | claude-haiku-4-5 | $0.02 | Frais km auto, paniers repas, indemnités BTP par zone, carburant, parking |
+| RH | `agents/rh.py` | claude-sonnet-4-6 | $0.05 | Pointage heures, heures sup convention BTP, congés CIBTP, intérimaires, sous-traitants, export paie |
+| Vision IA | `agents/vision.py` | claude-sonnet-4-6 | $0.08 | Premier filtre de TOUTE image reçue : photo chantier → catégorisation + analyse + détection oublis. Ticket → OCR. Courrier admin → classification. Transmet à l'agent concerné |
+| Site Web | `agents/site_web.py` | claude-sonnet-4-6 | $0.10 | Génération site vitrine IA (infos profil → pages → photos galerie → avis Google → SEO local → mise en ligne). Proposition MAJ mensuelle auto (nouvelles photos/avis), validation artisan avant publication |
+| **V2** : Téléphone IA | `agents/telephone.py` | claude-sonnet-4-6 | $0.10 | Décroche quand l'artisan est sur chantier, prise d'info structurée, filtre, notification push |
 
 ---
 

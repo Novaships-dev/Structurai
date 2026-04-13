@@ -1,8 +1,8 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> 12 modules, 8 corps de métier, 6 langues, 6658 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
+> 15 modules, 8 corps de métier, 6 langues, 6658 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
-> Dernière mise à jour : 09/04/2026
+> Dernière mise à jour : 14/04/2026
 
 ---
 
@@ -34,9 +34,9 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ---
 
-## Les 12 modules en détail
+## Les 15 modules en détail
 
-> **Terminologie :** STRUCTORAI a **9 agents IA autonomes** (Devis, Relance, Compta, Planning, Réputation, Prospection, Fiscalité, Déplacements, RH) + **3 modules fonctionnels** (Conversation vocale bidirectionnelle, Galerie Photo Vision IA, Gamification + Background Consciousness) = **12 modules au total**. Les agents sont des processus IA indépendants avec leur propre system prompt et budget LLM. Les modules sont des fonctionnalités transversales.
+> **Terminologie :** STRUCTORAI a **13 agents IA autonomes** (Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web) + **Supervisor** (orchestrateur) + **3 modules fonctionnels** (Conversation vocale bidirectionnelle, Galerie Photo, Gamification + Background Consciousness) = **17 processus au total**. V2 : Agent Téléphone IA.
 
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
@@ -52,6 +52,9 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 | 10 | **Gamification** | 5 niveaux (Apprenti → Légende). Quêtes d'onboarding = valeur immédiate ("tes 10 prix habituels" = devis instantanés après). Score de contexte par devis (1-5 étoiles). Badges (10 devis, devis <60sec, 100 tickets scannés, "cerveau à 95%"). "Mon assistant me connaît à X%" (motivation à nourrir le cerveau). Micro-apprentissages vocaux contextuels (1/jour max, désactivables). |
 | 11 | **Background Consciousness** | Le cerveau PENSE entre les tâches. Proactif, pas réactif. "Marge moyenne passée de 31% à 23%, problème = chantier Martin +40%." "3 chantiers gagnés sur 12 devis (25%), le mois dernier 1/10, ton nouveau format marche." "2 factures impayées = 4800€, trésorerie tendue dans 15 jours." Briefing matin WhatsApp (3-5 actions prioritaires). Résumé soir. |
 | 12 | **Agent TÉLÉPHONE IA (V2)** | L'artisan ne décroche pas → le cerveau décroche : "Bonjour, [entreprise], [prénom] est sur chantier. Je prends votre demande." Prise d'info structurée (nom, numéro, besoin, adresse, urgence). Filtre intelligent (prospect → fiche auto / perso → laisse sonner / fournisseur → message / spam → filtre). Notification push avec résumé. Proactivité ("2 prospects non rappelés, le plus urgent = Mme Leroy, fuite aujourd'hui"). |
+| 13 | **Agent Vision IA** | Toute photo/document envoyé passe d'abord par l'Agent Vision : il identifie (ticket, photo chantier, plan, courrier admin), catégorise, analyse, détecte les oublis, puis transmet à l'agent concerné. C'est le "premier regard" du cerveau. |
+| 14 | **Agent Site Web IA** | L'artisan dit "crée-moi un site" → le cerveau génère un site vitrine complet en 5 min (accueil, services, galerie avant/après, avis Google, contact). Chaque mois, le cerveau propose d'ajouter les nouvelles photos et avis → l'artisan valide avant publication. Site inclus dans le plan Pro (29€). Les agences web facturent 1 500-5 000€ pour ça. |
+| 15 | **Agent Email Pro** | Connexion boîte mail → filtrage IA pro/perso → catégorisation (prospect/client/fournisseur/admin/spam) → résumé quotidien vocal → alertes urgentes (URSSAF, mise en demeure) → détection demande de devis dans les emails → fiche prospect auto. Une vraie secrétaire IA. |
 
 ---
 
@@ -99,7 +102,7 @@ FR/EN/TR/ES/PT/AR. Artisans turcs, portugais, arabophones en France = marché qu
 # PARTIE 2 — LA DISTRIBUTION FRANCE
 
 ## VECTEUR 1 — FACEBOOK GROUPS BTP (canal #1)
-15-20 groupes. Post d'arrivée direct (ancien du BTP + invitation beta). 1 feature vidéo/semaine (12 semaines de contenu = 12 modules). 5-10 réponses/jour aux questions. Quand c'est naturel : "j'utilise StructorAI pour ça" + vidéo.
+15-20 groupes. Post d'arrivée direct (ancien du BTP + invitation beta). 1 feature vidéo/semaine (12 semaines de contenu = 15 modules). 5-10 réponses/jour aux questions. Quand c'est naturel : "j'utilise StructorAI pour ça" + vidéo.
 
 ## VECTEUR 2 — TIKTOK (explosif)
 Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly Cruz 2.8M, Enfile ton bleu 137K = les artisans sont là.
@@ -114,7 +117,7 @@ Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly 
 20+ pages sur structorai.app (métiers + comparatifs + Factur-X).
 
 ## VECTEUR 6 — FACTUR-X CHEVAL DE TROIE
-Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 12 modules.
+Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 15 modules.
 
 ## VECTEUR 7 — PARTENARIATS (mois 2+)
 Comptables (30-50 cabinets, 1 comptable = 10-50 artisans). Grossistes (Point P, Cedeo, BigMat). Fédérations (CAPEB 380K artisans, FFB). CMA.
@@ -329,7 +332,7 @@ i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues
 
 ## RÈGLE ABSOLUE
 
-1. Ne JAMAIS réduire StructorAI à "une app de devis". 12 modules, 6658 lignes de données terrain, 950+ postes, 96 erreurs.
+1. Ne JAMAIS réduire StructorAI à "une app de devis". 15 modules, 6658 lignes de données terrain, 950+ postes, 96 erreurs.
 2. Chaque pays a son cheval de Troie : Factur-X (FR), Peppol (BE), FatturaPA (IT), Veri*Factu (ES), ZUGFeRD (DE). La conformité est l'entrée. L'IA est la valeur.
 3. France d'abord. Prouver le modèle. Puis dupliquer.
 4. Tous les artisans du monde ont les MÊMES douleurs. La solution est universelle. Seules les règles changent.
