@@ -1,6 +1,6 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> 12 modules, 8 corps de métier, 6 langues, 4709 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
+> 12 modules, 8 corps de métier, 6 langues, 6658 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
 > Dernière mise à jour : 09/04/2026
 
@@ -55,8 +55,8 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ## Les arguments de vente que PERSONNE d'autre n'a
 
-### 1. 4709 lignes de données terrain (950+ postes, 96 erreurs terrain)
-8 référentiels techniques (plomberie 1021 lignes, électricité 960, carrelage 573, peinture 465, maçonnerie 488, menuiserie 426, plaquiste 401, façadier 375). Vrais prix, vraies durées, vrais pièges. "Dépose baignoire fonte : 150-250€, 2-3h, ~100kg, 2 personnes, benne obligatoire." "Ø16 pour la baignoire ? Il faut du Ø20 minimum." C'est du terrain, pas du ChatGPT.
+### 1. 6658 lignes de données terrain (950+ postes, 96 erreurs terrain)
+8 référentiels techniques (plomberie 1021 lignes, électricité 960, carrelage 930, maçonnerie 857, peinture 791, menuiserie 744, façadier 699, plaquiste 656). Vrais prix, vraies durées, vrais pièges. "Dépose baignoire fonte : 150-250€, 2-3h, ~100kg, 2 personnes, benne obligatoire." "Ø16 pour la baignoire ? Il faut du Ø20 minimum." C'est du terrain, pas du ChatGPT.
 
 ### 2. Le pipeline automatique complet
 Prospect appelle → pré-devis 30s → visite → photos (Vision IA aide au chiffrage + détecte oublis) → devis vocal 2 min → PDF 47 mentions → signature électronique → fiche chantier auto → acompte → timer → tickets scannés → marge temps réel → facture Factur-X → paiement en ligne → relance auto → SMS avis Google → réponse IA → export comptable → briefing soir → prospect suivant relancé. TOUT automatique.
@@ -162,7 +162,7 @@ Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 lang
 - **Mentions** : 47 mentions obligatoires devis BTP
 - **Assurance** : Décennale obligatoire. RGE, Qualibat, Qualifelec
 - **Sanctions** : 3 000-15 000€ (devis absent), 75 000€ + 6 mois prison (décennale absente), 75 000-375 000€ (facture non conforme)
-- **Base prix** : 4709 lignes, 8 corps de métier ✅ DÉJÀ CRÉÉ
+- **Base prix** : 6658 lignes, 8 corps de métier ✅ DÉJÀ CRÉÉ
 - **Effort** : AUCUN, tout est prêt
 
 ### 🇧🇪 BELGIQUE FRANCOPHONE (~2-3 semaines)
@@ -327,7 +327,7 @@ i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues
 
 ## RÈGLE ABSOLUE
 
-1. Ne JAMAIS réduire StructorAI à "une app de devis". 12 modules, 4709 lignes de données terrain, 950+ postes, 96 erreurs.
+1. Ne JAMAIS réduire StructorAI à "une app de devis". 12 modules, 6658 lignes de données terrain, 950+ postes, 96 erreurs.
 2. Chaque pays a son cheval de Troie : Factur-X (FR), Peppol (BE), FatturaPA (IT), Veri*Factu (ES), ZUGFeRD (DE). La conformité est l'entrée. L'IA est la valeur.
 3. France d'abord. Prouver le modèle. Puis dupliquer.
 4. Tous les artisans du monde ont les MÊMES douleurs. La solution est universelle. Seules les règles changent.
