@@ -394,7 +394,7 @@ Le cerveau devient un assistant RH qui prépare TOUT pour le comptable ou la pla
 
 ---
 
-### F63. 6 agents autonomes — ENRICHI (nouveaux agents identifiés)
+### F63. 13 agents autonomes — ENRICHI (nouveaux agents identifiés)
 **Modification Fabrice :** "Il y a sûrement d'autres agents à ajouter"
 
 **Agents supplémentaires identifiés :**

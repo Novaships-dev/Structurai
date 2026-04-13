@@ -291,16 +291,34 @@ Les 13 agents :
 - Proactivité : "Ahmed a fait 42h cette semaine dont 7h sup. Sa paye doit inclure 7h à 125%."
 
 **Agent EMAIL PRO**
-- Connexion IMAP/OAuth, filtrage pro/perso, catégorisation auto, résumé quotidien, alertes urgentes, fiche prospect auto
+- Connexion IMAP ou OAuth (Gmail, Outlook) à la boîte mail pro de l'artisan
+- Filtrage intelligent pro/perso : les emails personnels ne sont pas traités
+- Catégorisation automatique : prospect, client existant, fournisseur, admin (URSSAF, impôts), spam
+- Résumé quotidien vocal : "Tu as 3 emails importants : une demande de devis SDB, une facture Point P, un rappel URSSAF"
+- Alertes urgentes en temps réel : mise en demeure, courrier URSSAF, échéance fiscale → notification push immédiate
+- Détection demande de devis dans les emails → fiche prospect auto → notification "Nouveau prospect Leblanc, demande devis SDB"
+- Ne répond JAMAIS aux emails sans validation de l'artisan (sauf accusé de réception automatique configurable)
+- Proactivité : "Tu as une demande de devis de M. Morel reçue il y a 48h sans réponse. Je prépare un pré-devis ?"
 
 **Agent VISION IA**
-- Premier filtre de toute image (photo chantier, ticket, courrier). Catégorise, analyse, détecte les oublis, transmet à l'agent concerné
+- Premier filtre de TOUTE image reçue dans l'app (photo chantier, ticket de caisse, facture fournisseur, plan, courrier administratif, tableau électrique, photo SDB)
+- Identification automatique du type de document : ticket → route vers Agent Compta, photo chantier → route vers Agent Devis, courrier URSSAF → route vers Agent Fiscalité
+- Détection d'oublis sur les photos chantier : "Je vois un sèche-serviette sur la photo qui n'est pas dans le devis — tu veux l'ajouter ?"
+- Catégorisation automatique des photos galerie : avant/pendant/après/problème
+- Lecture de plans : extraction des dimensions, surfaces, nombre de pièces
+- Analyse de tableaux électriques : identification des circuits, conformité NFC 15-100
+- Utilise Claude Vision (Sonnet 4.6) pour la compréhension d'image
+- Proactivité : "Tu as 5 photos non catégorisées du chantier Dupont. Je les classe ?"
 
 **Agent SITE WEB**
-- Génère un site vitrine professionnel IA avec les données de l'app. MAJ mensuelle auto avec validation artisan
-
-**Agent RÉPUTATION & MARKETING**
-- Avis Google (SMS + réponse IA + SEO) + publication réseaux sociaux (avant/après + texte IA)
+- Génère un site vitrine professionnel complet en 5 minutes à partir des données déjà dans l'app
+- Sources : profil entreprise (F92), photos galerie chantier (avant/après), avis Google (Agent Réputation), corps de métier, zone d'intervention
+- Pages générées : accueil, services, galerie, avis clients, contact avec formulaire
+- SEO local automatique : balises meta, schema.org LocalBusiness, mots-clés métier+ville
+- Publication sur sous-domaine structorai.app (Pro) ou domaine personnalisé (Business)
+- MAJ mensuelle : le cerveau détecte les nouvelles photos/avis → propose une mise à jour → l'artisan valide dans le dossier "À faire" (F89) AVANT publication
+- Le cerveau ne publie JAMAIS sans validation de l'artisan
+- Proactivité : "Tu as 3 nouvelles photos et 2 nouveaux avis depuis la dernière MAJ. Je prépare une mise à jour du site ?"
 
 **COUCHE 4 — Cerveau global / Supervisor (pattern Ouroboros)**
 
@@ -685,45 +703,45 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │                                                                  │
 │  Règles Supervisor :                                            │
 │  - MAX_ROUNDS = 50 par tâche (prevent runaway)                  │
-│  - Budget par agent : Devis 30%, Relance 10%, Compta 10%,      │
-│    Planning 8%, Réputation 8%, Prospection 8%,                  │
-│    Fiscalité 8%, Déplacements 8%, RH 10%                       │
+│  - Budget par agent : Devis 22%, Compta 10%, Vision IA 10%,    │
+│    Site Web 8%, Fiscalité 8%, RH 8%, Relance 7%,              │
+│    Planning 6%, Réputation 6%, Prospection 6%,                 │
+│    Email Pro 4%, Déplacements 3%, Téléphone (V2) 2%           │
 │  - Background consciousness : 1 cycle/heure, $0.07/pensée      │
 │  - Multi-model review sur les décisions critiques (devis > 5K€)│
 └───────────────────────────┬─────────────────────────────────────┘
                             │
 ┌───────────────────────────▼─────────────────────────────────────┐
-│                    9 AGENTS AUTONOMES                             │
+│                   13 AGENTS AUTONOMES                            │
 │                                                                  │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
-│  │  AGENT   │ │  AGENT   │ │  AGENT   │                        │
-│  │  DEVIS   │ │ RELANCE  │ │  COMPTA  │                        │
-│  │          │ │          │ │          │                        │
-│  │ Voix→PDF │ │ Auto-    │ │ OCR      │                        │
-│  │ Prix     │ │ relance  │ │ tickets  │                        │
-│  │ TVA      │ │ Email+SMS│ │ Export   │                        │
-│  │ Mentions │ │ Adaptatif│ │ Marge    │                        │
-│  │ Signature│ │ Tracking │ │ Anomalie │                        │
-│  └──────────┘ └──────────┘ └──────────┘                        │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
-│  │  AGENT   │ │  AGENT   │ │  AGENT   │                        │
-│  │ PLANNING │ │RÉPUTATION│ │PROSPECTIO│                        │
-│  │          │ │          │ │   N      │                        │
-│  │ Timer    │ │ Avis     │ │ CRM      │                        │
-│  │ Capacité │ │ Google   │ │ Archi    │                        │
-│  │ Alerte   │ │ Réponse  │ │ Relance  │                        │
-│  │ Enchaîne │ │ IA       │ │ Leads    │                        │
-│  └──────────┘ └──────────┘ └──────────┘                        │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
-│  │  AGENT   │ │  AGENT   │ │  AGENT   │                        │
-│  │FISCALITÉ │ │DÉPLACE-  │ │   RH     │                        │
-│  │          │ │ MENTS    │ │          │                        │
-│  │ Statuts  │ │ GPS      │ │ Pointage │                        │
-│  │ Seuils   │ │ Frais km │ │ Heures   │                        │
-│  │ URSSAF   │ │ Paniers  │ │ Conv.BTP │                        │
-│  │ Calendr. │ │ Zones BTP│ │ CIBTP    │                        │
-│  │ Scan doc │ │ Carburant│ │ Export   │                        │
-│  └──────────┘ └──────────┘ └──────────┘                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+│  │  AGENT   │ │  AGENT   │ │  AGENT   │ │  AGENT   │           │
+│  │  DEVIS   │ │ RELANCE  │ │  COMPTA  │ │ PLANNING │           │
+│  │ Voix→PDF │ │ Auto-    │ │ OCR      │ │ Timer    │           │
+│  │ Prix     │ │ relance  │ │ tickets  │ │ Capacité │           │
+│  │ TVA      │ │ Email+SMS│ │ Export   │ │ Alerte   │           │
+│  │ Mentions │ │ Adaptatif│ │ Marge    │ │ Enchaîne │           │
+│  │ Signature│ │ Tracking │ │ Anomalie │ │ Matériaux│           │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+│  │  AGENT   │ │  AGENT   │ │  AGENT   │ │  AGENT   │           │
+│  │RÉPUTATION│ │PROSPECTIO│ │EMAIL PRO │ │FISCALITÉ │           │
+│  │& MARKET. │ │   N      │ │          │ │& TRÉSO.  │           │
+│  │ Avis     │ │ CRM      │ │ IMAP     │ │ Statuts  │           │
+│  │ Google   │ │ Archi    │ │ Filtrage │ │ Seuils   │           │
+│  │ Réseaux  │ │ Relance  │ │ Résumé   │ │ URSSAF   │           │
+│  │ SEO      │ │ Leads    │ │ Alertes  │ │ Scan doc │           │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+│  │  AGENT   │ │  AGENT   │ │  AGENT   │ │  AGENT   │           │
+│  │DÉPLACE-  │ │   RH     │ │VISION IA │ │ SITE WEB │           │
+│  │ MENTS    │ │          │ │          │ │          │           │
+│  │ GPS      │ │ Pointage │ │ Photos   │ │ Vitrine  │           │
+│  │ Frais km │ │ Heures   │ │ OCR      │ │ SEO      │           │
+│  │ Paniers  │ │ Conv.BTP │ │ Plans    │ │ Galerie  │           │
+│  │ Zones BTP│ │ CIBTP    │ │ Routage  │ │ MAJ auto │           │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+│  + V2 : Agent TÉLÉPHONE IA (décroche, prise d'info, filtre)    │
 │                                                                  │
 │  Chaque agent :                                                 │
 │  - A son propre system prompt spécialisé                       │

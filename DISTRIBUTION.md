@@ -141,7 +141,7 @@ Mois 3 → Campagne Factur-X + CAPEB/FFB.
 
 ## Pourquoi l'Europe
 
-Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 langues). Les 6 agents sont identiques partout, seules les règles métier changent (30%). La facturation électronique devient obligatoire dans TOUTE l'Europe 2026-2028 = même cheval de Troie partout. Marché total : ~4M artisans.
+Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 langues). Les 13 agents sont identiques partout, seules les règles métier changent (30%). La facturation électronique devient obligatoire dans TOUTE l'Europe 2026-2028 = même cheval de Troie partout. Marché total : ~4M artisans.
 
 ## Roadmap
 
@@ -283,7 +283,7 @@ Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 lang
 ## Architecture d'expansion
 
 ### Réutilisable partout (70-90%)
-i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues), Mem0, 6 agents, pipeline complet, gamification, galerie photo + Vision IA, background consciousness
+i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues), Mem0, 13 agents, pipeline complet, gamification, galerie photo + Vision IA, background consciousness
 
 ### À adapter par pays (30%)
 | Élément | Fichiers |

@@ -453,7 +453,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 - ❌ Pas de détection d'oublis via Vision IA (photos)
 - ❌ Pas de Factur-X
 
-**Verdict :** Renalto est une menace RÉELLE sur la brique "devis IA". C'est le seul concurrent qui fait de la génération de devis par IA + vocal + WhatsApp. MAIS c'est un outil mono-fonction (devis uniquement). STRUCTORAI est un business manager complet avec 9 agents + 12 modules. Renalto est un pistolet à eau, STRUCTORAI est un arsenal.
+**Verdict :** Renalto est une menace RÉELLE sur la brique "devis IA". C'est le seul concurrent qui fait de la génération de devis par IA + vocal + WhatsApp. MAIS c'est un outil mono-fonction (devis uniquement). STRUCTORAI est un business manager complet avec 13 agents IA autonomes + 15 modules. Renalto est un pistolet à eau, STRUCTORAI est un arsenal.
 
 ---
 
@@ -566,7 +566,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 | **Fabrik** | Conversation → devis | Très early | 🟢 FAIBLE — pas livré |
 | **BatiSigne** | Chiffrage IA | Niche | 🟢 FAIBLE — pas un logiciel complet |
 
-**Conclusion :** L'IA arrive dans le BTP mais PERSONNE ne fait ce que STRUCTORAI fait. Les concurrents IA font UN truc (devis IA). STRUCTORAI fait TOUT le pipeline avec 9 agents IA autonomes + mémoire + vocal + 6 langues + 6658 lignes de données terrain. Le seul à surveiller est Renalto (Rita) sur la brique devis WhatsApp.
+**Conclusion :** L'IA arrive dans le BTP mais PERSONNE ne fait ce que STRUCTORAI fait. Les concurrents IA font UN truc (devis IA). STRUCTORAI fait TOUT le pipeline avec 13 agents IA autonomes + mémoire + vocal + 6 langues + 6658 lignes de données terrain. Le seul à surveiller est Renalto (Rita) sur la brique devis WhatsApp.
 
 ---
 
@@ -594,7 +594,7 @@ Sage Batigest est "vieillissant, pas intuitif" selon ses propres utilisateurs. E
 AUCUN concurrent ne supporte une autre langue que le français. 500K artisans turcs, portugais, arabophones en France = marché invisible pour eux, visible pour STRUCTORAI.
 
 ### Faille 8 : Le prix
-Obat = 25-79€. Batigest = 34-100€+. EBP = 29-36€+. Axonaut = 42-70€. STRUCTORAI Pro = 29€ avec TOUT (IA, vocal, 9 agents, 6 langues). Le rapport valeur/prix est imbattable.
+Obat = 25-79€. Batigest = 34-100€+. EBP = 29-36€+. Axonaut = 42-70€. STRUCTORAI Pro = 29€ avec TOUT (IA, vocal, 13 agents, 6 langues). Le rapport valeur/prix est imbattable.
 
 ---
 

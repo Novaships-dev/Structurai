@@ -1,7 +1,7 @@
 # STRUCTORAI — COÛTS RÉELS ET PIÈGES À ÉVITER
 
 > Chaque centime compté. Zéro surprise.
-> Date : 09/04/2026
+> Date : 14/04/2026
 
 ---
 
@@ -70,14 +70,18 @@ C'est ici que tu dois être chirurgical. Chaque artisan qui utilise l'app coûte
 | **Brevo (emails)** | ~10 emails (relances, devis, factures) | **~$0.02** | Quasi gratuit |
 | **Twilio SMS** | ~5 SMS (relances, avis Google) | **~$0.20** | $0.04/SMS |
 | **Supabase Storage** | ~50 MB (tickets, photos, PDFs) | **~$0.01** | $0.021/GB |
-| **TOTAL PAR ARTISAN** | | **~$3.30/mois** | |
+| **Claude Vision (Agent Vision IA)** | ~10-15 analyses photo chantier/plan × Sonnet | **~$0.35** | Au-delà de l'OCR tickets : photos chantier, plans, détection oublis |
+| **Agent Site Web (génération)** | Génération initiale + MAJ mensuelle × Sonnet | **~$0.50** | + coût hébergement ~$2-5/mois par site (Vercel) |
+| **Agent Email Pro (IMAP)** | Polling IMAP + ~5 résumés/jour × Haiku | **~$0.15** | Connexion IMAP + filtrage + résumé quotidien |
+| **Agent Réputation & Marketing (social)** | ~4 posts réseaux sociaux/mois × Haiku | **~$0.10** | Publication Facebook/Instagram/Google Business |
+| **TOTAL PAR ARTISAN** | | **~$4.50/mois** | |
 
 ### Marge par artisan
 
 | Plan | Prix | Coût API/artisan | Coût infra partagé | **Marge brute** | **% marge** |
 |------|------|-----------------|-------------------|----------------|-------------|
-| **Pro 29€** | 29€ | ~3.30$ ≈ 3€ | ~1€ (quote-part infra) | **~25€** | **~86%** |
-| **Business 79€** | 79€ | ~5$ ≈ 4.50€ (usage + élevé) | ~1.50€ | **~73€** | **~92%** |
+| **Pro 29€** | 29€ | ~4.50$ ≈ 4.10€ | ~1€ (quote-part infra) | **~23.90€** | **~82%** |
+| **Business 79€** | 79€ | ~6.50$ ≈ 5.90€ (usage + élevé) | ~1.50€ | **~71.60€** | **~91%** |
 | **Starter 0€** | 0€ | ~0.80€ (usage limité) | ~0.50€ | **-1.30€** | Perte |
 
 **Le Starter coûte de l'argent.** C'est normal — c'est de l'acquisition. Mais il faut le plafonner.
@@ -283,6 +287,6 @@ Le poste #1 c'est Claude API (~50-60% des coûts variables).
 Le poste #2 c'est ElevenLabs TTS (~15-20%).
 Tout le reste est négligeable (<10%).
 
-Marge brute : 86-92% à tous les stades.
+Marge brute : 82-91% à tous les stades.
 Le SaaS est très rentable SI tu contrôles les 12 pièges ci-dessus.
 ```

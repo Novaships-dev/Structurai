@@ -1,7 +1,7 @@
 # CLAUDE.md — STRUCTORAI
 
 > Ce fichier est la LOI du repo. Claude Code le lit en premier et le respecte toujours.
-> Dernière mise à jour : 09/04/2026
+> Dernière mise à jour : 14/04/2026
 
 ---
 
@@ -17,9 +17,10 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 
 | Fichier | Rôle | Quand le lire |
 |---------|------|---------------|
-| `PRODUCT_CONTEXT.md` | Spec produit complète (987 lignes) | Avant toute décision produit |
-| `BUILD_PLAN.md` | Arborescence fichiers + sprints (755 lignes) | Avant de créer un fichier |
-| `FEATURES.md` | 93 features V2 détaillées (546 lignes) | Avant d'implémenter une feature |
+| `PRODUCT_CONTEXT.md` | Spec produit complète (1013 lignes) | Avant toute décision produit |
+| `BUILD_PLAN.md` | Arborescence fichiers + sprints (759 lignes) | Avant de créer un fichier |
+| `FEATURES.md` | 105 features détaillées (608 lignes) | Avant d'implémenter une feature |
+| `UX_PARCOURS.md` | Navigation, onglets, parcours UX, règles d'interface (438 lignes) | Avant de toucher à la navigation ou aux écrans |
 | `FICHE_METIER.md` | Inventaire 63 fichiers data (887 lignes) | Avant de créer un fichier data/ |
 | `docs/METIER.md` | Constitution BTP — règles immuables | Avant tout code lié aux devis/factures/TVA |
 | `PLOMBERIE/`, `ELECTRICITE/`, etc. | 8 référentiels techniques (6658 lignes) | Pour les prix, matériaux, règles IA pricing |
@@ -167,13 +168,13 @@ Le Supervisor reçoit TOUS les messages et décide quel agent répond :
 | Planning | `agents/planning.py` | claude-haiku-4-5 | $0.03 | Timer chantier, dépassements, capacité, enchaînements, rappels matériaux, calendrier, plan de charge |
 | Réputation & Marketing | `agents/reputation.py` | claude-haiku-4-5 | $0.02 | Avis Google (SMS + réponse IA + SEO local), publication réseaux sociaux (avant/après + texte IA), suivi score |
 | Prospection | `agents/prospection.py` | claude-haiku-4-5 | $0.02 | CRM architectes/apporteurs, leads entrants, rappels réseau, détection opportunités |
-| Email Pro | `agents/email_pro.py` | claude-haiku-4-5 | $0.03 | Connexion IMAP/OAuth, filtrage pro/perso, catégorisation (prospect/client/fournisseur/admin/spam), résumé quotidien, alertes urgentes, fiche prospect auto |
+| Email Pro | `agents/agent_email_pro.py` | claude-haiku-4-5 | $0.03 | Connexion IMAP/OAuth, filtrage pro/perso, catégorisation (prospect/client/fournisseur/admin/spam), résumé quotidien, alertes urgentes, fiche prospect auto |
 | Fiscalité & Trésorerie | `agents/fiscalite.py` | claude-sonnet-4-6 | $0.05 | Suivi fiscal annuel par statut, calendrier échéances, seuils, scan courriers admin, trésorerie prévisionnelle, alertes |
 | Déplacements | `agents/deplacements.py` | claude-haiku-4-5 | $0.02 | Frais km auto, paniers repas, indemnités BTP par zone, carburant, parking |
 | RH | `agents/rh.py` | claude-sonnet-4-6 | $0.05 | Pointage heures, heures sup convention BTP, congés CIBTP, intérimaires, sous-traitants, export paie |
-| Vision IA | `agents/vision.py` | claude-sonnet-4-6 | $0.08 | Premier filtre de TOUTE image reçue : photo chantier → catégorisation + analyse + détection oublis. Ticket → OCR. Courrier admin → classification. Transmet à l'agent concerné |
-| Site Web | `agents/site_web.py` | claude-sonnet-4-6 | $0.10 | Génération site vitrine IA (infos profil → pages → photos galerie → avis Google → SEO local → mise en ligne). Proposition MAJ mensuelle auto (nouvelles photos/avis), validation artisan avant publication |
-| **V2** : Téléphone IA | `agents/telephone.py` | claude-sonnet-4-6 | $0.10 | Décroche quand l'artisan est sur chantier, prise d'info structurée, filtre, notification push |
+| Vision IA | `agents/agent_vision.py` | claude-sonnet-4-6 | $0.08 | Premier filtre de TOUTE image reçue : photo chantier → catégorisation + analyse + détection oublis. Ticket → OCR. Courrier admin → classification. Transmet à l'agent concerné |
+| Site Web | `agents/agent_site_web.py` | claude-sonnet-4-6 | $0.10 | Génération site vitrine IA (infos profil → pages → photos galerie → avis Google → SEO local → mise en ligne). Proposition MAJ mensuelle auto (nouvelles photos/avis), validation artisan avant publication |
+| **V2** : Téléphone IA | `agents/agent_telephone.py` | claude-sonnet-4-6 | $0.10 | Décroche quand l'artisan est sur chantier, prise d'info structurée, filtre, notification push |
 
 ---
 

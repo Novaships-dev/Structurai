@@ -3,7 +3,7 @@
 > Sans eux, le cerveau hallucine des prix et oublie des mentions légales.
 > Ils sont dans le dossier `data/` du repo.
 > Fabrice valide le contenu terrain, Claude Code les intègre dans le RAG.
-> Date : 09/04/2026
+> Date : 14/04/2026
 
 ---
 
@@ -575,7 +575,7 @@ Même structure — postes typiques :
 - Enduit extérieur — par m²
 - Démolition / dépose — par m² ou m³
 
-### data/prix/menuiserie.json
+### data/prix/menuiserie_serrurerie.json
 - Pose fenêtre PVC (fourniture + pose) — par u
 - Pose porte intérieure (bloc porte) — par u
 - Pose porte blindée — par u
@@ -585,6 +585,22 @@ Même structure — postes typiques :
 - Pose parquet massif — par m²
 - Pose escalier — par u
 - Pose terrasse bois — par m²
+
+### data/prix/plaquiste.json
+- Montage cloison placo sur ossature métallique — par m²
+- Doublage collé (placo + isolant) — par m²
+- Faux plafond suspendu BA13 — par m²
+- Faux plafond décoratif (dalles) — par m²
+- Bandes à joints (finition) — par m²
+- Trappe de visite — par u
+
+### data/prix/facade.json
+- Ravalement façade (nettoyage + enduit) — par m²
+- ITE (Isolation Thermique par l'Extérieur) — par m²
+- Peinture façade — par m²
+- Réparation fissures façade — par ml
+- Pose enduit monocouche — par m²
+- Nettoyage haute pression — par m²
 
 ### data/prix/couverture.json
 - Réfection toiture tuiles — par m²
@@ -633,7 +649,7 @@ Coefficients multiplicateurs par région :
 }
 ```
 
-### data/prix/taux_horaire_mo.json
+### data/prix/taux_horaires.json
 Taux horaire moyen main d'oeuvre par corps de métier :
 ```json
 {
@@ -808,7 +824,7 @@ Mots-clés SEO à intégrer dans les réponses aux avis :
 | data/fiscalite/calendrier_fiscal.json | Toutes les échéances par statut : URSSAF (mensuel/trimestriel), TVA, CFE, IS, bilan, déclaration revenus | Sprint 6 |
 | data/fiscalite/tva_regimes.json | Franchise base, réel simplifié, réel normal, seuils, taux, conditions | Sprint 6 |
 
-### Fichiers data RH / conventions collectives BTP
+## 8. RH / CONVENTIONS COLLECTIVES BTP
 
 | Fichier | Contenu | Priorité |
 |---------|---------|----------|
@@ -818,7 +834,7 @@ Mots-clés SEO à intégrer dans les réponses aux avis :
 | data/rh/cotisations_specifiques_btp.json | CIBTP (20.70%), OPPBTP (0.11%), PRO BTP (prévoyance), CCCA-BTP, DFS (7% en 2026) | Sprint 7 |
 | data/rh/conges_btp.json | Période référence (1er avril → 31 mars), prime vacances 30%, congés intempéries | Sprint 7 |
 
-### Fichiers data déplacements
+## 9. DÉPLACEMENTS
 
 | Fichier | Contenu | Priorité |
 |---------|---------|----------|
@@ -826,7 +842,7 @@ Mots-clés SEO à intégrer dans les réponses aux avis :
 | data/deplacements/zones_btp.json | 5 zones concentriques (0-5km → 40-50km), plafonds URSSAF exonération | Sprint 6 |
 | data/deplacements/paniers_repas_regions.json | Montant panier repas par région BTP (10.50€ Normandie → 14€ Occitanie) | Sprint 6 |
 
-### Fichiers data réseaux sociaux
+## 10. RÉSEAUX SOCIAUX
 
 | Fichier | Contenu | Priorité |
 |---------|---------|----------|
@@ -834,7 +850,7 @@ Mots-clés SEO à intégrer dans les réponses aux avis :
 
 ---
 
-## 8. GAMIFICATION & ONBOARDING
+## 11. GAMIFICATION & ONBOARDING
 
 ### data/gamification/quests.json
 Les 7 quêtes d'onboarding avec XP et conditions de complétion
@@ -847,7 +863,7 @@ Les 5 niveaux avec seuils XP
 
 ---
 
-## 9. I18N — TERMES MÉTIER PAR LANGUE
+## 12. I18N — TERMES MÉTIER PAR LANGUE
 
 ### data/i18n/metier_terms.json
 Termes métier BTP traduits dans les 6 langues (FR, EN, TR, ES, PT, AR) :

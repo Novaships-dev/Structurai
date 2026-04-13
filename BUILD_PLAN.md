@@ -260,10 +260,10 @@ structorai/
 │       │   ├── agent_fiscalite.py         # Agent Fiscalité — suivi fiscal annuel, rappels URSSAF/TVA, alertes seuils, scan courrier admin
 │       │   ├── agent_deplacements.py      # Agent Déplacements — GPS, frais km, paniers, indemnités BTP zones, export frais
 │       │   ├── agent_rh.py               # Agent RH — pointage heures, heures sup, indemnités employés, congés CIBTP, export paie
-│       │   ├── email_pro.py                     # Agent Email Pro (IMAP, filtrage, résumé)
-│       │   ├── vision.py                        # Agent Vision IA (analyse photos/documents)
-│       │   ├── site_web.py                      # Agent Site Web (génération + MAJ site vitrine)
-│       │   └── telephone.py                     # Agent Téléphone IA (V2 — décroche, prise d'info)
+│       │   ├── agent_email_pro.py          # Agent Email Pro (IMAP, filtrage, résumé)
+│       │   ├── agent_vision.py            # Agent Vision IA (analyse photos/documents)
+│       │   ├── agent_site_web.py          # Agent Site Web (génération + MAJ site vitrine)
+│       │   └── agent_telephone.py         # Agent Téléphone IA (V2 — décroche, prise d'info)
 │       │
 │       ├── prompts/                       # System prompts séparés du code (pattern Ouroboros prompts/)
 │       │   ├── __init__.py
