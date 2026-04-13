@@ -2,7 +2,7 @@
 > Ce fichier est le blueprint exact pour Claude Code.
 > Chaque fichier listé ici doit être créé, avec son rôle précis.
 > Fabrice ne code pas. Claude Code code tout. Fabrice crée les comptes infra et configure les clés.
-> Date : 03/04/2026
+> Date : 09/04/2026
 
 ---
 

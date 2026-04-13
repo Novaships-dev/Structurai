@@ -36,6 +36,8 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ## Les 12 modules en détail
 
+> **Terminologie :** STRUCTORAI a **9 agents IA autonomes** (Devis, Relance, Compta, Planning, Réputation, Prospection, Fiscalité, Déplacements, RH) + **3 modules fonctionnels** (Conversation vocale bidirectionnelle, Galerie Photo Vision IA, Gamification + Background Consciousness) = **12 modules au total**. Les agents sont des processus IA indépendants avec leur propre system prompt et budget LLM. Les modules sont des fonctionnalités transversales.
+
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
 | 1 | **Agent DEVIS** | Vocal/WhatsApp/texte → comprend "sdb complète 8m²" → structure les postes → cherche dans tes prix perso (Mem0) ou prix marché (base 950+ postes) → TVA multi-taux (5.5%/10%/20%) → 47 mentions obligatoires → PDF conforme → envoi par email/SMS → signature électronique Yousign → client signe = fiche chantier + acompte automatiques. Pré-devis instantané par téléphone AVANT visite (filtre les prospects sérieux). Détecte les oublis ("évacuation gravats pas mentionnée, j'ajoute ?"). |

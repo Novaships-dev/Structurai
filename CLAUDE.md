@@ -44,6 +44,7 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 | **STT** | Whisper (OpenAI) ou Deepgram | - |
 | **TTS** | ElevenLabs (qualité) ou OpenAI TTS (fallback) | - |
 | **Mémoire** | Mem0 | pip install mem0ai |
+| **Signature électronique** | Yousign API | - |
 | **Paiement** | Stripe | - |
 | **Email** | Brevo (transactionnel) | - |
 | **SMS** | Twilio | - |

@@ -131,9 +131,9 @@ La base de connaissances BTP du cerveau IA. Chaque référentiel contient : mat�
 | Menuiserie & Serrurerie | 744 | 26 | 200+ | 12 | 3 devis |
 | Façadier | 699 | 25 | 60+ | 10 | 3 devis |
 | Plaquiste | 656 | 24 | 60+ | 10 | 3 devis |
-| **Total** | **6658** | **185** | **870+** | **96** | **20+** |
+| **Total** | **6658** | **185** | **950+** | **96** | **20+** |
 
-> **Total documentation** : ~10 000+ lignes (référentiels techniques + PRODUCT_CONTEXT + BUILD_PLAN + FEATURES + FICHE_METIER + CLAUDE.md).
+> **Total documentation** : ~11 350+ lignes (référentiels techniques + PRODUCT_CONTEXT + BUILD_PLAN + FEATURES + FICHE_METIER + CLAUDE.md + COUT_REEL + SECURITE + DISTRIBUTION).
 
 ---
 

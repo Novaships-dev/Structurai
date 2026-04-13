@@ -3,7 +3,7 @@
 > Sans eux, le cerveau hallucine des prix et oublie des mentions légales.
 > Ils sont dans le dossier `data/` du repo.
 > Fabrice valide le contenu terrain, Claude Code les intègre dans le RAG.
-> Date : 03/04/2026
+> Date : 09/04/2026
 
 ---
 
