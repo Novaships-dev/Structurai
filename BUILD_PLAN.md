@@ -651,7 +651,10 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Mobile : Écran nouveau devis (vocal + formulaire)
 - [ ] Mobile : Preview PDF devis
 - [ ] Mobile : Liste devis avec statuts
+- [ ] Backend : Estimation dimensions par photo (Claude Vision) — `agents/tools/vision_measure.py` (F106)
+- [ ] Backend : Pré-devis à distance depuis photos client — `agents/tools/prequote_remote.py` (F110)
 - [ ] Test : dicter un devis vocal → PDF généré → envoi email
+- [ ] Test : envoyer 2-3 photos pièce → dimensions estimées → pré-devis généré
 
 ### Sprint 4 — Pipeline chantiers + Compta + Photos (~3 jours)
 - [ ] Backend : CRUD chantiers (pipeline stages)
@@ -721,6 +724,13 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Security audit (pattern AgentShield)
 - [ ] Performance test : latence vocale < 1.5s
 - [ ] Launch : Facebook groupes artisans + Product Hunt
+
+### Sprint V1.5 — Mesure AR Android (post-launch)
+- [ ] Intégration ARCore via ViroReact ou expo-three
+- [ ] UI mesure : pointer caméra, taper 2 coins, distance affichée
+- [ ] Connexion mesures → Agent Devis (quantités automatiques)
+- [ ] Stockage mesures dans fiche chantier (Supabase)
+- Durée estimée : 2-3 jours
 
 ---
 
