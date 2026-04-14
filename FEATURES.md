@@ -587,6 +587,44 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 - **Pourquoi :** L'artisan fait appel à un intérimaire pour 2 jours ou sous-traite une partie du chantier. Il doit suivre les coûts et les heures
 - **Comment :** Fiche intérimaire/sous-traitant (coordonnées, tarif, attestations). Affectation par chantier. Suivi heures et coûts. Impact sur la marge du chantier
 
+### F106. Estimation dimensions par photo (Vision IA) — NOUVEAU
+- L'artisan ou le client envoie 2-3 photos d'une pièce
+- Claude Vision identifie les objets de référence (porte 204cm, prise 25cm, carrelage, fenêtre)
+- Estime : longueur, largeur, hauteur, surface sol, surface murs
+- Précision ~15-25%, score de confiance affiché
+- Enchaîne avec le pré-devis : "Tu veux que je génère le devis sur cette base ?"
+- Fonctionne sur TOUS les téléphones, via l'app ET WhatsApp (le client envoie les photos par WhatsApp)
+- Intégré à la Galerie Photo Chantier et à la mémoire Mem0
+- Sprint : 3 (Agent Devis + Vision IA)
+
+### F107. Mesure AR (réalité augmentée Android) — V1.5
+- L'artisan pointe la caméra, tape les 2 coins, la distance s'affiche
+- ARCore via ViroReact ou expo-three
+- Précision ~5-10cm
+- Mesures intégrées directement dans le devis
+- Stockées dans la fiche chantier
+- Sprint : post-launch V1.5
+
+### F108. Scan LiDAR pièce (iPhone Pro) — V2
+- API RoomPlan d'Apple, scan 30 secondes
+- Plan coté automatique (dimensions, portes, fenêtres)
+- Précision ~1-2cm
+- Export plan PDF annexé au devis
+- Sprint : V2
+
+### F109. Photogrammétrie multi-photos — V3
+- 4-6 photos sous différents angles → reconstruction 3D → dimensions
+- COLMAP ou API cloud
+- Tous les téléphones, précision ~5-10%
+- Sprint : V3
+
+### F110. Pré-devis à distance (client envoie les photos) — V1
+- Le client envoie des photos de sa pièce par WhatsApp ou email
+- Le cerveau estime les dimensions + génère le pré-devis
+- L'artisan reçoit : "Prospect Dupont, SDB ~6m², pré-devis estimé 4850€ TTC. Tu te déplaces ?"
+- Filtre les prospects sérieux AVANT déplacement
+- Sprint : 3 (même feature que F106 mais initiée par le client)
+
 ---
 
 ## RÉSUMÉ DES CHANGEMENTS
@@ -594,8 +632,8 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 | Type | Nombre |
 |------|--------|
 | Features modifiées/enrichies | 23 |
-| Nouvelles features ajoutées | 19 (F87-F105) |
-| **Total features** | **105** (86 → 105) |
+| Nouvelles features ajoutées | 24 (F87-F110) |
+| **Total features** | **110** (86 → 110) |
 | **Total agents V1** | **13** (6 → 13 : +Fiscalité, +Déplacements, +RH, +Vision IA, +Site Web, +Email Pro, +Réputation & Marketing) + Supervisor |
 | **V2** | Agent Téléphone IA |
 
