@@ -5,6 +5,95 @@
 
 ---
 
+# 0. LE POSITIONNEMENT — ON EST LES MEILLEURS ET ON LE DIT
+
+## La réalité du marché
+
+StructorAI est la MEILLEURE application du marché pour les artisans du bâtiment. C'est pas une opinion, c'est un fait. Aucun concurrent ne propose :
+- Un assistant vocal mains libres qui comprend le métier et RÉPOND à voix haute
+- Un cerveau qui VOIT les photos de chantier et fait le devis à partir de ce qu'il voit
+- 6 agents autonomes qui travaillent 24h/24 pendant que l'artisan dort
+- Une mémoire qui apprend les prix, les clients, le rythme de CHAQUE artisan
+- 950 postes chiffrés avec les vrais prix terrain et 96 erreurs documentées
+- 6 langues dès le premier jour
+- Factur-X natif (pas un patch rajouté en dernière minute)
+- WhatsApp comme porte d'entrée (les mains sales sur le chantier)
+
+Batappli c'est un logiciel de bureau d'il y a 15 ans. Obat c'est un formulaire en ligne. EBP c'est un tableur glorifié. StructorAI c'est un CERVEAU dans ta poche qui comprend ton métier mieux que ton apprenti.
+
+## Les phrases qui positionnent StructorAI comme le leader
+
+Ces phrases doivent apparaître PARTOUT : landing page, vidéos, posts, visuels.
+
+| Phrase | Où l'utiliser |
+|--------|--------------|
+| "L'app n°1 des artisans du bâtiment en France." | Landing page hero, bio TikTok/Instagram, Play Store |
+| "Le seul assistant qui comprend ton métier." | Landing page, Facebook posts, YouTube |
+| "Aucun autre outil ne fait ça." | Après chaque démo de feature unique (Vision IA, voix, mémoire) |
+| "L'outil que chaque artisan devrait avoir dans sa poche." | Posts Facebook, description YouTube |
+| "L'avenir du BTP est dans ta poche." | TikTok hook, bannière Play Store |
+| "L'assistant qui change tout pour les artisans." | Témoignages, posts, landing page |
+| "Fini les logiciels compliqués. Parle, c'est fait." | Landing page hero alternative, Facebook |
+| "Plus qu'une app. Un bras droit qui ne dort jamais." | Description longue, YouTube, articles |
+| "Le cerveau qui connaît 950 interventions BTP par coeur." | Arguments techniques, comparatifs |
+| "Pendant que tu dors, il relance tes impayés." | TikTok, posts Facebook, visuels |
+| "Ton meilleur employé. Il fait tout, il oublie rien, il coûte €29/mois." | Phrase de vente #1, partout |
+| "Construit par un ancien du bâtiment. Pas par des geeks en cravate." | Storytelling, Facebook, landing page |
+| "Il te connaît mieux que ton comptable au bout de 3 mois." | Mémoire Mem0, posts, démos |
+| "Après 3 mois, tu te demandes comment tu faisais avant." | Témoignages, nurturing |
+
+## Le pitch de 10 secondes (elevator pitch)
+
+"StructorAI c'est le meilleur assistant pour artisans du bâtiment. Tu lui parles depuis le chantier, les mains sales, il fait tes devis en 2 minutes, relance tes impayés, scanne ta compta, gère tes avis Google, et il te connaît de mieux en mieux chaque jour. Ton meilleur employé, €29/mois."
+
+## Le pitch de 30 secondes
+
+"Imagine un collègue qui travaille 24h/24, qui oublie jamais rien, qui connaît tes prix par coeur, qui relance tes impayés avec le bon ton, qui trie tes tickets de caisse en 3 secondes, qui surveille tes marges et te prévient quand ça dérape, qui collecte tes avis Google, qui relance tes architectes, et qui comprend même tes photos de chantier. Et qui parle ta langue, que tu sois français, turc, portugais ou arabe. Ce collègue c'est StructorAI. Et il coûte €29/mois. Le prix d'une heure de main d'oeuvre."
+
+## Le comparatif brutal (à utiliser dans les vidéos et posts)
+
+"Batappli : un logiciel de bureau. Tu t'assois devant un PC le soir pour remplir des cases.
+StructorAI : un cerveau dans ta poche. Tu parles, c'est fait. Même les mains dans le plâtre.
+
+Batappli : une bibliothèque d'ouvrages statique.
+StructorAI : un cerveau qui connaît 950 interventions et qui apprend TES prix.
+
+Batappli : pas de relance, pas de compta, pas de planning, pas d'avis Google.
+StructorAI : 12 modules. 6 agents. Un seul cerveau. Tout est fait.
+
+Batappli : français seulement.
+StructorAI : 6 langues. Français, turc, portugais, arabe, espagnol, anglais.
+
+Batappli : pas conforme Factur-X nativement.
+StructorAI : Factur-X natif. Conforme le jour 1.
+
+C'est pas le même monde."
+
+## Les chiffres qui impressionnent
+
+Utiliser ces chiffres dans les visuels, posts, landing page :
+
+| Chiffre | Ce qu'il dit |
+|---------|-------------|
+| "2 minutes" | Le temps d'un devis vocal vs 2h sur Word |
+| "3 secondes" | Le temps de classer un ticket de caisse |
+| "30 secondes" | Le pré-devis au téléphone |
+| "6 agents" | Qui travaillent 24h/24 pour toi |
+| "12 modules" | Tout ce que ton business a besoin |
+| "950 interventions" | Que le cerveau connaît par coeur avec les vrais prix |
+| "96 erreurs terrain" | Que le cerveau détecte pour toi |
+| "4709 lignes" | De données métier réelles (pas du ChatGPT) |
+| "8 corps de métier" | Plomberie, électricité, carrelage, peinture, maçonnerie, menuiserie, plaquiste, façadier |
+| "6 langues" | Français, turc, portugais, arabe, espagnol, anglais |
+| "85%" | Le cerveau te connaît à 85% en 3 mois. Devis en 30 secondes. |
+| "€29/mois" | Le prix d'une heure de main d'oeuvre |
+| "€0" | Le plan Starter. Gratuit. 5 devis/mois. |
+| "47 mentions" | Obligatoires sur un devis BTP. Le cerveau les met toutes. Automatiquement. |
+| "15 000€" | L'amende par facture non conforme Factur-X. StructorAI = conforme. |
+| "0 minute" | Ce que tu passes sur l'admin le soir. StructorAI a tout fait. |
+
+---
+
 # 1. PSYCHOLOGIE DU MARCHÉ — COMPRENDRE L'ARTISAN
 
 ## Qui est l'artisan BTP en France
@@ -281,14 +370,26 @@ C'est quand il dicte son premier devis et que le PDF sort en 2 minutes avec les 
 
 ---
 
-# 7. CE QU'ON NE DIT JAMAIS
+# 7. CE QU'ON DIT ET CE QU'ON NE DIT PAS
 
-- On ne dit JAMAIS "intelligence artificielle" ou "IA" en premier. On dit "assistant" ou "cerveau". L'IA fait peur aux artisans (va remplacer mon métier ?). Le mot "assistant" rassure (il m'aide, il ne me remplace pas).
-- On ne dit JAMAIS "logiciel" ou "plateforme". On dit "assistant" ou "collègue".
-- On ne parle JAMAIS de technologie en premier. On parle du RÉSULTAT (tes soirées, tes impayés, ta marge).
-- On ne dit JAMAIS "simple" ou "facile" (ça sous-entend que l'artisan est bête). On dit "tu parles, il fait le reste".
-- On ne critique JAMAIS Batappli ou les concurrents directement. On montre la différence par la démo.
-- On ne promet JAMAIS de chiffres impossibles ("gagne 10x plus"). On promet du temps ("2 minutes au lieu de 2 heures") et de la tranquillité ("rien à faire ce soir").
+## CE QU'ON DIT (sans hésiter)
+
+- On DIT que c'est **la meilleure app du marché** pour les artisans. C'est vrai, on l'assume.
+- On DIT que c'est **l'app n°1 des artisans BTP**. On la positionne comme le leader dès le jour 1.
+- On DIT que **rien d'autre ne fait ça**. Aucun concurrent n'a la voix, la vision, la mémoire, les 6 agents, les 6 langues.
+- On DIT que c'est **le meilleur employé qu'un artisan puisse avoir**. Il travaille 24h/24, oublie rien, coûte €29.
+- On DIT que ça va **changer sa vie**. Parce que c'est vrai. 2h d'admin en moins chaque soir = sa vie change.
+- On DIT que c'est **l'avenir du BTP**. Pas dans 10 ans. Maintenant.
+- On COMPARE avec les concurrents sans complexe. Batappli c'est un logiciel de bureau. StructorAI c'est un cerveau dans ta poche. C'est pas le même monde.
+
+## CE QU'ON NE DIT PAS
+
+- On ne dit pas "intelligence artificielle" en premier. On dit "assistant" ou "cerveau". L'IA fait peur aux artisans. Le mot "assistant" rassure.
+- On ne dit pas "logiciel" ou "plateforme". On dit "assistant", "collègue", "bras droit".
+- On ne parle pas de technologie en premier. On parle du RÉSULTAT d'abord (tes soirées, tes impayés, ta marge). La tech vient après.
+- On ne dit pas "simple" ou "facile" (ça sous-entend que l'artisan est bête). On dit "tu parles, il fait le reste".
+- On ne promet pas de chiffres impossibles ("gagne 10x plus"). On promet du temps ("2 minutes au lieu de 2 heures"), de l'argent récupéré ("tes impayés relancés"), et de la tranquillité ("rien à faire ce soir").
+- On ne dit pas "essayez notre solution innovante". On dit "essaie, tu vas comprendre en 2 minutes".
 
 ---
 
