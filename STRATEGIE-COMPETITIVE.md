@@ -1,606 +1,242 @@
-# STRUCTORAI — ANALYSE CONCURRENTIELLE COMPLÈTE
+# STRUCTORAI — EXPLOITER LES FAIBLESSES, VOLER LES FORCES
 
-> Chaque concurrent scanné. Forces, faiblesses, prix, avis négatifs, nombre d'utilisateurs.
-> Le but : savoir EXACTEMENT où frapper.
+> Chaque faiblesse concurrente = une feature qui tue.
+> Chaque force concurrente = une leçon à intégrer.
 > Date : 13/04/2026
 
 ---
 
-## RÉSUMÉ EXÉCUTIF
+## PRINCIPE
 
-**22 concurrents identifiés** dans la niche BTP/trades. **3 ont de l'IA** (Handoff.ai aux US, Sleepless Tradesman au UK, ServiceM8 en Australie) mais AUCUN n'est en France, AUCUN ne parle français, AUCUN ne fait du vocal bidirectionnel, et AUCUN ne couvre le pipeline complet (prospect → devis → chantier → facture → relance → compta → réputation → prospection → fiscalité → RH).
-
-**En France : ZÉRO concurrent avec IA.** Les 14 logiciels BTP français sont tous des logiciels de saisie classiques.
-
-| Catégorie | Concurrents | Part de marché |
-|-----------|------------|----------------|
-| Leaders spécialisés BTP (FR) | Obat, Tolteck | ~50K clients combinés |
-| Historiques / ERP (FR) | Sage Batigest, EBP Bâtiment, Batappli | PME structurées |
-| Challengers en ligne (FR) | ProGBat, Costructor, Synobat | Artisans prix-sensibles |
-| Généralistes avec module BTP (FR) | Axonaut, Evoliz, Pennylane | TPE multi-secteurs |
-| Suivi de chantier pur (FR) | Alobees, Kalitics, Fieldwire | PME 5-100 salariés |
-| Gratuits/Freemium (FR) | Boby, Facture.net | Auto-entrepreneurs |
-| **🔴 Concurrents IA (hors France)** | **Handoff.ai (US), Sleepless Tradesman (UK), ServiceM8 (AU)** | **US/UK/AU uniquement** |
+On ne copie pas. On observe ce que les concurrents font BIEN, on le fait mieux. On observe ce qui fait MAL à leurs utilisateurs, et on en fait notre argument de vente #1.
 
 ---
 
-## LES 2 LEADERS — CIBLES DIRECTES
+## PARTIE 1 — EXPLOITER LEURS FAIBLESSES
 
-### 1. OBAT — Le leader
+### FAIBLESSE 1 : Handoff hallucine les prix ($7 500 pour 8 portes)
 
-| Donnée | Valeur |
-|--------|--------|
-| **Clients** | 20 000+ (2026) |
-| **Avis Google** | 4.9/5 (2 500+ avis) |
-| **Trustpilot** | 636 avis |
-| **Prix** | 25-79€ HT/mois |
-| **Cible** | Artisans solo, TPE, PME jusqu'à 50 salariés |
-| **Création** | 2019, ~50 employés |
+**Le problème chez eux :** L'IA génère des prix sans garde-fou. Les artisans doivent tout vérifier. Un mauvais devis envoyé = crédibilité détruite.
 
-**Forces :**
-- Bibliothèque Batichiffrage intégrée (6M+ références fournisseurs)
-- Signature électronique des devis intégrée
-- Attestation TVA automatique
-- App mobile + web, multi-appareils
-- Support client excellent (unanimité dans les avis)
-- GTA (gestion temps et activités) depuis 2025
-- Conforme facturation électronique 2026
+**Comment on exploite :**
+- Le **score de confiance** sur chaque prix est l'arme n°1. Quand le cerveau n'est pas sûr, il le dit : "Prix estimé 380€/m² (confiance moyenne, 3 sources). Tu confirmes ?"
+- Règle IA pricing : alerter si prix < 70% ou > 150% du référentiel. Handoff ne fait pas ça.
+- **Nos 6 658 lignes de référentiels terrain** ancrent les prix dans le réel. Handoff a Home Depot. Nous on a les vrais prix par métier, par région, vérifiés.
+- **Mem0** : après 10 devis, le cerveau connaît TES prix. Plus d'hallucination possible sur tes postes habituels.
 
-**Faiblesses trouvées dans les avis :**
-- "Pas adapté aux entreprises, seulement aux artisans" — pas conforme pour les factures de situation complexes selon certains
-- Pas de connexion bancaire en temps réel
-- Pas de relance automatique des impayés (point mentionné sur plusieurs comparatifs)
-- Prix au-dessus de la moyenne du marché
-- "Logiciel qui ne gère que la facturation, pas assez complet, on utilise Excel pour les stocks et les achats" (avis LeBonLogiciel)
-- Pas de CRM intégré
-- Pas de mode vocal
-- Pas d'IA
-- Une seule langue (français)
+**Message marketing :** "Handoff te sort $7 500 pour 8 portes. Nous on te sort une fourchette 800-1 200€ basée sur tes prix + prix marché, et on te dit quand on n'est pas sûr."
 
 ---
 
-### 2. TOLTECK — Le simple (racheté par Saint-Gobain)
+### FAIBLESSE 2 : Obat n'a PAS de relance automatique
 
-| Donnée | Valeur |
-|--------|--------|
-| **Clients** | 28 000+ (2026) |
-| **Trustpilot** | 4.8/5 (926 avis) |
-| **Google** | 4.4/5 (500+ avis) |
-| **Capterra** | 4.4/5 |
-| **Prix** | 25€ HT/mois (sans engagement), 19€ annuel |
-| **Cible** | Artisans qui détestent l'informatique |
-| **Acquis par** | Saint-Gobain |
+**Le problème chez eux :** 20 000 clients, leader du marché, et ZÉRO relance des impayés. L'artisan doit se souvenir tout seul de relancer. 47% des factures BTP payées à plus de 30 jours. 1 faillite BTP sur 4 = retards de paiement.
 
-**Forces :**
-- Simplicité extrême (devis en 5 minutes)
-- Mode hors-ligne (fonctionne sans connexion)
-- Multi-plateforme (PC, Mac, tablette, smartphone)
-- Support illimité inclus dans le prix
-- Adossé à Saint-Gobain (crédibilité, pérennité)
-- Intégration catalogues Point P / Plateforme du Bâtiment
+**Comment on exploite :**
+- Agent Relance = différenciateur massif. Devis sans réponse J+3, facture J+15, J+30, J+45 avec ton adaptatif.
+- La mémoire Mem0 retient que "Martin paie toujours 10 jours en retard → relancer plus tôt".
+- Mise en demeure automatique J+45 avec texte juridiquement correct.
+- Dashboard impayés dans le briefing du matin : "3 factures impayées = 4 800€, la plus ancienne Martin 25 jours."
 
-**Faiblesses trouvées dans les avis :**
-- "Suspension immédiate du compte si le paiement échoue — inacceptable, aucune souplesse" (avis Trustpilot, janvier 2026)
-- Une seule devise supportée (pas d'EUR + CHF par exemple)
-- Pas de suivi de chantier
-- Pas de gestion des budgets
-- Pas de CRM
-- Pas de relance automatique
-- Pas de connexion bancaire
-- "Pas de fonctionnalités avancées, adapté seulement aux petits artisans"
-- Pas de multi-langue
-- Pas d'IA
+**Message marketing :** "Obat te laisse courir après tes impayés tout seul. Nous, on relance pour toi — et on adapte le ton à chaque client."
 
 ---
 
-## LES HISTORIQUES / ERP
+### FAIBLESSE 3 : Tolteck suspend immédiatement si le paiement échoue
 
-### 3. SAGE BATIGEST CONNECT
+**Le problème chez eux :** Un artisan perd sa CB, le prélèvement échoue, Tolteck coupe l'accès immédiatement. L'artisan ne peut plus accéder à ses devis et factures en cours.
 
-| Donnée | Valeur |
-|--------|--------|
-| **LeBonLogiciel** | 4.22/5 (175 avis Connect), 3.92/5 (1 132 avis i7) |
-| **Trustpilot Sage** | Catastrophique (résiliations, prélèvements après résiliation) |
-| **Prix** | À partir de 34.67€ HT/mois + 10€/utilisateur supplémentaire |
-| **Cible** | PME 10-50 salariés, marchés publics |
+**Comment on exploite :**
+- **Grâce period de 7 jours** : si le paiement échoue, on envoie un rappel, pas une coupure. L'artisan a 7 jours pour mettre à jour son moyen de paiement.
+- Mode lecture seule après 7 jours (peut consulter mais pas créer), jamais de coupure sèche.
+- Les données de l'artisan lui appartiennent. Même en cas de résiliation, export complet possible pendant 30 jours.
 
-**Forces :**
-- Solution la plus complète du marché (devis, factures, métrés, stocks, achats, suivi chantier, compta)
-- Gestion appels d'offres + Chorus Pro (marchés publics)
-- e-Tarif : 6M+ références avec prix fournisseurs actualisés
-- Factures de situation / d'avancement natives
-- Partenariat Alobees pour suivi terrain
-- PDP (Plateforme de Dématérialisation Partenaire) intégrée
-
-**Faiblesses — ACCABLANTES dans les avis :**
-- "Solution vieillissante, pas intuitive" (2/5, LeBonLogiciel)
-- "N'est plus maintenu, plus de mises à jour, contraints de remplacer" (2/5, février 2026)
-- "Trop onéreux, passage en abonnement fait exploser les coûts" (récurrent)
-- "Service client pitoyable, bugs depuis la dernière mise à jour" (Trustpilot)
-- "Augmentation énorme de l'abonnement sans réponse" (Trustpilot)
-- "Prélèvements après résiliation, mois de galère pour se faire rembourser" (MASSIF sur Trustpilot — 5+ avis similaires)
-- "Interface trop chargée, difficile à prendre en main"
-- "Commercial qui promet des fonctionnalités qui n'existent pas" (Trustpilot)
-- Pas de version Mac native
-- Pas d'app mobile native (uniquement web)
-- "Pas de CRM, gros point faible" (avis LeBonLogiciel)
-- Pas de mode vocal, pas d'IA
+**Message marketing :** "Chez Tolteck, un prélèvement rejeté = coupé immédiatement. Chez nous, tu as 7 jours pour respirer. Tes données t'appartiennent."
 
 ---
 
-### 4. EBP BÂTIMENT
+### FAIBLESSE 4 : Sage Batigest est vieillissant et ses utilisateurs veulent migrer
 
-| Donnée | Valeur |
-|--------|--------|
-| **Prix** | 29.25-36€ HT/mois (Hubbix), sur devis (ELITE) |
-| **Cible** | TPE-PME, plusieurs versions (ACTIV, PRO, ELITE) |
+**Le problème chez eux :** "Solution vieillissante", "pas intuitif", "n'est plus maintenu", "trop onéreux". 1 132 avis sur la version i7, note 3.92/5. Les utilisateurs DISENT qu'ils veulent changer.
 
-**Forces :**
-- Éditeur historique français reconnu
-- Facturation électronique intégrée
-- Factures de situation et d'avancement
-- Gestion achats et stocks
-- Version cloud + local
+**Comment on exploite :**
+- **Import Batigest** : créer un outil d'import qui récupère les clients, les ouvrages et l'historique depuis un export Batigest. L'artisan migre en 10 minutes.
+- Campagne Facebook/LinkedIn ciblée : "Vous utilisez Batigest ? Migrez en 10 minutes. Votre assistant IA vous attend."
+- Le prix : Batigest = 34-100€+/mois pour un logiciel sans IA. STRUCTORAI Pro = 29€ avec IA + vocal + 9 agents.
 
-**Faiblesses :**
-- "Logiciel complexe" (cité dans presque tous les comparatifs)
-- Pas adapté aux débutants
-- Interface datée
-- "Si vous travaillez seul, des alternatives seront plus simples" (MonLogicielBTP)
-- Courbe d'apprentissage longue
-- Pas de mode vocal, pas d'IA, pas de multi-langue
+**Message marketing :** "Batigest date de 2015. STRUCTORAI date de 2026. Même prix, 10× plus de valeur."
 
 ---
 
-### 5. BATAPPLI
+### FAIBLESSE 5 : AUCUN concurrent ne gère la réputation Google
 
-| Donnée | Valeur |
-|--------|--------|
-| **LeBonLogiciel** | 4.27/5 (91 avis) |
-| **Prix** | Licence perpétuelle : 590€ (Devis), 1 290€ (Artisan), 1 590€ (PME). Ou abonnement ~39-119€/mois |
-| **Comparatif-Logiciels** | 545€/mois mentionné (probablement version complète) |
-| **Cible** | Artisans à PME, depuis 25 ans |
+**Le problème :** Zéro concurrent ne collecte les avis, ne répond aux avis, ne fait de SEO local. L'artisan avec 12 avis perd face au concurrent avec 45 avis. Personne ne l'aide.
 
-**Forces :**
-- 25 ans d'existence, base installée solide
-- Bases de données métier détaillées pour le chiffrage
-- Versions artisan/PME avec fonctionnalités adaptées
-- Relance factures impayées automatique
+**Comment on exploite :**
+- Agent Réputation = océan bleu total. SMS auto J+2-3 post-chantier, lien avis Google pré-rempli.
+- Réponse IA aux avis (5★ = remerciement + mots-clés SEO, 3★ = empathie + résolution).
+- Dashboard : "Tu as 12 avis, ton concurrent en a 45. Je demande à tes 8 derniers clients ?"
+- Suivi position map pack Google.
 
-**Faiblesses trouvées dans les avis :**
-- "PAS de version en ligne, nécessite une installation" — pas de cloud natif
-- "Pas de mode hors connexion mobile, aux Antilles c'est compliqué car quand on est sur le chantier il faut taper les infos puis les ressaisir au bureau" (avis LeBonLogiciel)
-- "Face à de nombreux bugs avec notre outil actuel" (avis LeBonLogiciel)
-- "ERP restrictif, un peu fermé" (avis LeBonLogiciel)
-- Frais supplémentaires après la 1ère année pour assistance et mises à jour
-- "Tarifs élevés pour les versions complètes"
-- Pas de suivi comptable intégré
-- Interface vieillissante selon certains
+**Message marketing :** "En 3 mois, on te fait passer de 12 à 50 avis Google. Ton concurrent ne sait même pas que c'est possible."
 
 ---
 
-## LES CHALLENGERS EN LIGNE
+### FAIBLESSE 6 : AUCUN concurrent français n'a de vocal
 
-### 6. ProGBat
+**Le problème :** L'artisan sur le chantier, mains dans le ciment, doit poser ses outils, sortir son téléphone, ouvrir l'app, taper avec ses gros doigts. 10 minutes de perdues pour un devis.
 
-| Donnée | Valeur |
-|--------|--------|
-| **Prix** | 0€ (limité) → 17€ → 24€ → 138€ HT/mois |
-| **Cible** | Auto-entrepreneurs, TPE |
+**Comment on exploite :**
+- **Le vocal est LE différenciateur** : l'artisan parle, le cerveau comprend, structure, devis, envoie.
+- WhatsApp vocal : il envoie un vocal de 30 secondes, il reçoit un devis structuré.
+- Commandes contextuelles : sur la page chantier Dupont + "ajoute ticket 234€ Point P" = classé automatiquement.
+- Vocal en 6 langues : turc, portugais, arabe. Le marché invisible.
 
-**Forces :** 100% cloud, prix compétitif, bibliothèque d'ouvrages, signature électronique, module comptable, version gratuite.
-**Faiblesses :** Moins connu (peu de forums/retours), assistant IA "en cours de déploiement" (pas encore fonctionnel), pas de renommée.
-
-### 7. Costructor
-
-| Donnée | Valeur |
-|--------|--------|
-| **Prix** | Gratuit (limité) → 15€/mois |
-| **Cible** | TPE BTP |
-
-**Forces :** Plan gratuit généreux, compatible Peppol, développé en France.
-**Faiblesses :** Pas de synchronisation bancaire, pas de gestion employés/absences, fonctionnalités limitées vs payants.
-
-### 8. Synobat
-
-| Donnée | Valeur |
-|--------|--------|
-| **Prix** | 0€ → 12.50€ (Solo) → 25€ (Pro) → 125€ (Business) /mois |
-| **Cible** | Auto-entrepreneurs, artisans solo |
-| **Nouveau** | Lancé récemment, moins de maturité |
-
-**Forces :** Meilleur rapport qualité/prix revendiqué (12.50€/mois), plan gratuit, compatible 2026, app mobile.
-**Faiblesses :** Très nouveau (peu d'avis, peu de recul), écosystème limité, pas de suivi de chantier avancé sur les plans bas.
+**Message marketing :** "Les mains dans le plâtre ? Parle. C'est fait."
 
 ---
 
-## LES GÉNÉRALISTES
+### FAIBLESSE 7 : Batappli n'a pas de mode hors-ligne mobile
 
-### 9. Axonaut
+**Le problème :** "Aux Antilles c'est compliqué car quand on est sur le chantier il faut taper les infos et puis les ressaisir au bureau." Beaucoup de chantiers ont une connexion médiocre.
 
-| Donnée | Valeur |
-|--------|--------|
-| **Utilisateurs** | 189 000+ (tous secteurs) |
-| **Google** | 4.6/5 (195 avis) |
-| **Prix** | 41.99€ HT/mois (engagement 3 ans) ou 69.99€ sans engagement |
-| **Cible** | TPE-PME tous secteurs, 15% d'artisans |
-
-**Forces :** CRM + facturation + compta + RH + marketing dans un seul outil, connexion bancaire.
-**Faiblesses :** "Pas spécialisé BTP — pas de situations de travaux, pas de bibliothèques d'ouvrages, pas de métrés, gestion de chantier limitée à un module projet générique." Cher pour un artisan solo.
-
-### 10. Evoliz / Pennylane / Sellsy
-
-**Même problème :** Généralistes, pas BTP. Pas de situations de travaux, pas de bibliothèques métier, pas de TVA multi-taux BTP. Peuvent servir pour la facturation basique mais l'artisan doit tout paramétrer lui-même.
+**Comment on exploite :**
+- Mode offline complet : SQLite local + queue de sync.
+- L'artisan crée un devis hors-ligne, il se synchronise automatiquement quand la connexion revient.
+- Tolteck a déjà le mode hors-ligne, mais pas Obat, pas Batappli, pas Sage. On l'a aussi.
 
 ---
 
-## SUIVI DE CHANTIER PUR
+### FAIBLESSE 8 : Personne ne fait de prospection
 
-### 11. Alobees
+**Le problème :** L'artisan trouve ses chantiers par bouche-à-oreille et ne relance jamais son réseau. Les architectes oublient qu'il existe. Le carnet se vide sans prévenir.
 
-| Donnée | Valeur |
-|--------|--------|
-| **Prix** | 40€ HT/mois + 10€/utilisateur |
-| **Cible** | PME 5-100 salariés |
-
-**Forces :** App mobile terrain excellente, suivi temps réel, communication bureau/chantier, gain 20% productivité revendiqué.
-**Faiblesses :** Pas fait pour les artisans solo, pas de facturation propre, prix élevé pour un seul module.
-
-### 12. Kalitics / Fieldwire / Archipad
-
-Solutions de suivi de chantier, planning, coordination d'équipes. Complémentaires aux logiciels de facturation mais pas concurrents directs de STRUCTORAI (pas de devis, pas de facturation, pas de compta).
+**Comment on exploite :**
+- Agent Prospection = CRM architectes/apporteurs d'affaires.
+- "Architecte Lefebvre pas contacté depuis 45 jours → je prépare un message ?"
+- Détection opportunités : "2 chantiers en juin, carnet vide en juillet, je relance 5 contacts ?"
+- Lead entrant : prospect appelle → fiche créée → rappel planifié → pré-devis suggéré.
 
 ---
 
-## GRATUITS
+## PARTIE 2 — VOLER LEURS FORCES
 
-### 13. Boby
+### FORCE OBAT : Bibliothèque Batichiffrage (6M+ références)
 
-| Donnée | Valeur |
-|--------|--------|
-| **Prix** | Gratuit |
+**Leçon :** Les artisans ADORENT pouvoir chercher un produit et avoir le prix instantanément. Obat a Batichiffrage, Sage a e-Tarif.
 
-**Forces :** Gratuit, interface simple.
-**Faiblesses :** "Fonctionnalités limitées comparées aux solutions payantes, pas de support client dédié." Pas viable pour un artisan qui facture sérieusement.
-
-### 14. Facture.net
-
-Gratuit, généraliste, pas BTP. Correct pour démarrer, aucun suivi de chantier.
+**Ce qu'on fait :**
+- Nos 6 658 lignes de référentiels couvrent les postes de TRAVAIL (main d'oeuvre + fourniture) mais pas les catalogues fournisseurs détaillés.
+- **V2 : intégrer les APIs fournisseurs** (Point P, Cedeo, BigMat) pour les prix matériaux en temps réel. Pas pour V1, trop complexe.
+- **V1 : le Mem0 compense.** Après que l'artisan ait fait 20 devis, le cerveau connaît SES prix habituels chez SES fournisseurs. Plus besoin de Batichiffrage.
 
 ---
 
-## 🔴 LES CONCURRENTS IA — CEUX QUI BOUGENT
+### FORCE TOLTECK : Simplicité extrême (devis en 5 minutes)
 
-### 15. HANDOFF.AI (USA) — Le plus avancé en IA
+**Leçon :** Tolteck a 28K clients PARCE QUE c'est simple. Les artisans détestent l'informatique. Si c'est compliqué, ils n'utilisent pas.
 
-| Donnée | Valeur |
-|--------|--------|
-| **Pays** | USA |
-| **Prix** | ~$149/mois (Pro), custom pour plans supérieurs |
-| **G2** | Avis très positifs (mais beaucoup incentivized) |
-| **Capterra** | Avis mixtes |
-| **Cible** | Résidentiel US — remodelers, handymen, general contractors |
-| **Langue** | Anglais uniquement |
-
-**Forces — C'est le concurrent IA le plus sérieux :**
-- Devis IA instantanés : décris le job en texte → estimation complète en minutes
-- AI Site Walkthrough : enregistre une visite de chantier en audio → transcription → scope de travail automatique
-- Analyse de photos : upload photo → IA évalue les travaux et les coûts
-- Prix localisés par code postal (données Home Depot, Lowe's)
-- CRM intégré
-- Facturation + paiement digital
-- Propositions automatisées
-- Financement client (Acorn Finance)
-- "J'ai réduit de 90% le temps passé sur les devis" (avis récurrent)
-
-**Faiblesses trouvées dans les avis :**
-- "Les estimations reviennent parfois extrêmement élevées — $7 500 pour poser et peindre 8 portes. Les clients se moqueraient de moi" (Capterra)
-- "L'IA peut faire des hypothèses stupides — pour une nouvelle pièce, elle ne devisait le placo que d'un côté des murs au lieu des deux" (Slashdot)
-- "L'IA peut recevoir les mêmes informations et donner des résultats différents" (avis négatif)
-- "L'app crashe de temps en temps et freeze. L'IA est parfois lente" (Capterra)
-- "Le PDF starter affiche 'client not specified' — pas professionnel" (Capterra)
-- "Ça ressemble à un groupe de beta test payé au prix fort" (avis Capterra)
-- Prix données uniquement Home Depot — pas d'autres fournisseurs
-- **USA uniquement** — pas de TVA européenne, pas de mentions légales françaises
-- **Anglais uniquement**
-- Pas de vocal bidirectionnel (l'artisan tape ou dicte, le cerveau ne PARLE pas)
-- Pas de relance intelligente
-- Pas de scan tickets/compta
-- Pas de réputation Google
-- Pas de multi-langue
-
-**Verdict :** Handoff est le concurrent IA le plus avancé au monde dans le BTP, mais il est **100% US, 100% anglais, 100% résidentiel remodeling**. Pas de réglementation européenne, pas de Factur-X, pas de TVA multi-taux, pas de vocal. C'est un bon estimateur IA, pas un business manager complet.
+**Ce qu'on fait :**
+- L'onboarding STRUCTORAI doit être PLUS simple que Tolteck. Pas de formulaire de 15 champs.
+- Premier devis en 2 minutes : l'artisan parle → devis → envoi. C'est tout.
+- Gamification d'onboarding : "Donne-moi tes 10 prix habituels" = le cerveau est opérationnel à 80%.
+- Zéro menu complexe. L'artisan parle au chat, le chat fait tout.
+- **Règle UX : si l'artisan doit cliquer plus de 3 fois pour faire un devis, on a échoué.**
 
 ---
 
-### 16. SLEEPLESS TRADESMAN (UK) — Le nouveau challenger IA
+### FORCE OBAT : Support client excellent (4.9/5 unanime)
 
-| Donnée | Valeur |
-|--------|--------|
-| **Pays** | UK |
-| **Stade** | Très early — beta fermée Android, app iOS récente |
-| **Prix** | Pas encore public |
-| **Cible** | Tous corps de métier UK |
-| **Langue** | Anglais |
+**Leçon :** Le support est le facteur de rétention n°1 pour les artisans. Quand ça marche pas, ils veulent un humain IMMÉDIATEMENT.
 
-**Features IA :**
-- Chat conversation simple : décris le job → plan + estimation + matériaux
-- Analyse photos de chantier : upload → IA évalue le travail et les coûts
-- Prix fournisseurs actualisés
-- Conformité réglementaire : vérifie les codes de construction UK
-- PDF devis/factures avec branding
-- Envoi WhatsApp et email
-- Dark mode, multi-devise
-
-**Faiblesses :**
-- Très nouveau (quelques semaines/mois), quasi pas d'avis encore
-- Pas de CRM, pas de suivi de chantier, pas de relance
-- UK only (VAT UK, pas de TVA française)
-- Pas de vocal bidirectionnel
-- Pas de mémoire personnalisée
-- Pas de pipeline complet (prospect → devis → chantier → facture → relance → compta)
-
-**Verdict :** C'est le concurrent IA le plus proche de STRUCTORAI dans la philosophie (chat IA pour artisans), mais 100% UK, en beta, et avec 10% des features de STRUCTORAI.
+**Ce qu'on fait :**
+- Le cerveau IA EST le support de premier niveau. "Comment je fais une facture d'acompte ?" → le cerveau explique ET fait.
+- Si le cerveau ne peut pas résoudre → escalade humaine via chat (Fabrice au début, puis support dédié à 100+ clients).
+- Réponse < 2h en semaine. L'artisan ne doit JAMAIS se sentir seul.
+- **Vidéos tuto courtes** (30-60s) pour chaque action. Pas de doc de 50 pages.
 
 ---
 
-### 17. ServiceM8 (Australie) — Auto-Quote IA
+### FORCE HANDOFF : AI Site Walkthrough (audio → scope)
 
-| Donnée | Valeur |
-|--------|--------|
-| **Pays** | Australie, UK, USA, NZ, Canada |
-| **Prix** | Abonnement mensuel, plans multiples |
-| **Cible** | Field service (plombiers, électriciens, HVAC) |
+**Leçon :** L'artisan enregistre sa visite de chantier en parlant, Handoff transcrit et crée un scope de travail automatiquement. C'est puissant.
 
-**Feature IA :** "Auto-Quote" — analyse la fiche de travail et apprend comment l'artisan tarife pour rédiger automatiquement une description + items à facturer.
-**Faiblesses :** Une seule feature IA dans un logiciel de gestion classique. Pas d'estimation de prix marché, pas de vision IA, pas de vocal.
-
-### 18. ServiceTitan (USA) — Le géant des trades
-
-| Donnée | Valeur |
-|--------|--------|
-| **Pays** | USA principalement |
-| **Taille** | Valorisation >$9B, IPO 2025 |
-| **Cible** | Grosses entreprises de field service (HVAC, plumbing, electrical) |
-
-Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un impact mesurable de l'IA (vs 17% l'année précédente). Mais ServiceTitan est un ERP massif pour les grosses boîtes, pas pour les artisans solo. Prix non public (sur devis, typiquement $200-500+/mois).
-
-### Autres startups IA construction (pas concurrents directs)
-
-| Startup | Focus | Pourquoi pas concurrent |
-|---------|-------|----------------------|
-| **Togal.AI** | Takeoffs IA depuis blueprints | $299/mois, commercial uniquement, pas résidentiel |
-| **STACK** | Préconstruction / takeoffs | $216/mois, pas de facturation |
-| **Buildots** | Vision IA sécurité chantier | Gros chantiers industriels |
-| **SubBase** | Réconciliation factures fournisseurs IA | Sous-traitants, pas artisans |
-| **Trayd** | Back-office construction (YC, $10M Series A) | USA, grosses entreprises |
-| **Procore** | Project management enterprise | Millions de $, pas pour artisans |
-| **Kreo** | Takeoff IA budget | $35/mois, basique, pas de CRM/facturation |
-| **CountBricks** | Voice notes → takeoff | Niche, pas de pipeline complet |
+**Ce qu'on fait :**
+- On a MIEUX : vocal bidirectionnel. L'artisan parle sur le chantier, le cerveau RÉPOND et POSE DES QUESTIONS ("Tu veux garder la baignoire ou la remplacer ?").
+- Photo + vocal = combo ultime. L'artisan photographie la sdb + dit "SDB complète 6m²" → le cerveau voit la photo, comprend le scope, et propose un devis structuré avec détection d'oublis.
+- Handoff fait le walkthrough APRÈS la visite (transcription). Nous on le fait EN TEMPS RÉEL pendant la visite.
 
 ---
 
-## MATRICE — CE QU'ILS ONT VS CE QUE STRUCTORAI A
+### FORCE SAGE : Marchés publics + Chorus Pro
 
-| Fonctionnalité | Obat | Tolteck | Batigest | EBP | STRUCTORAI |
-|---------------|------|---------|----------|-----|------------|
-| Devis/factures | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Facturation électronique 2026 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Bibliothèque ouvrages | ✅ | ✅ | ✅ | ✅ | ✅ (950+ postes) |
-| Suivi de chantier | ✅ | ❌ | ✅ | ✅ | ✅ |
-| Signature électronique | ✅ | ❌ | ❌ | ❌ | ✅ (Yousign) |
-| Mode hors-ligne | ❌ | ✅ | ❌ | ❌ | ✅ (prévu) |
-| **Cerveau IA vocal** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Devis par la voix** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **OCR tickets** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Relance auto intelligente** | ❌ | ❌ | Basique | ❌ | ✅ (ton adaptatif) |
-| **Vision IA (photos)** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Détection oublis devis** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Mémoire qui apprend** | ❌ | ❌ | ❌ | ❌ | ✅ (Mem0) |
-| **Prospection auto** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Réputation Google auto** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Fiscalité intégrée** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Gestion RH / employés** | ❌ | ❌ | Basique | Basique | ✅ |
-| **Gamification** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **6 langues** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **WhatsApp** | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Connexion bancaire** | ❌ | ❌ | ❌ | ❌ | ❌ (pas V1) |
-| CRM | ❌ | ❌ | ❌ | ❌ | ✅ (Prospection) |
-| Marchés publics/Chorus | ❌ | ❌ | ✅ | ✅ | ❌ (pas V1) |
+**Leçon :** Sage a les marchés publics (appels d'offres, Chorus Pro). C'est un segment rentable.
+
+**Ce qu'on fait :**
+- Pas en V1. Les artisans solo ne font quasi jamais de marchés publics.
+- **V2+ : intégrer Chorus Pro** quand la base clients inclut des PME de 10+ salariés.
+- Garder en tête pour l'expansion européenne (chaque pays a son portail public).
 
 ---
 
-## CONCURRENTS AVEC IA — LES VRAIS MENACES
+### FORCE HANDOFF : Prix localisés par code postal
 
-### 15. RENALTO (Rita) — Le concurrent IA le plus sérieux ⚠️
+**Leçon :** Handoff utilise des prix réels par ZIP code (données Home Depot). C'est plus précis que des moyennes nationales.
 
-| Donnée | Valeur |
-|--------|--------|
-| **Produit** | "Rita" — assistante IA qui rédige des devis BTP |
-| **Fondateurs** | Xavier (expert bâtiment), Nicolas (tech), Charles (produit). Startup, Montreuil |
-| **Stade** | Early stage, présent au Salon Nordbat 2024, app lancée 2025 |
-| **App Store** | Présent iOS + Android |
-| **WhatsApp** | OUI — fonctionne directement via WhatsApp |
-| **Prix** | Gratuit (limité) → payant (bibliothèque perso) |
-| **Partenaire** | Marketplace Sage FR |
-| **TikTok** | Actif (676 likes sur une vidéo) |
-| **Clients** | Non communiqué (probablement <1000, startup early) |
-
-**Ce qu'il fait :**
-- Décris les travaux (texte, vocal, photos, documents) → Rita génère un devis en 30-60 secondes
-- Fonctionne via WhatsApp OU via l'app native
-- Bibliothèque de prix BTP intégrée (prix moyens, personnalisables)
-- Apprend tes prix et habitudes au fil du temps
-- Suggestions de prestations selon le type de chantier
-- Multi-métier (plomberie, électricité, maçonnerie, peinture, etc.)
-- Export PDF, Excel, CSV
-
-**CE QU'IL NE FAIT PAS (= avantage STRUCTORAI) :**
-- ❌ Pas de facturation (seulement devis)
-- ❌ Pas de relance impayés
-- ❌ Pas de suivi de chantier
-- ❌ Pas d'OCR tickets
-- ❌ Pas de compta
-- ❌ Pas de réputation Google
-- ❌ Pas de prospection CRM
-- ❌ Pas de fiscalité
-- ❌ Pas de gestion RH
-- ❌ Pas de gamification
-- ❌ Pas de background consciousness
-- ❌ Pas de mémoire persistante multi-level (Mem0)
-- ❌ Pas de score de confiance sur les prix
-- ❌ Pas de 6658 lignes de données terrain
-- ❌ Pas de détection d'oublis via Vision IA (photos)
-- ❌ Pas de Factur-X
-
-**Verdict :** Renalto est une menace RÉELLE sur la brique "devis IA". C'est le seul concurrent qui fait de la génération de devis par IA + vocal + WhatsApp. MAIS c'est un outil mono-fonction (devis uniquement). STRUCTORAI est un business manager complet avec 13 agents IA autonomes + 15 modules. Renalto est un pistolet à eau, STRUCTORAI est un arsenal.
+**Ce qu'on fait :**
+- **On a déjà les coefficients régionaux** (9 zones de Paris au DOM-TOM). C'est l'équivalent français.
+- V2 : affiner par département ou code postal si les données existent.
+- Mem0 fait mieux : après quelques devis, le cerveau utilise les prix RÉELS de l'artisan, pas des moyennes.
 
 ---
 
-### 16. BOBY / CEGID BOBY — IA Copilote intégrée
+## PARTIE 3 — LES 10 ACTIONS CONCRÈTES
 
-| Donnée | Valeur |
-|--------|--------|
-| **Produit** | "IA Copilote" intégré dans Boby (racheté par Cegid) |
-| **Acquis par** | Cegid (grand groupe ERP français) |
-| **Prix** | Gratuit (base) |
-
-**Ce qu'il fait :**
-- Dictée vocale de devis → l'IA transcrit et structure
-- Génération bibliothèque de prix automatique par IA
-- Saisie fiche client par la voix
-- Multi-langue (l'IA comprend et transcrit en français depuis d'autres langues)
-- Compatible tous appareils
-
-**CE QU'IL NE FAIT PAS :**
-- ❌ Pas de vrai cerveau IA (c'est un copilote de saisie, pas un agent autonome)
-- ❌ Pas de relance intelligente
-- ❌ Pas de suivi de chantier avancé
-- ❌ Pas d'OCR tickets
-- ❌ Pas de prospection
-- ❌ Pas de réputation
-- ❌ Pas de mémoire persistante
-- ❌ "Fonctionnalités limitées comparées aux solutions payantes, pas de support client dédié"
-
-**Verdict :** Boby a le backing de Cegid (gros groupe). L'IA Copilote est un ajout récent et basique — c'est de la dictée vocale + génération, pas un cerveau qui pense. Le produit est gratuit, donc il attrape les débutants. Mais les artisans qui grandissent le quittent vite.
+| # | Action | Exploite quelle faiblesse | Impact | Sprint |
+|---|--------|--------------------------|--------|--------|
+| 1 | **Score de confiance sur chaque prix** | Handoff hallucine | CRITIQUE — crédibilité | Sprint 3 |
+| 2 | **Agent Relance avec ton adaptatif** | Obat/Tolteck n'ont rien | CRITIQUE — trésorerie | Sprint 5 |
+| 3 | **Grâce period 7 jours** si paiement échoue | Tolteck coupe immédiatement | Rétention + image | Sprint 1 |
+| 4 | **Import Batigest/EBP** (clients + ouvrages) | Migration depuis les vieux logiciels | Acquisition | Sprint 8 |
+| 5 | **Agent Réputation** (SMS avis + réponse IA) | Personne ne le fait | Océan bleu | Sprint 6 |
+| 6 | **Vocal bidirectionnel 6 langues** | Personne n'a de vocal | Différenciateur n°1 | Sprint 2 |
+| 7 | **Onboarding en 2 min** (parle → devis → envoi) | Sage/EBP sont complexes | Conversion | Sprint 2-3 |
+| 8 | **Agent Prospection CRM** | Personne ne le fait | Océan bleu | Sprint 6 |
+| 9 | **Photo + vocal = devis** (Vision IA + détection oublis) | Handoff a la photo, pas le vocal bidirectionnel | Wow factor | Sprint 3 |
+| 10 | **Briefing matin WhatsApp** (3-5 actions prioritaires) | Personne ne le fait | Valeur perçue massive | Sprint 7 |
 
 ---
 
-### 17. MEDIABAT — Assistant IA pour devis
+## PARTIE 4 — CE QU'ON NE COPIE PAS
 
-| Donnée | Valeur |
-|--------|--------|
-| **Produit** | "Mediabat IA" — assistant IA intégré dans le logiciel Mediabat |
-| **Lancé** | Juillet 2025 (webinaire de lancement) |
-| **Cible** | Artisans et pros du bâtiment existants sur Mediabat |
+Certaines choses que les concurrents font ne valent PAS le coup en V1 :
 
-**Ce qu'il fait :**
-- L'IA propose des lignes de devis adaptées au métier
-- Intitulés précis, unités cohérentes, prix unitaires réalistes
-- L'artisan choisit et valide → finition dans Mediabat
-
-**CE QU'IL NE FAIT PAS :**
-- ❌ Pas de vocal
-- ❌ Pas de WhatsApp
-- ❌ C'est un "suggesteur" de lignes, pas un générateur complet
-- ❌ Fonctionne uniquement DANS Mediabat (pas standalone)
-- ❌ Pas de cerveau autonome
-
-**Verdict :** Feature IA ajoutée à un logiciel existant. Pas un produit IA natif. C'est ChatGPT intégré dans un formulaire de devis.
+| Feature | Qui l'a | Pourquoi on skip en V1 |
+|---------|---------|----------------------|
+| Catalogues fournisseurs temps réel (6M+ refs) | Obat (Batichiffrage), Sage (e-Tarif) | Intégration lourde, Mem0 compense pour les prix habituels |
+| Marchés publics / Chorus Pro | Sage, EBP | Notre cible = artisans solo, pas les PME marchés publics |
+| Gestion des stocks | EBP, Sage, ProGBat | Les artisans solo n'ont pas de stock, ils achètent au coup par coup |
+| Connexion bancaire | Axonaut, Pennylane | Lourd à intégrer (open banking), pas le plus demandé vs vocal/relance |
+| Factures de situation avancement complexes | Sage, EBP, Batappli | V2 — les artisans solo font rarement des situations |
+| Gestion d'équipes commerciales | Batappli PME | V2 si PME target |
 
 ---
 
-### 18. FABRIK — Assistant IA conversationnel pour devis
+## RÉSUMÉ — LA STRATÉGIE EN 1 PHRASE
 
-| Donnée | Valeur |
-|--------|--------|
-| **Produit** | Fabrik CRM avec "assistant IA conversationnel" |
-| **Prix** | Gratuit |
-| **Stade** | Early, "prochainement : relance auto, analyse rentabilité" |
+**Prendre les faiblesses de CHAQUE concurrent et les transformer en argument de vente :**
 
-**Ce qu'il fait :**
-- Conversation naturelle avec l'IA → génère un devis
-- Templates pré-configurés par métier BTP
-- Apprend tes tarifs habituels
-- Modifiable en temps réel par conversation
+- Obat pas de relance → "Nous on relance pour toi"
+- Tolteck suspend → "Nous on te laisse 7 jours"
+- Sage vieillissant → "Nous on est né en 2026"
+- Handoff hallucine → "Nous on te dit quand on n'est pas sûr"
+- Batappli pas de hors-ligne → "Nous on marche même au fond du chantier"
+- PERSONNE n'a de vocal → "Nous on parle ta langue"
+- PERSONNE ne gère la réputation → "Nous on te fait passer de 12 à 50 avis en 3 mois"
+- PERSONNE ne fait de prospection → "Nous on relance tes architectes à ta place"
 
-**CE QU'IL NE FAIT PAS :**
-- ❌ Pas encore de facturation (en cours)
-- ❌ Pas de relance auto (annoncé "prochainement")
-- ❌ Pas de vocal
-- ❌ Pas de suivi de chantier
-- ❌ Early stage, beaucoup de promesses, peu de livrables
-
-**Verdict :** Startup très early. Prometteuse sur le papier mais pas encore de produit complet.
-
----
-
-### 19. BATISIGNE — Calcul prix chantier par IA
-
-| Donnée | Valeur |
-|--------|--------|
-| **Produit** | Outil de chiffrage IA + signature électronique |
-| **Focus** | Calcul de prix automatique avec coefficients régionaux |
-
-**Ce qu'il fait :**
-- Base de prix référentiels + ajustement régional automatique
-- Décomposition automatique du chantier en postes
-- Marge personnalisable
-- Signature électronique
-
-**CE QU'IL NE FAIT PAS :**
-- ❌ Pas un logiciel de gestion complet
-- ❌ Pas de vocal
-- ❌ Pas de relance, compta, prospection, réputation...
-- ❌ Outil niche (chiffrage + signature)
-
----
-
-## SYNTHÈSE : LE VRAI PAYSAGE IA EN BTP
-
-| Concurrent IA | Ce qu'il fait | Maturité | Menace |
-|--------------|--------------|----------|--------|
-| **Renalto (Rita)** | Devis IA + vocal + WhatsApp | Early mais fonctionnel | ⚠️ MOYENNE — mono-fonction |
-| **Boby (Cegid)** | Dictée vocale + IA copilote | Basique, backing Cegid | ⚠️ FAIBLE — gratuit, limité |
-| **Mediabat IA** | Suggestions lignes de devis | Feature ajoutée | 🟢 FAIBLE — pas standalone |
-| **Fabrik** | Conversation → devis | Très early | 🟢 FAIBLE — pas livré |
-| **BatiSigne** | Chiffrage IA | Niche | 🟢 FAIBLE — pas un logiciel complet |
-
-**Conclusion :** L'IA arrive dans le BTP mais PERSONNE ne fait ce que STRUCTORAI fait. Les concurrents IA font UN truc (devis IA). STRUCTORAI fait TOUT le pipeline avec 13 agents IA autonomes + mémoire + vocal + 6 langues + 6658 lignes de données terrain. Le seul à surveiller est Renalto (Rita) sur la brique devis WhatsApp.
-
----
-
-## LES FAILLES COMMUNES — OÙ FRAPPER
-
-### Faille 1 : AUCUN concurrent FRANÇAIS n'a d'IA
-En France = zéro intelligence artificielle. Obat, Tolteck, Sage, EBP, Batappli = tous des logiciels de saisie. L'IA existe UNIQUEMENT aux US (Handoff) et au UK (Sleepless Tradesman), mais ils ne couvrent pas l'Europe, ne parlent pas français, n'ont pas la TVA multi-taux, pas le Factur-X, pas les mentions obligatoires. Handoff est le seul concurrent IA sérieux, mais ses faiblesses sont exploitables : prix qui "reviennent parfois extrêmement élevés", hallucinations (placo un seul côté), app qui crashe, et AUCUNE feature au-delà de l'estimation (pas de relance, pas de compta, pas de réputation).
-
-### Faille 2 : AUCUN concurrent ne parle
-Pas de vocal. L'artisan sur le chantier, mains dans le plâtre, doit poser ses outils, prendre son téléphone, taper. STRUCTORAI : il parle, c'est fait.
-
-### Faille 3 : AUCUN concurrent ne relance intelligemment
-Obat n'a même pas de relance auto. Tolteck non plus. Batappli a une relance basique (impression mensuelle). PERSONNE n'adapte le ton au client. STRUCTORAI : ton adaptatif (ferme vs doux), mémoire du comportement de paiement, escalade J+3 → J+15 → J+30 → J+45.
-
-### Faille 4 : AUCUN concurrent ne gère la réputation
-Zéro concurrent ne collecte les avis Google, ne répond aux avis, ne fait de SEO local. C'est un angle mort total du marché.
-
-### Faille 5 : AUCUN concurrent ne fait de prospection
-Zéro CRM architectes/apporteurs d'affaires. L'artisan est seul pour relancer son réseau.
-
-### Faille 6 : Les historiques ont un problème de modernité
-Sage Batigest est "vieillissant, pas intuitif" selon ses propres utilisateurs. EBP est "complexe". Batappli a des bugs et pas de cloud natif. Ces utilisateurs sont MÛRS pour migrer vers quelque chose de moderne.
-
-### Faille 7 : Les langues
-AUCUN concurrent ne supporte une autre langue que le français. 500K artisans turcs, portugais, arabophones en France = marché invisible pour eux, visible pour STRUCTORAI.
-
-### Faille 8 : Le prix
-Obat = 25-79€. Batigest = 34-100€+. EBP = 29-36€+. Axonaut = 42-70€. STRUCTORAI Pro = 29€ avec TOUT (IA, vocal, 13 agents, 6 langues). Le rapport valeur/prix est imbattable.
-
----
-
-## STRATÉGIE D'ATTAQUE
-
-**Cible primaire :** Les 400K+ artisans qui n'ont AUCUN logiciel (83% du marché).
-**Cible secondaire :** Les clients frustrés d'Obat (pas de relance auto), de Tolteck (pas de suivi de chantier), et de Sage/EBP (vieillissant, trop cher, trop complexe).
-
-**Message :** "Les autres te donnent un logiciel de saisie. Moi je te donne un bras droit IA qui parle, pense, et gère pendant que tu es sur le chantier."
+**Et prendre les forces des meilleurs :**
+- Simplicité de Tolteck → onboarding en 2 min
+- Support d'Obat → le cerveau IA est le support
+- Prix localisés de Handoff → coefficients régionaux + Mem0
+- Walkthrough de Handoff → vocal bidirectionnel EN TEMPS RÉEL
