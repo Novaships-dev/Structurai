@@ -115,7 +115,7 @@ Source : expérience directe de Fabrice dans le bâtiment.
 
 ---
 
-## LA SOLUTION — 15 MODULES, 1 CERVEAU
+## LA SOLUTION — 16 MODULES, 1 CERVEAU
 
 ### Principe fondamental
 
@@ -434,6 +434,59 @@ L'artisan est sur le chantier avec la disqueuse qui tourne, ou il conduit sur la
 ### Dossier "À FAIRE" centralisé (NOUVEAU)
 
 Un onglet dans l'app qui liste TOUTES les actions en attente de validation : réponses avis, relances, messages clients, publications réseaux, alertes planning. Classé par priorité. L'artisan valide (vocal/tap/swipe) ou refuse. Aucune action sans sa validation.
+
+### Module MESURE IA — Estimation & Mesure de pièce par photo (NOUVEAU)
+
+**Le problème terrain :** L'artisan se déplace pour mesurer une pièce AVANT de faire le devis. 1-2h de trajet + mesure pour un devis qui a 1 chance sur 10 d'être accepté. 10 visites = 10-20h perdues pour 1 chantier gagné. Si le client pouvait envoyer des photos et que le cerveau estimait les dimensions, l'artisan pourrait faire un pré-devis SANS se déplacer.
+
+**4 niveaux de mesure :**
+
+| Niveau | Technologie | Précision | Téléphones | Phase |
+|--------|------------|-----------|-----------|-------|
+| 1 | **Estimation Vision IA** (Claude Vision) | ~15-25% | TOUS | V1 (launch) |
+| 2 | **Mesure AR** (ARCore Android) | ~5-10cm | Android (ARCore compatible) | V1.5 |
+| 3 | **Scan LiDAR** (RoomPlan Apple) | ~1-2cm | iPhone Pro uniquement (PWA) | V2 |
+| 4 | **Photogrammétrie multi-photos** | ~5-10% | TOUS | V3 |
+
+**Niveau 1 — Estimation Vision IA (V1, tous les téléphones)**
+- L'artisan (ou le client) prend 2-3 photos de la pièce
+- Le cerveau (Claude Vision) identifie les objets de référence : porte standard (204cm), prise électrique (25cm du sol), carrelage (format visible), baignoire standard, fenêtre
+- Estime les dimensions : "Pièce estimée à environ 3m × 2m = 6m², hauteur ~2.50m. Surface murs ~25m². Précision : estimation ±20%, à confirmer sur place."
+- Score de confiance : 🟡 "Estimation visuelle, à confirmer pour le devis final"
+- Le cerveau enchaîne : "Tu veux que je génère le pré-devis sur cette base ?"
+- **Cas d'usage principal :** Le client envoie des photos par WhatsApp → l'artisan reçoit les dimensions estimées + le pré-devis → décide s'il se déplace ou pas. Filtre les prospects sérieux.
+
+**Niveau 2 — Mesure AR Android (V1.5)**
+- L'artisan pointe la caméra vers les coins de la pièce → ARCore calcule les distances
+- Interface : tap sur le point A, tap sur le point B → distance affichée en temps réel
+- Précision ~5-10cm (suffisant pour un devis)
+- Le cerveau intègre les mesures directement dans le devis : "Pièce mesurée : 3.20m × 2.15m = 6.88m². Je fais le devis sur cette base."
+- Stockage des mesures dans la fiche chantier (mémoire Mem0)
+- Librairie : ViroReact ou expo-three (React Native compatible)
+
+**Niveau 3 — Scan LiDAR iPhone Pro (V2)**
+- Utilise l'API RoomPlan d'Apple (iPhone 12 Pro et +)
+- L'artisan scanne la pièce en marchant autour (30 secondes)
+- Plan coté automatique : toutes les dimensions, portes, fenêtres, obstacles
+- Précision ~1-2cm (qualité professionnelle)
+- Le cerveau reçoit le plan complet et génère le devis : "Scan terminé. Pièce : 3.18m × 2.12m, hauteur 2.50m, sol 6.74m², murs 26.50m². 1 porte (90cm), 1 fenêtre (120×100cm). Devis ?"
+- Export plan PDF annexé au devis
+- Uniquement via la PWA iOS (accès natif LiDAR via WebXR ou app compagnon)
+
+**Niveau 4 — Photogrammétrie multi-photos (V3)**
+- L'artisan prend 4-6 photos de la pièce sous différents angles
+- Algorithme de reconstruction 3D (COLMAP ou API cloud) → dimensions calculées
+- Fonctionne sur TOUS les téléphones (pas besoin de LiDAR ou ARCore)
+- Précision ~5-10% (meilleure que Vision IA seule)
+- Temps de calcul : 10-30 secondes (cloud processing)
+- Le cerveau affiche : "Reconstruction 3D terminée. Pièce : ~3.15m × ~2.10m = ~6.6m². Confiance : 🟡 moyenne (±10%)"
+
+**Intégration avec les autres modules :**
+- Les mesures alimentent directement l'Agent DEVIS (quantités automatiques : m² sol, m² murs, ml plinthes, nombre de prises selon surface NFC 15-100)
+- Les mesures sont stockées dans la Galerie Photo Chantier (liées aux photos)
+- Les mesures enrichissent la mémoire Mem0 (le cerveau apprend les configurations types : "les sdb de ses clients font en moyenne 5.5m²")
+- Le pré-devis à distance : client envoie photos WhatsApp → cerveau mesure → pré-devis → artisan décide s'il se déplace
+- Proactivité : "D'après les photos et les mesures, il te faut environ 7m² de carrelage avec 10% de marge de coupe = 7.7m². Au prix de €35/m² chez Point P, ça fait ~€270 HT de fournitures."
 
 ### SYSTÈME DE CONNAISSANCE — D'OÙ VIENT LE SAVOIR DU CERVEAU
 
