@@ -1,6 +1,6 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> 15 modules, 8 corps de métier, 6 langues, 6658 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
+> 16 modules, 8 corps de métier, 6 langues, 6658 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
 > Dernière mise à jour : 14/04/2026
 
@@ -34,9 +34,9 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ---
 
-## Les 15 modules en détail
+## Les 16 modules en détail
 
-> **Terminologie :** STRUCTORAI a **13 agents IA autonomes** (Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web) + **Supervisor** (orchestrateur) + **3 modules fonctionnels** (Conversation vocale bidirectionnelle, Galerie Photo, Gamification + Background Consciousness) = **17 processus au total**. V2 : Agent Téléphone IA.
+> **Terminologie :** STRUCTORAI a **13 agents IA autonomes** (Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web) + **Supervisor** (orchestrateur) + **4 modules fonctionnels** (Conversation vocale bidirectionnelle, Galerie Photo, Gamification + Background Consciousness, Mesure IA) = **18 processus au total**. V2 : Agent Téléphone IA.
 
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
@@ -55,6 +55,7 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 | 13 | **Agent Vision IA** | Toute photo/document envoyé passe d'abord par l'Agent Vision : il identifie (ticket, photo chantier, plan, courrier admin), catégorise, analyse, détecte les oublis, puis transmet à l'agent concerné. C'est le "premier regard" du cerveau. |
 | 14 | **Agent Site Web IA** | L'artisan dit "crée-moi un site" → le cerveau génère un site vitrine complet en 5 min (accueil, services, galerie avant/après, avis Google, contact). Chaque mois, le cerveau propose d'ajouter les nouvelles photos et avis → l'artisan valide avant publication. Site inclus dans le plan Pro (29€). Les agences web facturent 1 500-5 000€ pour ça. |
 | 15 | **Agent Email Pro** | Connexion boîte mail → filtrage IA pro/perso → catégorisation (prospect/client/fournisseur/admin/spam) → résumé quotidien vocal → alertes urgentes (URSSAF, mise en demeure) → détection demande de devis dans les emails → fiche prospect auto. Une vraie secrétaire IA. |
+| 16 | **Module MESURE IA** | Le client envoie 2-3 photos de sa pièce → le cerveau mesure (Vision IA, détection porte/prise/carrelage comme références) → dimensions estimées (±20%) → pré-devis généré AVANT déplacement. 4 niveaux : Vision IA (V1, tous téléphones), AR Android (V1.5), LiDAR iPhone Pro (V2), Photogrammétrie multi-photos (V3). L'artisan ne se déplace QUE pour les chantiers sérieux. |
 
 ---
 
@@ -102,7 +103,7 @@ FR/EN/TR/ES/PT/AR. Artisans turcs, portugais, arabophones en France = marché qu
 # PARTIE 2 — LA DISTRIBUTION FRANCE
 
 ## VECTEUR 1 — FACEBOOK GROUPS BTP (canal #1)
-15-20 groupes. Post d'arrivée direct (ancien du BTP + invitation beta). 1 feature vidéo/semaine (12 semaines de contenu = 15 modules). 5-10 réponses/jour aux questions. Quand c'est naturel : "j'utilise StructorAI pour ça" + vidéo.
+15-20 groupes. Post d'arrivée direct (ancien du BTP + invitation beta). 1 feature vidéo/semaine (12 semaines de contenu = 16 modules). 5-10 réponses/jour aux questions. Quand c'est naturel : "j'utilise StructorAI pour ça" + vidéo.
 
 ## VECTEUR 2 — TIKTOK (explosif)
 Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly Cruz 2.8M, Enfile ton bleu 137K = les artisans sont là.
@@ -117,7 +118,7 @@ Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly 
 20+ pages sur structorai.app (métiers + comparatifs + Factur-X).
 
 ## VECTEUR 6 — FACTUR-X CHEVAL DE TROIE
-Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 15 modules.
+Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 16 modules.
 
 ## VECTEUR 7 — PARTENARIATS (mois 2+)
 Comptables (30-50 cabinets, 1 comptable = 10-50 artisans). Grossistes (Point P, Cedeo, BigMat). Fédérations (CAPEB 380K artisans, FFB). CMA.
@@ -332,7 +333,7 @@ i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues
 
 ## RÈGLE ABSOLUE
 
-1. Ne JAMAIS réduire StructorAI à "une app de devis". 15 modules, 6658 lignes de données terrain, 950+ postes, 96 erreurs.
+1. Ne JAMAIS réduire StructorAI à "une app de devis". 16 modules, 6658 lignes de données terrain, 950+ postes, 96 erreurs.
 2. Chaque pays a son cheval de Troie : Factur-X (FR), Peppol (BE), FatturaPA (IT), Veri*Factu (ES), ZUGFeRD (DE). La conformité est l'entrée. L'IA est la valeur.
 3. France d'abord. Prouver le modèle. Puis dupliquer.
 4. Tous les artisans du monde ont les MÊMES douleurs. La solution est universelle. Seules les règles changent.
