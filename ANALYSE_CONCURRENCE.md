@@ -404,6 +404,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 | **Gamification** | ❌ | ❌ | ❌ | ❌ | ✅ |
 | **6 langues** | ❌ | ❌ | ❌ | ❌ | ✅ |
 | **WhatsApp** | ❌ | ❌ | ❌ | ❌ | ✅ |
+| **Mesure pièce par photo** | ❌ | ❌ | ❌ | ❌ | ✅ Vision IA + AR + LiDAR |
 | **Connexion bancaire** | ❌ | ❌ | ❌ | ❌ | ❌ (pas V1) |
 | CRM | ❌ | ❌ | ❌ | ❌ | ✅ (Prospection) |
 | Marchés publics/Chorus | ❌ | ❌ | ✅ | ✅ | ❌ (pas V1) |
