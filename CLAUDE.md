@@ -19,7 +19,7 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 |---------|------|---------------|
 | `PRODUCT_CONTEXT.md` | Spec produit complète (1013 lignes) | Avant toute décision produit |
 | `BUILD_PLAN.md` | Arborescence fichiers + sprints (759 lignes) | Avant de créer un fichier |
-| `FEATURES.md` | 105 features détaillées (608 lignes) | Avant d'implémenter une feature |
+| `FEATURES.md` | 110 features détaillées (648 lignes) | Avant d'implémenter une feature |
 | `UX_PARCOURS.md` | Navigation, onglets, parcours UX, règles d'interface (438 lignes) | Avant de toucher à la navigation ou aux écrans |
 | `FICHE_METIER.md` | Inventaire 63 fichiers data (887 lignes) | Avant de créer un fichier data/ |
 | `docs/METIER.md` | Constitution BTP — règles immuables | Avant tout code lié aux devis/factures/TVA |
