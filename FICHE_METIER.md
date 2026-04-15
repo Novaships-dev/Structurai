@@ -41,19 +41,25 @@ Sanctions :
 - Mention décennale absente : 75 000€ + 6 mois d'emprisonnement
 - Facture non conforme : 75 000€ (personne physique) / 375 000€ (société)
 
-### Mention déchets (obligatoire depuis 01/07/2021 — arrêté du 29/12/2020)
+Sanctions facturation électronique (à partir de sept 2026/2027) :
+- Facture non émise au format électronique (e-invoicing) : 50€/facture, plafonnée 15 000€/an
+- Transmission e-reporting manquante : 500€/transmission, plafonnée 15 000€/an
+- Non-désignation d'une Plateforme Agréée (PA) en réception : 500€ à 1 000€
+- Droit à l'erreur : pas de sanction pour la 1ère infraction si régularisation sous 30 jours
+
+### Mention déchets obligatoire sur devis (depuis 01/07/2021 — arrêté du 29/12/2020)
 Chaque devis BTP doit obligatoirement préciser :
 - Estimation de la quantité totale de déchets générés par le chantier (en tonnes ou m³)
 - Modalités de tri sur le chantier (tri sur site ou en déchetterie)
-- Centre de collecte / installation de traitement où les déchets seront déposés
+- Centre de collecte / installation de traitement prévu
 - Estimation des coûts de gestion des déchets (ligne séparée sur le devis)
 Sanction : jusqu'à 3 000€ d'amende (personne physique) / 15 000€ (société)
 
 ### Retenue de garantie 5% (loi du 16/07/1971)
 - Le maître d'ouvrage peut retenir 5% du montant TTC des travaux pendant 1 an après réception
-- L'artisan peut remplacer la retenue par une caution bancaire
-- Libération automatique à l'expiration du délai de 1 an si aucune réserve
-- Le cerveau IA doit le mentionner dans les devis de gros chantiers et l'intégrer au suivi de trésorerie
+- L'artisan peut substituer la retenue par une caution bancaire
+- Libération automatique à l'expiration du délai de 1 an si aucune réserve notifiée
+- Impact trésorerie : le cerveau IA doit l'intégrer au suivi prévisionnel et alerter l'artisan
 
 ### data/legal/mentions_obligatoires_facture.json
 Similaire au devis + :
@@ -63,7 +69,7 @@ Similaire au devis + :
 - SIREN client (obligatoire B2B depuis 01/07/2024)
 - Adresse de livraison si différente de l'adresse de facturation (fréquent BTP : livraison matériaux sur chantier)
 - Catégorie de l'opération : livraison de biens / prestation de services / mixte
-- Option TVA sur les débits (si l'artisan a opté pour ce régime)
+- Option TVA sur les débits (mention obligatoire si l'artisan a opté pour ce régime)
 - Numéro de bon de commande (si applicable)
 
 ### data/legal/tva_rules.json
@@ -80,7 +86,7 @@ Similaire au devis + :
         "Pose, installation et entretien de matériaux et équipements éligibles",
         "Exemples : isolation thermique, chaudière condensation, pompe à chaleur, fenêtres double vitrage"
       ],
-      "attestation_client": "Mention sur devis/facture (CERFA 1300-SD et 1301-SD supprimés depuis 01/01/2025). Le client atteste que les travaux sont réalisés dans un logement achevé depuis plus de 2 ans et affecté à l'habitation.",
+      "attestation_client": "Mention texte sur devis/facture (CERFA 1300-SD et 1301-SD supprimés depuis 01/01/2025). Texte : Le client atteste que les travaux sont réalisés dans un logement achevé depuis plus de 2 ans et affecté à l'habitation.",
       "note": "Le client doit attester sur le devis que les conditions sont remplies"
     },
     {
@@ -92,7 +98,7 @@ Similaire au devis + :
         "Travaux d'amélioration, transformation, aménagement, entretien",
         "S'applique à la main d'oeuvre ET aux matériaux fournis par l'artisan"
       ],
-      "attestation_client": "Mention sur devis/facture (CERFA 1300-SD et 1301-SD supprimés depuis 01/01/2025). Le client atteste que les travaux sont réalisés dans un logement achevé depuis plus de 2 ans et affecté à l'habitation.",
+      "attestation_client": "Mention texte sur devis/facture (CERFA 1300-SD et 1301-SD supprimés depuis 01/01/2025). Texte : Le client atteste que les travaux sont réalisés dans un logement achevé depuis plus de 2 ans et affecté à l'habitation.",
       "exceptions": [
         "Ne s'applique PAS aux équipements ménagers/mobiliers",
         "Ne s'applique PAS à la climatisation (sauf réversible)",
@@ -131,7 +137,7 @@ Spécifications Factur-X pour la conformité septembre 2026 :
 Sanctions facturation électronique (à partir de sept 2026/2027) :
 - Facture non émise au format électronique (e-invoicing) : 50€/facture, plafonnée 15 000€/an
 - Transmission e-reporting manquante : 500€/transmission, plafonnée 15 000€/an
-- Non-désignation d'une plateforme de dématérialisation (PDP) en réception : 500€ à 1 000€
+- Non-désignation d'une Plateforme Agréée (PA) en réception : 500€ à 1 000€
 - Droit à l'erreur : pas de sanction pour la 1ère infraction si régularisation sous 30 jours
 
 ### Obligation e-reporting (à partir de sept 2027 pour TPE/PME)
@@ -139,7 +145,7 @@ Sanctions facturation électronique (à partir de sept 2026/2027) :
 - Transmission des données de paiement pour les prestations de services
 - Périodicité calquée sur le régime TVA de l'artisan
 - Les factures de situation BTP (avancement chantier) doivent transiter comme factures électroniques à part entière via PA
-- Les factures d'acompte, avoirs, factures rectificatives : même traitement
+- Les factures d'acompte, avoirs, factures rectificatives : même obligation
 
 ### data/legal/retractation.json
 Formulaire de rétractation 14 jours (démarchage à domicile) — modèle légal
@@ -847,7 +853,7 @@ Mots-clés SEO à intégrer dans les réponses aux avis :
 
 | Fichier | Contenu | Priorité |
 |---------|---------|----------|
-| data/fiscalite/micro_entreprise.json | Seuils CA 2026 (203 100€/83 600€), taux cotisations (12.3% vente / 21.2% services BIC / 25.6% BNC hors CIPAV / 23.2% CIPAV), franchise TVA (85 000€ vente / 37 500€ services — réforme 25 000€ unique ABANDONNÉE), ACRE réforme 01/07/2026 (exonération réduite de 50% à 25%, délai demande 60 jours max, conditions restreintes : demandeur d'emploi ≥6 mois/18 derniers mois ou salarié reprenant entreprise en difficulté), versement libératoire, CFP (0.3% BIC / 0.1% BNC / 0.2% libéral), TFCC (CCI 0.044% / CMA 0.48%) | Sprint 6 |
+| data/fiscalite/micro_entreprise.json | Seuils CA 2026 (203 100€/83 600€), taux cotisations (12.3% vente / 21.2% services BIC / 25.6% BNC hors CIPAV / 23.2% CIPAV), franchise TVA maintenue (85 000€ vente / 37 500€ services — réforme seuil unique 25 000€ ABANDONNÉE), ACRE réforme 01/07/2026 (exonération réduite 50%→25%, délai demande 60 jours max après ouverture activité, conditions restreintes : demandeur d'emploi ≥6 mois/18 derniers mois ou salarié reprenant entreprise en difficulté), versement libératoire, CFP (0.3% BIC / 0.1% BNC / 0.2% libéral), TFCC (CCI 0.044% / CMA 0.48%) | Sprint 6 |
 | data/fiscalite/eurl.json | Charges déductibles, cotisations TNS (~45% bénéfice), IS 15%/25%, TVA collectée/déductible, bilan annuel | Sprint 6 |
 | data/fiscalite/sas_sasu.json | Président assimilé salarié, cotisations ~65% salaire brut, dividendes flat tax 30%, AG | Sprint 6 |
 | data/fiscalite/ei.json | Régime réel simplifié/normal, charges déductibles, cotisations TNS | Sprint 6 |
