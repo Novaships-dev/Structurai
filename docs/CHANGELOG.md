@@ -2,6 +2,16 @@
 
 ---
 
+## 15/04/2026 — Ajout sanctions facturation électronique (e-invoicing)
+
+### FICHE_METIER.md — Section data/legal/factur_x.json
+- Ajout du barème de sanctions e-invoicing (50€/facture, 500€/transmission e-reporting, 500-1000€ non-désignation PDP, droit à l'erreur 30j)
+
+### PRODUCT_CONTEXT.md — Section TIMING FACTUR-X
+- Ajout des sanctions comme argument commercial clé avec calcul d'impact concret (20 factures/mois = 1 000€/mois)
+
+---
+
 ## 15/04/2026 — Audit V4 : 3 derniers micro-correctifs
 
 ### 1. COMMUNICATION.md L86 — Liste des 11 corps de métier complétée

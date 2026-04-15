@@ -111,6 +111,12 @@ Spécifications Factur-X pour la conformité septembre 2026 :
 - Calendrier : réception obligatoire sept 2026, émission obligatoire sept 2027 (TPE/PME)
 - Champs XML obligatoires : SIRET, TVA, montants, dates, numérotation
 
+Sanctions facturation électronique (à partir de sept 2026/2027) :
+- Facture non émise au format électronique (e-invoicing) : 50€/facture, plafonnée 15 000€/an
+- Transmission e-reporting manquante : 500€/transmission, plafonnée 15 000€/an
+- Non-désignation d'une plateforme de dématérialisation (PDP) en réception : 500€ à 1 000€
+- Droit à l'erreur : pas de sanction pour la 1ère infraction si régularisation sous 30 jours
+
 ### data/legal/retractation.json
 Formulaire de rétractation 14 jours (démarchage à domicile) — modèle légal
 

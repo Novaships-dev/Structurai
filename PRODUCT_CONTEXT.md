@@ -1048,6 +1048,14 @@ La facturation électronique au format Factur-X devient obligatoire pour la réc
 
 Les logiciels existants (Batappli, EBP) adaptent leurs outils existants. Nous, on arrive avec un outil natif Factur-X qui est AUSSI un assistant IA. La conformité est le cheval de Troie. L'IA est la valeur réelle.
 
+**Sanctions e-invoicing (argument commercial clé) :**
+- Facture non émise au format électronique : **50€/facture**, plafonnée 15 000€/an
+- Transmission e-reporting manquante : **500€/transmission**, plafonnée 15 000€/an
+- Non-désignation d'une PDP en réception : **500€ à 1 000€**
+- Droit à l'erreur : pas de sanction pour la 1ère infraction si régularisation sous 30 jours
+
+→ Un artisan qui émet 20 factures/mois sans e-invoicing = **1 000€/mois de sanctions**. Notre pitch : "STRUCTORAI vous met en conformité dès l'inscription."
+
 ---
 
 ## SÉPARATION TECHNIQUE
