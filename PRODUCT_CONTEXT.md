@@ -1056,7 +1056,7 @@ Les logiciels existants (Batappli, EBP) adaptent leurs outils existants. Nous, o
 
 → Un artisan qui émet 20 factures/mois sans e-invoicing = **1 000€/mois de sanctions**. Notre pitch : "STRUCTORAI vous met en conformité dès l'inscription."
 
-STRUCTORAI s'intègre à une Plateforme Agréée (PA) via API marque blanche pour assurer la conformité e-invoicing et e-reporting. L'artisan n'a rien à faire : la transmission est automatique. Options évaluées : FactPulse (29€/mois, intégration 2h), B2Brouter (phase pilote gratuite jusqu'au 31/08/2026), Iopole (PA #0018, SecNumCloud).
+STRUCTORAI s'intègre à une Plateforme Agréée (PA) immatriculée par la DGFiP via API marque blanche pour assurer la conformité e-invoicing et e-reporting. L'artisan n'a rien à faire : la transmission des factures à l'administration fiscale est automatique et invisible. Options PA évaluées : FactPulse (à partir de 29€/mois, intégration en 2h, sandbox gratuit), B2Brouter (PA immatriculée, phase pilote gratuite jusqu'au 31/08/2026), Iopole (PA #0018, SecNumCloud, ISO 27001).
 
 ---
 
