@@ -1,6 +1,6 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> 16 modules, 8 corps de métier, 6 langues, 6658 lignes de données terrain, 950+ postes chiffrés, 96 erreurs terrain, mémoire qui apprend.
+> 16 modules, 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
 > Dernière mise à jour : 14/04/2026
 
@@ -40,7 +40,7 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
-| 1 | **Agent DEVIS** | Vocal/WhatsApp/texte → comprend "sdb complète 8m²" → structure les postes → cherche dans tes prix perso (Mem0) ou prix marché (base 950+ postes) → TVA multi-taux (5.5%/10%/20%) → 47 mentions obligatoires → PDF conforme → envoi par email/SMS → signature électronique Yousign → client signe = fiche chantier + acompte automatiques. Pré-devis instantané par téléphone AVANT visite (filtre les prospects sérieux). Détecte les oublis ("évacuation gravats pas mentionnée, j'ajoute ?"). |
+| 1 | **Agent DEVIS** | Vocal/WhatsApp/texte → comprend "sdb complète 8m²" → structure les postes → cherche dans tes prix perso (Mem0) ou prix marché (base 1080+ postes) → TVA multi-taux (5.5%/10%/20%) → 47 mentions obligatoires → PDF conforme → envoi par email/SMS → signature électronique Yousign → client signe = fiche chantier + acompte automatiques. Pré-devis instantané par téléphone AVANT visite (filtre les prospects sérieux). Détecte les oublis ("évacuation gravats pas mentionnée, j'ajoute ?"). |
 | 2 | **Agent RELANCE** | Surveille TOUS les devis et factures. Devis J+3 → relance. Facture J+15 → email poli. J+30 → SMS ferme. J+45 → mise en demeure. Ton adaptatif par client (mémoire Mem0). Détecte si email ouvert. Anticipe ("Martin paie toujours 10 jours en retard, je relance plus tôt"). |
 | 3 | **Agent COMPTA** | Photo ticket → OCR → montant/fournisseur/date/articles extraits → catégorisé (matériaux/outillage/carburant/sous-traitance) → attribué au bon chantier ("tu étais sur Dupont, le ticket Point P 234€ va sur Dupont") → alerte anomalies ("847€ inhabituel, tu confirmes ?") → export comptable mensuel auto → envoyé au comptable. Suivi marge par chantier temps réel ("65% budget matériaux consommé, 40% du chantier fait"). |
 | 4 | **Agent PLANNING** | Timer par chantier (start/stop vocal). Comparaison temps prévu vs réel. Détection dépassements AVANT ("au rythme actuel, Dupont finit jeudi au lieu de mardi, marge restante 340€"). Enchaînements entre chantiers (si Dupont déborde → décaler le suivant → prévenir le client auto). Calcul capacité ("3 chantiers en avril, max 4, tu peux accepter 1 de plus"). Rappels matériaux ("chantier Martin lundi, t'as pas commandé chez Point P"). |
@@ -61,8 +61,8 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ## Les arguments de vente que PERSONNE d'autre n'a
 
-### 1. 6658 lignes de données terrain (950+ postes, 96 erreurs terrain)
-8 référentiels techniques (plomberie 1021 lignes, électricité 960, carrelage 930, maçonnerie 857, peinture 791, menuiserie 744, façadier 699, plaquiste 656). Vrais prix, vraies durées, vrais pièges. "Dépose baignoire fonte : 150-250€, 2-3h, ~100kg, 2 personnes, benne obligatoire." "Ø16 pour la baignoire ? Il faut du Ø20 minimum." C'est du terrain, pas du ChatGPT.
+### 1. 8819 lignes de données terrain (1080+ postes, 132 erreurs terrain)
+11 référentiels techniques (plomberie 1021 lignes, électricité 960, carrelage 930, maçonnerie 857, peinture 791, menuiserie 744, façadier 699, plaquiste 656, couverture 703, chauffage & clim 693, isolation 765). Vrais prix, vraies durées, vrais pièges. "Dépose baignoire fonte : 150-250€, 2-3h, ~100kg, 2 personnes, benne obligatoire." "Ø16 pour la baignoire ? Il faut du Ø20 minimum." C'est du terrain, pas du ChatGPT.
 
 ### 2. Le pipeline automatique complet
 Prospect appelle → pré-devis 30s → visite → photos (Vision IA aide au chiffrage + détecte oublis) → devis vocal 2 min → PDF 47 mentions → signature électronique → fiche chantier auto → acompte → timer → tickets scannés → marge temps réel → facture Factur-X → paiement en ligne → relance auto → SMS avis Google → réponse IA → export comptable → briefing soir → prospect suivant relancé. TOUT automatique.
@@ -96,7 +96,7 @@ FR/EN/TR/ES/PT/AR. Artisans turcs, portugais, arabophones en France = marché qu
 | 12 | Ta langue | "Turc, portugais, arabe. Le seul assistant qui parle TA langue." |
 | 13 | Le prospect perdu | "Tu décroches pas, il décroche pour toi. Le premier qui répond gagne." |
 | 14 | Le pilotage aveugle | "Marge -8 points ce mois. Le cerveau te prévient AVANT." |
-| 15 | 950 interventions en mémoire | "Le cerveau connaît 950 interventions avec les vrais prix et les 96 erreurs terrain. C'est pas du ChatGPT." |
+| 15 | 1080+ interventions en mémoire | "Le cerveau connaît 1080+ interventions avec les vrais prix et les 132 erreurs terrain. C'est pas du ChatGPT." |
 
 ---
 
@@ -168,7 +168,7 @@ Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 lang
 - **Mentions** : 47 mentions obligatoires devis BTP
 - **Assurance** : Décennale obligatoire. RGE, Qualibat, Qualifelec
 - **Sanctions** : 3 000-15 000€ (devis absent), 75 000€ + 6 mois prison (décennale absente), 75 000-375 000€ (facture non conforme)
-- **Base prix** : 6658 lignes, 8 corps de métier ✅ DÉJÀ CRÉÉ
+- **Base prix** : 8819 lignes, 11 corps de métier ✅ DÉJÀ CRÉÉ
 - **Effort** : AUCUN, tout est prêt
 
 ### 🇧🇪 BELGIQUE FRANCOPHONE (~2-3 semaines)
@@ -333,7 +333,7 @@ i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues
 
 ## RÈGLE ABSOLUE
 
-1. Ne JAMAIS réduire StructorAI à "une app de devis". 16 modules, 6658 lignes de données terrain, 950+ postes, 96 erreurs.
+1. Ne JAMAIS réduire StructorAI à "une app de devis". 16 modules, 8819 lignes de données terrain, 1080+ postes, 132 erreurs.
 2. Chaque pays a son cheval de Troie : Factur-X (FR), Peppol (BE), FatturaPA (IT), Veri*Factu (ES), ZUGFeRD (DE). La conformité est l'entrée. L'IA est la valeur.
 3. France d'abord. Prouver le modèle. Puis dupliquer.
 4. Tous les artisans du monde ont les MÊMES douleurs. La solution est universelle. Seules les règles changent.

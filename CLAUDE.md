@@ -17,16 +17,17 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 
 | Fichier | Rôle | Quand le lire |
 |---------|------|---------------|
-| `PRODUCT_CONTEXT.md` | Spec produit complète (1013 lignes) | Avant toute décision produit |
-| `BUILD_PLAN.md` | Arborescence fichiers + sprints (759 lignes) | Avant de créer un fichier |
+| `PRODUCT_CONTEXT.md` | Spec produit complète (1084 lignes) | Avant toute décision produit |
+| `BUILD_PLAN.md` | Arborescence fichiers + sprints (769 lignes) | Avant de créer un fichier |
 | `FEATURES.md` | 110 features détaillées (648 lignes) | Avant d'implémenter une feature |
 | `UX_PARCOURS.md` | Navigation, onglets, parcours UX, règles d'interface (438 lignes) | Avant de toucher à la navigation ou aux écrans |
-| `FICHE_METIER.md` | Inventaire 63 fichiers data (887 lignes) | Avant de créer un fichier data/ |
+| `FICHE_METIER.md` | Inventaire 63 fichiers data (903 lignes) | Avant de créer un fichier data/ |
 | `docs/METIER.md` | Constitution BTP — règles immuables | Avant tout code lié aux devis/factures/TVA |
-| `PLOMBERIE/`, `ELECTRICITE/`, etc. | 8 référentiels techniques (6658 lignes) | Pour les prix, matériaux, règles IA pricing |
+| `PLOMBERIE/`, `ELECTRICITE/`, etc. | 11 référentiels techniques (8819 lignes) | Pour les prix, matériaux, règles IA pricing |
 | `COUT_REEL.md` | Coûts API réels et pièges | Avant de configurer les budgets LLM et rate limits |
 | `SECURITE.md` | Audit sécurité complet | Avant d'implémenter auth, RLS, webhooks, RGPD |
 | `DISTRIBUTION.md` | Distribution + expansion Europe | Avant de toucher à l'i18n ou la facturation multi-pays |
+| `COMMUNICATION.md` | Stratégie de communication complète (405 lignes) | Avant de rédiger du contenu marketing, posts, landing page |
 
 **Règle absolue :** Si une décision contredit ces fichiers → mettre le fichier à jour ET logger dans `docs/CHANGELOG.md`.
 
@@ -225,6 +226,9 @@ data/
 │   ├── menuiserie_serrurerie.json
 │   ├── plaquiste.json
 │   ├── facade.json
+│   ├── couverture.json
+│   ├── chauffage_climatisation.json
+│   ├── isolation.json
 │   ├── coefficients_regionaux.json
 │   └── taux_horaires.json
 ├── templates_devis/          # Templates devis par type de chantier
@@ -296,7 +300,7 @@ memories = await mem0.search(
 
 ### 3. Knowledge Base (RAG)
 ```python
-# Les 8 référentiels techniques sont chargés dans un vector store
+# Les 11 référentiels techniques sont chargés dans un vector store
 # L'agent Devis fait un RAG search avant de proposer un prix
 results = await knowledge.search(
     query="prix pose baignoire remplacement",

@@ -54,7 +54,8 @@ Mois 2 : ~30$ (API tests) + 5$ (Railway) = ~35€
 | Brevo | Free → Starter | **0$** → **9€/mois si >300 emails/jour** | Upgrade si relances auto + emails transactionnels |
 | ElevenLabs | Starter | **5$/mois** (30K chars = ~30 min TTS) | C'est serré pour 50 users. Voir optimisation ci-dessous. |
 | Sentry | Free | **0$** | |
-| **TOTAL FIXE** | | **~15-50$/mois** selon upgrades | |
+| Yousign API (signature devis) | Starter | **75€/mois** (500 signatures/an) | Couvre ~42 signatures/mois. |
+| **TOTAL FIXE** | | **~90-125€/mois** selon upgrades | |
 
 ### Coûts VARIABLES par artisan payant (Pro à 29€/mois)
 

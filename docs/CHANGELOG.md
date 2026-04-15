@@ -2,6 +2,36 @@
 
 ---
 
+## 15/04/2026 — Audit V3 : correction des 16 incohérences restantes
+
+### BLOC A — Propagation des 3 nouveaux référentiels (couverture, chauffage & clim, isolation)
+- README.md : ajout COUVERTURE/ (703 lignes), CHAUFFAGE_CLIM/ (693 lignes), ISOLATION/ (765 lignes) dans la structure repo
+- README.md : "8 Corps de Métier" → "11 Corps de Métier", 3 lignes ajoutées au tableau, total 6658→8819, 185→236, 950+→1080+, 96→132, 20+→29+
+- README.md : COUCHE 1 ASCII "8 référentiels techniques (6600+)" → "11 référentiels techniques (8800+)"
+- CLAUDE.md : sources de vérité "8 référentiels techniques (6658 lignes)" → "11 référentiels techniques (8819 lignes)"
+- CLAUDE.md : RAG "Les 8 référentiels" → "Les 11 référentiels"
+- CLAUDE.md : data/prix/ tree — ajout couverture.json, chauffage_climatisation.json, isolation.json
+- DISTRIBUTION.md : toutes occurrences "8 corps"→"11 corps", "6658"→"8819", "950+"→"1080+", "96 erreurs"→"132 erreurs", "950 interventions"→"1080+ interventions", description détaillée des 11 référentiels
+
+### BLOC B — Propagation "6658" → "8819"
+- ANALYSE_CONCURRENCE.md : 2 occurrences "6658"→"8819"
+- STRATEGIE-COMPETITIVE.md : 2 occurrences "6658"→"8819"
+
+### BLOC C — COMMUNICATION.md alignement
+- COMMUNICATION.md : "6 agents" → "13 agents" (4 occurrences)
+- COMMUNICATION.md : "12 modules" → "16 modules", "8 corps de métier" → "11 corps", "950 interventions" → "1080+ interventions", "950 postes" → "1080+ postes", "96 erreurs" → "132 erreurs", "4709 lignes" → "8819 lignes"
+- README.md : ajout COMMUNICATION.md (405 lignes) dans la structure repo
+- CLAUDE.md : ajout COMMUNICATION.md dans la table sources de vérité
+
+### BLOC D — Compteurs de lignes
+- README.md : PRODUCT_CONTEXT 1067→1084, BUILD_PLAN 759→769, FICHE_METIER 887→903, COUT_REEL 288→292, ANALYSE 606→607, Total doc "~13 300+"→"~16 000+"
+- CLAUDE.md : PRODUCT_CONTEXT 1013→1084, BUILD_PLAN 759→769, FICHE_METIER 887→903
+
+### BLOC E — Yousign
+- COUT_REEL.md : ajout Yousign API Starter 75€/mois (500 signatures/an, ~42/mois) dans les coûts fixes mensuels. Total fixe mis à jour.
+
+---
+
 ## 14/04/2026 — Audit complet : correction des 33 incohérences
 
 ### 1.1 Résidu "9 agents" dans ANALYSE_CONCURRENCE.md (3 occurrences)

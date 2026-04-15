@@ -450,7 +450,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 - ❌ Pas de background consciousness
 - ❌ Pas de mémoire persistante multi-level (Mem0)
 - ❌ Pas de score de confiance sur les prix
-- ❌ Pas de 6658 lignes de données terrain
+- ❌ Pas de 8819 lignes de données terrain
 - ❌ Pas de détection d'oublis via Vision IA (photos)
 - ❌ Pas de Factur-X
 
@@ -567,7 +567,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 | **Fabrik** | Conversation → devis | Très early | 🟢 FAIBLE — pas livré |
 | **BatiSigne** | Chiffrage IA | Niche | 🟢 FAIBLE — pas un logiciel complet |
 
-**Conclusion :** L'IA arrive dans le BTP mais PERSONNE ne fait ce que STRUCTORAI fait. Les concurrents IA font UN truc (devis IA). STRUCTORAI fait TOUT le pipeline avec 13 agents IA autonomes + mémoire + vocal + 6 langues + 6658 lignes de données terrain. Le seul à surveiller est Renalto (Rita) sur la brique devis WhatsApp.
+**Conclusion :** L'IA arrive dans le BTP mais PERSONNE ne fait ce que STRUCTORAI fait. Les concurrents IA font UN truc (devis IA). STRUCTORAI fait TOUT le pipeline avec 13 agents IA autonomes + mémoire + vocal + 6 langues + 8819 lignes de données terrain. Le seul à surveiller est Renalto (Rita) sur la brique devis WhatsApp.
 
 ---
 

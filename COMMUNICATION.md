@@ -12,9 +12,9 @@
 StructorAI est la MEILLEURE application du marché pour les artisans du bâtiment. C'est pas une opinion, c'est un fait. Aucun concurrent ne propose :
 - Un assistant vocal mains libres qui comprend le métier et RÉPOND à voix haute
 - Un cerveau qui VOIT les photos de chantier et fait le devis à partir de ce qu'il voit
-- 6 agents autonomes qui travaillent 24h/24 pendant que l'artisan dort
+- 13 agents autonomes qui travaillent 24h/24 pendant que l'artisan dort
 - Une mémoire qui apprend les prix, les clients, le rythme de CHAQUE artisan
-- 950 postes chiffrés avec les vrais prix terrain et 96 erreurs documentées
+- 1080+ postes chiffrés avec les vrais prix terrain et 132 erreurs documentées
 - 6 langues dès le premier jour
 - Factur-X natif (pas un patch rajouté en dernière minute)
 - WhatsApp comme porte d'entrée (les mains sales sur le chantier)
@@ -35,7 +35,7 @@ Ces phrases doivent apparaître PARTOUT : landing page, vidéos, posts, visuels.
 | "L'assistant qui change tout pour les artisans." | Témoignages, posts, landing page |
 | "Fini les logiciels compliqués. Parle, c'est fait." | Landing page hero alternative, Facebook |
 | "Plus qu'une app. Un bras droit qui ne dort jamais." | Description longue, YouTube, articles |
-| "Le cerveau qui connaît 950 interventions BTP par coeur." | Arguments techniques, comparatifs |
+| "Le cerveau qui connaît 1080+ interventions BTP par coeur." | Arguments techniques, comparatifs |
 | "Pendant que tu dors, il relance tes impayés." | TikTok, posts Facebook, visuels |
 | "Ton meilleur employé. Il fait tout, il oublie rien, il coûte €29/mois." | Phrase de vente #1, partout |
 | "Construit par un ancien du bâtiment. Pas par des geeks en cravate." | Storytelling, Facebook, landing page |
@@ -56,10 +56,10 @@ Ces phrases doivent apparaître PARTOUT : landing page, vidéos, posts, visuels.
 StructorAI : un cerveau dans ta poche. Tu parles, c'est fait. Même les mains dans le plâtre.
 
 Batappli : une bibliothèque d'ouvrages statique.
-StructorAI : un cerveau qui connaît 950 interventions et qui apprend TES prix.
+StructorAI : un cerveau qui connaît 1080+ interventions et qui apprend TES prix.
 
 Batappli : pas de relance, pas de compta, pas de planning, pas d'avis Google.
-StructorAI : 12 modules. 6 agents. Un seul cerveau. Tout est fait.
+StructorAI : 16 modules. 13 agents. Un seul cerveau. Tout est fait.
 
 Batappli : français seulement.
 StructorAI : 6 langues. Français, turc, portugais, arabe, espagnol, anglais.
@@ -78,12 +78,12 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 | "2 minutes" | Le temps d'un devis vocal vs 2h sur Word |
 | "3 secondes" | Le temps de classer un ticket de caisse |
 | "30 secondes" | Le pré-devis au téléphone |
-| "6 agents" | Qui travaillent 24h/24 pour toi |
-| "12 modules" | Tout ce que ton business a besoin |
-| "950 interventions" | Que le cerveau connaît par coeur avec les vrais prix |
-| "96 erreurs terrain" | Que le cerveau détecte pour toi |
-| "4709 lignes" | De données métier réelles (pas du ChatGPT) |
-| "8 corps de métier" | Plomberie, électricité, carrelage, peinture, maçonnerie, menuiserie, plaquiste, façadier |
+| "13 agents" | Qui travaillent 24h/24 pour toi |
+| "16 modules" | Tout ce que ton business a besoin |
+| "1080+ interventions" | Que le cerveau connaît par coeur avec les vrais prix |
+| "132 erreurs terrain" | Que le cerveau détecte pour toi |
+| "8819 lignes" | De données métier réelles (pas du ChatGPT) |
+| "11 corps de métier" | Plomberie, électricité, carrelage, peinture, maçonnerie, menuiserie, plaquiste, façadier |
 | "6 langues" | Français, turc, portugais, arabe, espagnol, anglais |
 | "85%" | Le cerveau te connaît à 85% en 3 mois. Devis en 30 secondes. |
 | "€29/mois" | Le prix d'une heure de main d'oeuvre |
@@ -247,7 +247,7 @@ Script 3 — "Le prospect"
 - "500 000 artisans en France passent leurs soirées sur l'admin au lieu d'être avec leur famille."
 - Les 5 douleurs illustrées (devis, impayés, tickets, marges, prospects perdus)
 
-**Section solution — Les 12 modules :**
+**Section solution — Les 16 modules :**
 - Chaque module = 1 bloc visuel avec icône + titre + 1 phrase + vidéo courte
 - Pas de jargon tech. "Il fait tes devis par la voix" pas "pipeline vocal Whisper → LLM → PDF"
 
@@ -376,7 +376,7 @@ C'est quand il dicte son premier devis et que le PDF sort en 2 minutes avec les 
 
 - On DIT que c'est **la meilleure app du marché** pour les artisans. C'est vrai, on l'assume.
 - On DIT que c'est **l'app n°1 des artisans BTP**. On la positionne comme le leader dès le jour 1.
-- On DIT que **rien d'autre ne fait ça**. Aucun concurrent n'a la voix, la vision, la mémoire, les 6 agents, les 6 langues.
+- On DIT que **rien d'autre ne fait ça**. Aucun concurrent n'a la voix, la vision, la mémoire, les 13 agents, les 6 langues.
 - On DIT que c'est **le meilleur employé qu'un artisan puisse avoir**. Il travaille 24h/24, oublie rien, coûte €29.
 - On DIT que ça va **changer sa vie**. Parce que c'est vrai. 2h d'admin en moins chaque soir = sa vie change.
 - On DIT que c'est **l'avenir du BTP**. Pas dans 10 ans. Maintenant.
