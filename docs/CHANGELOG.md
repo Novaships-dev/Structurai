@@ -2,13 +2,48 @@
 
 ---
 
-## 15/04/2026 — Ajout sanctions facturation électronique (e-invoicing)
+## 15/04/2026 — Audit 360° web : intégration des 20 trouvailles
 
-### FICHE_METIER.md — Section data/legal/factur_x.json
-- Ajout du barème de sanctions e-invoicing (50€/facture, 500€/transmission e-reporting, 500-1000€ non-désignation PDP, droit à l'erreur 30j)
+### FICHE_METIER.md
+- Ajout sanctions facturation électronique (50€/facture, 500€/e-reporting)
+- Ajout 3 nouvelles mentions obligatoires facture (adresse livraison, catégorie opération, TVA débits)
+- Correction attestation TVA : CERFA supprimés depuis 01/01/2025 → mention texte sur devis
+- Ajout obligation e-reporting (B2C + données paiement)
+- ACRE réforme 01/07/2026 : détails complets (délai 60j, conditions restreintes, taux BNC 25.6%)
+- Ajout mention déchets obligatoire (depuis 01/07/2021)
+- Ajout retenue de garantie 5% (loi 16/07/1971)
 
-### PRODUCT_CONTEXT.md — Section TIMING FACTUR-X
-- Ajout des sanctions comme argument commercial clé avec calcul d'impact concret (20 factures/mois = 1 000€/mois)
+### SECURITE.md
+- Ajout section 8 : AI Act (transparence, documentation, traçabilité, supervision humaine)
+- Ajout section 9 : NIS2 (notification 24h, gestion risques, responsabilité dirigeant)
+- Ajout section 10 : Permissions app mobile CNIL (caméra, micro, contacts, localisation)
+- Ajout durées de conservation RGPD (factures 10 ans, clients 3 ans, RH 5 ans, etc.)
+
+### ANALYSE_CONCURRENCE.md
+- Mise à jour fiche Cegid Boby (#16) avec détails étendus (CA >700M€, multilingue vocal)
+- Mise à jour fiche Mediabat AI (#17)
+- Ajout 2 concurrents IA : Keyzia (#18), KeoBat (#19)
+- Fabrik et BatiSigne renumérotés #20 et #21
+- Ajout stat marché : 46% artisans digitalisés (Obat 2026)
+
+### COUT_REEL.md
+- Ajout coût Plateforme Agréée (PA) : 0.10-0.50€/facture ou 29-100€/mois
+
+### FEATURES.md
+- Ajout F111 : Intégration PA facturation électronique conforme
+
+### PRODUCT_CONTEXT.md
+- Correction "47 mentions obligatoires" → terminologie détaillée (6 occurrences)
+- Ajout stratégie intégration PA (FactPulse/B2Brouter/Iopole)
+
+### BUILD_PLAN.md
+- Sprint 5 : ajout tâches PA, Factur-X Extended, mentions facture, mention déchets, attestation TVA
+
+### COMMUNICATION.md
+- Ajout arguments Factur-X natif, PA intégrée, stat 46% artisans digitalisés
+
+### DISTRIBUTION.md
+- Correction "47 mentions obligatoires" → terminologie détaillée
 
 ---
 

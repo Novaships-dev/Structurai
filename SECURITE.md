@@ -123,6 +123,19 @@
 | Audio brut (vocaux) | **Non stocké** — traité et supprimé | Minimisation |
 | Données prospect (non-client) | **3 ans** après dernier contact | Intérêt légitime prospection |
 
+### Durées de conservation légales
+
+| Type de donnée | Durée | Base légale |
+|---------------|-------|-------------|
+| Factures et pièces comptables | **10 ans** | Code de commerce L123-22 |
+| Données clients actifs | Durée de la relation + **3 ans** | RGPD art. 5.1.e |
+| Données clients inactifs | **3 ans après dernière interaction** | Recommandation CNIL |
+| Données RH (employés) | **5 ans après départ du salarié** | Code du travail |
+| Devis non signés | **6 mois** recommandé | Bonne pratique RGPD |
+| Données de facturation | **10 ans** | Code de commerce |
+| Logs de connexion | **1 an** | LCEN art. 6-II |
+| Cookies / consentement | **6 mois** max sans re-demande | Directive ePrivacy |
+
 ### Transferts hors UE
 
 | Sous-traitant | Pays | Données transférées | Protection |
@@ -282,3 +295,47 @@
 
 10. LOGS SANS DONNÉES PERSO — ne jamais logger un email, un nom, un SIRET, un montant. Logger des IDs uniquement.
 ```
+
+---
+
+## 8. CONFORMITÉ AI ACT (Règlement IA européen)
+
+STRUCTORAI utilise de l'IA pour des décisions à impact (génération de devis, suggestions comptables, alertes fiscales). Obligations :
+
+| Obligation AI Act | Implémentation STRUCTORAI |
+|-------------------|--------------------------|
+| **Transparence** | Toujours indiquer que le contenu est généré par IA. Mention "Ce devis a été pré-rempli par l'IA. Vérifiez et validez avant envoi." |
+| **Documentation** | Documenter les modèles utilisés (Claude Sonnet/Haiku), les données d'entraînement (référentiels techniques), les cas d'erreur connus |
+| **Traçabilité** | Logger chaque décision IA (devis généré, prix suggéré, alerte fiscale) avec timestamp, modèle, input/output |
+| **Supervision humaine** | L'artisan VALIDE toujours avant envoi. Aucune action automatique sans confirmation (sauf background consciousness) |
+| **Non-discrimination** | Pas de traitement différencié selon l'origine, la langue ou le profil de l'artisan dans les suggestions IA |
+| **Droit d'opposition** | L'artisan peut désactiver les suggestions IA et saisir manuellement |
+
+---
+
+## 9. DIRECTIVE NIS2 (cybersécurité — applicable depuis janvier 2026)
+
+STRUCTORAI en tant que SaaS hébergeant des données financières peut être concerné à terme (PME numériques >50 salariés / >10M€ CA). Anticipation :
+
+| Obligation NIS2 | Action STRUCTORAI |
+|-----------------|-------------------|
+| Notification incident 24h | Alerte automatique Sentry → équipe → ANSSI si nécessaire |
+| Gestion des risques cyber | Audit sécurité annuel (Supabase RLS, API keys rotation, dépendances) |
+| Responsabilité dirigeant | Fabrice = responsable. Documenter les mesures prises. |
+
+---
+
+## 10. PERMISSIONS APP MOBILE — RECOMMANDATIONS CNIL (publiées 2024)
+
+STRUCTORAI accède à des données sensibles via le mobile. Chaque permission doit être justifiée et consentie :
+
+| Permission | Justification | Consentement |
+|-----------|---------------|-------------|
+| **Caméra** | Vision IA (photo chantier, OCR ticket, scan document) | Demandé à la 1ère utilisation, réexplicable |
+| **Microphone** | Dictée vocale devis, conversation IA | Demandé à la 1ère utilisation |
+| **Galerie photos** | Import photos chantier existantes | Demandé à la 1ère utilisation |
+| **Contacts** | Prospection (import contacts pour CRM) | Demandé explicitement, opt-in |
+| **Localisation** | Agent Déplacements (calcul km, zone chantier) | Demandé, avec option "uniquement pendant utilisation" |
+| **Notifications** | Alertes cerveau IA (relances, impayés, rappels) | Demandé au onboarding |
+
+Règle : ne JAMAIS accéder à une permission sans justification affichée à l'utilisateur. Ne JAMAIS pré-cocher.

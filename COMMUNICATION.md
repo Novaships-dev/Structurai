@@ -91,6 +91,9 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 | "47 mentions" | Obligatoires sur un devis BTP. Le cerveau les met toutes. Automatiquement. |
 | "15 000€" | L'amende par facture non conforme Factur-X. StructorAI = conforme. |
 | "0 minute" | Ce que tu passes sur l'admin le soir. StructorAI a tout fait. |
+| "Factur-X natif" | Déjà conforme septembre 2027. Batappli aussi, mais les autres non. |
+| "PA intégrée en arrière-plan" | Tu ne fais RIEN. Le cerveau transmet tes factures à l'État automatiquement. Zéro admin. |
+| "46% des artisans digitalisés" | Le marché est prêt. Les 54% restants vont suivre avec Factur-X obligatoire. |
 
 ---
 

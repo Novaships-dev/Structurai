@@ -40,7 +40,7 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
-| 1 | **Agent DEVIS** | Vocal/WhatsApp/texte → comprend "sdb complète 8m²" → structure les postes → cherche dans tes prix perso (Mem0) ou prix marché (base 1080+ postes) → TVA multi-taux (5.5%/10%/20%) → 47 mentions obligatoires → PDF conforme → envoi par email/SMS → signature électronique Yousign → client signe = fiche chantier + acompte automatiques. Pré-devis instantané par téléphone AVANT visite (filtre les prospects sérieux). Détecte les oublis ("évacuation gravats pas mentionnée, j'ajoute ?"). |
+| 1 | **Agent DEVIS** | Vocal/WhatsApp/texte → comprend "sdb complète 8m²" → structure les postes → cherche dans tes prix perso (Mem0) ou prix marché (base 1080+ postes) → TVA multi-taux (5.5%/10%/20%) → mentions obligatoires → PDF conforme → envoi par email/SMS → signature électronique Yousign → client signe = fiche chantier + acompte automatiques. Pré-devis instantané par téléphone AVANT visite (filtre les prospects sérieux). Détecte les oublis ("évacuation gravats pas mentionnée, j'ajoute ?"). |
 | 2 | **Agent RELANCE** | Surveille TOUS les devis et factures. Devis J+3 → relance. Facture J+15 → email poli. J+30 → SMS ferme. J+45 → mise en demeure. Ton adaptatif par client (mémoire Mem0). Détecte si email ouvert. Anticipe ("Martin paie toujours 10 jours en retard, je relance plus tôt"). |
 | 3 | **Agent COMPTA** | Photo ticket → OCR → montant/fournisseur/date/articles extraits → catégorisé (matériaux/outillage/carburant/sous-traitance) → attribué au bon chantier ("tu étais sur Dupont, le ticket Point P 234€ va sur Dupont") → alerte anomalies ("847€ inhabituel, tu confirmes ?") → export comptable mensuel auto → envoyé au comptable. Suivi marge par chantier temps réel ("65% budget matériaux consommé, 40% du chantier fait"). |
 | 4 | **Agent PLANNING** | Timer par chantier (start/stop vocal). Comparaison temps prévu vs réel. Détection dépassements AVANT ("au rythme actuel, Dupont finit jeudi au lieu de mardi, marge restante 340€"). Enchaînements entre chantiers (si Dupont déborde → décaler le suivant → prévenir le client auto). Calcul capacité ("3 chantiers en avril, max 4, tu peux accepter 1 de plus"). Rappels matériaux ("chantier Martin lundi, t'as pas commandé chez Point P"). |
@@ -165,7 +165,7 @@ Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 lang
 - **Format** : Factur-X (PDF/A-3 + XML CII ou UBL)
 - **Obligation** : Réception sept 2026, émission TPE sept 2027
 - **Plateforme** : PPF + Plateformes Agréées
-- **Mentions** : 47 mentions obligatoires devis BTP
+- **Mentions** : 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques
 - **Assurance** : Décennale obligatoire. RGE, Qualibat, Qualifelec
 - **Sanctions** : 3 000-15 000€ (devis absent), 75 000€ + 6 mois prison (décennale absente), 75 000-375 000€ (facture non conforme)
 - **Base prix** : 8819 lignes, 11 corps de métier ✅ DÉJÀ CRÉÉ

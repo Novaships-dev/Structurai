@@ -55,6 +55,7 @@ Mois 2 : ~30$ (API tests) + 5$ (Railway) = ~35€
 | ElevenLabs | Starter | **5$/mois** (30K chars = ~30 min TTS) | C'est serré pour 50 users. Voir optimisation ci-dessous. |
 | Sentry | Free | **0$** | |
 | Yousign API (signature devis) | Starter | **75€/mois** (500 signatures/an) | Couvre ~42 signatures/mois. |
+| Plateforme Agréée (PA) facturation électronique | API marque blanche (FactPulse ou B2Brouter) | **~0.10-0.50€/facture** ou forfait 29-100€/mois | Obligatoire dès sept 2027 pour émission. Intégrer en Sprint 5. Phase pilote B2Brouter gratuite jusqu'au 31/08/2026. |
 | **TOTAL FIXE** | | **~90-125€/mois** selon upgrades | |
 
 ### Coûts VARIABLES par artisan payant (Pro à 29€/mois)

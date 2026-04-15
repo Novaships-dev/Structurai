@@ -625,6 +625,17 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 - Filtre les prospects sérieux AVANT déplacement
 - Sprint : 3 (même feature que F106 mais initiée par le client)
 
+### F111. Intégration Plateforme Agréée (PA) — Facturation électronique conforme (NOUVEAU)
+- STRUCTORAI se connecte à une PA immatriculée (FactPulse, B2Brouter ou Iopole) via API marque blanche
+- Chaque facture générée est automatiquement transmise à la PA → format Factur-X → e-invoicing + e-reporting
+- L'artisan ne voit rien : tout est transparent, la conformité est en arrière-plan
+- Gestion des factures de situation (avancement chantier), acomptes, avoirs, retenues de garantie 5%
+- e-reporting B2C : transmission automatique des données de vente aux particuliers
+- 4 nouvelles mentions obligatoires auto-intégrées : SIREN client, adresse livraison, catégorie opération, TVA sur débits
+- Mention déchets auto-intégrée sur chaque devis (estimation quantité, tri, centre de collecte, coût)
+- Attestation TVA taux réduit : mention texte sur le devis (CERFA supprimés depuis 01/01/2025)
+- Sprint : Sprint 5 (avec Agent Factures)
+
 ---
 
 ## RÉSUMÉ DES CHANGEMENTS

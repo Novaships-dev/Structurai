@@ -168,7 +168,7 @@ Le LLM n'est pas un ChatGPT générique. Il est spécialisé bâtiment via un sy
 
 - Comprend le langage artisan : "sdb complète" = salle de bain avec dépose, plomberie, carrelage, faïence, douche ou baignoire, meuble vasque, sèche-serviette, joints silicone, évacuation gravats
 - Connaît les taux TVA BTP : 5.5% (rénovation énergétique), 10% (travaux rénovation), 20% (neuf + fournitures)
-- Sait appliquer les 47 mentions obligatoires d'un devis BTP 2026
+- Sait appliquer les 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques d'un devis BTP 2026
 - Connaît les prix moyens du marché par région et par corps de métier (base de données BatiChiffrage ou équivalent)
 - Détecte les oublis : "Vous n'avez pas mentionné l'évacuation des gravats — je l'ajoute ?"
 - Génère des documents conformes Factur-X (obligatoire septembre 2026)
@@ -205,7 +205,7 @@ Les 13 agents :
 - L'artisan dicte par WhatsApp vocal : "Devis pour M. Dupont, sdb complète, 8m²"
 - L'agent comprend le métier, structure les postes, cherche les prix dans la mémoire de l'artisan (ou propose les prix marché si nouveau type de chantier)
 - Calcule automatiquement : quantités (m², ml, unités), main d'oeuvre (basé sur le rythme réel de l'artisan), TVA multi-taux, total HT/TTC
-- Intègre les 47 mentions obligatoires, la décennale, les conditions
+- Intègre les 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques, la décennale, les conditions
 - Génère un PDF professionnel envoyé au client par email/SMS avec lien de signature électronique
 - Si le client signe → l'agent crée automatiquement la fiche chantier + demande d'acompte
 - Proactivité : "Le devis Dupont n'a pas été envoyé depuis 2 jours — je l'envoie maintenant ?"
@@ -498,7 +498,7 @@ Les données propres à chaque artisan : ses prix habituels, ses clients, ses ch
 **Source 2 — Base de connaissances métier BTP (RAG vectoriel) — LE SOCLE**
 Base de données interne, stockée dans Supabase avec embeddings vectoriels pour la recherche sémantique :
 - **Prix du marché** par région, par corps de métier, par type de prestation
-- **Réglementation** : 47 mentions obligatoires devis BTP, taux TVA (5.5%, 10%, 20%) et conditions d'application, décennale/RGE/Qualibat, Factur-X
+- **Réglementation** : 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques devis BTP, taux TVA (5.5%, 10%, 20%) et conditions d'application, décennale/RGE/Qualibat, Factur-X
 - **Templates métier** : structures types de devis par corps de métier (plomberie sdb, électricité tableau, peinture appartement) avec postes standards
 - **Nomenclature matériaux** : correspondance langage artisan ("un 32/40 cuivre") → références produits réelles
 - **Règles de calcul** : m² carrelage avec marge de coupe 10%, ml plinthe selon périmètre, nombre de prises selon surface
@@ -863,7 +863,7 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
    d. Calcul quantités : 8m² sol × prix/m² + 22ml faïence × prix/ml...
    e. TVA : main d'oeuvre 10%, fournitures 20% (rénovation > 2 ans)
    f. Détection oublis : "Pas de mention sèche-serviette. J'ajoute en option ?"
-   g. 47 mentions obligatoires auto-remplies
+   g. 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques auto-remplies
    h. Génération PDF professionnel
    i. Envoi au client par email + SMS avec lien signature
 
@@ -1055,6 +1055,8 @@ Les logiciels existants (Batappli, EBP) adaptent leurs outils existants. Nous, o
 - Droit à l'erreur : pas de sanction pour la 1ère infraction si régularisation sous 30 jours
 
 → Un artisan qui émet 20 factures/mois sans e-invoicing = **1 000€/mois de sanctions**. Notre pitch : "STRUCTORAI vous met en conformité dès l'inscription."
+
+STRUCTORAI s'intègre à une Plateforme Agréée (PA) via API marque blanche pour assurer la conformité e-invoicing et e-reporting. L'artisan n'a rien à faire : la transmission est automatique. Options évaluées : FactPulse (29€/mois, intégration 2h), B2Brouter (phase pilote gratuite jusqu'au 31/08/2026), Iopole (PA #0018, SecNumCloud).
 
 ---
 

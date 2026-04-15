@@ -691,6 +691,11 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Mobile : Liste factures avec statuts
 - [ ] Mobile : Indicateur impayés
 - [ ] Test : devis accepté → facture auto → pas payée J+15 → relance email
+- [ ] Intégration API Plateforme Agréée (PA) marque blanche pour e-invoicing + e-reporting
+- [ ] Format Factur-X Extended (situations de travaux, acomptes, retenue de garantie, autoliquidation)
+- [ ] 4 nouvelles mentions obligatoires facture intégrées au template
+- [ ] Mention déchets auto-calculée sur chaque devis
+- [ ] Attestation TVA taux réduit : mention texte remplaçant les anciens CERFA
 
 ### Sprint 6 — Réputation + Prospection + Email + Fiscalité + Déplacements (~3 jours)
 - [ ] Backend : Agent Réputation & Marketing (SMS avis Google + réponse IA + réseaux sociaux)

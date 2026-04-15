@@ -8,7 +8,7 @@
 
 ## RÉSUMÉ EXÉCUTIF
 
-**22 concurrents identifiés** dans la niche BTP/trades. **3 ont de l'IA** (Handoff.ai aux US, Sleepless Tradesman au UK, ServiceM8 en Australie) mais AUCUN n'est en France, AUCUN ne parle français, AUCUN ne fait du vocal bidirectionnel, et AUCUN ne couvre le pipeline complet (prospect → devis → chantier → facture → relance → compta → réputation → prospection → fiscalité → RH).
+**24 concurrents identifiés** dans la niche BTP/trades. **3 ont de l'IA** (Handoff.ai aux US, Sleepless Tradesman au UK, ServiceM8 en Australie) mais AUCUN n'est en France, AUCUN ne parle français, AUCUN ne fait du vocal bidirectionnel, et AUCUN ne couvre le pipeline complet (prospect → devis → chantier → facture → relance → compta → réputation → prospection → fiscalité → RH).
 
 **En France : ZÉRO concurrent avec IA.** Les 14 logiciels BTP français sont tous des logiciels de saisie classiques.
 
@@ -409,6 +409,8 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 | CRM | ❌ | ❌ | ❌ | ❌ | ✅ (Prospection) |
 | Marchés publics/Chorus | ❌ | ❌ | ✅ | ✅ | ❌ (pas V1) |
 
+| Stat marché 2026 | 46% des artisans utilisent déjà des solutions techniques (Obat 2026) | Le marché est MÛRE pour une solution IA complète |
+
 ---
 
 ## CONCURRENTS AVEC IA — LES VRAIS MENACES
@@ -458,60 +460,103 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 
 ---
 
-### 16. BOBY / CEGID BOBY — IA Copilote intégrée
+### 16. CEGID BOBY — Copilot IA dictée vocale ⚠️
 
 | Donnée | Valeur |
 |--------|--------|
-| **Produit** | "IA Copilote" intégré dans Boby (racheté par Cegid) |
-| **Acquis par** | Cegid (grand groupe ERP français) |
-| **Prix** | Gratuit (base) |
+| **Pays** | France |
+| **Éditeur** | Cegid (groupe coté, CA >700M€) |
+| **Prix** | ~29-49€/mois |
+| **Cible** | Artisans BTP toutes tailles |
 
-**Ce qu'il fait :**
-- Dictée vocale de devis → l'IA transcrit et structure
-- Génération bibliothèque de prix automatique par IA
-- Saisie fiche client par la voix
-- Multi-langue (l'IA comprend et transcrit en français depuis d'autres langues)
-- Compatible tous appareils
+**Forces :**
+- IA Copilote : dictée vocale → devis en français, depuis n'importe quelle langue (multilingue natif)
+- Génère une bibliothèque de prix sur mesure automatiquement par IA
+- Saisie client par voix (pas besoin de clavier)
+- Adossé à Cegid (comptabilité, paie, ERP) → intégration complète
+- Budget marketing massif (groupe coté)
 
-**CE QU'IL NE FAIT PAS :**
-- ❌ Pas de vrai cerveau IA (c'est un copilote de saisie, pas un agent autonome)
-- ❌ Pas de relance intelligente
-- ❌ Pas de suivi de chantier avancé
-- ❌ Pas d'OCR tickets
-- ❌ Pas de prospection
-- ❌ Pas de réputation
-- ❌ Pas de mémoire persistante
-- ❌ "Fonctionnalités limitées comparées aux solutions payantes, pas de support client dédié"
+**Faiblesses :**
+- Mono-fonction (devis + facturation), pas de mémoire persistante, pas de 13 agents
+- Pas de Vision IA photo chantier
+- Pas de WhatsApp
+- Interface corporate, moins "terrain" que Renalto
 
-**Verdict :** Boby a le backing de Cegid (gros groupe). L'IA Copilote est un ajout récent et basique — c'est de la dictée vocale + génération, pas un cerveau qui pense. Le produit est gratuit, donc il attrape les débutants. Mais les artisans qui grandissent le quittent vite.
+**Verdict :** Concurrent SÉRIEUX grâce au backing Cegid et au multilingue vocal. Mais reste un outil de devis, pas un business manager complet.
 
 ---
 
-### 17. MEDIABAT — Assistant IA pour devis
+### 17. MEDIABAT AI — Suggestions lignes de devis
 
 | Donnée | Valeur |
 |--------|--------|
-| **Produit** | "Mediabat IA" — assistant IA intégré dans le logiciel Mediabat |
-| **Lancé** | Juillet 2025 (webinaire de lancement) |
-| **Cible** | Artisans et pros du bâtiment existants sur Mediabat |
+| **Pays** | France |
+| **Prix** | Module ajouté à l'abonnement Mediabat existant |
+| **Cible** | Artisans déjà clients Mediabat |
 
-**Ce qu'il fait :**
-- L'IA propose des lignes de devis adaptées au métier
-- Intitulés précis, unités cohérentes, prix unitaires réalistes
-- L'artisan choisit et valide → finition dans Mediabat
+**Forces :**
+- Suggestions IA de lignes de devis avec intitulés précis, unités cohérentes, prix unitaires réalistes
+- Basé sur les pratiques du métier et les matériaux courants
+- 100% personnalisable (l'artisan garde le contrôle)
 
-**CE QU'IL NE FAIT PAS :**
-- ❌ Pas de vocal
-- ❌ Pas de WhatsApp
-- ❌ C'est un "suggesteur" de lignes, pas un générateur complet
-- ❌ Fonctionne uniquement DANS Mediabat (pas standalone)
-- ❌ Pas de cerveau autonome
+**Faiblesses :**
+- Module ajouté à un logiciel existant (pas standalone)
+- Pas d'IA vocale ni WhatsApp
+- Pas de vision IA, pas de mémoire
 
-**Verdict :** Feature IA ajoutée à un logiciel existant. Pas un produit IA natif. C'est ChatGPT intégré dans un formulaire de devis.
+**Verdict :** Menace FAIBLE. C'est un assistant de saisie, pas un cerveau.
 
 ---
 
-### 18. FABRIK — Assistant IA conversationnel pour devis
+### 18. KEYZIA — Multi-agents IA immobilier/BTP
+
+| Donnée | Valeur |
+|--------|--------|
+| **Pays** | France |
+| **Positionnement** | "IA souveraine des pros de l'immobilier" |
+| **Cible** | Immobilier + BTP |
+
+**Forces :**
+- Approche multi-agents (comme STRUCTORAI)
+- Analyse de documents (devis, factures, appels d'offres)
+- Technologie Anthropic/OpenAI
+
+**Faiblesses :**
+- Cible immobilier d'abord, BTP en second
+- Pas de données terrain (pas de 8 819 lignes)
+- Pas de vocal/WhatsApp
+- Pas de mémoire artisan
+
+**Verdict :** À surveiller car approche multi-agents similaire. Mais positionné immobilier, pas artisan terrain.
+
+---
+
+### 19. KEOBAT — IA intégrée chantier (150+ entreprises)
+
+| Donnée | Valeur |
+|--------|--------|
+| **Pays** | France |
+| **Prix** | 14-20€/utilisateur/mois |
+| **Cible** | PME BTP 10+ employés |
+
+**Forces :**
+- IA classification photos automatique
+- IA planning intelligent (suggestions selon disponibilités)
+- IA détection anomalies chantier
+- IA prédiction retards (après 3 mois de données)
+- 150+ entreprises équipées
+
+**Faiblesses :**
+- Cible PME (pas micro/artisan solo)
+- Pas de devis IA ni vocal
+- Pas de WhatsApp
+- Pas de multilingue
+
+**Verdict :** Pas un concurrent direct (cible PME, pas artisan). Mais leurs features IA chantier (classification photos, prédiction retards) sont à surveiller.
+
+---
+
+### 20. FABRIK — Assistant IA conversationnel pour devis
 
 | Donnée | Valeur |
 |--------|--------|
@@ -536,7 +581,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 
 ---
 
-### 19. BATISIGNE — Calcul prix chantier par IA
+### 21. BATISIGNE — Calcul prix chantier par IA
 
 | Donnée | Valeur |
 |--------|--------|
@@ -562,8 +607,10 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 | Concurrent IA | Ce qu'il fait | Maturité | Menace |
 |--------------|--------------|----------|--------|
 | **Renalto (Rita)** | Devis IA + vocal + WhatsApp | Early mais fonctionnel | ⚠️ MOYENNE — mono-fonction |
-| **Boby (Cegid)** | Dictée vocale + IA copilote | Basique, backing Cegid | ⚠️ FAIBLE — gratuit, limité |
-| **Mediabat IA** | Suggestions lignes de devis | Feature ajoutée | 🟢 FAIBLE — pas standalone |
+| **Cegid Boby** | Dictée vocale + IA copilote + multilingue | Basique, backing Cegid (CA >700M€) | ⚠️ SÉRIEUX — budget marketing massif |
+| **Mediabat AI** | Suggestions lignes de devis | Feature ajoutée | 🟢 FAIBLE — pas standalone |
+| **Keyzia** | Multi-agents IA immobilier/BTP | Early | ⚠️ À SURVEILLER — approche multi-agents |
+| **KeoBat** | IA chantier (photos, planning, anomalies) | 150+ entreprises | 🟢 FAIBLE — cible PME, pas artisan |
 | **Fabrik** | Conversation → devis | Très early | 🟢 FAIBLE — pas livré |
 | **BatiSigne** | Chiffrage IA | Niche | 🟢 FAIBLE — pas un logiciel complet |
 
