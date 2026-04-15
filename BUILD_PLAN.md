@@ -496,11 +496,20 @@ structorai/
 │   │   └── cotisations_specifiques.json   # CIBTP 20.70%, OPPBTP 0.11%, PRO BTP, DFS 7%
 │   ├── deplacements/
 │   │   └── bareme_kilometrique_2026.json  # Barème fiscal km par puissance CV
-│   └── prix_marche/                       # Prix moyens par région
-│       ├── ile_de_france.json
-│       ├── paca.json
-│       ├── auvergne_rhone_alpes.json
-│       └── ...                            # Autres régions
+│   └── prix/                              # Prix marché par corps de métier
+│       ├── plomberie.json
+│       ├── electricite.json
+│       ├── carrelage.json
+│       ├── peinture.json
+│       ├── maconnerie.json
+│       ├── menuiserie_serrurerie.json
+│       ├── plaquiste.json
+│       ├── facade.json
+│       ├── couverture.json
+│       ├── chauffage_climatisation.json
+│       ├── isolation.json
+│       ├── coefficients_regionaux.json    # 11 zones (Paris → DOM-TOM)
+│       └── taux_horaires.json             # Taux MO par métier
 │
 └── .github/
     └── workflows/

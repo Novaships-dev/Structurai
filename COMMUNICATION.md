@@ -83,7 +83,7 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 | "1080+ interventions" | Que le cerveau connaît par coeur avec les vrais prix |
 | "132 erreurs terrain" | Que le cerveau détecte pour toi |
 | "8819 lignes" | De données métier réelles (pas du ChatGPT) |
-| "11 corps de métier" | Plomberie, électricité, carrelage, peinture, maçonnerie, menuiserie, plaquiste, façadier |
+| "11 corps de métier" | Plomberie, électricité, carrelage, peinture, maçonnerie, menuiserie, plaquiste, façadier, couverture, chauffage & clim, isolation |
 | "6 langues" | Français, turc, portugais, arabe, espagnol, anglais |
 | "85%" | Le cerveau te connaît à 85% en 3 mois. Devis en 30 secondes. |
 | "€29/mois" | Le prix d'une heure de main d'oeuvre |

@@ -386,7 +386,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 |---------------|------|---------|----------|-----|------------|
 | Devis/factures | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Facturation électronique 2026 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Bibliothèque ouvrages | ✅ | ✅ | ✅ | ✅ | ✅ (950+ postes) |
+| Bibliothèque ouvrages | ✅ | ✅ | ✅ | ✅ | ✅ (1080+ postes) |
 | Suivi de chantier | ✅ | ❌ | ✅ | ✅ | ✅ |
 | Signature électronique | ✅ | ❌ | ❌ | ❌ | ✅ (Yousign) |
 | Mode hors-ligne | ❌ | ✅ | ❌ | ❌ | ✅ (prévu) |

@@ -2,6 +2,20 @@
 
 ---
 
+## 15/04/2026 — Audit V4 : 3 derniers micro-correctifs
+
+### 1. COMMUNICATION.md L86 — Liste des 11 corps de métier complétée
+- Ajout des 3 métiers manquants dans la liste : couverture, chauffage & clim, isolation
+
+### 2. ANALYSE_CONCURRENCE.md + STRATEGIE-COMPETITIVE.md L389
+- "950+ postes" → "1080+ postes" dans le tableau comparatif concurrents
+
+### 3. BUILD_PLAN.md — Structure data/ alignée sur CLAUDE.md
+- data/prix_marche/ (par région) → data/prix/ (par métier) avec les 11 fichiers métier + coefficients_regionaux.json + taux_horaires.json
+- Aligné sur la structure définie dans CLAUDE.md et FICHE_METIER.md
+
+---
+
 ## 15/04/2026 — Audit V3 : correction des 16 incohérences restantes
 
 ### BLOC A — Propagation des 3 nouveaux référentiels (couverture, chauffage & clim, isolation)
