@@ -483,25 +483,26 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 
 ---
 
-### 17. MEDIABAT AI — Suggestions lignes de devis
+### 17. MEDIABAT AI — Suggestions lignes de devis par IA
 
 | Donnée | Valeur |
 |--------|--------|
 | **Pays** | France |
-| **Prix** | Module ajouté à l'abonnement Mediabat existant |
+| **Prix** | Module inclus dans l'abonnement Mediabat |
 | **Cible** | Artisans déjà clients Mediabat |
 
 **Forces :**
-- Suggestions IA de lignes de devis avec intitulés précis, unités cohérentes, prix unitaires réalistes
+- Suggestions IA de lignes de devis : intitulés précis, unités cohérentes, prix unitaires réalistes
 - Basé sur les pratiques du métier et les matériaux courants
 - 100% personnalisable (l'artisan garde le contrôle)
 
 **Faiblesses :**
 - Module ajouté à un logiciel existant (pas standalone)
 - Pas d'IA vocale ni WhatsApp
-- Pas de vision IA, pas de mémoire
+- Pas de vision IA, pas de mémoire persistante
+- Pas de multi-agents
 
-**Verdict :** Menace FAIBLE. C'est un assistant de saisie, pas un cerveau.
+**Verdict :** Menace FAIBLE. C'est un assistant de saisie, pas un cerveau autonome.
 
 ---
 
@@ -510,46 +511,50 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 | Donnée | Valeur |
 |--------|--------|
 | **Pays** | France |
-| **Positionnement** | "IA souveraine des pros de l'immobilier" |
+| **Positionnement** | "IA souveraine des pros de l'immobilier et du bâtiment" |
 | **Cible** | Immobilier + BTP |
 
 **Forces :**
-- Approche multi-agents (comme STRUCTORAI)
+- Approche multi-agents (philosophie proche de STRUCTORAI)
 - Analyse de documents (devis, factures, appels d'offres)
 - Technologie Anthropic/OpenAI
+- Déploiement rapide annoncé (<48h)
 
 **Faiblesses :**
 - Cible immobilier d'abord, BTP en second
-- Pas de données terrain (pas de 8 819 lignes)
+- Pas de données terrain (pas de 8 819 lignes de référentiels techniques)
 - Pas de vocal/WhatsApp
-- Pas de mémoire artisan
+- Pas de mémoire artisan (Mem0)
+- Pas de Vision IA photo chantier
 
-**Verdict :** À surveiller car approche multi-agents similaire. Mais positionné immobilier, pas artisan terrain.
+**Verdict :** À SURVEILLER car approche multi-agents similaire. Mais positionné immobilier, pas artisan terrain.
 
 ---
 
-### 19. KEOBAT — IA intégrée chantier (150+ entreprises)
+### 19. KEOBAT — IA intégrée suivi de chantier (150+ entreprises)
 
 | Donnée | Valeur |
 |--------|--------|
 | **Pays** | France |
 | **Prix** | 14-20€/utilisateur/mois |
 | **Cible** | PME BTP 10+ employés |
+| **Clients** | 150+ entreprises |
 
 **Forces :**
-- IA classification photos automatique
-- IA planning intelligent (suggestions selon disponibilités)
-- IA détection anomalies chantier
-- IA prédiction retards (après 3 mois de données)
-- 150+ entreprises équipées
+- IA classification photos automatique (chantier, matériaux, anomalies)
+- IA planning intelligent (suggestions selon disponibilités équipes)
+- IA détection anomalies chantier (alertes automatiques)
+- IA prédiction retards (après 3-6 mois de données historiques)
+- Génération de tâches depuis le chat chantier
 
 **Faiblesses :**
-- Cible PME (pas micro/artisan solo)
-- Pas de devis IA ni vocal
+- Cible PME structurées (pas micro-entreprise / artisan solo)
+- Pas de devis IA ni dictée vocale
 - Pas de WhatsApp
 - Pas de multilingue
+- ROI visible seulement à partir de 10+ employés
 
-**Verdict :** Pas un concurrent direct (cible PME, pas artisan). Mais leurs features IA chantier (classification photos, prédiction retards) sont à surveiller.
+**Verdict :** Pas un concurrent direct (cible PME, pas artisan solo/micro). Mais leurs features IA chantier (classification photos, prédiction retards) sont des idées à surveiller pour STRUCTORAI V2.
 
 ---
 
