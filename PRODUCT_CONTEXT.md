@@ -168,7 +168,7 @@ Le LLM n'est pas un ChatGPT générique. Il est spécialisé bâtiment via un sy
 
 - Comprend le langage artisan : "sdb complète" = salle de bain avec dépose, plomberie, carrelage, faïence, douche ou baignoire, meuble vasque, sèche-serviette, joints silicone, évacuation gravats
 - Connaît les taux TVA BTP : 5.5% (rénovation énergétique), 10% (travaux rénovation), 20% (neuf + fournitures)
-- Sait appliquer les 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques d'un devis BTP 2026
+- Sait appliquer les 47 mentions obligatoires sur un devis BTP 2026 (15 mentions légales + 32 mentions complémentaires BTP, incluant les 4 nouvelles mentions facture électronique, mention déchets, retenue de garantie, etc.) d'un devis BTP 2026
 - Connaît les prix moyens du marché par région et par corps de métier (base de données BatiChiffrage ou équivalent)
 - Détecte les oublis : "Vous n'avez pas mentionné l'évacuation des gravats — je l'ajoute ?"
 - Génère des documents conformes Factur-X (obligatoire septembre 2026)
@@ -205,7 +205,7 @@ Les 13 agents :
 - L'artisan dicte par WhatsApp vocal : "Devis pour M. Dupont, sdb complète, 8m²"
 - L'agent comprend le métier, structure les postes, cherche les prix dans la mémoire de l'artisan (ou propose les prix marché si nouveau type de chantier)
 - Calcule automatiquement : quantités (m², ml, unités), main d'oeuvre (basé sur le rythme réel de l'artisan), TVA multi-taux, total HT/TTC
-- Intègre les 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques, la décennale, les conditions
+- Intègre les 47 mentions obligatoires sur un devis BTP 2026 (15 mentions légales + 32 mentions complémentaires BTP, incluant les 4 nouvelles mentions facture électronique, mention déchets, retenue de garantie, etc.), la décennale, les conditions
 - Génère un PDF professionnel envoyé au client par email/SMS avec lien de signature électronique
 - Si le client signe → l'agent crée automatiquement la fiche chantier + demande d'acompte
 - Proactivité : "Le devis Dupont n'a pas été envoyé depuis 2 jours — je l'envoie maintenant ?"
@@ -498,7 +498,7 @@ Les données propres à chaque artisan : ses prix habituels, ses clients, ses ch
 **Source 2 — Base de connaissances métier BTP (RAG vectoriel) — LE SOCLE**
 Base de données interne, stockée dans Supabase avec embeddings vectoriels pour la recherche sémantique :
 - **Prix du marché** par région, par corps de métier, par type de prestation
-- **Réglementation** : 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques devis BTP, taux TVA (5.5%, 10%, 20%) et conditions d'application, décennale/RGE/Qualibat, Factur-X
+- **Réglementation** : 47 mentions obligatoires sur un devis BTP 2026 (15 mentions légales + 32 mentions complémentaires BTP, incluant les 4 nouvelles mentions facture électronique, mention déchets, retenue de garantie, etc.) devis BTP, taux TVA (5.5%, 10%, 20%) et conditions d'application, décennale/RGE/Qualibat, Factur-X
 - **Templates métier** : structures types de devis par corps de métier (plomberie sdb, électricité tableau, peinture appartement) avec postes standards
 - **Nomenclature matériaux** : correspondance langage artisan ("un 32/40 cuivre") → références produits réelles
 - **Règles de calcul** : m² carrelage avec marge de coupe 10%, ml plinthe selon périmètre, nombre de prises selon surface
@@ -863,7 +863,7 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
    d. Calcul quantités : 8m² sol × prix/m² + 22ml faïence × prix/ml...
    e. TVA : main d'oeuvre 10%, fournitures 20% (rénovation > 2 ans)
    f. Détection oublis : "Pas de mention sèche-serviette. J'ajoute en option ?"
-   g. 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques auto-remplies
+   g. 47 mentions obligatoires sur un devis BTP 2026 (15 mentions légales + 32 mentions complémentaires BTP, incluant les 4 nouvelles mentions facture électronique, mention déchets, retenue de garantie, etc.) auto-remplies
    h. Génération PDF professionnel
    i. Envoi au client par email + SMS avec lien signature
 
@@ -941,7 +941,7 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 - Budget serré mais prêt à investir pour "faire pro"
 
 **Pain principal :** "Je ne sais pas comment faire un devis conforme."
-**Willingness to pay :** 0-29€/mois (free tier pour l'acquisition)
+**Willingness to pay :** 0-29€/mois (plan Starter gratuit pour l'acquisition)
 **Canal d'acquisition :** Google "comment faire un devis BTP", YouTube tuto artisans, CMA (Chambre des Métiers)
 
 ---
@@ -987,10 +987,10 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 | Prompt caching (system prompts) | -90% input tokens récurrents |
 | Background consciousness 3×/jour au lieu de 24× | -87% |
 | Context compaction (max 10K tokens historique) | -60% input |
-| **TOTAL OPTIMISÉ** | **~$3.30/mois par artisan** |
+| **TOTAL OPTIMISÉ** | **~$4.50/mois par artisan** |
 
-**Marge sur un artisan Pro (€29/mois) :** €29 - $3.30 LLM - $1 infra = ~€25 marge = **~86%**
-**Marge sur un artisan Business (€79/mois) :** €79 - $4.50 LLM - $1.50 infra = ~€73 marge = **~92%**
+**Marge sur un artisan Pro (€29/mois) :** €29 - $4.50 LLM - $0.70 infra = ~€24 marge = **~82%**
+**Marge sur un artisan Business (€79/mois) :** €79 - $4.50 LLM - $1.50 infra = ~€72 marge = **~91%**
 
 > Détail complet des coûts : voir `COUT_REEL.md`
 

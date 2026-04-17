@@ -59,7 +59,7 @@ Batappli : une bibliothèque d'ouvrages statique.
 StructorAI : un cerveau qui connaît 1080+ interventions et qui apprend TES prix.
 
 Batappli : pas de relance, pas de compta, pas de planning, pas d'avis Google.
-StructorAI : 16 modules. 13 agents. Un seul cerveau. Tout est fait.
+StructorAI : 18 composants (13 agents + Supervisor + 4 modules fonctionnels). Un seul cerveau. Tout est fait.
 
 Batappli : français seulement.
 StructorAI : 6 langues. Français, turc, portugais, arabe, espagnol, anglais.
@@ -79,7 +79,7 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 | "3 secondes" | Le temps de classer un ticket de caisse |
 | "30 secondes" | Le pré-devis au téléphone |
 | "13 agents" | Qui travaillent 24h/24 pour toi |
-| "16 modules" | Tout ce que ton business a besoin |
+| "18 composants" | 13 agents IA + Supervisor + 4 modules fonctionnels = tout ce que ton business a besoin |
 | "1080+ interventions" | Que le cerveau connaît par coeur avec les vrais prix |
 | "132 erreurs terrain" | Que le cerveau détecte pour toi |
 | "8819 lignes" | De données métier réelles (pas du ChatGPT) |
@@ -250,7 +250,7 @@ Script 3 — "Le prospect"
 - "500 000 artisans en France passent leurs soirées sur l'admin au lieu d'être avec leur famille."
 - Les 5 douleurs illustrées (devis, impayés, tickets, marges, prospects perdus)
 
-**Section solution — Les 16 modules :**
+**Section solution — Les 18 composants (13 agents + Supervisor + 4 modules fonctionnels) :**
 - Chaque module = 1 bloc visuel avec icône + titre + 1 phrase + vidéo courte
 - Pas de jargon tech. "Il fait tes devis par la voix" pas "pipeline vocal Whisper → LLM → PDF"
 

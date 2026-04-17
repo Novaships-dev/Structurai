@@ -62,7 +62,7 @@ On ne copie pas. On observe ce que les concurrents font BIEN, on le fait mieux. 
 **Comment on exploite :**
 - **Import Batigest** : créer un outil d'import qui récupère les clients, les ouvrages et l'historique depuis un export Batigest. L'artisan migre en 10 minutes.
 - Campagne Facebook/LinkedIn ciblée : "Vous utilisez Batigest ? Migrez en 10 minutes. Votre assistant IA vous attend."
-- Le prix : Batigest = 34-100€+/mois pour un logiciel sans IA. STRUCTORAI Pro = 29€ avec IA + vocal + 9 agents.
+- Le prix : Batigest = 34-100€+/mois pour un logiciel sans IA. STRUCTORAI Pro = 29€ avec IA + vocal + 13 agents.
 
 **Message marketing :** "Batigest date de 2015. STRUCTORAI date de 2026. Même prix, 10× plus de valeur."
 
@@ -184,7 +184,7 @@ On ne copie pas. On observe ce que les concurrents font BIEN, on le fait mieux. 
 **Leçon :** Handoff utilise des prix réels par ZIP code (données Home Depot). C'est plus précis que des moyennes nationales.
 
 **Ce qu'on fait :**
-- **On a déjà les coefficients régionaux** (9 zones de Paris au DOM-TOM). C'est l'équivalent français.
+- **On a déjà les coefficients régionaux** (11 zones de Paris au DOM-TOM). C'est l'équivalent français.
 - V2 : affiner par département ou code postal si les données existent.
 - Mem0 fait mieux : après quelques devis, le cerveau utilise les prix RÉELS de l'artisan, pas des moyennes.
 

@@ -918,7 +918,7 @@ Déplacement > 30km → frais déplacement 30-80€
 > 9. Techniques de pose (8 types) avec surcoût vs droite
 > 10. Méthodes de collage (4 méthodes) avec prix MO/m²
 > 11. Toutes les mises en oeuvre (9 catégories, 80+ postes) : dépose, préparation, sol, mur, joints, plinthes, extérieur, piscine, terrasse, forfaits, majorations
-> 12. Taux horaires et rendement moyen par zone + coefficients régionaux (9 zones)
+> 12. Taux horaires et rendement moyen par zone + coefficients régionaux (11 zones)
 > 13. 14 erreurs courantes terrain
 > 14. Carrelage piscine complet (types, colles, joints, mise en oeuvre, budgets)
 > 15. Terrasse extérieure détaillée (collée, scellée, sur plots avec prix composants)

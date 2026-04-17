@@ -1,6 +1,6 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> 16 modules, 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
+> 13 agents IA + 1 Supervisor + 4 modules fonctionnels = 18 composants. 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
 > Dernière mise à jour : 14/04/2026
 
@@ -34,9 +34,9 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ---
 
-## Les 16 modules en détail
+## Les 18 composants en détail
 
-> **Terminologie :** STRUCTORAI a **13 agents IA autonomes** (Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web) + **Supervisor** (orchestrateur) + **4 modules fonctionnels** (Conversation vocale bidirectionnelle, Galerie Photo, Gamification + Background Consciousness, Mesure IA) = **18 processus au total**. V2 : Agent Téléphone IA.
+> **Terminologie unique :** STRUCTORAI = **13 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 18 composants au total**. Les 13 agents V1 : Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web. V2 : Agent Téléphone IA.
 
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
@@ -103,7 +103,7 @@ FR/EN/TR/ES/PT/AR. Artisans turcs, portugais, arabophones en France = marché qu
 # PARTIE 2 — LA DISTRIBUTION FRANCE
 
 ## VECTEUR 1 — FACEBOOK GROUPS BTP (canal #1)
-15-20 groupes. Post d'arrivée direct (ancien du BTP + invitation beta). 1 feature vidéo/semaine (12 semaines de contenu = 16 modules). 5-10 réponses/jour aux questions. Quand c'est naturel : "j'utilise StructorAI pour ça" + vidéo.
+15-20 groupes. Post d'arrivée direct (ancien du BTP + invitation beta). 1 feature vidéo/semaine (12 semaines de contenu = 18 composants couverts en roulement). 5-10 réponses/jour aux questions. Quand c'est naturel : "j'utilise StructorAI pour ça" + vidéo.
 
 ## VECTEUR 2 — TIKTOK (explosif)
 Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly Cruz 2.8M, Enfile ton bleu 137K = les artisans sont là.
@@ -118,7 +118,7 @@ Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly 
 20+ pages sur structorai.app (métiers + comparatifs + Factur-X).
 
 ## VECTEUR 6 — FACTUR-X CHEVAL DE TROIE
-Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 16 modules.
+Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 18 composants (13 agents + Supervisor + 4 modules fonctionnels).
 
 ## VECTEUR 7 — PARTENARIATS (mois 2+)
 Comptables (30-50 cabinets, 1 comptable = 10-50 artisans). Grossistes (Point P, Cedeo, BigMat). Fédérations (CAPEB 380K artisans, FFB). CMA.
@@ -165,7 +165,7 @@ Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 lang
 - **Format** : Factur-X (PDF/A-3 + XML CII ou UBL)
 - **Obligation** : Réception sept 2026, émission TPE sept 2027
 - **Plateforme** : PPF + Plateformes Agréées
-- **Mentions** : 15 mentions légales obligatoires devis BTP + 4 nouvelles mentions facture électronique 2026 + mention déchets obligatoire + mentions complémentaires BTP spécifiques
+- **Mentions** : 47 mentions obligatoires sur un devis BTP 2026 (15 mentions légales + 32 mentions complémentaires BTP incluant les 4 nouvelles mentions facture électronique, mention déchets, retenue de garantie, etc.)
 - **Assurance** : Décennale obligatoire. RGE, Qualibat, Qualifelec
 - **Sanctions** : 3 000-15 000€ (devis absent), 75 000€ + 6 mois prison (décennale absente), 75 000-375 000€ (facture non conforme)
 - **Base prix** : 8819 lignes, 11 corps de métier ✅ DÉJÀ CRÉÉ
@@ -333,7 +333,7 @@ i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues
 
 ## RÈGLE ABSOLUE
 
-1. Ne JAMAIS réduire StructorAI à "une app de devis". 16 modules, 8819 lignes de données terrain, 1080+ postes, 132 erreurs.
+1. Ne JAMAIS réduire StructorAI à "une app de devis". 13 agents IA + 1 Supervisor + 4 modules fonctionnels = 18 composants, 8819 lignes de données terrain, 1080+ postes, 132 erreurs.
 2. Chaque pays a son cheval de Troie : Factur-X (FR), Peppol (BE), FatturaPA (IT), Veri*Factu (ES), ZUGFeRD (DE). La conformité est l'entrée. L'IA est la valeur.
 3. France d'abord. Prouver le modèle. Puis dupliquer.
 4. Tous les artisans du monde ont les MÊMES douleurs. La solution est universelle. Seules les règles changent.

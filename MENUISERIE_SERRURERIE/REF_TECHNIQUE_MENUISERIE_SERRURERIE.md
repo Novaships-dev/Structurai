@@ -730,7 +730,7 @@ Serrurerie :
 > 7. Agencement bois (6 interventions) avec prix
 > 8. Serrurerie complète (11 serrures + 4 blindages + 8 dépannages + 4 ferronnerie) avec prix
 > 9. Types de pose (5 fenêtres + 5 portes) avec prix MO
-> 10. Taux horaires menuisier + serrurier + coefficients régionaux (9 zones, distincts menuiserie/serrurerie)
+> 10. Taux horaires menuisier + serrurier + coefficients régionaux (11 zones, distincts menuiserie/serrurerie)
 > 11. Aides financières fenêtres (MaPrimeRénov', CEE, TVA 5.5%, éco-PTZ)
 > 12. Marques et fournisseurs
 > 13. 12 erreurs courantes terrain

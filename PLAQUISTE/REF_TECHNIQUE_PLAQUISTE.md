@@ -640,7 +640,7 @@ Coffrage unitaire (WC, colonne) → forfait minimum 200-400€
 > 5. Outillage (15 outils) avec prix
 > 6. Mises en oeuvre (8 catégories, 60+ postes) : dépose, cloisons, doublage, faux plafonds, jointage, coffrages, travaux spécifiques, majorations
 > 7. Forfaits par pièce (7 exemples)
-> 8. Taux horaires par zone + coefficients régionaux (9 zones)
+> 8. Taux horaires par zone + coefficients régionaux (11 zones)
 > 9. 10 erreurs courantes terrain
 > 10. Niveaux de finition Q1-Q4 (DTU 25.41 / NF P 72-203)
 > 11. Performances acoustiques (6 configurations cloison, de 34 à 60 dB)

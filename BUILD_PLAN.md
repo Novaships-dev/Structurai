@@ -24,7 +24,7 @@ structorai/
 │               ├── db-audit-template.sql
 │               └── setup-guide.md
 ├── docs/                              ← Docs de référence (source de vérité)
-│   └── PRODUCT-CONTEXT.md             ← Le PRODUCT-CONTEXT complet (842 lignes)
+│   └── PRODUCT_CONTEXT.md             ← Le PRODUCT_CONTEXT complet
 └── skills/                            ← Skills Claude Code spécifiques STRUCTORAI
 ```
 
@@ -117,7 +117,7 @@ structorai/
 │               └── setup-guide.md
 │
 ├── docs/                                  # 20+ docs de référence
-│   ├── PRODUCT-CONTEXT.md                 # Source de vérité produit (842 lignes)
+│   ├── PRODUCT_CONTEXT.md                 # Source de vérité produit
 │   ├── ARCH.md                            # Architecture technique détaillée
 │   ├── API.md                             # Tous les endpoints REST
 │   ├── CONVENTIONS.md                     # Naming, patterns, règles de code
@@ -297,7 +297,7 @@ structorai/
 │       │   ├── __init__.py
 │       │   ├── supabase.py                # Client Supabase singleton (pattern AgentShield)
 │       │   ├── redis.py                   # Client Redis (pattern AgentShield)
-│       │   ├── errors.py                  # Erreurs custom StructoraiError (pattern AgentShield)
+│       │   ├── errors.py                  # Erreurs custom StructorAIError (pattern AgentShield)
 │       │   ├── claude_client.py           # Client Claude API — appels LLM avec retry
 │       │   └── confidence.py              # Score de confiance par information (🟢🟡🔴)
 │       │
@@ -454,20 +454,19 @@ structorai/
 │       ├── 010_create_time_entries.sql
 │       ├── 011_create_photos.sql          # Photos chantier — url, chantier_id, type (avant/pendant/après), analyse IA, géoloc, metadata
 │       ├── 012_create_contacts_pro.sql
-│       ├── 012_create_avis_google.sql
-│       ├── 013_create_emails.sql
-│       ├── 014_create_relances.sql
-│       ├── 015_create_agent_tasks.sql
-│       ├── 016_create_agent_memory.sql
-│       ├── 017_create_agent_budget.sql
-│       ├── 018_create_knowledge_base.sql
-│       ├── 019_create_gamification.sql
-│       ├── 020_create_api_keys.sql
-│       ├── 021_create_subscriptions.sql
-│       ├── 022_create_metier_rules.sql
-│       ├── 023_create_helper_functions.sql
-│       ├── 024_create_rls_policies.sql
-│       ├── 025_seed_metier_rules.sql      # TVA, mentions obligatoires, templates devis
+│       ├── 013_create_avis_google.sql
+│       ├── 014_create_emails.sql
+│       ├── 015_create_relances.sql
+│       ├── 016_create_agent_tasks.sql
+│       ├── 017_create_agent_memory.sql
+│       ├── 018_create_agent_budget.sql
+│       ├── 019_create_knowledge_base.sql
+│       ├── 020_create_gamification.sql
+│       ├── 021_create_api_keys.sql
+│       ├── 022_create_subscriptions.sql
+│       ├── 023_create_metier_rules.sql     # Création + seed TVA, mentions obligatoires, templates devis
+│       ├── 024_create_helper_functions.sql
+│       ├── 025_create_rls_policies.sql
 │       ├── 026_create_deplacements.sql     # Déplacements — chantier_id, employe_id, km, zone BTP, indemnités, panier
 │       ├── 027_create_employes.sql         # Employés — nom, classification BTP, coefficient, compétences, disponibilité
 │       ├── 028_create_fiscal_calendar.sql  # Échéances fiscales par statut — URSSAF, TVA, CFE, IS, bilan
@@ -620,11 +619,11 @@ MEM0_API_KEY=xxx              # ou self-hosted
 
 ### Sprint 1 — Fondations (Claude Code, ~2 jours)
 - [ ] Init repo GitHub NovaShips/structorai
-- [ ] CLAUDE.md + docs/PRODUCT-CONTEXT.md + tous les skills/
+- [ ] CLAUDE.md + PRODUCT_CONTEXT.md + tous les skills/
 - [ ] Backend : FastAPI skeleton (main.py, config.py, health.py)
 - [ ] Backend : Auth middleware (JWT + API keys, pattern AgentShield)
 - [ ] Backend : Error handlers (pattern AgentShield)
-- [ ] Supabase : 25 migrations SQL
+- [ ] Supabase : 29 migrations SQL
 - [ ] Supabase : RLS policies (toutes les tables)
 - [ ] Backend : Stripe billing (checkout, portal, webhooks)
 - [ ] Mobile : Init Expo project avec navigation
@@ -754,13 +753,13 @@ MEM0_API_KEY=xxx              # ou self-hosted
 |----------|--------|
 | Fichiers backend Python | ~90 (+3 agents, +3 prompts, +3 services) |
 | Fichiers mobile TypeScript | ~90 (+8 composants, +3 écrans) |
-| Migrations SQL | 29 (au lieu de 25, +4 nouvelles) |
+| Migrations SQL | 29 |
 | Docs .md | 22 |
-| Skills .md | 34 (au lieu de 31, +3 nouvelles) |
-| Fichiers data JSON | ~30 (au lieu de ~20, +10 nouvelles) |
+| Skills .md | 34 |
+| Fichiers data JSON | ~30 |
 | Fichiers i18n | 6 |
 | **Total fichiers** | **~300** |
-| **Durée estimée** | **~18-20 jours de build** |
+| **Durée estimée** | **~22 jours de build Claude Code** |
 
 Pour référence : AgentShield = 355 fichiers en 32h. STRUCTORAI est plus complexe (agents IA, vocal, mobile, 6 langues) mais le pattern est rodé.
 

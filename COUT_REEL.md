@@ -24,11 +24,11 @@
 |---------|----------------------|-----------------|-----------------|
 | Claude API (tests agents) | ~50 appels Sonnet/jour × 30 jours = 1500 appels, ~2K tokens input + ~1K output par appel | **~15-25$** | ⚠️ Si tu laisses un agent en boucle = facture explosive |
 | Whisper/OpenAI STT (tests voix) | ~20 tests/jour × 30s = 10 min/jour | **~2$** | $0.006/min. Très cheap. |
-| ElevenLabs TTS (tests voix) | Free tier = 10K chars/mois ≈ 10 min audio | **0$** | Le free tier suffit pour tester. |
-| Brevo (email) | Free tier = 300 emails/jour | **0$** | Gratuit pour le dev. |
+| ElevenLabs TTS (tests voix) | Offre gratuite = 10K chars/mois ≈ 10 min audio | **0$** | L'offre gratuite suffit pour tester. |
+| Brevo (email) | Offre gratuite = 300 emails/jour | **0$** | Gratuit pour le dev. |
 | Twilio (SMS) | ~50 SMS de test | **~2$** | $0.04/SMS France. |
-| Mem0 | Free tier / self-hosted | **0$** | Self-host sur Railway si possible. |
-| Sentry | Free tier (5K events/mois) | **0$** | |
+| Mem0 | Offre gratuite / self-hosted | **0$** | Self-host sur Railway si possible. |
+| Sentry | Offre gratuite (5K events/mois) | **0$** | |
 | **TOTAL VARIABLE BUILD** | | **~20-30$/mois** | |
 
 ### TOTAL PHASE BUILD

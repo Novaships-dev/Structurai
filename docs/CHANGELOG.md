@@ -2,6 +2,69 @@
 
 ---
 
+## 17/04/2026 — Audit V5 cohérence : valeurs de référence appliquées
+
+> Source de vérité : `docs/DECISIONS-LOG.md`
+
+### Valeurs chiffrées harmonisées (partout)
+- Mentions obligatoires devis : toutes les formulations variables ("15 mentions + 4 nouvelles + déchets + complémentaires") → formulation unique "47 mentions (15 légales + 32 complémentaires BTP)"
+- Coefficients régionaux : `9 zones` → `11 zones` (CLAUDE.md, README.md, STRATEGIE-COMPETITIVE.md, CARRELAGE, PEINTURE, MENUISERIE_SERRURERIE, PLAQUISTE)
+- Sprints : `8 sprints` → `9 sprints (S0-S8) + V1.5 post-launch` (README.md)
+- Durée build : `~18-20 jours` → `~22 jours Claude Code` (README.md, BUILD_PLAN.md)
+- Migrations SQL : `25 migrations` → `29 migrations` (BUILD_PLAN.md Sprint 1 + récap, README.md Sprint 1)
+- Budget LLM / artisan : `$3.30/mois` → `$4.50/mois` (PRODUCT_CONTEXT.md)
+- Marge Pro : `~86%` → `~82%` (PRODUCT_CONTEXT.md)
+- Marge Business : `~92%` → `~91%` (PRODUCT_CONTEXT.md)
+
+### Bug migrations dupliquées (H2/H3)
+- BUILD_PLAN.md : deux migrations numérotées `012` → renumérotation :
+  - `012_create_contacts_pro.sql` (inchangée)
+  - `012_create_avis_google.sql` renommée `013_create_avis_google.sql`
+  - Décalage +1 pour 013-024
+  - Fusion de l'ancienne `022_create_metier_rules.sql` + ancienne `025_seed_metier_rules.sql` en `023_create_metier_rules.sql` (création + seed)
+- Total final : **29 migrations uniques** numérotées 001-029
+
+### Compteurs de lignes inter-fichiers supprimés
+- CLAUDE.md table Sources de vérité : suppression "(1084 lignes)", "(769 lignes)", "(648 lignes)", "(438 lignes)", "(903 lignes)", "(8819 lignes)", "(405 lignes)"
+- README.md structure du repo : suppression de tous les "(xxx lignes)" sur les fichiers et répertoires cités
+- BUILD_PLAN.md : suppression "(842 lignes)" sur les citations de PRODUCT_CONTEXT
+
+### Nommage agents Python harmonisé
+- CLAUDE.md tableau agents : tous les fichiers préfixés `agent_` (`agent_devis.py`, `agent_relance.py`, `agent_compta.py`, `agent_planning.py`, `agent_reputation.py`, `agent_prospection.py`, `agent_fiscalite.py`, `agent_deplacements.py`, `agent_rh.py`)
+- CLAUDE.md exemple conventions : `app/agents/devis.py` → `app/agents/agent_devis.py`
+- BUILD_PLAN.md arborescence agents : déjà conforme
+
+### Modèles Claude précisés avec suffix
+- `claude-haiku-4-5` → `claude-haiku-4-5-20251001` (partout dans CLAUDE.md)
+- Agents Devis + Vision IA passés à `claude-opus-4-7` (tâches les plus complexes)
+- Stack technique CLAUDE.md : les trois modèles listés (opus-4-7, sonnet-4-6, haiku-4-5-20251001)
+
+### Supervisor clarifié
+- Tableau CLAUDE.md : Supervisor marqué "(hors des 13)"
+- Ligne récapitulative ajoutée : "13 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 18 composants au total"
+
+### Comptage modules unifié
+- DISTRIBUTION.md : `16 modules` + `18 processus au total` → phrase de référence unique
+- `Les 16 modules en détail` (heading) → `Les 18 composants en détail`
+- COMMUNICATION.md : `16 modules. 13 agents.` → `18 composants (13 agents + Supervisor + 4 modules fonctionnels)`
+- ANALYSE_CONCURRENCE.md : `13 agents IA autonomes + 15 modules` → `13 agents IA + 1 Supervisor + 4 modules fonctionnels = 18 composants`
+
+### Nom produit harmonisé
+- BUILD_PLAN.md : `StructoraiError` → `StructorAIError`
+- Aucune occurrence `Structorai` ou `Structurai` restante hors documents d'audit
+
+### Plan gratuit
+- COUT_REEL.md : `Free tier` (4 occurrences) → `Offre gratuite`
+- PRODUCT_CONTEXT.md : `free tier pour l'acquisition` → `plan Starter gratuit pour l'acquisition`
+
+### Chemin PRODUCT_CONTEXT unifié
+- BUILD_PLAN.md : toutes les références `docs/PRODUCT-CONTEXT.md` (tiret) → `PRODUCT_CONTEXT.md` (underscore, racine)
+
+### Nouveau fichier
+- `docs/DECISIONS-LOG.md` — log des valeurs de référence + rapport fichier par fichier
+
+---
+
 ## 15/04/2026 — Audit 360° web : intégration des 20 trouvailles réglementaires et concurrentielles
 
 ### FICHE_METIER.md (7 corrections)

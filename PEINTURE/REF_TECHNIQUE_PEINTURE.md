@@ -779,7 +779,7 @@ Déplacement > 30km → 30-60€ de frais
 > 7. Toutes les mises en oeuvre chiffrées (10 catégories, 100+ postes)
 > 8. Enduits décoratifs haut de gamme (10 techniques artisanales) avec prix
 > 9. Marques pro et grand public
-> 10. Taux horaires par zone + coefficients régionaux (9 zones)
+> 10. Taux horaires par zone + coefficients régionaux (11 zones)
 > 11. 12 erreurs courantes terrain
 > 12. Diagnostic plomb (obligations, prix, seuils, impact sur le peintre)
 > 13. Normes et DTU (7 références + 3 niveaux de finition A/B/C)

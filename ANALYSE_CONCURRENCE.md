@@ -456,7 +456,7 @@ Rapport "2026 State of AI in the Trades" : 38% des entrepreneurs US voient un im
 - ❌ Pas de détection d'oublis via Vision IA (photos)
 - ❌ Pas de Factur-X
 
-**Verdict :** Renalto est une menace RÉELLE sur la brique "devis IA". C'est le seul concurrent qui fait de la génération de devis par IA + vocal + WhatsApp. MAIS c'est un outil mono-fonction (devis uniquement). STRUCTORAI est un business manager complet avec 13 agents IA autonomes + 15 modules. Renalto est un pistolet à eau, STRUCTORAI est un arsenal.
+**Verdict :** Renalto est une menace RÉELLE sur la brique "devis IA". C'est le seul concurrent qui fait de la génération de devis par IA + vocal + WhatsApp. MAIS c'est un outil mono-fonction (devis uniquement). STRUCTORAI est un business manager complet avec 13 agents IA + 1 Supervisor + 4 modules fonctionnels = 18 composants. Renalto est un pistolet à eau, STRUCTORAI est un arsenal.
 
 ---
 

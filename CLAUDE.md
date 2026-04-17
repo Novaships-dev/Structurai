@@ -17,17 +17,17 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 
 | Fichier | Rôle | Quand le lire |
 |---------|------|---------------|
-| `PRODUCT_CONTEXT.md` | Spec produit complète (1084 lignes) | Avant toute décision produit |
-| `BUILD_PLAN.md` | Arborescence fichiers + sprints (769 lignes) | Avant de créer un fichier |
-| `FEATURES.md` | 110 features détaillées (648 lignes) | Avant d'implémenter une feature |
-| `UX_PARCOURS.md` | Navigation, onglets, parcours UX, règles d'interface (438 lignes) | Avant de toucher à la navigation ou aux écrans |
-| `FICHE_METIER.md` | Inventaire 63 fichiers data (903 lignes) | Avant de créer un fichier data/ |
+| `PRODUCT_CONTEXT.md` | Spec produit complète | Avant toute décision produit |
+| `BUILD_PLAN.md` | Arborescence fichiers + sprints | Avant de créer un fichier |
+| `FEATURES.md` | 110 features détaillées | Avant d'implémenter une feature |
+| `UX_PARCOURS.md` | Navigation, onglets, parcours UX, règles d'interface | Avant de toucher à la navigation ou aux écrans |
+| `FICHE_METIER.md` | Inventaire des fichiers data | Avant de créer un fichier data/ |
 | `docs/METIER.md` | Constitution BTP — règles immuables | Avant tout code lié aux devis/factures/TVA |
-| `PLOMBERIE/`, `ELECTRICITE/`, etc. | 11 référentiels techniques (8819 lignes) | Pour les prix, matériaux, règles IA pricing |
+| `PLOMBERIE/`, `ELECTRICITE/`, etc. | 11 référentiels techniques | Pour les prix, matériaux, règles IA pricing |
 | `COUT_REEL.md` | Coûts API réels et pièges | Avant de configurer les budgets LLM et rate limits |
 | `SECURITE.md` | Audit sécurité complet | Avant d'implémenter auth, RLS, webhooks, RGPD |
 | `DISTRIBUTION.md` | Distribution + expansion Europe | Avant de toucher à l'i18n ou la facturation multi-pays |
-| `COMMUNICATION.md` | Stratégie de communication complète (405 lignes) | Avant de rédiger du contenu marketing, posts, landing page |
+| `COMMUNICATION.md` | Stratégie de communication complète | Avant de rédiger du contenu marketing, posts, landing page |
 
 **Règle absolue :** Si une décision contredit ces fichiers → mettre le fichier à jour ET logger dans `docs/CHANGELOG.md`.
 
@@ -42,7 +42,7 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 | **Navigation** | Expo Router (file-based) | v4 |
 | **Backend** | FastAPI + Python | 3.12+ |
 | **Base de données** | Supabase (PostgreSQL + Auth + RLS + Realtime + Storage) | - |
-| **IA / LLM** | Claude API (Anthropic) | claude-sonnet-4-6 (agents), claude-haiku-4-5 (tâches légères) |
+| **IA / LLM** | Claude API (Anthropic) | claude-opus-4-7 (Devis complexes, Vision IA critique), claude-sonnet-4-6 (agents standards), claude-haiku-4-5-20251001 (tâches légères) |
 | **STT** | Whisper (OpenAI) ou Deepgram | - |
 | **TTS** | ElevenLabs (qualité) ou OpenAI TTS (fallback) | - |
 | **Mémoire** | Mem0 | pip install mem0ai |
@@ -71,7 +71,7 @@ UPPER_SNAKE_CASE        # constantes, env vars
 # Fichiers
 app/api/v1/devis.py     # endpoints
 app/services/pdf.py     # logique métier
-app/agents/devis.py     # agent IA
+app/agents/agent_devis.py  # agent IA (tous les agents ont le prefix `agent_`)
 app/models/devis.py     # modèles Pydantic
 app/prompts/devis.py    # system prompts (séparés du code)
 
@@ -144,7 +144,7 @@ class DevisAgent(BaseAgent):
     name = "devis"
     system_prompt = DEVIS_SYSTEM_PROMPT  # depuis prompts/devis.py
     tools = [calculate_price, generate_pdf, send_email]
-    model = "claude-sonnet-4-6"
+    model = "claude-opus-4-7"
     max_tokens = 4096
     budget_max_per_call = 0.15  # $0.15 max par appel
 ```
@@ -162,20 +162,22 @@ Le Supervisor reçoit TOUS les messages et décide quel agent répond :
 
 | Agent | Fichier | Model | Budget/appel | Scope |
 |-------|---------|-------|-------------|-------|
-| Supervisor | `agents/supervisor.py` | claude-sonnet-4-6 | $0.10 | Routage intent, queue, budget LLM, briefing matin, résumé soir, crons, Background Consciousness |
-| Devis | `agents/devis.py` | claude-sonnet-4-6 | $0.15 | Vocal/texte/photo → postes → prix (Mem0 + référentiels) → TVA multi-taux → PDF 47 mentions → signature Yousign → acompte auto |
-| Relance | `agents/relance.py` | claude-haiku-4-5 | $0.02 | Devis sans réponse J+3, factures impayées J+15/30/45, ton adaptatif par client (Mem0), mise en demeure |
-| Compta | `agents/compta.py` | claude-sonnet-4-6 | $0.08 | Catégorisation tickets/factures fournisseurs, attribution chantier, marge temps réel, export comptable, suivi achats |
-| Planning | `agents/planning.py` | claude-haiku-4-5 | $0.03 | Timer chantier, dépassements, capacité, enchaînements, rappels matériaux, calendrier, plan de charge |
-| Réputation & Marketing | `agents/reputation.py` | claude-haiku-4-5 | $0.02 | Avis Google (SMS + réponse IA + SEO local), publication réseaux sociaux (avant/après + texte IA), suivi score |
-| Prospection | `agents/prospection.py` | claude-haiku-4-5 | $0.02 | CRM architectes/apporteurs, leads entrants, rappels réseau, détection opportunités |
-| Email Pro | `agents/agent_email_pro.py` | claude-haiku-4-5 | $0.03 | Connexion IMAP/OAuth, filtrage pro/perso, catégorisation (prospect/client/fournisseur/admin/spam), résumé quotidien, alertes urgentes, fiche prospect auto |
-| Fiscalité & Trésorerie | `agents/fiscalite.py` | claude-sonnet-4-6 | $0.05 | Suivi fiscal annuel par statut, calendrier échéances, seuils, scan courriers admin, trésorerie prévisionnelle, alertes |
-| Déplacements | `agents/deplacements.py` | claude-haiku-4-5 | $0.02 | Frais km auto, paniers repas, indemnités BTP par zone, carburant, parking |
-| RH | `agents/rh.py` | claude-sonnet-4-6 | $0.05 | Pointage heures, heures sup convention BTP, congés CIBTP, intérimaires, sous-traitants, export paie |
-| Vision IA | `agents/agent_vision.py` | claude-sonnet-4-6 | $0.08 | Premier filtre de TOUTE image reçue : photo chantier → catégorisation + analyse + détection oublis. Ticket → OCR. Courrier admin → classification. Transmet à l'agent concerné |
-| Site Web | `agents/agent_site_web.py` | claude-sonnet-4-6 | $0.10 | Génération site vitrine IA (infos profil → pages → photos galerie → avis Google → SEO local → mise en ligne). Proposition MAJ mensuelle auto (nouvelles photos/avis), validation artisan avant publication |
+| Supervisor (hors des 13) | `agents/supervisor.py` | claude-sonnet-4-6 | $0.10 | Routage intent, queue, budget LLM, briefing matin, résumé soir, crons, Background Consciousness |
+| Devis | `agents/agent_devis.py` | claude-opus-4-7 | $0.15 | Vocal/texte/photo → postes → prix (Mem0 + référentiels) → TVA multi-taux → PDF 47 mentions → signature Yousign → acompte auto |
+| Relance | `agents/agent_relance.py` | claude-haiku-4-5-20251001 | $0.02 | Devis sans réponse J+3, factures impayées J+15/30/45, ton adaptatif par client (Mem0), mise en demeure |
+| Compta | `agents/agent_compta.py` | claude-sonnet-4-6 | $0.08 | Catégorisation tickets/factures fournisseurs, attribution chantier, marge temps réel, export comptable, suivi achats |
+| Planning | `agents/agent_planning.py` | claude-haiku-4-5-20251001 | $0.03 | Timer chantier, dépassements, capacité, enchaînements, rappels matériaux, calendrier, plan de charge |
+| Réputation & Marketing | `agents/agent_reputation.py` | claude-haiku-4-5-20251001 | $0.02 | Avis Google (SMS + réponse IA + SEO local), publication réseaux sociaux (avant/après + texte IA), suivi score |
+| Prospection | `agents/agent_prospection.py` | claude-haiku-4-5-20251001 | $0.02 | CRM architectes/apporteurs, leads entrants, rappels réseau, détection opportunités |
+| Email Pro | `agents/agent_email_pro.py` | claude-haiku-4-5-20251001 | $0.03 | Connexion IMAP/OAuth, filtrage pro/perso, catégorisation (prospect/client/fournisseur/admin/spam), résumé quotidien, alertes urgentes, fiche prospect auto |
+| Fiscalité & Trésorerie | `agents/agent_fiscalite.py` | claude-sonnet-4-6 | $0.05 | Suivi fiscal annuel par statut, calendrier échéances, seuils, scan courriers admin, trésorerie prévisionnelle, alertes |
+| Déplacements | `agents/agent_deplacements.py` | claude-haiku-4-5-20251001 | $0.02 | Frais km auto, paniers repas, indemnités BTP par zone, carburant, parking |
+| RH | `agents/agent_rh.py` | claude-sonnet-4-6 | $0.05 | Pointage heures, heures sup convention BTP, congés CIBTP, intérimaires, sous-traitants, export paie |
+| Vision IA | `agents/agent_vision.py` | claude-opus-4-7 | $0.08 | Premier filtre de TOUTE image reçue : photo chantier → catégorisation + analyse + détection oublis. Ticket → OCR. Courrier admin → classification. Transmet à l'agent concerné |
+| Site Web | `agents/agent_site_web.py` | claude-sonnet-4-6 | $0.10 | Génération site vitrine IA (infos profil → pages → photos galerie → avis Google → SEO local → mise en ligne). Proposition mise à jour mensuelle auto (nouvelles photos/avis), validation artisan avant publication |
 | **V2** : Téléphone IA | `agents/agent_telephone.py` | claude-sonnet-4-6 | $0.10 | Décroche quand l'artisan est sur chantier, prise d'info structurée, filtre, notification push |
+
+> **Total** : **13 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 18 composants au total.** Le Supervisor est listé à part car c'est l'orchestrateur, pas un des 13 agents.
 
 ---
 
@@ -200,7 +202,7 @@ Le code de génération PDF DOIT toujours inclure les 47 mentions : 15 mentions 
 
 ### Prix
 - Toujours donner des **fourchettes** (min-max), JAMAIS un prix unique
-- Appliquer les **coefficients régionaux** (9 zones)
+- Appliquer les **coefficients régionaux** (11 zones)
 - Déférer aux **prix de l'artisan** (Mem0) s'ils existent
 - Alerter si prix < 70% ou > 150% du référentiel
 
@@ -278,7 +280,7 @@ data/
 # Si un agent échoue 3 fois de suite → pause 60s → fallback model
 if agent.consecutive_failures >= 3:
     agent.pause(seconds=60)
-    agent.switch_model("claude-haiku-4-5")  # fallback moins cher
+    agent.switch_model("claude-haiku-4-5-20251001")  # fallback moins cher
 ```
 
 ### 2. Mem0 (mémoire artisan)
