@@ -1,8 +1,8 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> 13 agents IA + 1 Supervisor + 4 modules fonctionnels = 18 composants. 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
+> **14 agents IA + 1 Supervisor + 4 modules fonctionnels = 19 composants** (audit V6 : +Agent Coach Business). 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
-> Dernière mise à jour : 14/04/2026
+> Dernière mise à jour : 17/04/2026 (audit V6 : 14 agents, expansion chiffrée par pays)
 
 ---
 
@@ -34,9 +34,9 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 
 ---
 
-## Les 18 composants en détail
+## Les 19 composants en détail
 
-> **Terminologie unique :** STRUCTORAI = **13 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 18 composants au total**. Les 13 agents V1 : Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web. V2 : Agent Téléphone IA.
+> **Terminologie unique (audit V6) :** STRUCTORAI = **14 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 19 composants au total**. Les 14 agents V1 : Devis, Relance, Compta, Planning, Réputation & Marketing, Prospection, Email Pro, Fiscalité & Trésorerie, Déplacements, RH, Vision IA, Site Web, **Coach Business (14ème, audit V6)**. V2 : Agent Téléphone IA.
 
 | # | Module | Ce qu'il fait VRAIMENT |
 |---|--------|----------------------|
@@ -56,6 +56,7 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 | 14 | **Agent Site Web IA** | L'artisan dit "crée-moi un site" → le cerveau génère un site vitrine complet en 5 min (accueil, services, galerie avant/après, avis Google, contact). Chaque mois, le cerveau propose d'ajouter les nouvelles photos et avis → l'artisan valide avant publication. Site inclus dans le plan Pro (29€). Les agences web facturent 1 500-5 000€ pour ça. |
 | 15 | **Agent Email Pro** | Connexion boîte mail → filtrage IA pro/perso → catégorisation (prospect/client/fournisseur/admin/spam) → résumé quotidien vocal → alertes urgentes (URSSAF, mise en demeure) → détection demande de devis dans les emails → fiche prospect auto. Une vraie secrétaire IA. |
 | 16 | **Module MESURE IA** | Le client envoie 2-3 photos de sa pièce → le cerveau mesure (Vision IA, détection porte/prise/carrelage comme références) → dimensions estimées (±20%) → pré-devis généré AVANT déplacement. 4 niveaux : Vision IA (V1, tous téléphones), AR Android (V1.5), LiDAR iPhone Pro (V2), Photogrammétrie multi-photos (V3). L'artisan ne se déplace QUE pour les chantiers sérieux. |
+| 17 | **Agent COACH BUSINESS (14ème agent, audit V6)** | Conseil stratégique mensuel automatique. Analyse : taux horaire vs benchmark département, taux conversion devis, carnet de commandes, marge moyenne, positioning. Recommandations actionnables : "Ton taux horaire est 20% sous la médiane, je suggère +7€/h progressif". Aucun concurrent ne fait ça — un coach humain coûte 500-2000€/an. |
 
 ---
 
@@ -118,10 +119,32 @@ Compte @structorai. 15 TikToks de launch (1 par angle). 1-2/jour ensuite. Kelly 
 20+ pages sur structorai.app (métiers + comparatifs + Factur-X).
 
 ## VECTEUR 6 — FACTUR-X CHEVAL DE TROIE
-Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 18 composants (13 agents + Supervisor + 4 modules fonctionnels).
+Campagne Juillet-Août 2026 (Facebook + YouTube + TikTok + landing /factur-x). L'artisan vient pour la conformité, reste pour les 19 composants (14 agents + Supervisor + 4 modules fonctionnels).
+
+## VECTEUR 8 — ACQUISITION ARTISANS ÉTRANGERS EN FRANCE (F133, audit V6)
+15% des 500K artisans en France ont une langue maternelle non-française (turc, arabe, portugais, espagnol). Marché invisible que les concurrents n'adressent PAS.
+
+- **Landings localisées** : `/tr` (turc), `/ar` (arabe), `/pt` (portugais), `/es` (espagnol) — SEO local + publicités Facebook ciblées par langue
+- **Agent Planning adapté** : prise en compte du calendrier Ramadan, fêtes religieuses orthodoxes, jours fériés culturels
+- **Facebook groupes communauté** : groupes artisans turcs en France (~40K membres cumulés), artisans portugais (~60K), artisans maghrébins (~80K)
+- **Influenceurs communautaires** : artisans bilingues influents dans leurs communautés
+- **Argumentaire clé** : "Le seul assistant BTP qui parle TA langue" — différenciateur massif vs Obat/Tolteck/Batigest (français uniquement)
+- **Volume estimé** : 75K artisans étrangers en France = 15% du marché FR = pool à €3M MRR potentiel à 1% conversion
 
 ## VECTEUR 7 — PARTENARIATS (mois 2+)
 Comptables (30-50 cabinets, 1 comptable = 10-50 artisans). Grossistes (Point P, Cedeo, BigMat). Fédérations (CAPEB 380K artisans, FFB). CMA.
+
+### Partenariats grossistes — 3 niveaux (F113, audit V6)
+| Niveau | Quand | Quoi |
+|--------|-------|------|
+| **V1 (Sprint 4)** | Launch | OCR carte fidélité + numéro compte client → saisie manuelle historique d'achats. Aucun accord commercial requis |
+| **V2 (post-launch)** | Q4 2026 | Intégration API temps réel Point P / Cedeo / BigMat (si accords ouverts) |
+| **V3 (2027+)** | Post 2K MRR | Partenariats commerciaux exclusifs + commissions. Négociés en position de force (volume artisans prouvé) |
+
+### Partenariats fédérations (F130 Fédération)
+Codes promo `CAPEB20` et `FFB20` = -20% à vie sur Pro/Business pour les membres vérifiés. Justificatif de membre requis à l'activation. Permet aux fédérations de pousser STRUCTORAI auprès de leurs ~450K adhérents combinés.
+
+Voir `PARTENARIATS.md` (à créer) pour le détail complet de la stratégie grossistes + fédérations.
 
 ## Calendrier
 Pré-launch → Facebook groups + beta testeurs + TikTok warming.
@@ -142,19 +165,23 @@ Mois 3 → Campagne Factur-X + CAPEB/FFB.
 
 ## Pourquoi l'Europe
 
-Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 langues). Les 13 agents sont identiques partout, seules les règles métier changent (30%). La facturation électronique devient obligatoire dans TOUTE l'Europe 2026-2028 = même cheval de Troie partout. Marché total : ~4M artisans.
+Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 langues, `country_code` dès V1 F135). Les 14 agents sont identiques partout, seules les règles métier changent (30%). La facturation électronique devient obligatoire dans TOUTE l'Europe 2026-2028 = même cheval de Troie partout. Marché total : ~4M artisans.
 
 ## Roadmap
 
-| Phase | Quand | Marché | Pourquoi en premier |
-|-------|-------|--------|-------------------|
-| 1 | 2026 | **France** | Marché primaire, Factur-X sept 2026 |
-| 2 | Q1 2027 | **Belgique + Suisse romande** | Même langue, adaptation minimale |
-| 3 | Q2 2027 | **Espagne** | Langue déjà supportée, Veri*Factu 2026, 400K autónomos |
-| 4 | Q3 2027 | **Italie** | FatturaPA obligatoire depuis 2019, 400K artigiani qui cherchent |
-| 5 | Q4 2027 | **Allemagne** | Plus gros marché (600K), ZUGFeRD 2027-2028 |
-| 6 | 2028 | **Turquie + Portugal** | Langues déjà supportées, marchés peu digitalisés |
-| 7 | 2028 | **Maghreb + UK** | Langues supportées, marchés vierges/spécifiques |
+| Phase | Quand | Marché | Durée build (audit V6) | Pourquoi en premier |
+|-------|-------|--------|-----------------------|-------------------|
+| 1 | 2026 | **France** | — (déjà fait) | Marché primaire, Factur-X sept 2026 |
+| 2 | Q1 2027 | **Belgique francophone** | **~2 mois** | Même langue, adaptation minimale (TVA 6%/21%, Peppol BIS 3.0, mentions BCE) |
+| 3 | Q1 2027 | **Suisse romande** | **~2 mois** | Même langue (TVA 8.1%, QR-facture, CHF, IDE, +40-60% prix) |
+| 4 | Q2 2027 | **Portugal** | **~3 mois** | Langue déjà supportée + certification AT (3-6 mois admin en parallèle) |
+| 5 | Q2 2027 | **Espagne** | **~4 mois** | Langue déjà supportée, Veri*Factu 2026, 400K autónomos, régions autonomes (TicketBAI, NaTicket) |
+| 6 | Q3 2027 | **Italie** | **~5 mois** | Italien à ajouter (7ème langue), FatturaPA obligatoire depuis 2019, SdI, 400K artigiani qui cherchent |
+| 7 | Q4 2027 | **Allemagne** | **~5 mois** | Allemand à ajouter, plus gros marché (600K), ZUGFeRD 2027-2028, Meisterbrief, 16 Länder |
+| 8 | 2028 | **UK** | **~5 mois** | Anglais déjà supporté, CIS scheme complexe (douleur MASSIVE), 300K tradesmen |
+| 9 | 2028 | **Turquie + Maghreb** | ~5 mois + ~4 mois/pays | Turc/arabe déjà supportés, marchés vierges numériquement (~1.5M artisans) |
+
+**Total durée expansion Europe complète (7 pays principaux) : ~26 mois cumulés de build si fait en séquentiel, ~18 mois si équipe double sur plusieurs pays en parallèle.**
 
 ---
 
@@ -284,7 +311,7 @@ Architecture conçue pour l'expansion dès le jour 1 (i18n, multi-tenant, 6 lang
 ## Architecture d'expansion
 
 ### Réutilisable partout (70-90%)
-i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues), Mem0, 13 agents, pipeline complet, gamification, galerie photo + Vision IA, background consciousness
+i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues), Mem0, 14 agents (y compris Coach Business avec benchmarks par pays à créer), pipeline complet, gamification, galerie photo + Vision IA, background consciousness
 
 ### À adapter par pays (30%)
 | Élément | Fichiers |
@@ -333,7 +360,7 @@ i18n (JSON par langue), Whisper (toutes langues), ElevenLabs TTS (toutes langues
 
 ## RÈGLE ABSOLUE
 
-1. Ne JAMAIS réduire StructorAI à "une app de devis". 13 agents IA + 1 Supervisor + 4 modules fonctionnels = 18 composants, 8819 lignes de données terrain, 1080+ postes, 132 erreurs.
+1. Ne JAMAIS réduire StructorAI à "une app de devis". **14 agents IA + 1 Supervisor + 4 modules fonctionnels = 19 composants (audit V6)**, 8819 lignes de données terrain, 1080+ postes, 132 erreurs.
 2. Chaque pays a son cheval de Troie : Factur-X (FR), Peppol (BE), FatturaPA (IT), Veri*Factu (ES), ZUGFeRD (DE). La conformité est l'entrée. L'IA est la valeur.
 3. France d'abord. Prouver le modèle. Puis dupliquer.
 4. Tous les artisans du monde ont les MÊMES douleurs. La solution est universelle. Seules les règles changent.

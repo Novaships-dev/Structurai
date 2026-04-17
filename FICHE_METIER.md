@@ -910,7 +910,36 @@ Termes métier BTP traduits dans les 6 langues (FR, EN, TR, ES, PT, AR) :
 
 ---
 
-## RÉSUMÉ — NOMBRE DE FICHIERS DATA
+## NOUVEAUX FICHIERS DATA — AUDIT V6 (17/04/2026)
+
+### data/benchmarks/taux_horaires_par_metier_region.json (F119 Agent Coach Business)
+Benchmarks des taux horaires moyens par métier × département français (96 départements × 11 métiers = 1 056 entrées).
+- **Source :** Travaux.com, TarifArtisan.fr, CAPEB, FFB, enquêtes terrain 2025-2026
+- **Usage :** Agent Coach Business compare le taux horaire de l'artisan avec la médiane de son département et de son métier → recommandation
+- **Structure :** `{ "metier": "plomberie", "dept": "13", "taux_min": 45, "taux_median": 55, "taux_max": 70, "sample_size": 180 }`
+
+### data/capsules/index.json (F120 Formation contextuelle)
+Index des 50 capsules vidéo de formation contextuelle (60 secondes chacune).
+- **Source :** Tournages internes 3 mois post-launch
+- **Usage :** Supervisor déclenche capsule si `trigger_event` match contexte (ex: premier impayé → capsule "Comment envoyer une mise en demeure")
+- **Structure :** `{ "capsule_id": "C001", "title": "...", "url": "...", "duration_sec": 60, "trigger_event": "first_unpaid", "priority": "high", "metier": "all" }`
+
+### data/diagnostics/[metier].json × 11 fichiers (F126 Télé-dépannage V2)
+Arbres de décision pour le télé-dépannage par métier (50 pannes × 11 métiers = 550 arbres).
+- **Source :** Fabrice + experts métier par corps
+- **Usage :** Agent Téléphone V2 reçoit appel diagnostic → parcourt arbre → résolution si possible
+- **Structure :** `{ "panne_id": "P001", "metier": "plomberie", "symptome": "fuite sous évier", "questions": [...], "solutions": [...], "temps_estime_sec": 30 }`
+- **11 fichiers :** plomberie.json, electricite.json, carrelage.json, peinture.json, maconnerie.json, menuiserie_serrurerie.json, plaquiste.json, facade.json, couverture.json, chauffage_climatisation.json, isolation.json
+
+### data/imports/templates/ × 6 fichiers (F112 Import universel concurrents)
+Templates de mapping pour les parseurs d'import depuis concurrents.
+- **Usage :** Guide le parseur `backend/app/services/importers/*.py` pour mapper les champs source → STRUCTORAI
+- **6 fichiers :** obat_mapping.json, tolteck_mapping.json, batigest_mapping.json, ebp_mapping.json, excel_template.json, facturenet_mapping.json
+- **Structure :** `{ "source": "obat", "fields": { "source_client_name": "structorai_client.full_name", ... }, "transformations": [...] }`
+
+---
+
+## RÉSUMÉ — NOMBRE DE FICHIERS DATA (audit V6)
 
 | Catégorie | Nombre de fichiers | Priorité |
 |-----------|-------------------|----------|
@@ -926,10 +955,16 @@ Termes métier BTP traduits dans les 6 langues (FR, EN, TR, ES, PT, AR) :
 | Réseaux sociaux (templates publications) | 1 | 🟢 MOYENNE |
 | Gamification | 3 | 🟢 MOYENNE |
 | i18n termes métier | 1 | 🟢 MOYENNE |
-| **TOTAL** | **~63 fichiers** | |
+| **Benchmarks (F119 audit V6)** | **1** (1056 entrées) | 🟡 HAUTE (sans ça, Coach Business sans données) |
+| **Capsules (F120 audit V6)** | **1** (index 50 capsules) | 🟢 MOYENNE |
+| **Diagnostics V2 (F126 audit V6)** | **11** (reporté V2) | 🟢 MOYENNE (V2) |
+| **Imports templates (F112 audit V6)** | **6** | 🟡 HAUTE (sans ça, import concurrents impossible) |
+| **TOTAL (audit V6)** | **~82 fichiers** (+19 vs V5) | |
 
 **Les 18 fichiers 🔴 CRITIQUES doivent être prêts AVANT le Sprint 3 (Agent Devis).**
 Les autres peuvent être ajoutés progressivement.
+**Les 6 fichiers imports (F112) doivent être prêts AVANT le Sprint 2.**
+**Le fichier benchmarks (F119) doit être prêt AVANT le Sprint 6.**
 
 ---
 

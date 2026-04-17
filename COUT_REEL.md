@@ -1,7 +1,7 @@
 # STRUCTORAI — COÛTS RÉELS ET PIÈGES À ÉVITER
 
 > Chaque centime compté. Zéro surprise.
-> Date : 14/04/2026
+> Date : 17/04/2026 (audit V6 : +Coach Business +capsules +V2 costs)
 
 ---
 
@@ -76,17 +76,37 @@ C'est ici que tu dois être chirurgical. Chaque artisan qui utilise l'app coûte
 | **Agent Site Web (génération)** | Génération initiale + MAJ mensuelle × Sonnet | **~$0.50** | + coût hébergement ~$2-5/mois par site (Vercel) |
 | **Agent Email Pro (IMAP)** | Polling IMAP + ~5 résumés/jour × Haiku | **~$0.15** | Connexion IMAP + filtrage + résumé quotidien |
 | **Agent Réputation & Marketing (social)** | ~4 posts réseaux sociaux/mois × Haiku | **~$0.10** | Publication Facebook/Instagram/Google Business |
-| **TOTAL PAR ARTISAN** | | **~$4.50/mois** | |
+| **Agent Coach Business (F119)** | 1-2 analyses mensuelles × Opus | **~$0.20** | Analyses stratégiques mensuelles : benchmark département, taux conversion, marge, positioning. Starter 1×/mois, Pro/Business illimité |
+| **Capsules vidéo formation (F120)** | Hébergement 50 capsules + lecture ~5/artisan/mois | **~$0.05** | Streaming vidéo 60s + CDN |
+| **Validation RGE (F128)** | ~1 check/mois × API data.gouv.fr | **$0** | API gratuite officielle |
+| **TOTAL PAR ARTISAN (audit V6)** | | **~$4.80/mois** | +$0.30 vs V5 ($4.50) — Coach Business + capsules |
 
-### Marge par artisan
+### Marge par artisan (audit V6)
 
 | Plan | Prix | Coût API/artisan | Coût infra partagé | **Marge brute** | **% marge** |
 |------|------|-----------------|-------------------|----------------|-------------|
-| **Pro 29€** | 29€ | ~4.50$ ≈ 4.10€ | ~1€ (quote-part infra) | **~23.90€** | **~82%** |
-| **Business 79€** | 79€ | ~6.50$ ≈ 5.90€ (usage + élevé) | ~1.50€ | **~71.60€** | **~91%** |
-| **Starter 0€** | 0€ | ~0.80€ (usage limité) | ~0.50€ | **-1.30€** | Perte |
+| **Pro 29€** | 29€ | ~4.80$ ≈ 4.40€ | ~1.25€ (quote-part infra + capsules) | **~23.35€** | **~80%** (était 82%, -2pts audit V6) |
+| **Business 79€** | 79€ | ~6.80$ ≈ 6.20€ (usage + élevé) | ~2.50€ (infra + services V2 inclus) | **~70.30€** | **~89%** (était 91%, -2pts audit V6) |
+| **Starter 0€** | 0€ | ~0.90€ (usage limité + 1 Coach/mois) | ~0.50€ | **-1.40€** | Perte |
+| **Pro annuel 229€** | 229€/12 ≈ 19€ équivalent | ~4.80$/mois | ~1.25€ | **~13€/mois** | **~67%** (engagement = acceptable) |
+| **Business annuel 629€** | 629€/12 ≈ 52€ équivalent | ~6.80$/mois | ~2.50€ | **~43€/mois** | **~82%** |
+| **Lifetime 990€** | Amorti sur 24 mois théoriques | ~4.80$/mois × 24 = 115€ coût cumulé + infra | | **~875€ marge cumulée** | **~88% amorti** |
+| **Fédération -20%** | Pro 23.20€ / Business 63.20€ | ~4.80$ / ~6.80$ | ~1.25€ / ~2.50€ | **~18€ / ~55€** | **~77% / ~87%** |
 
 **Le Starter coûte de l'argent.** C'est normal — c'est de l'acquisition. Mais il faut le plafonner.
+
+### Coûts fixes additionnels V2 (audit V6)
+
+| Service | Coût/mois | Quand l'activer |
+|---------|-----------|-----------------|
+| **Supabase read replica (F132)** | +25$/mois | À partir de 50 clients payants |
+| **UptimeRobot Pro + Better Uptime (F132)** | +15$/mois | Sprint 8 (launch) |
+| **Fallback LLM (OpenAI GPT-4 backup F132)** | ~$0.10/artisan/mois (usage exceptionnel) | Sprint 8 — toujours actif mais quasi jamais déclenché |
+| **Hébergement vidéos capsules (F120)** | +15$/mois (Cloudflare Stream ou Mux) | Sprint 7 — dès que les capsules sont tournées |
+| **Portail client sous-domaine (F127 V2)** | +5$/mois (Vercel) | V2 post-launch |
+| **API accounting connectors (F122 V2)** | ~$20-50/mois par connecteur Pennylane/Cegid/Sage | V2 post-launch, Business only |
+
+> Détail complet des coûts V2 : voir `docs/COUTS-V2.md` (à créer)
 
 ---
 

@@ -298,18 +298,31 @@
 
 ---
 
-## 8. CONFORMITÉ AI ACT (Règlement IA européen)
+## 8. CONFORMITÉ AI ACT (Règlement IA européen) — F131, audit V6
 
-STRUCTORAI utilise de l'IA pour des décisions à impact (génération de devis, suggestions comptables, alertes fiscales). Obligations :
+STRUCTORAI utilise de l'IA pour des décisions à impact (génération de devis, suggestions comptables, alertes fiscales, Coach Business). Obligations applicables dès août 2026.
+
+### Classification du système (AI Act article 6)
+STRUCTORAI est classé **GPAI (General-Purpose AI) à risque limité** :
+- Pas de risque inacceptable (pas de scoring social, pas de manipulation subliminale)
+- Pas de risque élevé (pas d'évaluation de crédit, pas de recrutement automatisé, pas d'infrastructure critique)
+- Risque limité car interaction avec utilisateur humain qui valide chaque décision
+
+### Obligations détaillées (F131)
 
 | Obligation AI Act | Implémentation STRUCTORAI |
 |-------------------|--------------------------|
-| **Transparence** | Toujours indiquer que le contenu est généré par IA. Mention "Ce devis a été pré-rempli par l'IA. Vérifiez et validez avant envoi." |
-| **Documentation** | Documenter les modèles utilisés (Claude Sonnet/Haiku), les données d'entraînement (référentiels techniques), les cas d'erreur connus |
-| **Traçabilité** | Logger chaque décision IA (devis généré, prix suggéré, alerte fiscale) avec timestamp, modèle, input/output |
-| **Supervision humaine** | L'artisan VALIDE toujours avant envoi. Aucune action automatique sans confirmation (sauf background consciousness) |
-| **Non-discrimination** | Pas de traitement différencié selon l'origine, la langue ou le profil de l'artisan |
-| **Droit d'opposition** | L'artisan peut désactiver les suggestions IA et saisir manuellement |
+| **Transparence (art. 50)** | Badge "Décision IA" sur TOUTE sortie générée (devis, analyse Coach, suggestion Fiscalité). Mention "Ce devis a été pré-rempli par l'IA. Vérifiez et validez avant envoi." Bouton "Demander validation humaine" accessible à tout moment |
+| **Documentation technique (art. 53)** | Document `docs/AI-ACT-COMPLIANCE.md` (à créer) listant : modèles utilisés (claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001), données d'entraînement (référentiels BTP 8819 lignes), cas d'erreur connus, limites du système, évaluations de performance |
+| **Traçabilité (art. 12)** | Migration `036_create_ai_audit_log.sql` — log chaque décision IA avec : timestamp, modèle, agent, input (hashé si données sensibles), output, coût, latence, user_id. Conservation 10 ans |
+| **Supervision humaine (art. 14)** | L'artisan VALIDE toujours avant envoi (devis, relance, publication réseau social, réponse avis). Aucune action automatique sans confirmation (sauf background consciousness qui est lecture seule + alertes) |
+| **Non-discrimination (art. 10)** | Pas de traitement différencié selon l'origine, la langue ou le profil de l'artisan. Les benchmarks Coach Business sont par département métier, pas par nom/origine |
+| **Droit d'opposition (art. 26)** | L'artisan peut désactiver les suggestions IA et saisir manuellement. Désactivation granulaire par agent |
+| **Page publique transparence** | `/transparency` accessible sans login — explique le fonctionnement de l'IA, les modèles utilisés, les limites, les données collectées, les droits des utilisateurs |
+| **Signalement incidents graves (art. 73)** | Procédure documentée : incident IA grave (discrimination, fuite, hallucination critique) → notification CNIL + Commission dans 15 jours |
+
+### Date limite de mise en conformité
+**Août 2026** pour les systèmes GPAI existants. La documentation technique doit être prête **AVANT** cette date. Voir `docs/AI-ACT-COMPLIANCE.md` à créer (Sprint 6).
 
 ---
 
@@ -354,3 +367,83 @@ Règle : ne JAMAIS accéder à une permission sans justification affichée à l'
 | Logs de connexion app | **1 an** | LCEN art. 6-II |
 | Cookies / preuve de consentement | **6 mois** max sans re-demande | Directive ePrivacy |
 | Données de compte supprimé | **30 jours** puis suppression définitive | RGPD droit à l'effacement |
+
+---
+
+## 12. RÉSILIENCE ET REDONDANCE (F132, audit V6)
+
+Un outage d'Anthropic (Claude API) = toute l'app inutilisable. Un outage Supabase = écrans vides. STRUCTORAI doit tenir.
+
+### Fallback LLM multi-provider
+- **Provider principal** : Anthropic (Claude Opus 4.7, Sonnet 4.6, Haiku 4.5)
+- **Fallback** : OpenAI GPT-4 (si Anthropic down > 30 secondes)
+- Abstraction dans `backend/app/utils/claude_client.py` : interface unifiée, switch automatique
+- Détection outage : 3 erreurs 5xx consécutives ou timeout > 10s → bascule fallback pour 5 minutes puis re-test
+- Cache local des 100 dernières requêtes pour servir les demandes répétitives en cas d'outage
+
+### Read replica Supabase
+- Read replica (+25$/mois) activé à partir de 50 clients payants
+- Configuration : lectures chat history, benchmarks Coach, templates sur la replica. Écrit sur le primary
+- Objectif : continuer à servir les lectures même si le primary DB est en maintenance
+
+### Monitoring externe
+- **UptimeRobot** (gratuit jusqu'à 50 monitors) : check /health toutes les 60 secondes
+- **Better Uptime** (~10$/mois) : alertes multi-canal (email, SMS, Slack) + status page publique status.structorai.app
+- **Sentry** (déjà en place) : tracking erreurs backend + mobile
+
+### SLA interne 99.5% documenté dans CGV
+- 99.5% disponibilité = max 3h 40min d'indisponibilité par mois
+- Communiqué aux artisans via status page publique
+- Argument Business : les clients Business (TPE 2-10 salariés) ont besoin de garanties contractuelles
+
+### Plan de continuité
+Voir `docs/RESILIENCE.md` (à créer) pour le plan de continuité complet : procédures outage Anthropic, Supabase, Railway, Vercel, perte de données, attaque DDoS.
+
+---
+
+## 13. VALIDATION CERTIFICATIONS RGE / QUALIBAT (F128, audit V6)
+
+La TVA 5.5% est conditionnée à une certification RGE valide. Un artisan qui facture à 5.5% sans RGE valide = redressement fiscal.
+
+### Implémentation
+- Service `backend/app/services/certif_validation.py`
+- API officielle gratuite : data.gouv.fr (Registre RGE) + RGE.fr
+- Validation à l'inscription : saisie SIRET → requête API → confirmation certification active + type + date d'expiration
+- Re-check mensuel automatique : cron nocturne → alerte artisan 60 jours avant expiration
+- Blocage génération devis TVA 5.5% si RGE invalide/expiré (Agent Devis vérifie avant de générer)
+
+### Données stockées
+- Table `rge_certifications` (créée via migration existante) : artisan_id, type_certif (RGE/Qualibat/Qualifelec/QualiPAC), numéro, date_debut, date_fin, organisme, status (active/expirée/suspendue)
+- Mise à jour automatique via cron + manuel si l'artisan renouvelle sa certif
+- Audit log de chaque validation (qui a validé, quand, résultat)
+
+### Sécurité juridique
+- En cas de contrôle fiscal, l'artisan peut prouver qu'à chaque devis TVA 5.5% la certification était active (log horodaté)
+- Intégré au pack contrôle fiscal F129
+
+---
+
+## 14. MODE CONTRÔLE FISCAL (F129, audit V6)
+
+En cas de contrôle fiscal (fréquent chez les artisans — ~5% par an), l'administration exige un dossier complet sous 30 jours. Aujourd'hui c'est un enfer. Avec STRUCTORAI, 1 clic génère tout.
+
+### Composition du ZIP pack contrôle fiscal
+- Tous les devis de la période contrôlée (avec PDF + XML Factur-X si applicable)
+- Toutes les factures (avec numérotation séquentielle vérifiée, pas de trou)
+- Tous les tickets OCR avec justificatifs matériaux/carburant/outillage
+- Justifs TVA : attestation taux réduit client + certification RGE à la date de chaque devis TVA 5.5% (F128)
+- Registres comptables exportés : journal des ventes, journal des achats, grand livre simplifié
+- Export tableau de bord fiscal annuel (CA, TVA collectée/déductible, cotisations, résultat)
+- Pour les Business : export RH (pointage heures, indemnités, export paie préparé)
+
+### Signature + horodatage certifié
+- Le ZIP est signé cryptographiquement par STRUCTORAI (preuve d'intégrité)
+- Horodatage via API qualifiée (Chambersign, DictaoTrust, ou équivalent) = preuve légale de la date
+- Archivage 10 ans (obligation Code de commerce L123-22)
+
+### Endpoint + UI
+- Endpoint `/v1/export/tax-audit` → génération asynchrone (queue worker) → email avec lien de téléchargement sécurisé (expire 7 jours)
+- Écran mobile accessible via menu profil : "Pack contrôle fiscal" → sélection période → génération → notification push quand prêt
+
+### Service
+`backend/app/services/tax_audit_export.py` — orchestration : collecte des données, génération PDFs combinés, signature, horodatage, envoi.

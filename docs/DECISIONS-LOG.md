@@ -1,20 +1,91 @@
 ---
 name: DECISIONS-LOG
-description: Log des valeurs de référence tranchées et décisions appliquées lors de l'audit cohérence du 17/04/2026. Rapport fichier par fichier.
+description: Log des valeurs de référence tranchées et décisions appliquées lors des audits cohérence (V5 14/04/2026) puis intégration 22 améliorations (V6 17/04/2026). Rapport fichier par fichier.
 type: reference
 date: 2026-04-17
 author: Claude Code
 ---
 
-# DECISIONS-LOG — Audit cohérence STRUCTORAI
+# DECISIONS-LOG — Audits STRUCTORAI
 
-> Ce fichier logue les décisions prises pendant l'audit cohérence du 17/04/2026.
+> Ce fichier logue les décisions prises pendant les audits successifs.
 > Chaque valeur ci-dessous est la **source de vérité unique** pour tout le repo.
 > En cas de contradiction dans un autre fichier, c'est ce log qui fait foi.
 
 ---
 
-## 1. Valeurs de référence (source de vérité)
+## AUDIT V6 — 17/04/2026 — Intégration des 22 améliorations stratégiques
+
+### 3 décisions prises
+
+**1. 14ème agent — Agent Coach Business (F119)**
+- Ajouté dans les 14 agents V1 (+ Supervisor + 4 modules fonctionnels = 19 composants)
+- Modèle : `claude-opus-4-7`
+- Budget : $0.10/appel
+- Fichier : `agents/agent_coach.py` + `prompts/coach_prompt.py`
+- Inclus dans TOUS les plans : Starter 1 analyse/mois, Pro/Business illimité
+- Budget allocation Supervisor redistribué : Devis 20% (22→20), Compta 9% (10→9), Vision IA 9% (10→9), Fiscalité 8%, RH 8%, Site Web 7% (8→7), Relance 7%, Planning 6%, Réputation 6%, **Coach 6% (nouveau)**, Prospection 5% (6→5), Email Pro 4%, Déplacements 3%, V2 Téléphone 2%
+
+**2. Pricing enrichi — 7 options (F130)**
+Garder Starter €0 / Pro €29 / Business €79 mensuel. AJOUTER :
+- **Pro annuel** : €229/an (≈ €19/mois, économie 35%)
+- **Business annuel** : €629/an (≈ €52/mois, économie 35%)
+- **Lifetime** : €990 une fois (limité 100 licences, promo launch)
+- **Fédération** : Code promo `CAPEB20` / `FFB20` (-20% à vie, nécessite justificatif membre)
+- **Trial** : 30 jours gratuits sur Pro et Business (pas 14)
+- **Add-on Agent Téléphone IA (V2)** : +15€/mois sur tous plans sauf Starter
+
+**3. Découpage V1 / V2 / V3**
+- **V1 launch juin 2026** : 135 features (F01-F135) SAUF 3 reports ci-dessous
+- **V2 sept-oct 2026 post-launch** : F122 (Synchro compta Pennylane/Cegid/Sage/QuickBooks, Business only) + F126 (Télé-dépannage extension Agent Téléphone) + F127 (Portail client final) + Agent Téléphone IA de base + F113 V2 (API grossistes temps réel)
+- **V3 2027+** : F109 (Photogrammétrie multi-photos) + F113 V3 (API grossistes exclusives, bloqué jusqu'à 2K MRR pour négocier)
+
+### Nouveaux chiffres de référence (audit V6)
+
+| Sujet | Valeur V5 (14/04) | Valeur V6 (17/04) |
+|---|---|---|
+| Agents V1 | 13 | **14** (+Agent Coach Business F119) |
+| Total composants | 18 | **19** (14 agents + Supervisor + 4 modules) |
+| Features V1 | 110 + F111 | **135** (+F112 à F135 = 24 nouvelles) |
+| Migrations SQL | 29 | **37** (+030 à 037) |
+| Coût LLM/artisan/mois | $4.50 | **~$4.80** (+Coach +capsules) |
+| Marge Pro (€29) | 82% | **80%** (-2pts, capsules + coach incluses) |
+| Marge Business (€79) | 91% | **89%** (-2pts, services V2 inclus dans coûts) |
+| Trial | 14 jours | **30 jours** |
+| Plans tarifaires | 3 (Starter/Pro/Business) | **7** (+Pro annuel, Business annuel, Lifetime, Fédération) |
+| Onboarding | signup-first | **inversé** (test avant signup) — cible conversion >25% vs >12% |
+
+### 16 fichiers modifiés (audit V6)
+
+1. **CLAUDE.md** : 13→14 agents partout, ligne Coach Business ajoutée, section Pricing 7 options ajoutée, arborescence data enrichie (benchmarks/capsules/diagnostics/imports)
+2. **PRODUCT_CONTEXT.md** : 13→14 agents, description Coach Business (10 lignes), budget Supervisor redistribué, section Pricing restructurée (7 options), coûts $4.50→$4.80, marges 82%/91%→80%/89%, section Moat enrichie (F118 switching cost + F121 détecteur + F117 score), section Roadmap V1/V2/V3 ajoutée
+3. **BUILD_PLAN.md** : ajout F112-F135 dans sprints 1-8 + V2/V3, migrations 030-037, agent_coach.py + coach_prompt.py, durée V1 22→25 jours, skills/docs à créer listés
+4. **FEATURES.md** : F112-F135 ajoutées (24 nouvelles features avec tag V1/V2/V3), résumé total 110→135 features, tableau découpage V1/V2/V3
+5. **README.md** : 13→14 agents (incluant Coach Business), pricing 3→7 options, Plan de Build enrichi (37 migrations, audit V6 features)
+6. **COUT_REEL.md** : ligne Coach Business ~$0.20, capsules ~$0.05, total $4.50→$4.80, marges 82%/91%→80%/89%, section "Coûts V2" ajoutée (read replica, monitoring, hébergement capsules, connectors compta)
+7. **DISTRIBUTION.md** : 18→19 composants, liste 14 agents (+Coach), section "Acquisition artisans étrangers en France" F133 ajoutée, tableau expansion Europe chiffré par pays (BE 2m / CH 2m / PT 3m / ES 4m / IT 5m / DE 5m / UK 5m), section partenariats grossistes 3 niveaux + fédérations
+8. **COMMUNICATION.md** : 13→14 agents, 18→19 composants, 8 nouveaux arguments marketing (Coach IA, parrainage, onboarding 90s, RGE auto, 30 jours trial, 990€ Lifetime, -20% fédérations, détecteur concurrent)
+9. **STRATEGIE-COMPETITIVE.md** : F112 import Sprint 8→Sprint 2-3, 4 nouvelles actions (F119 Coach, F121 détecteur, F128 RGE, F125 onboarding), 3 nouveaux angles vs concurrents
+10. **ANALYSE_CONCURRENCE.md** : 13→14 agents, mention Coach Business + détecteur devis concurrent comme moat unique
+11. **UX_PARCOURS.md** : nouveau parcours 1 onboarding inversé F125 (90s), parcours 1bis classique conservé, menu profil enrichi (parrainage, import, concurrent-analyzer, pack contrôle fiscal, warning switching cost)
+12. **SECURITE.md** : section 8 AI Act étoffée massivement (F131 — classification GPAI, badge Décision IA, page /transparency, audit log), sections 12 (Résilience F132), 13 (Validation RGE F128), 14 (Mode contrôle fiscal F129) ajoutées
+13. **FICHE_METIER.md** : 4 nouvelles catégories data ajoutées — benchmarks (1056 entrées), capsules index, diagnostics V2 (11 fichiers), imports templates (6 fichiers). Total ~63→~82 fichiers
+14. **docs/CHANGELOG.md** : entrée "17/04/2026 — Audit V6" avec détail complet
+15. **docs/DECISIONS-LOG.md** : ce fichier, entrée audit V6 ajoutée
+16. **docs/REFACTORING-V6-REPORT.md** : rapport final (livrable de l'audit)
+
+### Règles strictes respectées
+- Aucun fichier code applicatif touché (zero .py, .ts, .tsx, .sql)
+- Aucun nouveau doc dans `docs/` sauf `REFACTORING-V6-REPORT.md` (livrable)
+- Aucun skill créé (reportés au plan FICHIERS_A_CREER.md)
+- Aucun JSON data généré
+- Aucun fichier supprimé
+
+---
+
+## AUDIT V5 — 17/04/2026 (valeurs de référence initiales)
+
+### 1. Valeurs de référence (source de vérité — V5)
 
 | Sujet | Valeur tranchée | Justification |
 |---|---|---|

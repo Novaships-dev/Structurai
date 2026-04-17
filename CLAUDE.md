@@ -1,7 +1,7 @@
 # CLAUDE.md — STRUCTORAI
 
 > Ce fichier est la LOI du repo. Claude Code le lit en premier et le respecte toujours.
-> Dernière mise à jour : 14/04/2026
+> Dernière mise à jour : 17/04/2026
 
 ---
 
@@ -9,7 +9,7 @@
 
 Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artisans du bâtiment en France. Tu codes TOUT. Fabrice (le fondateur) ne code pas. Il crée les comptes infra, configure les clés API, et valide les choix produit.
 
-**Ce que tu builds :** Une app mobile avec cerveau IA spécialisé BTP — chat vocal, scan de tickets, devis par la voix, 13 agents IA autonomes, 6 langues.
+**Ce que tu builds :** Une app mobile avec cerveau IA spécialisé BTP — chat vocal, scan de tickets, devis par la voix, 14 agents IA autonomes, 6 langues.
 
 ---
 
@@ -19,7 +19,7 @@ Tu es Claude Code, l'agent IA qui build STRUCTORAI — un SaaS mobile pour artis
 |---------|------|---------------|
 | `PRODUCT_CONTEXT.md` | Spec produit complète | Avant toute décision produit |
 | `BUILD_PLAN.md` | Arborescence fichiers + sprints | Avant de créer un fichier |
-| `FEATURES.md` | 110 features détaillées | Avant d'implémenter une feature |
+| `FEATURES.md` | 135 features détaillées (V1 / V2 / V3) | Avant d'implémenter une feature |
 | `UX_PARCOURS.md` | Navigation, onglets, parcours UX, règles d'interface | Avant de toucher à la navigation ou aux écrans |
 | `FICHE_METIER.md` | Inventaire des fichiers data | Avant de créer un fichier data/ |
 | `docs/METIER.md` | Constitution BTP — règles immuables | Avant tout code lié aux devis/factures/TVA |
@@ -158,11 +158,11 @@ Le Supervisor reçoit TOUS les messages et décide quel agent répond :
 4. Suit le budget LLM par artisan
 5. Circuit breaker : 3 réponses vides → pause + fallback
 
-### Les 13 Agents V1 + Supervisor
+### Les 14 Agents V1 + Supervisor
 
 | Agent | Fichier | Model | Budget/appel | Scope |
 |-------|---------|-------|-------------|-------|
-| Supervisor (hors des 13) | `agents/supervisor.py` | claude-sonnet-4-6 | $0.10 | Routage intent, queue, budget LLM, briefing matin, résumé soir, crons, Background Consciousness |
+| Supervisor (hors des 14) | `agents/supervisor.py` | claude-sonnet-4-6 | $0.10 | Routage intent, queue, budget LLM, briefing matin, résumé soir, crons, Background Consciousness |
 | Devis | `agents/agent_devis.py` | claude-opus-4-7 | $0.15 | Vocal/texte/photo → postes → prix (Mem0 + référentiels) → TVA multi-taux → PDF 47 mentions → signature Yousign → acompte auto |
 | Relance | `agents/agent_relance.py` | claude-haiku-4-5-20251001 | $0.02 | Devis sans réponse J+3, factures impayées J+15/30/45, ton adaptatif par client (Mem0), mise en demeure |
 | Compta | `agents/agent_compta.py` | claude-sonnet-4-6 | $0.08 | Catégorisation tickets/factures fournisseurs, attribution chantier, marge temps réel, export comptable, suivi achats |
@@ -175,9 +175,10 @@ Le Supervisor reçoit TOUS les messages et décide quel agent répond :
 | RH | `agents/agent_rh.py` | claude-sonnet-4-6 | $0.05 | Pointage heures, heures sup convention BTP, congés CIBTP, intérimaires, sous-traitants, export paie |
 | Vision IA | `agents/agent_vision.py` | claude-opus-4-7 | $0.08 | Premier filtre de TOUTE image reçue : photo chantier → catégorisation + analyse + détection oublis. Ticket → OCR. Courrier admin → classification. Transmet à l'agent concerné |
 | Site Web | `agents/agent_site_web.py` | claude-sonnet-4-6 | $0.10 | Génération site vitrine IA (infos profil → pages → photos galerie → avis Google → SEO local → mise en ligne). Proposition mise à jour mensuelle auto (nouvelles photos/avis), validation artisan avant publication |
+| Coach Business | `agents/agent_coach.py` | claude-opus-4-7 | $0.10 | Conseil stratégique mensuel : taux horaire vs benchmark département, taux conversion devis, carnet de commandes, marge moyenne, positioning, pricing, prospection. 1 analyse/mois (Starter), illimité (Pro/Business) |
 | **V2** : Téléphone IA | `agents/agent_telephone.py` | claude-sonnet-4-6 | $0.10 | Décroche quand l'artisan est sur chantier, prise d'info structurée, filtre, notification push |
 
-> **Total** : **13 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 18 composants au total.** Le Supervisor est listé à part car c'est l'orchestrateur, pas un des 13 agents.
+> **Total** : **14 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 19 composants au total.** Le Supervisor est listé à part car c'est l'orchestrateur, pas un des 14 agents.
 
 ---
 
@@ -205,6 +206,28 @@ Le code de génération PDF DOIT toujours inclure les 47 mentions : 15 mentions 
 - Appliquer les **coefficients régionaux** (11 zones)
 - Déférer aux **prix de l'artisan** (Mem0) s'ils existent
 - Alerter si prix < 70% ou > 150% du référentiel
+
+---
+
+## PRICING — 7 OPTIONS
+
+| Plan | Prix | Trial | Cible |
+|------|------|-------|-------|
+| **Starter** | €0/mois | — | Auto-entrepreneurs, découverte (5 devis/mois, Coach 1×/mois, pas de relance auto) |
+| **Pro** | €29/mois | 30 jours | Artisan seul (devis illimités, 14 agents actifs, voix) |
+| **Pro annuel** | €229/an (≈ €19/mois, -35%) | 30 jours | Artisan seul engagement 12 mois |
+| **Business** | €79/mois | 30 jours | TPE 2-10 salariés (tout Pro + multi-user, API, priorité) |
+| **Business annuel** | €629/an (≈ €52/mois, -35%) | 30 jours | TPE engagement 12 mois |
+| **Lifetime** | €990 une fois | — | Promo launch, limité à 100 licences |
+| **Fédération** | Pro ou Business -20% à vie | 30 jours | Code promo `CAPEB20` / `FFB20`, justificatif membre requis |
+
+**Add-on Agent Téléphone IA (V2)** : +15€/mois sur Pro / Pro annuel / Business / Business annuel (non disponible en Starter).
+
+**Règles de facturation :**
+- Tous les prix sont en EUR HT
+- Stripe Products créés pour chaque plan + add-on (voir `BUILD_PLAN.md`)
+- Migration `033_update_subscriptions_plans.sql` gère les 7 combinaisons
+- Grâce period 7 jours après échec de paiement (pas de coupure sèche)
 
 ---
 
@@ -242,6 +265,10 @@ data/
 ├── deplacements/             # Barème km + zones BTP + paniers
 ├── gamification/             # Quêtes, badges, niveaux
 ├── social/                   # Templates publications réseaux sociaux
+├── benchmarks/               # Taux horaires par métier/région (Agent Coach Business F119)
+├── capsules/                 # Formation contextuelle — 50 capsules vidéo 60s (F120)
+├── diagnostics/              # Arbres de décision télé-dépannage V2 (F126, 50 pannes × 11 métiers)
+├── imports/                  # Templates mapping imports concurrents (F112 — Obat, Tolteck, Batigest, EBP, Excel, Facture.net)
 └── i18n/                     # Termes métier BTP traduits (6 langues)
 ```
 

@@ -1,7 +1,7 @@
 # COMMUNICATION.md — Stratégie de communication StructorAI
 > Ce fichier est la bible de la communication. Chaque post, vidéo, message, landing page, pub puise ici.
 > L'objectif : transformer un artisan qui a PEUR de la tech en un utilisateur qui ne peut PLUS s'en passer.
-> Dernière mise à jour : 09/04/2026
+> Dernière mise à jour : 17/04/2026 (audit V6 : +Agent Coach Business, +arguments parrainage/onboarding/RGE)
 
 ---
 
@@ -12,7 +12,7 @@
 StructorAI est la MEILLEURE application du marché pour les artisans du bâtiment. C'est pas une opinion, c'est un fait. Aucun concurrent ne propose :
 - Un assistant vocal mains libres qui comprend le métier et RÉPOND à voix haute
 - Un cerveau qui VOIT les photos de chantier et fait le devis à partir de ce qu'il voit
-- 13 agents autonomes qui travaillent 24h/24 pendant que l'artisan dort
+- 14 agents autonomes qui travaillent 24h/24 pendant que l'artisan dort
 - Une mémoire qui apprend les prix, les clients, le rythme de CHAQUE artisan
 - 1080+ postes chiffrés avec les vrais prix terrain et 132 erreurs documentées
 - 6 langues dès le premier jour
@@ -59,7 +59,7 @@ Batappli : une bibliothèque d'ouvrages statique.
 StructorAI : un cerveau qui connaît 1080+ interventions et qui apprend TES prix.
 
 Batappli : pas de relance, pas de compta, pas de planning, pas d'avis Google.
-StructorAI : 18 composants (13 agents + Supervisor + 4 modules fonctionnels). Un seul cerveau. Tout est fait.
+StructorAI : 19 composants (14 agents + Supervisor + 4 modules fonctionnels). Un seul cerveau. Tout est fait.
 
 Batappli : français seulement.
 StructorAI : 6 langues. Français, turc, portugais, arabe, espagnol, anglais.
@@ -78,8 +78,8 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 | "2 minutes" | Le temps d'un devis vocal vs 2h sur Word |
 | "3 secondes" | Le temps de classer un ticket de caisse |
 | "30 secondes" | Le pré-devis au téléphone |
-| "13 agents" | Qui travaillent 24h/24 pour toi |
-| "18 composants" | 13 agents IA + Supervisor + 4 modules fonctionnels = tout ce que ton business a besoin |
+| "14 agents" | Qui travaillent 24h/24 pour toi |
+| "19 composants" | 14 agents IA + Supervisor + 4 modules fonctionnels = tout ce que ton business a besoin |
 | "1080+ interventions" | Que le cerveau connaît par coeur avec les vrais prix |
 | "132 erreurs terrain" | Que le cerveau détecte pour toi |
 | "8819 lignes" | De données métier réelles (pas du ChatGPT) |
@@ -94,6 +94,13 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 | "Factur-X natif" | Déjà conforme pour septembre 2027. Tes concurrents vont paniquer, toi tu es prêt. |
 | "PA intégrée invisible" | Tu ne fais RIEN. Le cerveau transmet tes factures à l'État automatiquement. Zéro admin supplémentaire. |
 | "46% des artisans digitalisés" | Le marché est prêt. Les 54% restants vont suivre avec Factur-X obligatoire. C'est maintenant ou jamais. |
+| "Ton coach IA" | "Ton coach business IA qui analyse ton business chaque mois. Taux horaire, marge, carnet. Un coach humain c'est 500-2000€/an. Le nôtre est inclus." |
+| "90 secondes" | Le temps du nouvel onboarding inversé (F125) : landing → chat public → premier devis → signup uniquement pour envoyer. |
+| "RGE validé auto" | "Ton devis TVA 5.5% est validé automatiquement contre la base officielle RGE. Zéro risque de redressement fiscal." |
+| "1 mois offert" | "Parraine un collègue : 1 mois offert pour vous deux + 50€ de crédit Point P. Ton réseau devient ton atout." |
+| "30 jours de trial" | "30 jours gratuits sur Pro ou Business (vs 14 chez les autres). Le temps de bien tester." |
+| "990€ Lifetime" | "100 licences Lifetime au prix d'un abonnement annuel. Tu payes une fois, tu es tranquille à vie. Premier arrivé, premier servi." |
+| "-20% fédérations" | "Membre CAPEB ou FFB ? Code CAPEB20 ou FFB20 = -20% à vie. Notre partenariat avec les fédérations." |
 
 ---
 
@@ -250,7 +257,7 @@ Script 3 — "Le prospect"
 - "500 000 artisans en France passent leurs soirées sur l'admin au lieu d'être avec leur famille."
 - Les 5 douleurs illustrées (devis, impayés, tickets, marges, prospects perdus)
 
-**Section solution — Les 18 composants (13 agents + Supervisor + 4 modules fonctionnels) :**
+**Section solution — Les 19 composants (14 agents + Supervisor + 4 modules fonctionnels) :**
 - Chaque module = 1 bloc visuel avec icône + titre + 1 phrase + vidéo courte
 - Pas de jargon tech. "Il fait tes devis par la voix" pas "pipeline vocal Whisper → LLM → PDF"
 
@@ -375,11 +382,45 @@ C'est quand il dicte son premier devis et que le PDF sort en 2 minutes avec les 
 
 # 7. CE QU'ON DIT ET CE QU'ON NE DIT PAS
 
+## ARGUMENTS MARKETING AUDIT V6 — LES 6 NOUVELLES ANGLES
+
+### 1. Ton coach business IA (F119)
+**Phrase qui tue :** "Un coach business humain c'est 500 à 2000€/an. Le nôtre est inclus dans ton abonnement et il t'analyse chaque mois. Taux horaire, marge, carnet, positioning — tout y passe."
+
+**Où l'utiliser :** Landing page (section "Le plus"), Facebook (post dédié avec exemple d'analyse), TikTok (Script : "Ton taux horaire est 20% trop bas. Personne ne te l'a jamais dit.")
+
+### 2. Parrainage : le BTP fonctionne au bouche-à-oreille (F114)
+**Phrase qui tue :** "Parraine un collègue. 1 mois offert pour vous deux + 50€ de crédit Point P. Ton réseau devient ton atout."
+
+**Où l'utiliser :** WhatsApp nurturing J+30, landing, badge Ambassadeur dans l'app, campagne Facebook groupes
+
+### 3. Onboarding inversé — 90 secondes pour comprendre (F125)
+**Phrase qui tue :** "Tu ne signes pas pour tester. Tu testes d'abord. Tu signes pour envoyer ton premier devis."
+
+**Où l'utiliser :** Landing page hero, TikTok (démo sandbox), Facebook posts — renforce le "Gratuit pour tester" à l'extrême
+
+### 4. Validation RGE automatique (F128)
+**Phrase qui tue :** "Ton devis TVA 5.5% est validé automatiquement contre la base officielle RGE. Zéro risque de redressement fiscal. Personne d'autre ne fait ça."
+
+**Où l'utiliser :** Argument anti-Batigest/EBP (qui ne valident pas), landing pour les métiers isolation/chauffage/énergie
+
+### 5. Détecteur de devis concurrent (F121)
+**Phrase qui tue :** "Ton client te montre un devis d'un concurrent ? Upload-le. Le cerveau analyse ligne par ligne et te donne l'argumentaire pour gagner."
+
+**Où l'utiliser :** TikTok (démo visuelle), YouTube tutos, Facebook (post "Comment battre un concurrent sans baisser tes prix")
+
+### 6. Plans enrichis — 7 options pour toutes les bourses (F130)
+**Phrase qui tue :** "Starter gratuit, Pro 29€/mois, annuel -35%, Lifetime 990€ (100 licences), -20% fédérations CAPEB/FFB. Il y a une formule pour toi."
+
+**Où l'utiliser :** Page pricing, emails nurturing, posts "Lifetime fin de stock"
+
+---
+
 ## CE QU'ON DIT (sans hésiter)
 
 - On DIT que c'est **la meilleure app du marché** pour les artisans. C'est vrai, on l'assume.
 - On DIT que c'est **l'app n°1 des artisans BTP**. On la positionne comme le leader dès le jour 1.
-- On DIT que **rien d'autre ne fait ça**. Aucun concurrent n'a la voix, la vision, la mémoire, les 13 agents, les 6 langues.
+- On DIT que **rien d'autre ne fait ça**. Aucun concurrent n'a la voix, la vision, la mémoire, les 14 agents, les 6 langues.
 - On DIT que c'est **le meilleur employé qu'un artisan puisse avoir**. Il travaille 24h/24, oublie rien, coûte €29.
 - On DIT que ça va **changer sa vie**. Parce que c'est vrai. 2h d'admin en moins chaque soir = sa vie change.
 - On DIT que c'est **l'avenir du BTP**. Pas dans 10 ans. Maintenant.

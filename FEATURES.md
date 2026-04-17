@@ -638,20 +638,221 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 
 ---
 
+## FEATURES AJOUTÉES — AUDIT V6 (22 AMÉLIORATIONS STRATÉGIQUES)
+
+### F112. Import universel depuis concurrents (V1 — Sprint 2-3)
+- **Quoi :** 6 parseurs d'import pour migrer depuis les concurrents (Obat, Tolteck, Batigest, EBP, Excel, Facture.net)
+- **Pourquoi :** Faire sauter la friction #1 d'adoption — Sage Batigest a 1 132 avis 3.92/5 avec utilisateurs qui veulent migrer mais sont bloqués par 10 ans d'historique
+- **Comment :** Endpoint `/v1/import/[source]` → dossier `backend/app/services/importers/` → templates mapping dans `data/imports/` → écran mobile `app/(dashboard)/settings/import.tsx` → preview avant validation
+- **Sprint :** 2-3 (et non Sprint 8 comme initialement prévu dans STRATEGIE-COMPETITIVE — remonté en priorité)
+- **Tag :** V1
+
+### F113. Partenariats grossistes — scan carte fidélité (V1 — Sprint 4)
+- **Quoi :** OCR carte fidélité + numéro compte client grossiste (Point P, Cedeo, BigMat) → import auto de l'historique d'achats
+- **Pourquoi :** Les artisans ont un compte client chez 2-3 grossistes. Sans avoir à négocier un accord commercial, on peut ingérer leurs achats via scan
+- **Comment :** V1 = OCR carte + extraction numéro compte → saisie manuelle historique. V2 = API intégration temps réel. V3 = partenariats commerciaux exclusifs post 2K MRR
+- **Sprint :** 4 (V1), V2 (API), V3 (exclusif)
+- **Tag :** V1 (scan) / V2 (API) / V3 (exclusif)
+
+### F114. Code parrain structurel (V1 — Sprint 7)
+- **Quoi :** Programme de parrainage : 1 mois offert parrain + filleul + 50€ crédit Point P (partenariat à venir)
+- **Pourquoi :** Le BTP fonctionne au bouche-à-oreille. Formaliser cette mécanique = levier d'acquisition gratuit
+- **Comment :** Migration `030_create_referrals.sql` → endpoints `/v1/referral/*` → code unique par artisan → tracking conversion → badge gamification "Ambassadeur" → dashboard filleuls
+- **Écran mobile :** `app/(dashboard)/settings/parrainage.tsx`
+- **Sprint :** 7
+- **Tag :** V1
+
+### F115. Sandbox publique sans inscription (V1 — Sprint 8)
+- **Quoi :** Démo interactive sur structorai.app/try — chat avec le cerveau, 5 messages sans créer de compte
+- **Pourquoi :** Le taux de conversion landing → signup est faible quand l'utilisateur ne peut pas tester. Laisser tester AVANT de demander l'email
+- **Comment :** Endpoint `/v1/public/chat` (rate-limited IP, session Redis 15 min) → écran `app/(public)/try.tsx` → CTA "Crée ton compte" après 3 messages
+- **Sprint :** 8
+- **Tag :** V1
+
+### F116. Rapport annuel de l'artisan (V1 — Sprint 7)
+- **Quoi :** Bilan personnel envoyé 2×/an (1er janvier + 1er juillet) — CA, marge moyenne, top 3 clients, temps gagné, avis collectés, évolution vs période précédente
+- **Pourquoi :** Renforcer la dépendance émotionnelle + fournir un argument fort pour rester abonné ("sans STRUCTORAI tu n'aurais pas ces chiffres")
+- **Comment :** Cron `app/crons/rapport_annuel.py` → génération PDF + envoi email → archivage dans la fiche artisan
+- **Sprint :** 7
+- **Tag :** V1
+
+### F117. Score "cerveau me connaît" — warning anti-churn (V1 — Sprint 7)
+- **Quoi :** Enrichissement du composant `BrainProgress.tsx` avec warning visible : "Si tu pars, ton score repart à 0. Tu as investi X jours pour arriver à Y%."
+- **Pourquoi :** Switching cost concret — le score est l'actif principal que l'artisan construit. Le matérialiser = moat psychologique
+- **Comment :** Composant mobile enrichi, affichage à l'écran profil + lors de la tentative de résiliation
+- **Sprint :** 7
+- **Tag :** V1
+
+### F118. Switching cost moat documenté (V1 — documentation)
+- **Quoi :** Asymétrie volontaire : on accepte les imports entrants depuis concurrents (F112), on ne fournit PAS d'API export symétrique pour les concurrents
+- **Pourquoi :** Douve stratégique — un artisan qui a 2 ans d'historique dans STRUCTORAI ne peut migrer facilement vers un concurrent. C'est intentionnel et assumé dans la stratégie produit
+- **Comment :** Pas de feature à coder. Documenté dans PRODUCT_CONTEXT.md section "Moat" et décision dans `docs/DECISIONS-LOG.md`
+- **Sprint :** — (documentation)
+- **Tag :** V1
+
+### F119. Agent Coach Business — 14ème agent (V1 — Sprint 6-7)
+- **Quoi :** Agent IA dédié au conseil stratégique mensuel. Analyse automatique : taux horaire vs benchmark département, taux de conversion devis, carnet de commandes, marge moyenne, positioning concurrence, recommandations pricing/prospection
+- **Pourquoi :** Les artisans ne savent pas s'ils sont bien payés, bien positionnés, rentables. Un coach humain = 500-2000€/an. Un coach IA mensuel = différenciateur massif vs concurrence
+- **Comment :** Agent `agents/agent_coach.py`, modèle `claude-opus-4-7`, budget $0.10/appel. Prompt `prompts/coach_prompt.py`. Data `data/benchmarks/taux_horaires_par_metier_region.json`. Analyses déclenchées mensuellement par le Supervisor
+- **Plans :** Inclus dans TOUS les plans. Starter = 1 analyse/mois, Pro/Business = illimité
+- **Sprint :** 6-7
+- **Tag :** V1
+
+### F120. Formation contextuelle par capsules vidéo 60s (V1 — Sprint 7)
+- **Quoi :** 50 capsules vidéo de 60 secondes déclenchées par le Supervisor selon le contexte (première facture → capsule "Comment lire ta facture", premier impayé → capsule "Mise en demeure")
+- **Pourquoi :** Zéro documentation statique. Les artisans apprennent en contexte, au moment où ils en ont besoin. 60 secondes = attention soutenable
+- **Comment :** Migration `031_create_capsules.sql` → data `data/capsules/index.json` (50 entrées avec `trigger_event`) → hébergement vidéo (à chiffrer dans COUT_REEL) → Supervisor déclenche capsule si trigger match contexte
+- **Sprint :** 7 (infrastructure). Tournage des 50 capsules : 3 mois post-launch
+- **Tag :** V1
+
+### F121. Détection et analyse de devis concurrent (V1 — Sprint 3)
+- **Quoi :** L'artisan upload un PDF/photo d'un devis concurrent → extension Agent Vision `parse_competitor_quote()` → comparaison avec référentiels BTP + Mem0 → argumentaire de réponse pour gagner le chantier
+- **Pourquoi :** Arme unique — aucun concurrent ne le fait. L'artisan est régulièrement en compétition et n'a aucun outil pour analyser la concurrence
+- **Comment :** Endpoint `/v1/devis/analyze-competitor` → écran `app/(dashboard)/devis/concurrent-analyzer.tsx` → sortie : analyse ligne par ligne, prix fort/faible vs marché, poste manquant chez le concurrent, argumentaire de vente
+- **Sprint :** 3
+- **Tag :** V1
+
+### F122. Synchro comptable native (V2 — post-launch)
+- **Quoi :** Intégration API avec Pennylane, Cegid, Sage, QuickBooks pour synchronisation bidirectionnelle
+- **Pourquoi :** Les artisans Business (2-10 salariés) ont un expert-comptable qui utilise une de ces plateformes. Aujourd'hui on exporte en CSV — demain on pousse en temps réel
+- **Comment :** Service `backend/app/services/accounting/` → 4 connecteurs → plan Business uniquement
+- **Sprint :** V2 post-launch
+- **Tag :** V2
+
+### F123. Assignation tâches employés avec suivi photo (V1 — Sprint 7)
+- **Quoi :** Extension Agent RH. Le patron assigne des tâches à ses employés → l'employé reçoit sur son mobile → prend photo début + photo fin → heures automatiquement tracké
+- **Pourquoi :** Les patrons (Business) n'ont aucune visibilité sur ce que font leurs employés. Kanban tâches par employé + preuve photo = transparence totale
+- **Comment :** Migration `032_create_tasks.sql` → endpoints `/v1/tasks/*` → écran Kanban patron → écran simplifié employé (voir F124)
+- **Sprint :** 7
+- **Tag :** V1
+
+### F124. App mode Compagnon — écran employé simplifié (V1 — Sprint 7)
+- **Quoi :** Version allégée STRUCTORAI pour les employés des Business — login par code 4 chiffres, photos début/fin de tâche, pointage, pas d'accès aux données commerciales
+- **Pourquoi :** Les patrons Business ne veulent pas donner les infos CA/marge à leurs employés. Mais ils veulent que leurs employés utilisent l'app pour le pointage photo
+- **Comment :** Routes `app/(compagnon)/*` dédiées → auth simplifiée → UI ultra-réduite (pointage + tâches du jour + photos)
+- **Sprint :** 7
+- **Tag :** V1
+
+### F125. Onboarding inversé (V1 — Sprint 8)
+- **Quoi :** Landing → chat public (F115) → premier devis VRAIMENT généré (via sandbox) → signup UNIQUEMENT pour envoyer au client
+- **Pourquoi :** Inverser le funnel classique (signup → test → valeur). Ici : valeur prouvée AVANT signup. Cible conversion >25% (vs >12% actuel)
+- **Comment :** Modifier UX_PARCOURS.md section onboarding → réorganiser la landing → wire sandbox (F115) avec sign-up bloquant uniquement pour l'envoi
+- **Sprint :** 8
+- **Tag :** V1
+
+### F126. Télé-dépannage — extension Agent Téléphone (V2)
+- **Quoi :** L'Agent Téléphone reçoit un appel avec problème urgent → diagnostic via arbre de décision (50 pannes × 11 métiers = 550 arbres) → résolution à distance si possible → artisan paie 2€ par dépannage résolu, 50/50 artisan/plateforme
+- **Pourquoi :** Monétisation supplémentaire + valeur pour le client final. Plomberie : "l'eau fuit sous l'évier" → 30 secondes de diagnostic → "vérifie le siphon, serre à la main" → problème résolu sans déplacement
+- **Comment :** Data `data/diagnostics/[metier].json` (11 fichiers) → migration `034_create_diagnostics.sql` → tracking paiements
+- **Sprint :** V2 post-launch
+- **Tag :** V2
+
+### F127. Portail client final (V2 — post-launch)
+- **Quoi :** Mini-PWA React légère sur sous-domaine `client.structorai.app/[chantier-token]` — le client final de l'artisan voit ses devis, factures, photos, signe, paye
+- **Pourquoi :** Aujourd'hui le client reçoit des emails ponctuels. Un portail = expérience premium + upsell naturel (l'artisan vend plus facilement le plan Pro pour avoir le portail client)
+- **Comment :** Auth par token URL unique (pas de compte client) → endpoints `/v1/client-portal/*` → migration `035_create_client_tokens.sql`
+- **Sprint :** V2 post-launch
+- **Tag :** V2
+
+### F128. Validation auto RGE / Qualibat (V1 — Sprint 3)
+- **Quoi :** Service `backend/app/services/certif_validation.py` qui interroge l'API data.gouv.fr / RGE.fr à l'inscription + re-check mensuel. Blocage génération devis TVA 5.5% si RGE invalide
+- **Pourquoi :** La TVA 5.5% requiert une certification RGE valide. Un devis TVA 5.5% sans RGE = redressement fiscal pour l'artisan. On sécurise légalement
+- **Comment :** API officielle gratuite data.gouv.fr → cache 30 jours → alerte artisan si RGE expire dans <60 jours → blocage devis TVA 5.5% si invalide
+- **Sprint :** 3
+- **Tag :** V1
+
+### F129. Pack contrôle fiscal (V1 — Sprint 6)
+- **Quoi :** Extension Agent Fiscalité. Endpoint `/v1/export/tax-audit` génère un ZIP signé horodatage certifié contenant : devis + factures + tickets OCR + justifs TVA + registres comptables
+- **Pourquoi :** En cas de contrôle fiscal, l'artisan doit fournir un dossier complet sous 30 jours. Aujourd'hui c'est un enfer. Avec STRUCTORAI : 1 clic, ZIP généré, horodaté
+- **Comment :** Service `backend/app/services/tax_audit_export.py` → signature horodatée via API qualifiée → ZIP envoyé par email + archivé 10 ans
+- **Sprint :** 6
+- **Tag :** V1
+
+### F130. Tarification enrichie — 7 options (V1 — Sprint 1)
+- **Quoi :** Plans Starter €0 / Pro €29 / Pro annuel €229 / Business €79 / Business annuel €629 / Lifetime €990 (100 licences) / Fédération (code `CAPEB20` / `FFB20` -20% à vie). Trial 30 jours. Add-on Agent Téléphone +15€/mois
+- **Pourquoi :** Segmentation plus fine → meilleure conversion. Annuel = cash flow + rétention. Lifetime = marketing launch. Fédération = partenariats institutionnels
+- **Comment :** Migration `033_update_subscriptions_plans.sql` → Stripe Products (annuels, Lifetime, Fédération) → logique validation code promo avec justificatif membre CAPEB/FFB
+- **Sprint :** 1
+- **Tag :** V1
+
+### F131. Conformité AI Act (V1 — Sprint 6)
+- **Quoi :** UI avec badge "Décision IA" sur toute sortie générée + bouton "Demander validation humaine" + page publique `/transparency` + documentation technique modèles
+- **Pourquoi :** AI Act européen applicable août 2026. Les LLM orientés décisions financières (devis, fiscal) sont GPAI à risque limité. Documentation obligatoire
+- **Comment :** Migration `036_create_ai_audit_log.sql` → log de chaque décision IA → page `/transparency` publique → doc technique créée avant août 2026
+- **Sprint :** 6
+- **Tag :** V1
+
+### F132. Résilience et redondance (V1 — Sprint 8)
+- **Quoi :** Fallback LLM (Anthropic down → GPT-4 backup) + read replica Supabase (+25$/mois) + monitoring UptimeRobot + Better Uptime + SLA interne 99.5% documenté dans CGV
+- **Pourquoi :** Quand Anthropic a un outage (déjà arrivé plusieurs fois), toute l'app tombe. Un fallback OpenAI maintient le service. SLA = argument Business
+- **Comment :** Abstraction client LLM multi-provider (déjà en place partiellement) → read replica Supabase pour les lectures chat history → monitoring externe
+- **Sprint :** 8
+- **Tag :** V1
+
+### F133. Acquisition artisans étrangers en France (V1 — Sprint 8)
+- **Quoi :** Adaptation Agent Planning (calendrier Ramadan, fêtes religieuses) + landings localisées `/tr`, `/ar`, `/pt`, `/es` ciblant les communautés étrangères installées en France
+- **Pourquoi :** 500K artisans en France, dont ~15% ont une langue maternelle non-française (turc, arabe, portugais, espagnol). Marché invisible que les concurrents n'adressent PAS
+- **Comment :** Landings déjà localisées grâce à l'i18n → ajustement du calendrier des agents pour les fêtes culturelles → distribution ciblée (Facebook groupes communauté)
+- **Sprint :** 8
+- **Tag :** V1
+
+### F134. Verticalisation / éditions métier (V1 architecture, V2 lancement)
+- **Quoi :** Architecture `country_code` + `edition` sur `organizations` dès V1. Éditions métier spécialisées (STRUCTORAI-Plomberie, STRUCTORAI-Électricité) lancées post 2K MRR
+- **Pourquoi :** Marketing plus fort ("le logiciel des plombiers") + devis ultra-spécialisés par métier. Mais pas rentable de fragmenter avant d'avoir la base horizontale
+- **Comment :** Migration `037_add_country_edition.sql` → architecture prête en V1 → éditions lancées en V2 si MRR > 2K€
+- **Sprint :** V1 (schéma), V2 (lancement éditions)
+- **Tag :** V1 (architecture) / V2 (éditions)
+
+### F135. Architecture multi-pays (V1 — Sprint 1)
+- **Quoi :** Colonne `country_code` sur toutes les tables dès le début. Règles BTP modulaires par pays (structure prête, contenu FR uniquement en V1). Plan d'expansion chiffré : BE 2 mois / CH 2 mois / PT 3 mois / ES 4 mois / IT 5 mois / DE 5 mois / UK 5 mois
+- **Pourquoi :** Ajouter `country_code` sur 30 tables a posteriori = migration douloureuse. Le faire dès le jour 1 = zero friction pour l'expansion Europe
+- **Comment :** Toutes les migrations Sprint 1 intègrent `country_code TEXT NOT NULL DEFAULT 'FR'` + index. Architecture règles métier modulaires dans `data/legal/{country}/` et `data/prix/{country}/`
+- **Sprint :** 1
+- **Tag :** V1
+
+---
+
 ## RÉSUMÉ DES CHANGEMENTS
 
 | Type | Nombre |
 |------|--------|
 | Features modifiées/enrichies | 23 |
-| Nouvelles features ajoutées | 24 (F87-F110) |
-| **Total features** | **110** (86 → 110) |
-| **Total agents V1** | **13** (6 → 13 : +Fiscalité, +Déplacements, +RH, +Vision IA, +Site Web, +Email Pro, +Réputation & Marketing) + Supervisor |
-| **V2** | Agent Téléphone IA |
+| Nouvelles features V1 ajoutées (audit initial) | 24 (F87-F110) |
+| F111 ajoutée audit 15/04 | 1 (F111) |
+| **Nouvelles features audit V6 (17/04)** | **24 (F112-F135)** |
+| **Total features** | **135** (110 + F111 + 24 = 135) |
+| **Total agents V1** | **14** (+Agent Coach Business F119) + Supervisor |
+| **V2** | Agent Téléphone IA + F122 (Synchro compta) + F126 (Télé-dépannage) + F127 (Portail client) |
+| **V3** | F109 (Photogrammétrie) + F113 V3 (API grossistes exclusives) |
 
-### Impact BUILD_PLAN
-- 3 nouveaux agents backend : `agent_fiscalite.py`, `agent_deplacements.py`, `agent_rh.py`
-- 3 nouveaux prompts : `fiscalite_prompt.py`, `deplacements_prompt.py`, `rh_prompt.py`
-- 3 nouvelles migrations : `create_fiscal_data.sql`, `create_deplacements.sql`, `create_employes.sql`
-- 3 nouveaux skills : `SKILL-FISCALITE.md`, `SKILL-DEPLACEMENTS.md`, `SKILL-RH.md`
-- Composants mobile : FiscalDashboard, FiscalCalendar, DeplacementTracker, TodoQueue (dossier "À faire"), VideoCamera, SocialPublish, EmployeeCard, TeamPlanning, PayrollExport
-- Knowledge base enrichie : données fiscales micro/EURL/SAS/EI, barèmes kilométriques, indemnités BTP zones, conventions collectives BTP (6 IDCC), grilles salariales régionales, cotisations CIBTP/OPPBTP/PRO BTP
+### Découpage V1 / V2 / V3
+
+| Sprint | Features |
+|--------|----------|
+| **V1 launch juin 2026** | F01-F111 + F112-F121 + F123-F125 + F128-F135 (tout sauf 3 reports) |
+| **V2 post-launch sept-oct 2026** | F122, F126, F127, F113 V2 (API grossistes), Agent Téléphone IA de base |
+| **V3 2027+** | F109 (photogrammétrie), F113 V3 (API grossistes exclusif, bloqué jusqu'à 2K MRR) |
+
+### Impact BUILD_PLAN audit V6
+- 1 nouvel agent backend : `agent_coach.py` (14ème agent)
+- 1 nouveau prompt : `coach_prompt.py`
+- 8 nouvelles migrations : `030_create_referrals.sql` → `037_add_country_edition.sql`
+- 5 nouveaux skills à planifier : `SKILL-IMPORT-COMPETITORS.md`, `SKILL-COMPETITOR-ANALYSIS.md`, `SKILL-ACCOUNTING-INTEGRATION.md`, `SKILL-AI-ACT-COMPLIANCE.md`, `SKILL-RETENTION-PATTERNS.md`
+- 7 nouveaux docs à créer (plan `FICHIERS_A_CREER.md`) : `PARTENARIATS.md`, `TRUST-SIGNALS.md`, `docs/RETENTION.md`, `docs/AI-ACT-COMPLIANCE.md`, `docs/RESILIENCE.md`, `docs/VERTICAL-EDITIONS.md`, `docs/COUTS-V2.md`
+- Écrans mobile : `settings/import.tsx`, `settings/parrainage.tsx`, `devis/concurrent-analyzer.tsx`, `public/try.tsx`, routes `(compagnon)/`
+- Nouveaux fichiers data : `data/benchmarks/`, `data/capsules/`, `data/diagnostics/`, `data/imports/`
+- Budget allocation Supervisor redistribué sur 14 agents (voir PRODUCT_CONTEXT.md)
+
+### Impact chiffres de référence
+
+| Sujet | Avant | Après |
+|---|---|---|
+| Agents V1 | 13 | **14** |
+| Total composants | 18 | **19** |
+| Features | 110 | **135** |
+| Migrations SQL | 29 | **37** |
+| Coût LLM/artisan/mois | $4.50 | **~$4.80** |
+| Marge Pro | 82% | **80%** |
+| Marge Business | 91% | **89%** |
+| Trial | 14 jours | **30 jours** |
+| Plans tarifaires | 3 | **7** |

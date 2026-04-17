@@ -2,6 +2,83 @@
 
 ---
 
+## 17/04/2026 — Audit V6 : intégration 22 améliorations stratégiques
+
+> Source : PLAN-22-AMELIORATIONS.md (spec). Source de vérité : `docs/DECISIONS-LOG.md` entrée 17/04/2026.
+
+### Décisions stratégiques (3)
+- **14ème agent ajouté** : Agent Coach Business (F119) — conseil stratégique mensuel (benchmark département, conversion devis, marge, positioning). Modèle claude-opus-4-7, budget $0.10/appel. Inclus dans tous les plans (Starter 1×/mois, Pro/Business illimité)
+- **Pricing enrichi 7 options** : Starter €0 / Pro €29 / Pro annuel €229 / Business €79 / Business annuel €629 / Lifetime €990 (100 licences) / Fédération -20% avec CAPEB20 ou FFB20. Trial 30 jours (vs 14). Add-on Agent Téléphone +15€/mois
+- **Découpage V1/V2/V3** : V1 = launch juin 2026 (135 features moins 3 reports), V2 = sept-oct 2026 (Pennylane/Cegid/Sage F122 + Télé-dépannage F126 + Portail client F127 + Agent Téléphone base), V3 = 2027+ (Photogrammétrie F109 + API grossistes exclusives F113-V3)
+
+### 24 nouvelles features F112 à F135
+| Feature | Nom | Sprint / Tag |
+|---------|-----|--------------|
+| F112 | Import universel concurrents (Obat, Tolteck, Batigest, EBP, Excel, Facture.net) | Sprint 2-3 / V1 |
+| F113 | Partenariats grossistes — scan carte fidélité | Sprint 4 / V1 (scan), V2 (API), V3 (exclusif) |
+| F114 | Code parrain structurel | Sprint 7 / V1 |
+| F115 | Sandbox publique sans inscription | Sprint 8 / V1 |
+| F116 | Rapport annuel de l'artisan | Sprint 7 / V1 |
+| F117 | Score "cerveau me connaît" — warning anti-churn | Sprint 7 / V1 |
+| F118 | Switching cost moat documenté | documentation / V1 |
+| F119 | Agent Coach Business (14ème agent) | Sprint 6-7 / V1 |
+| F120 | Formation contextuelle capsules vidéo 60s | Sprint 7 / V1 |
+| F121 | Détection et analyse devis concurrent | Sprint 3 / V1 |
+| F122 | Synchro comptable native (Pennylane/Cegid/Sage/QuickBooks) | V2 post-launch |
+| F123 | Assignation tâches employés avec suivi photo | Sprint 7 / V1 |
+| F124 | App mode Compagnon (employés simplifiés) | Sprint 7 / V1 |
+| F125 | Onboarding inversé | Sprint 8 / V1 |
+| F126 | Télé-dépannage (extension Agent Téléphone) | V2 post-launch |
+| F127 | Portail client final | V2 post-launch |
+| F128 | Validation auto RGE/Qualibat | Sprint 3 / V1 |
+| F129 | Pack contrôle fiscal | Sprint 6 / V1 |
+| F130 | Tarification enrichie — 7 options | Sprint 1 / V1 |
+| F131 | Conformité AI Act | Sprint 6 / V1 |
+| F132 | Résilience et redondance | Sprint 8 / V1 |
+| F133 | Acquisition artisans étrangers en France | Sprint 8 / V1 |
+| F134 | Verticalisation / éditions métier | Sprint 1 architecture, V2 lancement |
+| F135 | Architecture multi-pays (country_code) | Sprint 1 / V1 |
+
+### Nouveaux chiffres de référence
+| Sujet | Avant | Après |
+|---|---|---|
+| Agents V1 | 13 | **14** (+Agent Coach Business) |
+| Total composants | 18 | **19** (14 agents + 1 Supervisor + 4 modules) |
+| Features | 110 (+ F111) | **135** |
+| Migrations SQL | 29 | **37** (+030-037) |
+| Coût LLM/artisan/mois | $4.50 | **$4.80** (+Coach +capsules) |
+| Marge Pro | 82% | **80%** (-2pts, capsules incluses) |
+| Marge Business | 91% | **89%** (-2pts, services V2 inclus) |
+| Trial | 14 jours | **30 jours** |
+| Plans tarifaires | 3 | **7** (+annuels, Lifetime, Fédération) |
+
+### 8 nouvelles migrations SQL (030-037)
+- `030_create_referrals.sql` (F114)
+- `031_create_capsules.sql` (F120)
+- `032_create_tasks.sql` (F123)
+- `033_update_subscriptions_plans.sql` (F130)
+- `034_create_diagnostics.sql` (F126 V2)
+- `035_create_client_tokens.sql` (F127 V2)
+- `036_create_ai_audit_log.sql` (F131)
+- `037_add_country_edition.sql` (F134/F135)
+
+### Fichiers modifiés (16)
+CLAUDE.md, PRODUCT_CONTEXT.md, BUILD_PLAN.md, FEATURES.md, README.md, COUT_REEL.md, DISTRIBUTION.md, COMMUNICATION.md, STRATEGIE-COMPETITIVE.md, ANALYSE_CONCURRENCE.md, UX_PARCOURS.md, SECURITE.md, FICHE_METIER.md, docs/DECISIONS-LOG.md, docs/CHANGELOG.md, docs/REFACTORING-V6-REPORT.md (nouveau — rapport final).
+
+### Fichiers / skills / docs à créer plus tard
+Plan `FICHIERS_A_CREER.md` (à créer) :
+- 5 nouveaux skills : SKILL-IMPORT-COMPETITORS.md, SKILL-COMPETITOR-ANALYSIS.md, SKILL-ACCOUNTING-INTEGRATION.md, SKILL-AI-ACT-COMPLIANCE.md, SKILL-RETENTION-PATTERNS.md
+- 7 nouveaux docs : PARTENARIATS.md, TRUST-SIGNALS.md, docs/RETENTION.md, docs/AI-ACT-COMPLIANCE.md, docs/RESILIENCE.md, docs/VERTICAL-EDITIONS.md, docs/COUTS-V2.md
+
+### Règles strictes respectées
+- Aucun fichier code applicatif touché (zero .py, .ts, .tsx, .sql)
+- Aucun nouveau doc dans `docs/` (sauf `REFACTORING-V6-REPORT.md` comme livrable de l'audit)
+- Aucun skill créé
+- Aucun JSON data généré
+- Aucun fichier supprimé
+
+---
+
 ## 17/04/2026 — Audit V5 cohérence : valeurs de référence appliquées
 
 > Source de vérité : `docs/DECISIONS-LOG.md`

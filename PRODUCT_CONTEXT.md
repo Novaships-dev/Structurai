@@ -2,7 +2,7 @@
 > Source de vérité du deuxième SaaS Nova.
 > Statut : BUILD — launch prévu Juin 2026
 > Priorité : Tool #2 dans le portfolio Nova (remplace EngageRadar)
-> Dernière mise à jour : 14/04/2026
+> Dernière mise à jour : 17/04/2026
 > Pivot stratégique : EngageRadar abandonné (marché saturé, ICP = codeurs qui buildent eux-mêmes). Nouveau Tool #2 = STRUCTORAI, SaaS pour artisans du bâtiment.
 
 ---
@@ -115,7 +115,7 @@ Source : expérience directe de Fabrice dans le bâtiment.
 
 ---
 
-## LA SOLUTION — 16 MODULES, 1 CERVEAU
+## LA SOLUTION — 14 AGENTS + SUPERVISOR + 4 MODULES = 19 COMPOSANTS, 1 CERVEAU
 
 ### Principe fondamental
 
@@ -187,7 +187,7 @@ Le cerveau se souvient de TOUT pour chaque artisan :
 
 Plus l'artisan utilise l'outil, plus il est précis. Au bout de 3 mois, le cerveau fait des devis EXACTEMENT comme l'artisan les ferait — mais en 2 minutes au lieu de 2 heures.
 
-**COUCHE 3 — 13 agents autonomes (pattern Ouroboros)**
+**COUCHE 3 — 14 agents autonomes (pattern Ouroboros)**
 
 Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrière-plan (background consciousness) inspirés d'Ouroboros. Chaque agent :
 - A sa propre spécialité et ses propres outils
@@ -196,7 +196,7 @@ Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrièr
 - A un budget LLM dédié et tracké
 - Est proactif : il pense et agit ENTRE les tâches, pas seulement quand on lui demande
 
-Les 13 agents :
+Les 14 agents :
 
 **Agent DEVIS (le killer feature)**
 - Le devis est CONVERSATIONNEL : le cerveau dicte poste par poste, l'artisan valide ou modifie chaque prix en vocal
@@ -320,11 +320,28 @@ Les 13 agents :
 - Le cerveau ne publie JAMAIS sans validation de l'artisan
 - Proactivité : "Tu as 3 nouvelles photos et 2 nouveaux avis depuis la dernière MAJ. Je prépare une mise à jour du site ?"
 
+**Agent COACH BUSINESS** (14ème agent — ajouté audit V6)
+- Agent de conseil stratégique mensuel — le coach business que l'artisan n'a jamais eu
+- **Analyses mensuelles automatiques** (1er du mois) :
+  - Taux horaire vs benchmark département (data `data/benchmarks/taux_horaires_par_metier_region.json`)
+  - Taux de conversion devis (envoyés vs signés) vs médiane métier
+  - Carnet de commandes : semaines couvertes, trou prévu, alerte si < 3 semaines
+  - Marge moyenne par chantier vs benchmark + analyse des chantiers les moins rentables
+  - Positioning : "Tu es dans le top 25% / médian / bottom 25% de ton département sur l'indicateur X"
+- **Recommandations actionnables** :
+  - "Ton taux horaire (45€) est 20% sous la médiane plombier 13 (57€). Je te suggère d'augmenter progressivement à 52€ sur les nouveaux devis"
+  - "Ton taux de conversion est de 18%. La médiane métier est 32%. 3 pistes : pré-devis téléphonique, personnalisation par client, réduire le délai d'envoi"
+  - "Ton carnet est à 2 semaines. Il faut prospecter. Je prépare 5 messages ciblés à envoyer aux architectes inactifs ?"
+- **Modèle :** `claude-opus-4-7` (raisonnement stratégique complexe, fournit de vrais insights)
+- **Budget :** $0.10/appel, ~1-2 analyses mensuelles par artisan
+- **Plans :** Starter = 1 analyse/mois, Pro/Business = illimité + possibilité de demander une analyse ad-hoc ("analyse mes 3 derniers chantiers")
+- Proactivité : "J'ai analysé tes 6 derniers chantiers. Pattern détecté : tu perds 400€ de marge moyenne sur les SDB complètes vs ce que tu facturais il y a un an. Je te montre les 3 postes où ça s'est passé ?"
+
 **COUCHE 4 — Cerveau global / Supervisor (pattern Ouroboros)**
 
 Inspiré directement de l'architecture Ouroboros avec Supervisor + Background Consciousness :
 
-- **Orchestration des 13 agents** : distribue les tâches, gère les priorités, évite les conflits (l'agent Relance ne contacte pas un client que l'agent Devis vient de relancer)
+- **Orchestration des 14 agents** : distribue les tâches, gère les priorités, évite les conflits (l'agent Relance ne contacte pas un client que l'agent Devis vient de relancer)
 - **Background Consciousness** : entre les tâches, le cerveau PENSE sur l'état global de l'artisan. Pas réactif — proactif.
   - "Ce mois-ci ta marge moyenne est de 23% (vs 31% le mois dernier). Le problème c'est le chantier Martin qui a dépassé de 40%."
   - "Tu as gagné 3 chantiers sur 12 devis ce mois (25%). Le mois dernier c'était 1/10. Ton nouveau format fonctionne."
@@ -746,7 +763,7 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │                                                                  │
 │  ├── state.py — État global artisan, budget LLM, métriques      │
 │  ├── queue.py — File de tâches prioritaires                     │
-│  ├── workers.py — Cycle de vie des 13 agents                    │
+│  ├── workers.py — Cycle de vie des 14 agents                    │
 │  ├── consciousness.py — Background consciousness (pense entre   │
 │  │                       les tâches, génère les résumés,        │
 │  │                       détecte les problèmes proactivement)   │
@@ -756,16 +773,17 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │                                                                  │
 │  Règles Supervisor :                                            │
 │  - MAX_ROUNDS = 50 par tâche (prevent runaway)                  │
-│  - Budget par agent : Devis 22%, Compta 10%, Vision IA 10%,    │
-│    Site Web 8%, Fiscalité 8%, RH 8%, Relance 7%,              │
-│    Planning 6%, Réputation 6%, Prospection 6%,                 │
-│    Email Pro 4%, Déplacements 3%, Téléphone (V2) 2%           │
+│  - Budget par agent (14 agents) : Devis 20%, Compta 9%,        │
+│    Vision IA 9%, Fiscalité 8%, RH 8%, Site Web 7%,             │
+│    Relance 7%, Planning 6%, Réputation 6%, Coach 6%,           │
+│    Prospection 5%, Email Pro 4%, Déplacements 3%,              │
+│    Téléphone (V2) 2%                                           │
 │  - Background consciousness : 1 cycle/heure, $0.07/pensée      │
 │  - Multi-model review sur les décisions critiques (devis > 5K€)│
 └───────────────────────────┬─────────────────────────────────────┘
                             │
 ┌───────────────────────────▼─────────────────────────────────────┐
-│                   13 AGENTS AUTONOMES                            │
+│                   14 AGENTS AUTONOMES                            │
 │                                                                  │
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
 │  │  AGENT   │ │  AGENT   │ │  AGENT   │ │  AGENT   │           │
@@ -794,6 +812,14 @@ Push notifications : Expo Notifications (Android natif) + Brevo email/SMS (iOS P
 │  │ Paniers  │ │ Conv.BTP │ │ Plans    │ │ Galerie  │           │
 │  │ Zones BTP│ │ CIBTP    │ │ Routage  │ │ MAJ auto │           │
 │  └──────────┘ └──────────┘ └──────────┘ └──────────┘           │
+│  ┌──────────┐                                                   │
+│  │  AGENT   │  (14ème agent — audit V6)                        │
+│  │  COACH   │                                                   │
+│  │ BUSINESS │  Conseil stratégique mensuel                     │
+│  │ Taux h   │  Benchmark département                           │
+│  │ Convers. │  Marge moyenne                                   │
+│  │ Carnet   │  Prospection + positioning                       │
+│  └──────────┘                                                   │
 │  + V2 : Agent TÉLÉPHONE IA (décroche, prise d'info, filtre)    │
 │                                                                  │
 │  Chaque agent :                                                 │
@@ -902,7 +928,22 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 1. La compréhension métier BTP par LLM (chaque prompt est un investissement en knowledge)
 2. La mémoire persistante par artisan (plus tu l'utilises, plus il est précis)
 3. L'interface WhatsApp/voix (les concurrents sont tous sur écran PC)
-4. Les 13 agents proactifs avec background consciousness
+4. Les 14 agents proactifs avec background consciousness (dont Agent Coach Business F119 — unique sur le marché)
+5. **Switching cost asymétrique (F118)** : on accepte les imports entrants depuis Obat/Tolteck/Batigest/EBP/Excel/Facture.net (F112) mais on ne fournit PAS d'API export symétrique pour les concurrents. Un artisan avec 2 ans d'historique + Mem0 à 85% + benchmarks personnalisés ne peut pas migrer facilement — c'est intentionnel et assumé
+6. **Détecteur devis concurrent (F121)** : fonction unique sur le marché — upload d'un devis concurrent → analyse ligne par ligne + argumentaire de vente
+7. **Score "cerveau me connaît à X%" (F117)** : matérialise l'investissement temporel de l'artisan + warning anti-churn ("si tu pars, ton score repart à 0")
+
+---
+
+## ROADMAP V1 / V2 / V3 (audit V6 17/04/2026)
+
+| Phase | Période | Périmètre |
+|-------|---------|-----------|
+| **V1** | Launch juin 2026 | 135 features (F01-F135) sauf 3 reports ci-dessous. 14 agents + Supervisor + 4 modules = 19 composants. 7 plans tarifaires. 37 migrations SQL |
+| **V2** | Sept-oct 2026 post-launch | F122 (Synchro compta Pennylane/Cegid/Sage/QuickBooks, Business only) + F126 (Télé-dépannage extension Agent Téléphone) + F127 (Portail client final) + Agent Téléphone IA de base (add-on +15€/mois) + F113 V2 (API grossistes temps réel) |
+| **V3** | 2027+ | F109 (Photogrammétrie multi-photos) + F113 V3 (API grossistes exclusives — bloqué jusqu'à 2K MRR pour négocier en position de force) |
+
+Voir `FEATURES.md` section découpage V1/V2/V3 pour le détail feature par feature.
 
 ---
 
@@ -946,17 +987,24 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 
 ---
 
-## PRICING
+## PRICING — 7 OPTIONS (audit V6)
 
-| Plan | Prix/mois | Cible | Inclus |
-|------|-----------|-------|--------|
-| Starter | €0 | Auto-entrepreneurs, test | 5 devis/mois, scan tickets, pipeline basique. Pas de relance auto ni agents. |
-| Pro | €29 | Artisan seul | Devis illimités voix/WhatsApp, 13 agents actifs, relances auto, scan tickets illimité, avis Google, export comptable |
-| Business | €79 | TPE 2-10 salariés | Tout Pro + multi-utilisateurs, suivi multi-chantiers avancé, rapports rentabilité, accès comptable partagé, support prioritaire |
+| Plan | Prix | Trial | Cible | Inclus |
+|------|------|-------|-------|--------|
+| **Starter** | €0 | — | Auto-entrepreneurs, test | 5 devis/mois, scan tickets, pipeline basique, Agent Coach 1 analyse/mois. Pas de relance auto |
+| **Pro** | €29/mois | 30 j | Artisan seul | Devis illimités voix/WhatsApp, 14 agents actifs, relances auto, scan tickets illimité, avis Google, export comptable, Coach illimité |
+| **Pro annuel** | €229/an (≈ €19/mois, -35%) | 30 j | Artisan engagement 12 mois | Idem Pro, paiement annuel |
+| **Business** | €79/mois | 30 j | TPE 2-10 salariés | Tout Pro + multi-utilisateurs, suivi multi-chantiers avancé, rapports rentabilité, accès comptable partagé, support prioritaire, app Compagnon employés, Kanban tâches |
+| **Business annuel** | €629/an (≈ €52/mois, -35%) | 30 j | TPE engagement 12 mois | Idem Business, paiement annuel |
+| **Lifetime** | €990 une fois | — | Promo launch | Accès Pro à vie. Limité à 100 licences (audit V6). Non renouvelable |
+| **Fédération** | Pro ou Business -20% à vie | 30 j | Membres CAPEB / FFB | Code promo `CAPEB20` / `FFB20`, justificatif membre requis à l'activation |
 
-**ARPU cible :** €40/mois (mix Pro/Business)
-**Conversion free → paid :** >12% (la valeur est évidente dès le premier devis vocal)
-**Churn cible :** <3%/mois (une fois que la mémoire est entraînée, l'artisan ne part plus)
+**Add-on Agent Téléphone IA (V2)** : +15€/mois sur tous les plans sauf Starter.
+
+**ARPU cible :** €40/mois (mix Pro/Business après redistribution annuels/Lifetime)
+**Conversion free → paid :** >25% avec onboarding inversé F125 (vs >12% initial)
+**Churn cible :** <3%/mois (une fois que la mémoire est entraînée, l'artisan ne part plus — renforcé par le warning "score repart à 0" F117)
+**Grâce period :** 7 jours après échec de paiement (pas de coupure sèche — voir STRATEGIE-COMPETITIVE vs Tolteck)
 
 ---
 
@@ -987,12 +1035,12 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 | Prompt caching (system prompts) | -90% input tokens récurrents |
 | Background consciousness 3×/jour au lieu de 24× | -87% |
 | Context compaction (max 10K tokens historique) | -60% input |
-| **TOTAL OPTIMISÉ** | **~$4.50/mois par artisan** |
+| **TOTAL OPTIMISÉ (audit V6)** | **~$4.80/mois par artisan** (était $4.50, +$0.30 Coach Business + capsules) |
 
-**Marge sur un artisan Pro (€29/mois) :** €29 - $4.50 LLM - $0.70 infra = ~€24 marge = **~82%**
-**Marge sur un artisan Business (€79/mois) :** €79 - $4.50 LLM - $1.50 infra = ~€72 marge = **~91%**
+**Marge sur un artisan Pro (€29/mois) :** €29 - $4.80 LLM - $0.70 infra - $0.25 capsules = ~€23 marge = **~80%** (était 82%, -2pts)
+**Marge sur un artisan Business (€79/mois) :** €79 - $4.80 LLM - $1.50 infra - $2 services V2 = ~€70 marge = **~89%** (était 91%, -2pts)
 
-> Détail complet des coûts : voir `COUT_REEL.md`
+> Détail complet des coûts : voir `COUT_REEL.md` + document dédié `docs/COUTS-V2.md` à créer pour les coûts V2 (Pennylane/Cegid/Sage integration, read replica, fallback LLM)
 
 ---
 

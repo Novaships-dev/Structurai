@@ -2,7 +2,7 @@
 
 > Chaque faiblesse concurrente = une feature qui tue.
 > Chaque force concurrente = une leçon à intégrer.
-> Date : 13/04/2026
+> Date : 17/04/2026 (audit V6 : +Coach Business, +détecteur devis concurrent, import remonté Sprint 2-3)
 
 ---
 
@@ -62,7 +62,7 @@ On ne copie pas. On observe ce que les concurrents font BIEN, on le fait mieux. 
 **Comment on exploite :**
 - **Import Batigest** : créer un outil d'import qui récupère les clients, les ouvrages et l'historique depuis un export Batigest. L'artisan migre en 10 minutes.
 - Campagne Facebook/LinkedIn ciblée : "Vous utilisez Batigest ? Migrez en 10 minutes. Votre assistant IA vous attend."
-- Le prix : Batigest = 34-100€+/mois pour un logiciel sans IA. STRUCTORAI Pro = 29€ avec IA + vocal + 13 agents.
+- Le prix : Batigest = 34-100€+/mois pour un logiciel sans IA. STRUCTORAI Pro = 29€ avec IA + vocal + 14 agents (dont Coach Business F119).
 
 **Message marketing :** "Batigest date de 2015. STRUCTORAI date de 2026. Même prix, 10× plus de valeur."
 
@@ -197,13 +197,17 @@ On ne copie pas. On observe ce que les concurrents font BIEN, on le fait mieux. 
 | 1 | **Score de confiance sur chaque prix** | Handoff hallucine | CRITIQUE — crédibilité | Sprint 3 |
 | 2 | **Agent Relance avec ton adaptatif** | Obat/Tolteck n'ont rien | CRITIQUE — trésorerie | Sprint 5 |
 | 3 | **Grâce period 7 jours** si paiement échoue | Tolteck coupe immédiatement | Rétention + image | Sprint 1 |
-| 4 | **Import Batigest/EBP** (clients + ouvrages) | Migration depuis les vieux logiciels | Acquisition | Sprint 8 |
+| 4 | **Import universel concurrents (F112)** — Obat, Tolteck, Batigest, EBP, Excel, Facture.net | Migration depuis les vieux logiciels | Acquisition | **Sprint 2-3** (remonté depuis Sprint 8 — audit V6) |
 | 5 | **Agent Réputation** (SMS avis + réponse IA) | Personne ne le fait | Océan bleu | Sprint 6 |
 | 6 | **Vocal bidirectionnel 6 langues** | Personne n'a de vocal | Différenciateur n°1 | Sprint 2 |
 | 7 | **Onboarding en 2 min** (parle → devis → envoi) | Sage/EBP sont complexes | Conversion | Sprint 2-3 |
 | 8 | **Agent Prospection CRM** | Personne ne le fait | Océan bleu | Sprint 6 |
 | 9 | **Photo + vocal = devis** (Vision IA + détection oublis) | Handoff a la photo, pas le vocal bidirectionnel | Wow factor | Sprint 3 |
 | 10 | **Briefing matin WhatsApp** (3-5 actions prioritaires) | Personne ne le fait | Valeur perçue massive | Sprint 7 |
+| 11 | **Agent Coach Business** (F119, audit V6) | Aucun concurrent n'a d'IA coach stratégique | CRITIQUE — nouveau moat | Sprint 6-7 |
+| 12 | **Détecteur devis concurrent** (F121, audit V6) | Aucun concurrent ne le fait | Arme unique pour gagner les batailles | Sprint 3 |
+| 13 | **Validation auto RGE/Qualibat** (F128, audit V6) | Aucun concurrent ne le fait | Sécurité juridique, argument TVA 5.5% | Sprint 3 |
+| 14 | **Onboarding inversé 90s** (F125, audit V6) | Tous demandent signup avant test | Conversion >25% (vs >12% actuel) | Sprint 8 |
 
 ---
 
@@ -234,6 +238,9 @@ Certaines choses que les concurrents font ne valent PAS le coup en V1 :
 - PERSONNE n'a de vocal → "Nous on parle ta langue"
 - PERSONNE ne gère la réputation → "Nous on te fait passer de 12 à 50 avis en 3 mois"
 - PERSONNE ne fait de prospection → "Nous on relance tes architectes à ta place"
+- **PERSONNE n'a de coach business IA (F119, audit V6)** → "Nous on t'analyse ton business chaque mois, comme un coach humain à 2000€/an"
+- **PERSONNE n'a de détecteur de devis concurrent (F121)** → "Montre-nous le devis de ton concurrent, on te donne l'argumentaire pour gagner"
+- **PERSONNE ne valide automatiquement ton RGE (F128)** → "Tes devis TVA 5.5% sont validés contre la base officielle data.gouv.fr"
 
 **Et prendre les forces des meilleurs :**
 - Simplicité de Tolteck → onboarding en 2 min

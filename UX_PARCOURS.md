@@ -3,7 +3,7 @@
 > Ce fichier est la source de vérité pour l'interface de l'app.
 > Claude Code le lit AVANT de créer un composant mobile.
 > Règle : si l'artisan doit réfléchir, c'est raté.
-> Date : 14/04/2026
+> Date : 17/04/2026 (audit V6 : onboarding inversé, écrans import/parrainage/concurrent-analyzer)
 
 ---
 
@@ -249,17 +249,50 @@ Accessible depuis tous les écrans. Tap sur l'avatar → écran profil avec sect
 | **Ma bibliothèque** | Ouvrages, matériaux, main d'oeuvre avec MES prix. Navigable par catégorie, cherchable. Ajout/modif/suppression |
 | **Mon calendrier** | Vue semaine/mois. RDV, chantiers, échéances fiscales, relances. Synchro Google Calendar |
 | **Mon site web** | Aperçu complet, pages, modifier, stats visites, URL |
-| **Mes employés** | Fiches employés, intérimaires, sous-traitants. Heures, congés, pointage |
-| **Mon abonnement** | Plan actuel (Starter/Pro/Business), facturation, upgrade, historique paiements |
+| **Mes employés** | Fiches employés, intérimaires, sous-traitants. Heures, congés, pointage. Mode Compagnon pour l'employé (F124 — code 4 chiffres, photos début/fin) |
+| **Mon abonnement** | Plan actuel (Starter / Pro / Pro annuel / Business / Business annuel / Lifetime / Fédération), facturation, upgrade, historique paiements, add-on Agent Téléphone (V2) |
+| **Mon parrainage** (F114) | Code parrain personnel, liste des filleuls, mois offerts, crédits Point P accumulés, badge Ambassadeur — écran `settings/parrainage.tsx` |
+| **Importer depuis un concurrent** (F112) | Upload export Obat / Tolteck / Batigest / EBP / Excel / Facture.net → mapping automatique → preview → validation → import complet (clients, devis, ouvrages, historique) — écran `settings/import.tsx` |
+| **Analyser un devis concurrent** (F121) | Upload PDF/photo d'un devis concurrent → analyse ligne par ligne vs référentiels BTP + Mem0 → argumentaire pour gagner le chantier — écran `devis/concurrent-analyzer.tsx` |
 | **Réglages** | Langue (6 langues), notifications (fréquence, canaux), mode sombre, voix du cerveau (homme/femme), agents actifs/inactifs |
 | **Aide** | Ouvre le chat — le cerveau EST le support |
-| **Exporter mes données** | Export JSON/CSV de toutes les données (RGPD) |
+| **Exporter mes données** | Export JSON/CSV de toutes les données (RGPD). **Pas d'API export symétrique pour les concurrents (F118 — switching cost)** |
+| **Pack contrôle fiscal** (F129) | Génère un ZIP signé horodaté contenant devis + factures + tickets OCR + justifs TVA + registres (en cas de contrôle fiscal) |
 
 ---
 
 ## PARCOURS CLÉS
 
-### Parcours 1 : Premier lancement (onboarding 2 min)
+### Parcours 1 : Premier lancement — ONBOARDING INVERSÉ (F125, audit V6, ~90 secondes)
+
+Le nouveau flow n'est plus "signup → test". C'est "test → valeur prouvée → signup pour envoyer".
+
+```
+1. L'artisan arrive sur structorai.app (landing ou via pub)
+2. Landing hero : "Tes soirées de devis sont terminées. Teste 90 secondes. Pas de signup."
+3. L'artisan clique "Essaie maintenant" → ouverture de app/(public)/try.tsx (F115 sandbox)
+4. Chat public (endpoint /v1/public/chat, rate-limited par IP, session Redis 15 min)
+5. Le cerveau parle :
+   "Salut ! Je suis l'assistant des artisans BTP. Dis-moi ce que tu veux que je fasse.
+    Par exemple : 'Fais-moi un devis pour SDB complète 8m² chez M. Dupont, Marseille'"
+6. L'artisan dicte ou tape → le cerveau génère un VRAI devis avec prix marché, TVA,
+   mentions obligatoires → affiche le PDF dans le chat
+7. "Voilà ton devis. 1 850€ HT, TVA 10% = 2 035€ TTC. Pour l'envoyer à ton client,
+    crée un compte — c'est gratuit."
+8. L'artisan voit la VALEUR avant de signer → clique "Crée mon compte"
+9. Signup minimal (email + mot de passe) → auto-fill SIRET via API INSEE
+10. "C'est bon, je peux envoyer le devis à M. Dupont ! Tu veux que je le fasse maintenant ?"
+
+Cible conversion : >25% (vs >12% avec l'onboarding classique signup-first).
+Les infos manquantes (décennale, RGE, logo, régime TVA) sont demandées PLUS TARD,
+au fil des usages, quand le cerveau en a besoin — PAS pendant l'onboarding.
+
+Écrans concernés :
+- app/(public)/try.tsx — sandbox publique (F115)
+- Landing hero restructurée (F125)
+```
+
+### Parcours 1bis : Onboarding classique signup-first (conservé pour utilisateurs loggés direct sur l'app)
 
 ```
 1. L'artisan installe l'app → écran de bienvenue simple (logo + "Commencer")
@@ -272,9 +305,6 @@ Accessible depuis tous les écrans. Tap sur l'avatar → écran profil avec sect
 7. L'artisan donne le SIRET → auto-fill via API INSEE (nom entreprise, adresse, statut)
 8. "C'est bon, je peux déjà faire tes devis ! Tu veux essayer ?"
 9. Premier devis possible en 2 minutes
-
-Les infos manquantes (décennale, RGE, logo, régime TVA) sont demandées PLUS TARD,
-au fil des usages, quand le cerveau en a besoin — PAS pendant l'onboarding.
 ```
 
 ### Parcours 2 : Créer un devis (vocal, < 2 min)

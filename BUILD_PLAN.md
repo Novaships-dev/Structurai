@@ -2,7 +2,7 @@
 > Ce fichier est le blueprint exact pour Claude Code.
 > Chaque fichier listé ici doit être créé, avec son rôle précis.
 > Fabrice ne code pas. Claude Code code tout. Fabrice crée les comptes infra et configure les clés.
-> Date : 14/04/2026
+> Date : 17/04/2026 (audit V6 intégré : 14 agents, 37 migrations, F112-F135)
 
 ---
 
@@ -121,7 +121,7 @@ structorai/
 │   ├── ARCH.md                            # Architecture technique détaillée
 │   ├── API.md                             # Tous les endpoints REST
 │   ├── CONVENTIONS.md                     # Naming, patterns, règles de code
-│   ├── AGENTS.md                          # Architecture des 13 agents IA + Supervisor
+│   ├── AGENTS.md                          # Architecture des 14 agents IA + Supervisor
 │   ├── METIER.md                          # Constitution BTP — règles immuables (TVA, mentions, Factur-X)
 │   ├── MEMORY.md                          # Architecture mémoire Mem0 — niveaux, recall, enrichissement
 │   ├── VOICE.md                           # Pipeline vocal — STT, TTS, latence, langues
@@ -237,7 +237,7 @@ structorai/
 │       │   ├── web_search_service.py      # Recherche web fallback + auto-enrichissement
 │       │   └── i18n_service.py            # Détection langue, traduction, localization
 │       │
-│       ├── agents/                        # Les 13 agents IA + Supervisor (pattern Ouroboros)
+│       ├── agents/                        # Les 14 agents IA + Supervisor (pattern Ouroboros)
 │       │   ├── __init__.py
 │       │   ├── supervisor.py              # Orchestrateur — queue, workers, budget, consciousness
 │       │   ├── consciousness.py           # Background consciousness — pense entre les tâches
@@ -261,9 +261,10 @@ structorai/
 │       │   ├── agent_deplacements.py      # Agent Déplacements — GPS, frais km, paniers, indemnités BTP zones, export frais
 │       │   ├── agent_rh.py               # Agent RH — pointage heures, heures sup, indemnités employés, congés CIBTP, export paie
 │       │   ├── agent_email_pro.py          # Agent Email Pro (IMAP, filtrage, résumé)
-│       │   ├── agent_vision.py            # Agent Vision IA (analyse photos/documents)
+│       │   ├── agent_vision.py            # Agent Vision IA (analyse photos/documents, F121 parse_competitor_quote)
 │       │   ├── agent_site_web.py          # Agent Site Web (génération + MAJ site vitrine)
-│       │   └── agent_telephone.py         # Agent Téléphone IA (V2 — décroche, prise d'info)
+│       │   ├── agent_coach.py             # Agent Coach Business (14ème agent, F119 — conseil stratégique mensuel)
+│       │   └── agent_telephone.py         # Agent Téléphone IA (V2 — décroche, prise d'info, F126 télé-dépannage)
 │       │
 │       ├── prompts/                       # System prompts séparés du code (pattern Ouroboros prompts/)
 │       │   ├── __init__.py
@@ -278,6 +279,7 @@ structorai/
 │       │   ├── fiscalite_prompt.py        # System prompt Agent Fiscalité (statuts micro/EURL/SAS, URSSAF, TVA, calendrier fiscal)
 │       │   ├── deplacements_prompt.py     # System prompt Agent Déplacements (barème km, zones BTP, paniers, GPS)
 │       │   ├── rh_prompt.py              # System prompt Agent RH (conventions collectives BTP, grilles, CIBTP, heures sup)
+│       │   ├── coach_prompt.py           # System prompt Agent Coach Business (F119 — analyses stratégiques, benchmarks)
 │       │   └── metier_context.py          # Injecteur du contexte METIER.md + health invariants dans chaque prompt
 │       │
 │       ├── memory/                        # Couche mémoire (Mem0)
@@ -470,7 +472,15 @@ structorai/
 │       ├── 026_create_deplacements.sql     # Déplacements — chantier_id, employe_id, km, zone BTP, indemnités, panier
 │       ├── 027_create_employes.sql         # Employés — nom, classification BTP, coefficient, compétences, disponibilité
 │       ├── 028_create_fiscal_calendar.sql  # Échéances fiscales par statut — URSSAF, TVA, CFE, IS, bilan
-│       └── 029_create_deplacements_frais.sql # Frais déplacements détaillés — carburant, parking, péages, amendes par chantier
+│       ├── 029_create_deplacements_frais.sql # Frais déplacements détaillés — carburant, parking, péages, amendes par chantier
+│       ├── 030_create_referrals.sql         # Parrainage (F114) — codes, filleuls, récompenses
+│       ├── 031_create_capsules.sql          # Capsules vidéo formation contextuelle (F120) — index, triggers
+│       ├── 032_create_tasks.sql             # Tâches employés (F123) — Kanban patron, assignation, photos preuves
+│       ├── 033_update_subscriptions_plans.sql # Plans tarifaires enrichis (F130) — annuels, Lifetime, Fédération, add-ons
+│       ├── 034_create_diagnostics.sql       # Télé-dépannage V2 (F126) — arbres de décision, tracking paiements
+│       ├── 035_create_client_tokens.sql     # Portail client V2 (F127) — tokens URL uniques, accès limité
+│       ├── 036_create_ai_audit_log.sql      # Log audit IA (F131 AI Act) — décisions, modèles, inputs/outputs
+│       └── 037_add_country_edition.sql      # Architecture multi-pays (F134/F135) — country_code + edition sur organizations
 │
 ├── data/                                  # Données seed BTP
 │   ├── tva_rules.json                     # Règles TVA BTP (5.5%, 10%, 20%)
@@ -623,9 +633,11 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Backend : FastAPI skeleton (main.py, config.py, health.py)
 - [ ] Backend : Auth middleware (JWT + API keys, pattern AgentShield)
 - [ ] Backend : Error handlers (pattern AgentShield)
-- [ ] Supabase : 29 migrations SQL
+- [ ] Supabase : 37 migrations SQL (29 historiques + 030-037 audit V6)
 - [ ] Supabase : RLS policies (toutes les tables)
-- [ ] Backend : Stripe billing (checkout, portal, webhooks)
+- [ ] **F135** — Architecture multi-pays : `country_code TEXT NOT NULL DEFAULT 'FR'` sur TOUTES les tables + migration `037_add_country_edition.sql`
+- [ ] **F130** — Pricing enrichi (7 options) : migration `033_update_subscriptions_plans.sql` + Stripe Products (annuels, Lifetime, Fédération) + logique code promo CAPEB20/FFB20 avec justificatif
+- [ ] Backend : Stripe billing (checkout, portal, webhooks) — 30 jours de trial (pas 14)
 - [ ] Mobile : Init Expo project avec navigation
 - [ ] Mobile : Auth flow (login, signup, Supabase)
 - [ ] Mobile : i18n setup (6 langues, fichiers JSON)
@@ -633,14 +645,15 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Deploy backend sur Railway + PWA sur Vercel
 - [ ] Smoke test : signup → login → health check
 
-### Sprint 2 — Chat + Voix + Cerveau IA (~3 jours)
-- [ ] Backend : Supervisor (pattern Ouroboros — queue, workers, state, budget)
+### Sprint 2 — Chat + Voix + Cerveau IA + Import concurrents (~3 jours)
+- [ ] Backend : Supervisor (pattern Ouroboros — queue, workers, state, budget sur 14 agents)
 - [ ] Backend : base_agent.py (classe de base avec system prompt, tools, memory)
 - [ ] Backend : Claude API client (appels LLM avec retry, budget tracking)
 - [ ] Backend : Mem0 intégration (store, recall, search)
 - [ ] Backend : Pipeline vocal (Whisper STT → cerveau → ElevenLabs TTS)
 - [ ] Backend : Chat endpoint (POST /v1/chat + WebSocket)
 - [ ] Backend : WhatsApp webhook (réception + envoi messages)
+- [ ] **F112** — Import universel concurrents (démarrage Sprint 2, fin Sprint 3) : dossier `backend/app/services/importers/` (6 parseurs : Obat, Tolteck, Batigest, EBP, Excel, Facture.net) + endpoint `/v1/import/[source]` + data `data/imports/templates/` + écran `app/(dashboard)/settings/import.tsx`
 - [ ] Mobile : Chat screen avec input texte + micro FAB
 - [ ] Mobile : VoiceFAB composant (push-to-talk + mode mains libres)
 - [ ] Mobile : Playback TTS (réponse vocale du cerveau)
@@ -648,7 +661,7 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Test : envoyer un message texte → recevoir réponse IA
 - [ ] Test : envoyer un vocal → recevoir réponse vocale
 
-### Sprint 3 — Agent Devis (~3 jours)
+### Sprint 3 — Agent Devis + Détecteur concurrent + Validation RGE (~3 jours)
 - [ ] Backend : Agent Devis (vocal → décomposition postes → prix → TVA → PDF)
 - [ ] Backend : Knowledge base BTP (RAG — prix marché, TVA, mentions)
 - [ ] Backend : PDF service (ReportLab — devis conforme Factur-X)
@@ -661,10 +674,14 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Mobile : Liste devis avec statuts
 - [ ] Backend : Estimation dimensions par photo (Claude Vision) — `agents/tools/vision_measure.py` (F106)
 - [ ] Backend : Pré-devis à distance depuis photos client — `agents/tools/prequote_remote.py` (F110)
+- [ ] **F121** — Détection et analyse devis concurrent : extension Agent Vision `parse_competitor_quote()` + endpoint `/v1/devis/analyze-competitor` + écran `app/(dashboard)/devis/concurrent-analyzer.tsx`
+- [ ] **F128** — Validation auto RGE/Qualibat : service `backend/app/services/certif_validation.py` (API data.gouv.fr/RGE.fr) + re-check mensuel + blocage génération devis TVA 5.5% si RGE invalide
+- [ ] **F112** (fin) — Import universel concurrents : finaliser les 6 parseurs + tests d'import complet
 - [ ] Test : dicter un devis vocal → PDF généré → envoi email
 - [ ] Test : envoyer 2-3 photos pièce → dimensions estimées → pré-devis généré
+- [ ] Test : upload devis concurrent PDF → analyse ligne par ligne + argumentaire
 
-### Sprint 4 — Pipeline chantiers + Compta + Photos (~3 jours)
+### Sprint 4 — Pipeline chantiers + Compta + Photos + Grossistes niveau V1 (~3 jours)
 - [ ] Backend : CRUD chantiers (pipeline stages)
 - [ ] Backend : Timer service (start/stop par chantier)
 - [ ] Backend : Agent Compta (OCR tickets Claude Vision)
@@ -672,6 +689,7 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Backend : Photo service (upload Supabase Storage, compression, géoloc, horodatage)
 - [ ] Backend : Analyse photo IA (Claude Vision → catégorisation avant/pendant/après, détection matériaux, aide au devis)
 - [ ] Backend : Export avant/après (split screen image generation)
+- [ ] **F113** (V1) — Partenariats grossistes scan carte fidélité : OCR carte fidélité Point P / Cedeo / BigMat → extraction numéro compte client → saisie manuelle historique. API temps réel reportée en V2, exclusifs en V3
 - [ ] Mobile : Pipeline Kanban (drag-and-drop chantiers)
 - [ ] Mobile : Timer widget (start/stop)
 - [ ] Mobile : Scan caméra tickets
@@ -696,37 +714,49 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Backend : Mention déchets auto-calculée sur chaque devis (quantité, tri, centre collecte, coût)
 - [ ] Backend : Attestation TVA taux réduit — mention texte remplaçant les anciens CERFA
 
-### Sprint 6 — Réputation + Prospection + Email + Fiscalité + Déplacements (~3 jours)
+### Sprint 6 — Réputation + Prospection + Email + Fiscalité + Déplacements + Coach + Pack contrôle fiscal + AI Act (~3 jours)
 - [ ] Backend : Agent Réputation & Marketing (SMS avis Google + réponse IA + réseaux sociaux)
 - [ ] Backend : Agent Prospection (CRM pro + rappels architectes)
 - [ ] Backend : Module email (IMAP polling + catégorisation)
 - [ ] Backend : Background consciousness (loop pensée proactive)
 - [ ] Backend : Agent Fiscalité (suivi annuel, calendrier fiscal, alertes seuils, scan courrier admin)
 - [ ] Backend : Agent Déplacements (GPS, calcul frais km, indemnités BTP, paniers)
-- [ ] Data : Seed fiscalité (micro/EURL/SAS/EI) + calendrier fiscal + barèmes km
+- [ ] **F119** — Agent Coach Business (14ème agent) : `agents/agent_coach.py` + `prompts/coach_prompt.py` + data `data/benchmarks/taux_horaires_par_metier_region.json` + analyses mensuelles déclenchées par Supervisor
+- [ ] **F129** — Pack contrôle fiscal : extension Agent Fiscalité + service `backend/app/services/tax_audit_export.py` + endpoint `/v1/export/tax-audit` (ZIP signé horodaté)
+- [ ] **F131** — Conformité AI Act : migration `036_create_ai_audit_log.sql` + log de chaque décision IA + badge "Décision IA" sur UI + bouton "Demander validation humaine" + page publique `/transparency`
+- [ ] Data : Seed fiscalité (micro/EURL/SAS/EI) + calendrier fiscal + barèmes km + benchmarks taux horaires
 - [ ] Mobile : Écran avis Google
 - [ ] Mobile : Écran contacts pro
 - [ ] Mobile : Résumé emails
 - [ ] Mobile : Écran fiscal (tableau de bord annuel)
 - [ ] Mobile : DeplacementTracker (GPS + frais)
 - [ ] Mobile : TodoQueue (dossier "À faire" centralisé)
+- [ ] Mobile : Écran Coach Business (affichage analyse mensuelle + recommandations)
 - [ ] Test : chantier terminé → SMS avis → avis reçu → réponse IA
+- [ ] Test : analyse mensuelle Coach générée → comparaison benchmark département → recommandations actionnables
 
-### Sprint 7 — Gamification + RH + Polish (~3 jours)
+### Sprint 7 — Gamification + RH + Parrainage + Rapport annuel + Capsules + Tâches employés + App Compagnon (~3 jours)
 - [ ] Backend : Gamification service (XP, niveaux, quêtes, badges)
 - [ ] Backend : Score de contexte par devis (⭐ à ⭐⭐⭐⭐⭐)
 - [ ] Backend : "Mon assistant me connaît à X%"
 - [ ] Backend : Auto-enrichissement (web → base, corrections → apprentissage)
 - [ ] Backend : Agent RH (pointage heures, conventions BTP, indemnités employés, export paie)
-- [ ] Data : Seed conventions collectives BTP + grilles salariales + indemnités zones
+- [ ] **F114** — Code parrain structurel : migration `030_create_referrals.sql` + endpoints `/v1/referral/*` + écran mobile `app/(dashboard)/settings/parrainage.tsx` + badge "Ambassadeur"
+- [ ] **F116** — Rapport annuel de l'artisan : cron `app/crons/rapport_annuel.py` (1er janvier + 1er juillet) + génération PDF + email
+- [ ] **F117** — Warning anti-churn : enrichissement `BrainProgress.tsx` avec warning "Si tu pars, ton score repart à 0"
+- [ ] **F120** — Formation contextuelle capsules vidéo : migration `031_create_capsules.sql` + data `data/capsules/index.json` + Supervisor déclenche capsule selon `trigger_event` (infrastructure V1, tournage 50 capsules sur 3 mois post-launch)
+- [ ] **F123** — Assignation tâches employés : migration `032_create_tasks.sql` + endpoints `/v1/tasks/*` + Kanban tâches patron
+- [ ] **F124** — App mode Compagnon : routes `app/(compagnon)/*` + auth code 4 chiffres + écran pointage photo début/fin
+- [ ] Data : Seed conventions collectives BTP + grilles salariales + indemnités zones + capsules index (50 entrées)
 - [ ] Mobile : Onboarding flow (7 quêtes)
 - [ ] Mobile : Profil avec badges, niveau, XP
-- [ ] Mobile : BrainProgress component
+- [ ] Mobile : BrainProgress component (avec warning F117)
 - [ ] Mobile : Micro-apprentissages vocaux
 - [ ] Mobile : Écran RH (planning équipe, heures, export paie)
 - [ ] Test : pointage employé → heures sup calculées → indemnités calculées → export paie généré
+- [ ] Test : parrainage — artisan partage code, filleul s'inscrit, 1 mois offert aux deux
 
-### Sprint 8 — Build + Deploy + Launch (~2 jours)
+### Sprint 8 — Build + Deploy + Launch + Sandbox + Onboarding inversé + Résilience + Artisans étrangers (~2 jours)
 - [ ] EAS Build Android → Google Play Store (beta)
 - [ ] PWA build → Vercel (iOS)
 - [ ] WhatsApp Business : templates validés par Meta
@@ -736,6 +766,10 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Seed data : prix marché toutes régions
 - [ ] Security audit (pattern AgentShield)
 - [ ] Performance test : latence vocale < 1.5s
+- [ ] **F115** — Sandbox publique sans inscription : endpoint `/v1/public/chat` (rate-limited IP, session Redis 15 min) + écran `app/(public)/try.tsx` + CTA signup après 3 messages
+- [ ] **F125** — Onboarding inversé : refactor landing → chat public → premier devis → signup UNIQUEMENT pour envoyer. Cible conversion >25%
+- [ ] **F132** — Résilience et redondance : fallback LLM (Anthropic down → GPT-4) + read replica Supabase (+25$/mois) + monitoring UptimeRobot + Better Uptime + SLA 99.5% documenté dans CGV
+- [ ] **F133** — Acquisition artisans étrangers : adaptation Agent Planning (Ramadan, fêtes religieuses) + landings localisées `/tr`, `/ar`, `/pt`, `/es`
 - [ ] Launch : Facebook groupes artisans + Product Hunt
 
 ### Sprint V1.5 — Mesure AR Android (post-launch)
@@ -745,21 +779,51 @@ MEM0_API_KEY=xxx              # ou self-hosted
 - [ ] Stockage mesures dans fiche chantier (Supabase)
 - Durée estimée : 2-3 jours
 
+### Sprint V2 — Synchro compta + Télé-dépannage + Portail client + Agent Téléphone (sept-oct 2026 post-launch)
+- [ ] **F122** — Synchro comptable native : service `backend/app/services/accounting/` + 4 connecteurs (Pennylane, Cegid, Sage, QuickBooks) — plan Business uniquement
+- [ ] **F126** — Télé-dépannage : extension Agent Téléphone + data `data/diagnostics/[metier].json` (11 fichiers × 50 pannes = 550 arbres) + migration `034_create_diagnostics.sql` + tracking paiements 2€ split 50/50
+- [ ] **F127** — Portail client final : mini-PWA React sur sous-domaine `client.structorai.app/[token]` + auth par token URL + endpoints `/v1/client-portal/*` + migration `035_create_client_tokens.sql`
+- [ ] **F113** (V2) — API grossistes temps réel : intégration API Point P / Cedeo / BigMat (selon ouverture)
+- [ ] **Agent Téléphone IA base** : `agents/agent_telephone.py` — décroche, prise d'info structurée, filtrage, notification push. Add-on +15€/mois
+
+### Sprint V3 — Photogrammétrie + Grossistes exclusifs (2027+)
+- [ ] **F109** — Photogrammétrie multi-photos : 4-6 photos sous différents angles → reconstruction 3D (COLMAP ou API cloud) → dimensions calculées. Fonctionne sur TOUS les téléphones
+- [ ] **F113** (V3) — API grossistes exclusives : partenariats commerciaux avec Point P / Cedeo / BigMat (bloqué jusqu'à 2K MRR pour négocier en position de force)
+- [ ] **F134** (V2 lancement éditions) — Lancement éditions métier (STRUCTORAI-Plomberie, STRUCTORAI-Électricité) si MRR > 2K€
+
 ---
 
-## TOTAL ESTIMÉ
+## TOTAL ESTIMÉ (audit V6)
 
 | Métrique | Valeur |
 |----------|--------|
-| Fichiers backend Python | ~90 (+3 agents, +3 prompts, +3 services) |
-| Fichiers mobile TypeScript | ~90 (+8 composants, +3 écrans) |
-| Migrations SQL | 29 |
-| Docs .md | 22 |
-| Skills .md | 34 |
-| Fichiers data JSON | ~30 |
+| Fichiers backend Python | ~95 (+1 agent Coach, +1 prompt Coach, +4 services audit V6) |
+| Fichiers mobile TypeScript | ~95 (+5 écrans audit V6 : import, parrainage, concurrent-analyzer, public/try, compagnon) |
+| Migrations SQL | **37** (29 historiques + 030-037 audit V6) |
+| Docs .md | 22 + 7 plans audit V6 (FICHIERS_A_CREER.md) |
+| Skills .md | 34 + 5 plans audit V6 (FICHIERS_A_CREER.md) |
+| Fichiers data JSON | ~38 (+8 audit V6 : benchmarks, capsules, diagnostics V2, imports templates) |
 | Fichiers i18n | 6 |
-| **Total fichiers** | **~300** |
-| **Durée estimée** | **~22 jours de build Claude Code** |
+| **Total fichiers** | **~320** (+20 audit V6) |
+| **Durée estimée V1** | **~25 jours de build Claude Code** (+3 jours audit V6 : Coach, F112-F135) |
+| **V2 durée** | **~10 jours** (F122, F126, F127, Agent Téléphone base) |
+| **V3 durée** | **~8 jours** (F109 photogrammétrie, F113 V3, F134 éditions métier) |
+
+### Skills à planifier (audit V6 — `FICHIERS_A_CREER.md`)
+- `SKILL-IMPORT-COMPETITORS.md` (F112)
+- `SKILL-COMPETITOR-ANALYSIS.md` (F121)
+- `SKILL-ACCOUNTING-INTEGRATION.md` (F122)
+- `SKILL-AI-ACT-COMPLIANCE.md` (F131)
+- `SKILL-RETENTION-PATTERNS.md` (F117/F118)
+
+### Docs à créer (audit V6 — `FICHIERS_A_CREER.md`)
+- `PARTENARIATS.md` — stratégie grossistes + fédérations (F113, F130 Fédération)
+- `TRUST-SIGNALS.md` — sponsors, logos, crédibilité
+- `docs/RETENTION.md` — KPIs + triggers anti-churn (F117, F118)
+- `docs/AI-ACT-COMPLIANCE.md` — conformité EU (F131)
+- `docs/RESILIENCE.md` — plan de continuité (F132)
+- `docs/VERTICAL-EDITIONS.md` — roadmap éditions métier (F134)
+- `docs/COUTS-V2.md` — coûts V2 détaillés (Pennylane/Cegid/Sage, read replica, fallback LLM)
 
 Pour référence : AgentShield = 355 fichiers en 32h. STRUCTORAI est plus complexe (agents IA, vocal, mobile, 6 langues) mais le pattern est rodé.
 
@@ -767,7 +831,7 @@ Pour référence : AgentShield = 355 fichiers en 32h. STRUCTORAI est plus comple
 
 | Pattern | Source | Fichier STRUCTORAI | Pourquoi |
 |---------|--------|-------------------|----------|
-| Supervisor + workers + queue | Ouroboros `supervisor/` | `agents/supervisor.py`, `queue.py`, `workers.py` | Orchestration des 13 agents |
+| Supervisor + workers + queue | Ouroboros `supervisor/` | `agents/supervisor.py`, `queue.py`, `workers.py` | Orchestration des 14 agents |
 | Background consciousness loop | Ouroboros `consciousness.py` | `agents/consciousness.py` | Proactivité — le cerveau pense entre les tâches |
 | BIBLE.md constitution | Ouroboros `BIBLE.md` | `docs/METIER.md` | Règles BTP immuables (TVA, mentions, Factur-X) |
 | Circuit breaker + fallback chain | Ouroboros v6.0 | `agents/circuit_breaker.py` | 3 réponses vides → pause + fallback model |
