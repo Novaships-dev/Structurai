@@ -2,6 +2,35 @@
 
 ---
 
+## 17/04/2026 — Audit V7 : 5 renforcements stratégiques intégrés
+
+### Transformations faiblesses → forces
+- Sur-scope V1 → Argument "100% du pipeline artisan"
+- Risque juridique Coach → Positionnement "éclaireur" avec disclaimers
+- MemPalace neuf → Argument "Souveraineté données EU"
+- AI Act à respecter → Premier SaaS BTP FR conforme
+- Coût support → "IA 24/7 + humain 2h", argument différenciant
+
+### Fichiers modifiés
+- COMMUNICATION.md (section 5 forces)
+- DISTRIBUTION.md (slogan + arguments)
+- PRODUCT_CONTEXT.md (Moat enrichi + Coach + Mémoire + Support)
+- SECURITE.md (section 8 AI Act étoffée + section 15 Souveraineté)
+- COUT_REEL.md (+ 1 500€ one-time AI Act + support)
+- FEATURES.md (+ F136 Support hybride, F119 et F131 enrichis)
+- FICHIERS_A_CREER.md (+ 4 nouveaux docs priorité 1)
+- CLAUDE.md (règles d'or Coach/Mémoire/AI Act)
+- docs/DECISIONS-LOG.md (entrée V7)
+
+### Total features
+135 → **136** (F136 ajoutée)
+
+### Marges
+Pro 80% (<50 clients) / **78%** (>50 clients avec support externalisé)
+Business 89% (<50 clients) / **87%** (>50 clients)
+
+---
+
 ## 17/04/2026 — Audit V6 : intégration 22 améliorations stratégiques
 
 > Source : PLAN-22-AMELIORATIONS.md (spec). Source de vérité : `docs/DECISIONS-LOG.md` entrée 17/04/2026.

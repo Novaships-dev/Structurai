@@ -187,6 +187,17 @@ Le cerveau se souvient de TOUT pour chaque artisan :
 
 Plus l'artisan utilise l'outil, plus il est précis. Au bout de 3 mois, le cerveau fait des devis EXACTEMENT comme l'artisan les ferait — mais en 2 minutes au lieu de 2 heures.
 
+**Architecture hybride Mem0 + MemPalace (audit V7)**
+
+STRUCTORAI combine deux systèmes de mémoire pour maximiser qualité et souveraineté :
+
+- **Mem0** : patterns structurés légers (profils, préférences, historique clients). Hébergé sur serveurs EU. Mature, stable en production.
+- **MemPalace** : verbatim riche (conversations vocales complètes, devis archivés, knowledge graph temporel). 100% local sur Railway EU (ChromaDB + SQLite). Aucune donnée ne quitte l'Europe.
+
+**Fallback Mem0-seul** : si MemPalace présente >5% d'instabilité, bascule automatique vers Mem0-seul sans downtime (procédure documentée dans `docs/MEMORY-STRATEGY.md` à créer).
+
+**Avantage RGPD** : souveraineté totale des données artisan. Argument différenciant vs concurrents qui hébergent aux US.
+
 **COUCHE 3 — 14 agents autonomes (pattern Ouroboros)**
 
 Pas de l'automatisation "if/then". De vrais agents LLM avec conscience d'arrière-plan (background consciousness) inspirés d'Ouroboros. Chaque agent :
@@ -336,6 +347,20 @@ Les 14 agents :
 - **Budget :** $0.10/appel, ~1-2 analyses mensuelles par artisan
 - **Plans :** Starter = 1 analyse/mois, Pro/Business = illimité + possibilité de demander une analyse ad-hoc ("analyse mes 3 derniers chantiers")
 - Proactivité : "J'ai analysé tes 6 derniers chantiers. Pattern détecté : tu perds 400€ de marge moyenne sur les SDB complètes vs ce que tu facturais il y a un an. Je te montre les 3 postes où ça s'est passé ?"
+
+**Positionnement légal (audit V7) :**
+Le Coach éclaire sur des patterns sectoriels observés, il ne remplace JAMAIS un expert-comptable, un avocat fiscaliste ou un conseiller en gestion. Toutes ses recommandations sont formulées au conditionnel ("tu pourrais envisager", jamais "tu dois"). Chaque analyse inclut systématiquement la phrase "Valide avec ton expert-comptable avant toute décision".
+
+**Exclusions explicites (audit V7) :**
+- Pas de conseil en optimisation fiscale agressive (ex : montages EURL/SASU)
+- Pas de conseil en restructuration juridique
+- Pas de conseil en investissement
+- Pas de recommandations contraires à l'éthique ou à la loi
+
+**Disclaimer UI obligatoire** affiché avant chaque analyse :
+"💡 Analyse Coach — Indicative. Ces données sont issues de comparaisons sectorielles. Elles éclairent tes choix mais ne remplacent pas l'avis d'un professionnel."
+
+Voir `docs/COACH-DISCLAIMER.md` (à créer) pour le texte exact des disclaimers et exclusions.
 
 **COUCHE 4 — Cerveau global / Supervisor (pattern Ouroboros)**
 
@@ -932,6 +957,32 @@ Temps total : 2-3 minutes. Ancien process : 1-2 heures.
 5. **Switching cost asymétrique (F118)** : on accepte les imports entrants depuis Obat/Tolteck/Batigest/EBP/Excel/Facture.net (F112) mais on ne fournit PAS d'API export symétrique pour les concurrents. Un artisan avec 2 ans d'historique + Mem0 à 85% + benchmarks personnalisés ne peut pas migrer facilement — c'est intentionnel et assumé
 6. **Détecteur devis concurrent (F121)** : fonction unique sur le marché — upload d'un devis concurrent → analyse ligne par ligne + argumentaire de vente
 7. **Score "cerveau me connaît à X%" (F117)** : matérialise l'investissement temporel de l'artisan + warning anti-churn ("si tu pars, ton score repart à 0")
+8. **NOUVEAU (audit V7) — La totalité du pipeline** : 100% du pipeline artisan couvert vs 25-40% chez les concurrents. Aucun outil ne fait devis + relance + compta + avis Google + prospection + coach + RGE + pack fiscal dans un seul cerveau
+9. **NOUVEAU (audit V7) — Souveraineté des données** : hébergement 100% EU (Supabase Frankfurt + Railway EU + MemPalace self-hosted), RGPD+ natif. Argument massif vs concurrents hébergés US
+10. **NOUVEAU (audit V7) — Conformité AI Act dès le lancement** : premier SaaS BTP FR labellisé AI Act compatible. Revue juridique avocat + page `/transparency` publique + audit logs. Argument réglementaire qui va devenir impératif à partir d'août 2026
+
+---
+
+## ARCHITECTURE SUPPORT — 24/7 HYBRIDE (audit V7)
+
+Le support STRUCTORAI est pensé comme une extension du cerveau IA, pas un département séparé.
+
+**Niveau 1 — Cerveau IA (100% des cas, 24/7)**
+L'artisan pose une question dans le chat. Le cerveau répond instantanément ET fait l'action si possible. Résout ~70% des demandes.
+
+**Niveau 2 — Escalade asynchrone (20% des cas restants, <2h en journée)**
+Si le cerveau détecte qu'il ne peut pas résoudre → propose "Je contacte le support humain". Création ticket via widget Intercom/Crisp. Notification Fabrice ou support externalisé.
+
+**Niveau 3 — Urgence (10% des cas, <1h soir/weekend)**
+Détection mots-clés "urgent", "bloqué", "client mécontent" → SMS direct Fabrice. Réponse prioritaire.
+
+**Métriques trackées dès J1** :
+- Taux de résolution IA (objectif : >70%)
+- Temps moyen escalade → réponse humaine (objectif : <2h)
+- NPS support
+- Volume tickets résolus / semaine
+
+Voir `docs/SUPPORT-STRATEGY.md` (à créer) pour détails opérationnels.
 
 ---
 

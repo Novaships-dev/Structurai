@@ -695,6 +695,9 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 - **Pourquoi :** Les artisans ne savent pas s'ils sont bien payés, bien positionnés, rentables. Un coach humain = 500-2000€/an. Un coach IA mensuel = différenciateur massif vs concurrence
 - **Comment :** Agent `agents/agent_coach.py`, modèle `claude-opus-4-7`, budget $0.10/appel. Prompt `prompts/coach_prompt.py`. Data `data/benchmarks/taux_horaires_par_metier_region.json`. Analyses déclenchées mensuellement par le Supervisor
 - **Plans :** Inclus dans TOUS les plans. Starter = 1 analyse/mois, Pro/Business = illimité
+- **Positionnement légal (audit V7) :** éclaireur sectoriel, JAMAIS décideur. Toutes recommandations au conditionnel. Disclaimer UI obligatoire. Redirection systématique vers expert-comptable.
+- **Exclusions (audit V7) :** optimisation fiscale agressive, restructuration juridique, conseil en investissement.
+- Voir `docs/COACH-DISCLAIMER.md` (à créer) pour texte exact.
 - **Sprint :** 6-7
 - **Tag :** V1
 
@@ -776,9 +779,9 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 - **Tag :** V1
 
 ### F131. Conformité AI Act (V1 — Sprint 6)
-- **Quoi :** UI avec badge "Décision IA" sur toute sortie générée + bouton "Demander validation humaine" + page publique `/transparency` + documentation technique modèles
-- **Pourquoi :** AI Act européen applicable août 2026. Les LLM orientés décisions financières (devis, fiscal) sont GPAI à risque limité. Documentation obligatoire
-- **Comment :** Migration `036_create_ai_audit_log.sql` → log de chaque décision IA → page `/transparency` publique → doc technique créée avant août 2026
+- **Quoi :** STRUCTORAI premier SaaS BTP FR conforme AI Act dès le jour 1. Classification "Système IA à usage limité avec supervision humaine" (pas haut risque).
+- **Pourquoi :** argument de différenciation massif, trust signal. Les concurrents auront 6-12 mois de retard sur la conformité.
+- **Comment :** validation humaine systématique sur décisions financières. Page `/transparency` publique (modèles + usages + audit logs). Badge "Décision IA" sur outputs critiques. Bouton "Demander validation humaine" partout. Revue juridique par avocat spécialisé (1 500€ one-time, cabinet Bensoussan/Caprioli). Publication attestation AI Act. Migration `036_create_ai_audit_log.sql` → log de chaque décision IA.
 - **Sprint :** 6
 - **Tag :** V1
 
@@ -810,6 +813,13 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 - **Sprint :** 1
 - **Tag :** V1
 
+### F136. Support hybride IA + humain (V1 — Sprint 6) — audit V7
+- **Quoi :** architecture support à 3 niveaux — IA 24/7 (70% résolution) + escalade asynchrone <2h (20%) + urgence SMS Fabrice <1h (10%)
+- **Pourquoi :** aucun concurrent ne répond le soir ni weekend. Obat ouvre lundi 9h. STRUCTORAI = présent 24/7.
+- **Comment :** widget Crisp (ou Intercom) intégré dans le chat. Agents détectent leurs limites et proposent escalade. Prompt système enrichi. Endpoint `/v1/support/escalate`. Dashboard admin : taux résolution IA, temps escalade, NPS support. Détection mots-clés "urgent/bloqué/mécontent" → SMS direct Fabrice.
+- **Sprint :** 6
+- **Tag :** V1
+
 ---
 
 ## RÉSUMÉ DES CHANGEMENTS
@@ -820,7 +830,8 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 | Nouvelles features V1 ajoutées (audit initial) | 24 (F87-F110) |
 | F111 ajoutée audit 15/04 | 1 (F111) |
 | **Nouvelles features audit V6 (17/04)** | **24 (F112-F135)** |
-| **Total features** | **135** (110 + F111 + 24 = 135) |
+| **Nouvelles features audit V7 (17/04)** | **1 (F136)** |
+| **Total features** | **136** (110 + F111 + 24 + F136 = 136) |
 | **Total agents V1** | **14** (+Agent Coach Business F119) + Supervisor |
 | **V2** | Agent Téléphone IA + F122 (Synchro compta) + F126 (Télé-dépannage) + F127 (Portail client) |
 | **V3** | F109 (Photogrammétrie) + F113 V3 (API grossistes exclusives) |
@@ -829,7 +840,7 @@ Les budgets LLM devront être redistribués pour inclure les 2 nouveaux agents.
 
 | Sprint | Features |
 |--------|----------|
-| **V1 launch juin 2026** | F01-F111 + F112-F121 + F123-F125 + F128-F135 (tout sauf 3 reports) |
+| **V1 launch juin 2026** | F01-F111 + F112-F121 + F123-F125 + F128-F136 (tout sauf 3 reports) |
 | **V2 post-launch sept-oct 2026** | F122, F126, F127, F113 V2 (API grossistes), Agent Téléphone IA de base |
 | **V3 2027+** | F109 (photogrammétrie), F113 V3 (API grossistes exclusif, bloqué jusqu'à 2K MRR) |
 

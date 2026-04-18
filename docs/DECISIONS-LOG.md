@@ -14,6 +14,36 @@ author: Claude Code
 
 ---
 
+## 17/04/2026 — V7 : 5 Renforcements stratégiques (faiblesses → forces)
+
+### Décisions fixées
+1. **Agent Coach positionnement "éclaireur"** : conseil au conditionnel, disclaimers obligatoires, redirection expert-comptable systématique
+2. **Mémoire hybride Mem0 + MemPalace** avec fallback Mem0-seul documenté
+3. **AI Act classification** : "Système IA à usage limité avec supervision humaine" (pas haut risque). Revue juridique 1 500€ avant launch.
+4. **Support hybride 3 niveaux** : IA 24/7 / escalade <2h / urgence SMS <1h. Widget Crisp par défaut.
+5. **Slogan #1** : "100% du pipeline artisan" (vs 25-40% concurrents).
+
+### Nouvelle feature
+- F136 — Support hybride IA + humain (V1, Sprint 6)
+
+### 4 docs planifiés (priorité 1)
+- `docs/COACH-DISCLAIMER.md`
+- `docs/MEMORY-STRATEGY.md`
+- `docs/AI-ACT-COMPLIANCE.md`
+- `docs/SUPPORT-STRATEGY.md`
+
+### Budget additionnel
+- **1 500€ one-time** revue juridique AI Act
+- ~25€/mois widget support (Crisp/Intercom) à partir de 50 clients
+- ~500-800€/mois support externalisé à partir de 50-200 clients
+
+### Marges recalculées
+- Pro à 50+ clients : **78%** (vs 80% précédent, -2pts pour support externalisé)
+- Business à 50+ clients : **87%** (vs 89% précédent)
+- Marges <50 clients inchangées : 80% Pro, 89% Business
+
+---
+
 ## AUDIT V6 — 17/04/2026 — Intégration des 22 améliorations stratégiques
 
 ### 3 décisions prises

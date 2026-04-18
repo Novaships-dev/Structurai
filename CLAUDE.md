@@ -180,6 +180,8 @@ Le Supervisor reçoit TOUS les messages et décide quel agent répond :
 
 > **Total** : **14 agents IA + 1 Supervisor + 4 modules fonctionnels (Galerie photo, Gamification, Mesure IA, Dossier À faire) = 19 composants au total.** Le Supervisor est listé à part car c'est l'orchestrateur, pas un des 14 agents.
 
+> **Note importante Agent Coach Business (audit V7)** : positionnement légal "éclaireur", jamais "décideur". Disclaimers UI et exclusions documentées dans `docs/COACH-DISCLAIMER.md` (à créer).
+
 ---
 
 ## RÈGLES MÉTIER BTP — IMMUABLES
@@ -412,6 +414,14 @@ SENTRY_DSN=
 6. **Ne jamais commiter des secrets** — `.env` dans `.gitignore`
 7. **Ne jamais déployer sans test** — au minimum un smoke test
 8. **Ne jamais ignorer le BUILD_PLAN.md** — c'est l'ordre de construction
+
+---
+
+## RÈGLES D'OR — AUDIT V7
+
+- **Agent Coach** : JAMAIS d'injonction, toujours conditionnel, toujours "valide avec ton expert-comptable". Disclaimer UI obligatoire. Voir `docs/COACH-DISCLAIMER.md` (à créer).
+- **Mémoire** : privilégier l'hébergement EU. MemPalace 100% local sur Railway EU. Mem0 configuré région EU. Aucun stockage données artisan hors UE. Voir `docs/MEMORY-STRATEGY.md` (à créer).
+- **Décisions IA** : validation humaine obligatoire sur toutes décisions financières (devis, factures, relances). Pas d'envoi automatique sans confirmation. Voir `docs/AI-ACT-COMPLIANCE.md` (à créer).
 
 ---
 

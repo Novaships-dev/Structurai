@@ -104,6 +104,54 @@ Utiliser ces chiffres dans les visuels, posts, landing page :
 
 ---
 
+## Les 5 forces différenciantes (arguments marketing — audit V7)
+
+### Force 1 — La totalité du pipeline artisan
+
+Tableau comparatif concurrents :
+
+| Fonction | Obat | Tolteck | Batigest | STRUCTORAI |
+|---|---|---|---|---|
+| Devis IA vocal | ❌ | ❌ | ❌ | ✅ |
+| Relance auto adaptative | ❌ | ❌ | ❌ | ✅ |
+| OCR tickets de caisse | ❌ | ❌ | ❌ | ✅ |
+| Avis Google auto + réponse IA | ❌ | ❌ | ❌ | ✅ |
+| Prospection CRM architectes | ❌ | ❌ | ❌ | ✅ |
+| Agent Coach stratégique | ❌ | ❌ | ❌ | ✅ |
+| Validation RGE automatique | ❌ | ❌ | ❌ | ✅ |
+| Pack contrôle fiscal | ❌ | ❌ | ❌ | ✅ |
+| Portail client final | ❌ | ❌ | ❌ | ✅ V2 |
+| Télé-dépannage client | ❌ | ❌ | ❌ | ✅ V2 |
+| **Couverture pipeline** | **35%** | **25%** | **40%** | **100%** |
+
+Slogan : **"14 agents. 1 cerveau. Tout ton business."**
+
+### Force 2 — Coach qui éclaire, pas qui décide
+
+Positionnement légal : conseil éclairé, pas conseil réglementé. Disclaimers visibles, redirection systématique vers expert-comptable.
+
+Script : *"Obat te sort des chiffres. STRUCTORAI te montre ce qu'ils veulent dire."*
+
+### Force 3 — 100% RGPD / données en France
+
+MemPalace + Mem0 hybride, serveurs Railway EU. Aucune donnée artisan ne quitte l'Europe. Argument souveraineté numérique.
+
+Script : *"Obat stocke chez Google US. STRUCTORAI garde tout en France."*
+
+### Force 4 — Conforme AI Act dès le jour 1
+
+Premier SaaS BTP FR labellisé AI Act compatible. Revue juridique avocat, page `/transparency` publique, audit logs.
+
+Script : *"Quand les contrôles AI Act arrivent, tu es déjà en règle. Les autres ? Pas encore."*
+
+### Force 5 — Support 24/7 IA + humain 2h
+
+IA résout 70% instantanément jour et nuit. Humain <2h en journée, <1h en urgence soir/weekend.
+
+Script : *"Un problème à 22h dimanche ? STRUCTORAI répond. Obat ouvre lundi 9h."*
+
+---
+
 # 1. PSYCHOLOGIE DU MARCHÉ — COMPRENDRE L'ARTISAN
 
 ## Qui est l'artisan BTP en France

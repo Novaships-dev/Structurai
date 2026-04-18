@@ -56,7 +56,10 @@ Mois 2 : ~30$ (API tests) + 5$ (Railway) = ~35€
 | Sentry | Free | **0$** | |
 | Yousign API (signature devis) | Starter | **75€/mois** (500 signatures/an) | Couvre ~42 signatures/mois. |
 | Plateforme Agréée (PA) facturation électronique | API marque blanche (FactPulse ou B2Brouter) | **~0.10-0.50€/facture** ou forfait 29-100€/mois | Obligatoire dès sept 2027 pour émission. Phase pilote B2Brouter gratuite jusqu'au 31/08/2026. Intégrer en Sprint 5. |
-| **TOTAL FIXE** | | **~90-125€/mois** selon upgrades | |
+| Revue juridique AI Act (avocat) | One-time | **1 500€** | Avant launch. Cabinet Bensoussan, Caprioli ou équivalent. Audit V7. |
+| Intercom ou Crisp (support widget) | Starter/Free | **0€ → 25€/mois à 50 clients** | Crisp gratuit <100 sessions/mois, Intercom ~25$ Essential. Défaut Crisp. Audit V7. |
+| Supabase read replica (résilience) | À partir de 50 clients | **+25$/mois** | Backup + read replica pour performance. |
+| **TOTAL FIXE** | | **~90-125€/mois** selon upgrades (+ 1 500€ one-time AI Act) | |
 
 ### Coûts VARIABLES par artisan payant (Pro à 29€/mois)
 
@@ -79,14 +82,17 @@ C'est ici que tu dois être chirurgical. Chaque artisan qui utilise l'app coûte
 | **Agent Coach Business (F119)** | 1-2 analyses mensuelles × Opus | **~$0.20** | Analyses stratégiques mensuelles : benchmark département, taux conversion, marge, positioning. Starter 1×/mois, Pro/Business illimité |
 | **Capsules vidéo formation (F120)** | Hébergement 50 capsules + lecture ~5/artisan/mois | **~$0.05** | Streaming vidéo 60s + CDN |
 | **Validation RGE (F128)** | ~1 check/mois × API data.gouv.fr | **$0** | API gratuite officielle |
-| **TOTAL PAR ARTISAN (audit V6)** | | **~$4.80/mois** | +$0.30 vs V5 ($4.50) — Coach Business + capsules |
+| **Support externalisé (à partir 50 clients — audit V7)** | ~1 ticket/artisan/mois × 15 min | **~2€/artisan/mois** | Freelance FR via Malt/Upwork, 500-800€/mois à 50-200 clients |
+| **TOTAL PAR ARTISAN (audit V7)** | | **~$4.80/mois** (< 50 clients) → **~$7/mois** (≥ 50 clients avec support externalisé) | +$0.30 vs V5 — Coach + capsules. Audit V7 : + ~2€ support à partir de 50 clients |
 
-### Marge par artisan (audit V6)
+### Marge par artisan (audit V7)
 
 | Plan | Prix | Coût API/artisan | Coût infra partagé | **Marge brute** | **% marge** |
 |------|------|-----------------|-------------------|----------------|-------------|
-| **Pro 29€** | 29€ | ~4.80$ ≈ 4.40€ | ~1.25€ (quote-part infra + capsules) | **~23.35€** | **~80%** (était 82%, -2pts audit V6) |
-| **Business 79€** | 79€ | ~6.80$ ≈ 6.20€ (usage + élevé) | ~2.50€ (infra + services V2 inclus) | **~70.30€** | **~89%** (était 91%, -2pts audit V6) |
+| **Pro 29€** (<50 clients) | 29€ | ~4.80$ ≈ 4.40€ | ~1.25€ (quote-part infra + capsules) | **~23.35€** | **~80%** (inchangé) |
+| **Pro 29€** (≥50 clients, audit V7) | 29€ | ~4.80$ ≈ 4.40€ | ~1.25€ + 2€ support externalisé | **~21.35€** | **~78%** (-2pts support externalisé) |
+| **Business 79€** (<50 clients) | 79€ | ~6.80$ ≈ 6.20€ (usage + élevé) | ~2.50€ (infra + services V2 inclus) | **~70.30€** | **~89%** (inchangé) |
+| **Business 79€** (≥50 clients, audit V7) | 79€ | ~6.80$ ≈ 6.20€ | ~2.50€ + 2€ support externalisé | **~68.30€** | **~87%** (-2pts support externalisé) |
 | **Starter 0€** | 0€ | ~0.90€ (usage limité + 1 Coach/mois) | ~0.50€ | **-1.40€** | Perte |
 | **Pro annuel 229€** | 229€/12 ≈ 19€ équivalent | ~4.80$/mois | ~1.25€ | **~13€/mois** | **~67%** (engagement = acceptable) |
 | **Business annuel 629€** | 629€/12 ≈ 52€ équivalent | ~6.80$/mois | ~2.50€ | **~43€/mois** | **~82%** |
@@ -202,6 +208,20 @@ BUDGET_MAX_PER_ARTISAN_PER_DAY = 2.00  # $2 max/jour
 - Alerte Slack/email si coût journalier > $5 (phase launch)
 - Alerte si un artisan dépasse $3/jour en API
 - Log chaque appel API avec le coût estimé
+
+---
+
+## COÛTS DES 5 RENFORCEMENTS STRATÉGIQUES (audit V7)
+
+| Renforcement | Coût one-time | Coût récurrent/mois | ROI attendu |
+|---|---|---|---|
+| Conformité AI Act (revue juridique) | **1 500€** | 0€ | Premium pricing, trust signal massif, 0 risque amende |
+| Support hybride (widget Crisp + freelance) | 0€ | 0€ → 25€ à 50 clients + 500€ à 100 clients | Churn réduit de 5% à 2%, NPS >60 |
+| Architecture mémoire hybride | 0€ | 0€ (MemPalace self-hosted) | Argument souveraineté = conversion +15% |
+| Positionnement Coach éclaireur | 0€ | 0€ | 0 risque juridique, adoption Business +30% |
+| Communication totalité pipeline | 0€ | Budget marketing variable | Conversion landing +40% vs slogan générique |
+
+**Total : 1 500€ one-time + marginal récurrent.** ROI sur les 4 axes conversion/rétention/pricing/risque.
 
 ---
 

@@ -298,31 +298,62 @@
 
 ---
 
-## 8. CONFORMITÉ AI ACT (Règlement IA européen) — F131, audit V6
+## 8. CONFORMITÉ AI ACT EUROPÉEN (audit V7 — étoffé)
 
-STRUCTORAI utilise de l'IA pour des décisions à impact (génération de devis, suggestions comptables, alertes fiscales, Coach Business). Obligations applicables dès août 2026.
+**Classification STRUCTORAI** : "Système IA à usage limité avec supervision humaine" (pas haut risque).
 
-### Classification du système (AI Act article 6)
-STRUCTORAI est classé **GPAI (General-Purpose AI) à risque limité** :
-- Pas de risque inacceptable (pas de scoring social, pas de manipulation subliminale)
-- Pas de risque élevé (pas d'évaluation de crédit, pas de recrutement automatisé, pas d'infrastructure critique)
-- Risque limité car interaction avec utilisateur humain qui valide chaque décision
+**Justification** :
+- Validation humaine obligatoire sur TOUTES les décisions financières (devis, factures, relances) avant envoi
+- Bouton "Valider" systématique dans l'UI
+- L'artisan garde le contrôle à 100%
+- Aucune décision auto envoyée sans confirmation
 
-### Obligations détaillées (F131)
+**Mesures de transparence implémentées (F131)** :
+- Page publique `/transparency` listant modèles utilisés et usages
+- Badge "Décision IA" sur chaque output critique
+- Bouton "Demander validation humaine" disponible partout
+- Audit logs dans table `ai_decisions` (migration 036)
 
-| Obligation AI Act | Implémentation STRUCTORAI |
-|-------------------|--------------------------|
-| **Transparence (art. 50)** | Badge "Décision IA" sur TOUTE sortie générée (devis, analyse Coach, suggestion Fiscalité). Mention "Ce devis a été pré-rempli par l'IA. Vérifiez et validez avant envoi." Bouton "Demander validation humaine" accessible à tout moment |
-| **Documentation technique (art. 53)** | Document `docs/AI-ACT-COMPLIANCE.md` (à créer) listant : modèles utilisés (claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001), données d'entraînement (référentiels BTP 8819 lignes), cas d'erreur connus, limites du système, évaluations de performance |
-| **Traçabilité (art. 12)** | Migration `036_create_ai_audit_log.sql` — log chaque décision IA avec : timestamp, modèle, agent, input (hashé si données sensibles), output, coût, latence, user_id. Conservation 10 ans |
-| **Supervision humaine (art. 14)** | L'artisan VALIDE toujours avant envoi (devis, relance, publication réseau social, réponse avis). Aucune action automatique sans confirmation (sauf background consciousness qui est lecture seule + alertes) |
-| **Non-discrimination (art. 10)** | Pas de traitement différencié selon l'origine, la langue ou le profil de l'artisan. Les benchmarks Coach Business sont par département métier, pas par nom/origine |
-| **Droit d'opposition (art. 26)** | L'artisan peut désactiver les suggestions IA et saisir manuellement. Désactivation granulaire par agent |
-| **Page publique transparence** | `/transparency` accessible sans login — explique le fonctionnement de l'IA, les modèles utilisés, les limites, les données collectées, les droits des utilisateurs |
-| **Signalement incidents graves (art. 73)** | Procédure documentée : incident IA grave (discrimination, fuite, hallucination critique) → notification CNIL + Commission dans 15 jours |
+**Modèles déclarés** :
+- Claude Opus 4.7 (Anthropic) : Agent Devis complexe, Vision IA stratégique
+- Claude Sonnet 4.6 (Anthropic) : 10 agents opérationnels standards
+- Claude Haiku 4.5 (Anthropic) : 3 agents légers (relance, déplacements, réputation)
+- Whisper API (OpenAI) : transcription vocale
+- ElevenLabs : synthèse vocale
 
-### Date limite de mise en conformité
-**Août 2026** pour les systèmes GPAI existants. La documentation technique doit être prête **AVANT** cette date. Voir `docs/AI-ACT-COMPLIANCE.md` à créer (Sprint 6).
+**Exclusions IA haut risque** :
+- Pas de scoring de crédit/solvabilité artisan
+- Pas de décision d'embauche automatisée
+- Pas de système biométrique
+- Pas de catégorisation sociale
+
+**Revue juridique** : validation par avocat spécialisé IA (cabinet Bensoussan, Caprioli, ou équivalent) avant launch. Budget 1 500€ one-time.
+
+**Attestation** : publication du rapport de conformité AI Act sur la page `/transparency`.
+
+**Date limite de mise en conformité** : **août 2026** pour les systèmes GPAI existants. La documentation technique doit être prête AVANT cette date.
+
+Voir `docs/AI-ACT-COMPLIANCE.md` (à créer) pour analyse article par article.
+
+---
+
+### 8.bis AGENT COACH BUSINESS — CADRE JURIDIQUE (audit V7)
+
+Le Coach n'est PAS un conseiller financier, fiscaliste, juridique ou en gestion réglementé.
+
+**Positionnement légal** : "éclaireur sectoriel" qui affiche des patterns observables, ne donne jamais d'injonction.
+
+**Disclaimer UI obligatoire avant chaque analyse** :
+"💡 Analyse Coach — Indicative. Ces données éclairent tes choix mais ne remplacent pas l'avis d'un professionnel (expert-comptable, avocat fiscaliste)."
+
+**Exclusions explicites dans le prompt système du Coach** :
+- Pas de conseil en optimisation fiscale agressive
+- Pas de conseil en restructuration juridique
+- Pas de conseil en investissement
+- Formulation toujours au conditionnel
+- Toujours suggérer "Valide avec ton expert-comptable"
+
+Voir `docs/COACH-DISCLAIMER.md` (à créer) pour le texte exact des disclaimers et exclusions.
 
 ---
 
@@ -447,3 +478,28 @@ En cas de contrôle fiscal (fréquent chez les artisans — ~5% par an), l'admin
 
 ### Service
 `backend/app/services/tax_audit_export.py` — orchestration : collecte des données, génération PDFs combinés, signature, horodatage, envoi.
+
+---
+
+## 15. SOUVERAINETÉ DES DONNÉES ARTISAN (audit V7)
+
+STRUCTORAI garantit que les données artisan restent en Europe.
+
+**Hébergement** :
+- Base de données Supabase : région EU (Frankfurt)
+- Railway backend : région EU
+- Vercel PWA : région EU
+- Mem0 : cloud EU (configurable)
+- MemPalace : 100% local sur Railway EU (ChromaDB + SQLite embarqués)
+
+**Sous-traitants hors EU (avec DPA signés)** :
+- Anthropic (Claude API) : US mais engagement GDPR via DPA
+- OpenAI (Whisper) : US mais engagement GDPR via DPA
+- ElevenLabs : US mais engagement GDPR via DPA
+- Stripe : US mais engagement GDPR via DPA
+
+**Argument marketing** : les données métier (conversations vocales, historique devis, mémoire artisan) ne quittent PAS l'EU. Seuls les appels API ponctuels aux LLM transitent hors EU avec DPA.
+
+**Fallback** : si MemPalace présente instabilité, bascule Mem0-seul documentée, temps bascule 2h sans downtime.
+
+Voir `docs/MEMORY-STRATEGY.md` (à créer) pour l'architecture mémoire hybride complète.

@@ -1,6 +1,6 @@
 # DISTRIBUTION-STRUCTORAI.md — Stratégie de distribution + Expansion Europe
 > StructorAI = LE premier assistant IA complet pour artisans BTP.
-> **14 agents IA + 1 Supervisor + 4 modules fonctionnels = 19 composants** (audit V6 : +Agent Coach Business). 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
+> **Le seul SaaS qui couvre 100% du pipeline artisan BTP.** 14 agents IA + 1 Supervisor + 4 modules fonctionnels = 19 composants (audit V6 : +Agent Coach Business). 11 corps de métier, 6 langues, 8819 lignes de données terrain, 1080+ postes chiffrés, 132 erreurs terrain, mémoire qui apprend.
 > Aucun concurrent n'a ça. Ni en France, ni en Europe, ni dans le monde.
 > Dernière mise à jour : 17/04/2026 (audit V6 : 14 agents, expansion chiffrée par pays)
 
@@ -57,6 +57,18 @@ StructorAI c'est un business manager IA complet dans la poche de l'artisan. Il :
 | 15 | **Agent Email Pro** | Connexion boîte mail → filtrage IA pro/perso → catégorisation (prospect/client/fournisseur/admin/spam) → résumé quotidien vocal → alertes urgentes (URSSAF, mise en demeure) → détection demande de devis dans les emails → fiche prospect auto. Une vraie secrétaire IA. |
 | 16 | **Module MESURE IA** | Le client envoie 2-3 photos de sa pièce → le cerveau mesure (Vision IA, détection porte/prise/carrelage comme références) → dimensions estimées (±20%) → pré-devis généré AVANT déplacement. 4 niveaux : Vision IA (V1, tous téléphones), AR Android (V1.5), LiDAR iPhone Pro (V2), Photogrammétrie multi-photos (V3). L'artisan ne se déplace QUE pour les chantiers sérieux. |
 | 17 | **Agent COACH BUSINESS (14ème agent, audit V6)** | Conseil stratégique mensuel automatique. Analyse : taux horaire vs benchmark département, taux conversion devis, carnet de commandes, marge moyenne, positioning. Recommandations actionnables : "Ton taux horaire est 20% sous la médiane, je suggère +7€/h progressif". Aucun concurrent ne fait ça — un coach humain coûte 500-2000€/an. |
+
+---
+
+## Les 5 arguments de vente différenciants (audit V7)
+
+1. **La totalité** : 100% du pipeline vs 25-40% chez les concurrents
+2. **Coach éclaireur** : vision stratégique mensuelle, validation par expert-comptable
+3. **Souveraineté** : données 100% EU, RGPD+ natif
+4. **AI Act** : premier SaaS BTP FR conforme
+5. **Support 24/7** : IA instantanée + humain rapide
+
+Voir `COMMUNICATION.md` pour les scripts de vente détaillés.
 
 ---
 

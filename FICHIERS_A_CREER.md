@@ -30,27 +30,57 @@ Aujourd'hui FEATURES.md ne liste que ~56 features. Créer la liste complète des
 ### 4. `docs/MEMORY.md` — Architecture mémoire
 Décision à trancher : Mem0 seul, MemPalace seul, ou hybride. Mapping BTP (wings/rooms/drawers si MemPalace). Choix documenté.
 
+### 5. `docs/COACH-DISCLAIMER.md` — Cadre juridique Agent Coach (audit V7)
+- Texte exact du disclaimer UI à afficher avant chaque analyse
+- Liste exhaustive des exclusions (pas de conseil fiscal agressif, pas de restructuration, etc.)
+- Template de phrases "au conditionnel" pour le system prompt
+- Référence articles de loi (activités réglementées des conseillers en gestion)
+
+### 6. `docs/MEMORY-STRATEGY.md` — Architecture mémoire hybride + fallback (audit V7)
+- Architecture détaillée Mem0 + MemPalace avec mapping BTP (wings/rooms/drawers)
+- Règles de routage : quelle donnée va où
+- Procédure de fallback Mem0-seul si MemPalace instable >5%
+- Script de migration MemPalace → Mem0 (documentation technique)
+- Argument souveraineté EU
+
+### 7. `docs/AI-ACT-COMPLIANCE.md` — Conformité AI Act Européen (audit V7)
+- Analyse article par article de l'AI Act
+- Classification STRUCTORAI avec justification
+- Mesures de transparence implémentées
+- Liste des modèles avec versions et dates
+- Template attestation avocat
+- Page `/transparency` contenu type
+- Procédure audit logs
+
+### 8. `docs/SUPPORT-STRATEGY.md` — Support 24/7 hybride (audit V7)
+- Architecture 3 niveaux (IA / asynchrone / urgence)
+- Détection mots-clés escalade
+- Procédure escalade SMS Fabrice
+- KPIs à tracker (résolution IA, temps escalade, NPS)
+- Seuil d'embauche support externe (50, 200, 500 clients)
+- Scripts de réponse humaine pour cas fréquents
+
 ---
 
 ## PRIORITÉ 2 — Docs techniques (nécessaires pour un build propre)
 
-5. `docs/ARCH.md` — Architecture technique détaillée
-6. `docs/API.md` — Endpoints REST exhaustifs + exemples Pydantic
-7. `docs/AGENTS.md` — Architecture des 13 agents + Supervisor
-8. `docs/VOICE.md` — Pipeline vocal (STT + TTS, latence cible)
-9. `docs/WHATSAPP.md` — Meta Cloud API + templates + fallback
-10. `docs/DEPLOY.md` — Railway + Vercel + EAS Build
-11. `docs/ENV.md` — Variables d'environnement exhaustives
-12. `docs/MIGRATIONS.md` — Guide migrations Supabase (ordre + RLS + seeds)
-13. `docs/ERRORS.md` — Codes d'erreur standardisés
-14. `docs/PRICING-ENGINE.md` — Plans Starter/Pro/Business + Stripe
-15. `docs/I18N.md` — i18next 6 langues
-16. `docs/GAMIFICATION.md` — XP, niveaux, quêtes, badges
-17. `docs/KNOWLEDGE.md` — 4 sources RAG + auto-enrichissement
-18. `docs/PROMPTS.md` — Guide écriture system prompts par agent
-19. `docs/OFFLINE.md` — SQLite local + sync queue
-20. `docs/TESTS.md` — Stratégie de test (TDD agents, TVA, Factur-X, RLS)
-21. `docs/CONVENTIONS.md` — Naming Python/TS/SQL + patterns Git
+9. `docs/ARCH.md` — Architecture technique détaillée
+10. `docs/API.md` — Endpoints REST exhaustifs + exemples Pydantic
+11. `docs/AGENTS.md` — Architecture des 13 agents + Supervisor
+12. `docs/VOICE.md` — Pipeline vocal (STT + TTS, latence cible)
+13. `docs/WHATSAPP.md` — Meta Cloud API + templates + fallback
+14. `docs/DEPLOY.md` — Railway + Vercel + EAS Build
+15. `docs/ENV.md` — Variables d'environnement exhaustives
+16. `docs/MIGRATIONS.md` — Guide migrations Supabase (ordre + RLS + seeds)
+17. `docs/ERRORS.md` — Codes d'erreur standardisés
+18. `docs/PRICING-ENGINE.md` — Plans Starter/Pro/Business + Stripe
+19. `docs/I18N.md` — i18next 6 langues
+20. `docs/GAMIFICATION.md` — XP, niveaux, quêtes, badges
+21. `docs/KNOWLEDGE.md` — 4 sources RAG + auto-enrichissement
+22. `docs/PROMPTS.md` — Guide écriture system prompts par agent
+23. `docs/OFFLINE.md` — SQLite local + sync queue
+24. `docs/TESTS.md` — Stratégie de test (TDD agents, TVA, Factur-X, RLS)
+25. `docs/CONVENTIONS.md` — Naming Python/TS/SQL + patterns Git
 
 ---
 
@@ -115,10 +145,10 @@ Schéma JSON type à définir une fois, appliquer aux 11.
 
 ## TOTAL
 
-- **4 docs priorité 1** (obligatoires)
+- **8 docs priorité 1** (obligatoires — incl. 4 nouveaux audit V7 : COACH-DISCLAIMER, MEMORY-STRATEGY, AI-ACT-COMPLIANCE, SUPPORT-STRATEGY)
 - **17 docs priorité 2** (recommandés)
 - **10-14 skills priorité 3**
 - **8 fichiers priorité 4** (hooks + commands)
 - **11 fichiers JSON priorité 5**
 
-**Total : ~50-54 fichiers** à créer par Fabrice + Claude avant de lancer le build Claude Code.
+**Total : ~54-58 fichiers** à créer par Fabrice + Claude avant de lancer le build Claude Code.
